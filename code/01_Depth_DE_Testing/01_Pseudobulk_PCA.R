@@ -225,7 +225,58 @@ ggsave(plot = pb_brainid_pca,
        height = 8,
        width = 8)
 
+######PCA with selection for highly deviant genes. 
+#Perform the PCA analysis with selecting for top 4000 highly deviant genes. 
+#Pull HDGs
+hdgs <- rownames(sce)[order(rowData(sce)$binomial_deviance, decreasing = T)][1:4000]
+#Pull log counts matrix
+pb_log_counts_HDGs <- pb_log_counts[hdgs,]
 
+#Perform PCA analysis without scaling
+pca_no_scale_hdgs <- prcomp(t(pb_log_counts_HDGs), center = TRUE, scale. = FALSE)
+
+#Pull PCA results
+pca_scores_hdgs <- as.data.frame(pca_no_scale_hdgs$x)
+
+#Add metadata to the pca output
+pca_scores_hdgs$Depth <- colData(sce_pb)$Depth
+pca_scores_hdgs$CellType.Final <- colData(sce_pb)$CellType.Final
+pca_scores_hdgs$Brain_ID <- colData(sce_pb)$Brain_ID
+
+
+#Plot the PCA colored by:
+#CellType.Final
+pb_celltype_pca_hdgs <- ggplot(pca_scores_hdgs,aes(x = PC1, y = PC2, color = CellType.Final)) +
+  geom_point(size = 4) +
+  labs(x = paste("PC1\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC1"]*100,"% Variance Explained")),
+       y = paste("PC2\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_celltype_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_HDGs_CellType.Final_PCA.pdf",
+       height = 8,
+       width = 8)
+
+#Depth
+pb_depth_pca <-  ggplot(pca_scores_hdgs,aes(x = PC1, y = PC2, color = Depth)) +
+  geom_point(size = 4) +
+  labs(x = paste("PC1\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC1"]*100,"% Variance Explained")),
+       y = paste("PC2\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_depth_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_HDGs_Depth_PCA.pdf",
+       height = 8,
+       width = 8)
+
+#Brain_ID
+pb_brainid_pca <-  ggplot(pca_scores_hdgs,aes(x = PC1, y = PC2, color = Brain_ID)) +
+  geom_point(size = 4) +
+  labs(x = paste("PC1\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC1"]*100,"% Variance Explained")),
+       y = paste("PC2\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_brainid_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_HDGs_BrainID_PCA.pdf",
+       height = 8,
+       width = 8)
 
 
 
