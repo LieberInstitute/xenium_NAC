@@ -278,7 +278,40 @@ ggsave(plot = pb_brainid_pca,
        height = 8,
        width = 8)
 
-
+#Split the object by CellType and then perform the PCA. 
+#Use the HDGs from above. 
+for(i in unique(sce$CellType.Final)){
+  print(i)
+  
+  #Subset for cell type of interest
+  sce_sub <- sce_pb[,sce_pb$CellType.Final == i]
+  
+  #Pull log counts matrix
+  pb_log_counts <- assay(sce_sub,"logcounts")
+  pb_log_counts <- pb_log_counts[hdgs,]
+  
+  #Perform PCA analysis without scaling
+  pca_no_scale <- prcomp(t(pb_log_counts), center = TRUE, scale. = FALSE)
+  
+  #Pull PCA results
+  pca_scores <- as.data.frame(pca_no_scale$x)
+  
+  #Add Depth
+  pca_scores$Depth <- colData(sce_sub)$Depth
+  
+  #Plot
+  celltype_plot <- ggplot(pca_scores,aes(x = PC1, y = PC2, color = Depth)) +
+    geom_point(size = 4) +
+    labs(x = paste("PC1\n",paste0(summary(pca_no_scale)$importance[2,"PC1"]*100,"% Variance Explained")),
+         y = paste("PC2\n",paste0(summary(pca_no_scale)$importance[2,"PC2"]*100,"% Variance Explained")))
+  
+  #Save the plot
+  ggsave(plot = celltype_plot,
+         filename = paste0("/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/",i,"_HDGs_Depth_PCA.pdf"),
+         height = 8,
+         width = 8)
+  
+}
 
 
 
