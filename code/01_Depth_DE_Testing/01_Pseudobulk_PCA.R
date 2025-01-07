@@ -29,7 +29,7 @@ sce
 # altExpNames(0):
 
 #Remove the Neuron_Ambig group
-sce <- sce[,sce$CellType.Final !=Neuron_Ambig"]
+sce <- sce[,sce$CellType.Final != "Neuron_Ambig"]
 
 dim(sce)
 #[1]  36601 103339
@@ -93,7 +93,7 @@ as.data.frame(unique(colData(sce)[,c("Brain_ID","Depth")]))
 # 13_AAACCCAAGGACTGGT-1   Br6432  Anterior
 # 15_AAACCCAAGGGAGATA-1   Br6471    Middle
 # 17_AAACCCAAGATTGCGG-1   Br6522    Middle
-# 19_AAACCCACAACCTC-1   Br8667 Posterior
+# 19_AAACCCACAAGGCCTC-1   Br8667 Posterior
 
 #For pseudobulk DEG testing, you need to test 1 condition vs another. Can't have three designations. Make three columns that
 #will be anterior,middle,posterior and the other samples will just say Other. 
@@ -121,7 +121,7 @@ sce_pb
 # rownames(34977): ENSG00000243485 ENSG00000186092 ... ENSG00000278817
 # ENSG00000277196
 # rowData names(7): source type ... gene_type binomial_deviance
-# colnames:ULL
+# colnames: NULL
 # colData names(48): Sample Barcode ... Brain_ID ncells
 # reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
 # mainExpName: NULL
@@ -146,7 +146,7 @@ table(sce_pb$Brain_ID)
 #8492 is not represented within the Ependymal population. That's okay. 
 
 ###############PCA analysis#####################
-#Get library size factorsThis function generates "per-cell size factors from library sizes (i.e., total sum of counts per cell)
+#Get library size factors. This function generates "per-cell size factors from library sizes (i.e., total sum of counts per cell)
 sce_pb <- computeLibraryFactors(sce_pb)
 
 #Generate log-normalized counts
@@ -179,7 +179,7 @@ pca_scores <- as.data.frame(pca_no_scale$x)
 #Check out the matrix. 
 pca_scores[1:5,1:5]
 # PC1        PC2       PC3      PC4      PC5
-# 1 -145.77 -109.21437 -34.36973 86.61906 27.85574
+# 1 -145.7752 -109.21437 -34.36973 86.61906 27.85574
 # 2 -162.3320  -99.15418 -17.20643 54.78211 16.94541
 # 3 -170.3131  -96.11557 -15.91427 43.95342 16.18650
 # 4 -144.8057 -110.36204 -37.43378 82.35241 22.25010
@@ -191,9 +191,47 @@ pca_scores$CellType.Final <- colData(sce_pb)$CellType.Final
 pca_scores$Brain_ID <- colData(sce_pb)$Brain_ID
 
 
-#Plot the 
-ggplot(pca_scores,aes(x = PC1, y = PC2, color = CellType.Final)) +
-  geom_point() +
+#Plot the PCA colored by:
+#CellType.Final
+pb_celltype_pca <- ggplot(pca_scores,aes(x = PC1, y = PC2, color = CellType.Final)) +
+  geom_point(size = 4) +
   labs(x = paste("PC1\n",paste0(summary(pca_no_scale)$importance[2,"PC1"]*100,"% Variance Explained")),
        y = paste("PC2\n",paste0(summary(pca_no_scale)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_celltype_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_CellType.Final_PCA.pdf",
+       height = 8,
+       width = 8)
+
+#Depth
+pb_depth_pca <- ggplot(pca_scores,aes(x = PC1, y = PC2, color = Depth)) +
+  geom_point(size = 4) +
+  labs(x = paste("PC1\n",paste0(summary(pca_no_scale)$importance[2,"PC1"]*100,"% Variance Explained")),
+       y = paste("PC2\n",paste0(summary(pca_no_scale)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_depth_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_Depth_PCA.pdf",
+       height = 8,
+       width = 8)
+
+#Brain_ID
+pb_brainid_pca <- ggplot(pca_scores,aes(x = PC1, y = PC2, color = Brain_ID)) +
+  geom_point(size = 4) +
+  labs(x = paste("PC1\n",paste0(summary(pca_no_scale)$importance[2,"PC1"]*100,"% Variance Explained")),
+       y = paste("PC2\n",paste0(summary(pca_no_scale)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_brainid_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_BrainID_PCA.pdf",
+       height = 8,
+       width = 8)
+
+
+
+
+
+
+
+
+
+
 
