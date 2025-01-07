@@ -95,20 +95,6 @@ as.data.frame(unique(colData(sce)[,c("Brain_ID","Depth")]))
 # 17_AAACCCAAGATTGCGG-1   Br6522    Middle
 # 19_AAACCCACAAGGCCTC-1   Br8667 Posterior
 
-#For pseudobulk DEG testing, you need to test 1 condition vs another. Can't have three designations. Make three columns that
-#will be anterior,middle,posterior and the other samples will just say Other. 
-sce$Depth_Anterior <- ifelse(sce$Depth == "Anterior",
-                             "Anterior",
-                             "Other")
-
-sce$Depth_Middle <- ifelse(sce$Depth == "Middle",
-                           "Middle",
-                           "Other")
-
-sce$Depth_Posterior <- ifelse(sce$Depth == "Posterior",
-                              "Posterior",
-                              "Other")
-
 #Pseudobulk across CellType and Brain_ID
 sce_pb <- aggregateAcrossCells(sce,ids = colData(sce)[,c("CellType.Final","Brain_ID")])
 
