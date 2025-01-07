@@ -95,6 +95,20 @@ as.data.frame(unique(colData(sce)[,c("Brain_ID","Depth")]))
 # 17_AAACCCAAGATTGCGG-1   Br6522    Middle
 # 19_AAACCCACAAGGCCTC-1   Br8667 Posterior
 
+#For pseudobulk DEG testing, you need to test 1 condition vs another. Can't have three designations. Make three columns that
+#will be anterior,middle,posterior and the other samples will just say Other. 
+sce$Depth_Anterior <- ifelse(sce$Depth == "Anterior",
+                             "Anterior",
+                             "Other")
+
+sce$Depth_Middle <- ifelse(sce$Depth == "Middle",
+                           "Middle",
+                           "Other")
+
+sce$Depth_Posterior <- ifelse(sce$Depth == "Posterior",
+                              "Posterior",
+                              "Other")
+
 #Pseudobulk across CellType and Brain_ID
 sce_pb <- aggregateAcrossCells(sce,ids = colData(sce)[,c("CellType.Final","Brain_ID")])
 
@@ -175,7 +189,7 @@ pca_scores[1:5,1:5]
 pca_scores$Depth <- colData(sce_pb)$Depth
 pca_scores$CellType.Final <- colData(sce_pb)$CellType.Final
 pca_scores$Brain_ID <- colData(sce_pb)$Brain_ID
-
+pca_scores$ncells <- colData(sce_pb)$ncells
 
 #Plot the PCA colored by:
 #CellType.Final
@@ -211,6 +225,18 @@ ggsave(plot = pb_brainid_pca,
        height = 8,
        width = 8)
 
+# Number of cells
+pb_ncells_pca <- ggplot(pca_scores,aes(x = PC1, y = PC2, color = ncells)) +
+  geom_point(size = 4) +
+  labs(x = paste("PC1\n",paste0(summary(pca_no_scale)$importance[2,"PC1"]*100,"% Variance Explained")),
+       y = paste("PC2\n",paste0(summary(pca_no_scale)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_ncells_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_ncells_PCA.pdf",
+       height = 8,
+       width = 8)
+
+
 ######PCA with selection for highly deviant genes. 
 #Perform the PCA analysis with selecting for top 4000 highly deviant genes. 
 #Pull HDGs
@@ -228,6 +254,7 @@ pca_scores_hdgs <- as.data.frame(pca_no_scale_hdgs$x)
 pca_scores_hdgs$Depth <- colData(sce_pb)$Depth
 pca_scores_hdgs$CellType.Final <- colData(sce_pb)$CellType.Final
 pca_scores_hdgs$Brain_ID <- colData(sce_pb)$Brain_ID
+pca_scores_hdgs$ncells <- colData(sce_pb)$ncells
 
 
 #Plot the PCA colored by:
@@ -237,7 +264,7 @@ pb_celltype_pca_hdgs <- ggplot(pca_scores_hdgs,aes(x = PC1, y = PC2, color = Cel
   labs(x = paste("PC1\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC1"]*100,"% Variance Explained")),
        y = paste("PC2\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC2"]*100,"% Variance Explained")))
 
-ggsave(plot = pb_celltype_pca,
+ggsave(plot = pb_celltype_pca_hdgs,
        filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_HDGs_CellType.Final_PCA.pdf",
        height = 8,
        width = 8)
@@ -263,6 +290,18 @@ ggsave(plot = pb_brainid_pca,
        filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_HDGs_BrainID_PCA.pdf",
        height = 8,
        width = 8)
+
+#Brain_ID
+pb_ncells_pca <-  ggplot(pca_scores_hdgs,aes(x = PC1, y = PC2, color = ncells)) +
+  geom_point(size = 4) +
+  labs(x = paste("PC1\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC1"]*100,"% Variance Explained")),
+       y = paste("PC2\n",paste0(summary(pca_no_scale_hdgs)$importance[2,"PC2"]*100,"% Variance Explained")))
+
+ggsave(plot = pb_ncells_pca,
+       filename = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/01_Depth_DE_Testing/PCA_Plots/All_Clusters_HDGs_ncells_PCA.pdf",
+       height = 8,
+       width = 8)
+
 
 #Split the object by CellType and then perform the PCA. 
 #Use the HDGs from above. 
@@ -408,8 +447,6 @@ sessioninfo::session_info()
 # 
 # 
 # 
-
-
 
 
 
