@@ -110,7 +110,7 @@ celltype_plot <- plotReducedDim(sce_pb,
                                 percentVar = metadata(sce_pb)$PCA_var_explained*100,
                                 label_format = c("%s %i", " (%i%%)"),
                                 ncomponents = 4,
-                                point_size = 3)
+                                point_size = 3) + ggtitle(celltype_run) + theme(plot.title = element_text(hjust = 0.5))
 
 #Save the plot
 ggsave(plot = celltype_plot,
@@ -160,7 +160,7 @@ for(l in paste0("PC",1:10)){
     scale_x_continuous(breaks = 1:2, labels = c("anterior_posterior", "middle")) +
     labs(x = "Anatomical Depth",
          y = l,
-         title = sprintf("R^2 = %s, p = %s", r_sq, p_val)) +
+         title = paste0(celltype_run,"\n",sprintf("R^2 = %s, p = %s", r_sq, p_val))) +
     theme_bw() +
     theme(plot.title = element_text(hjust = 0.5))
   #Save plot
