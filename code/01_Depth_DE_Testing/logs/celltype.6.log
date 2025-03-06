@@ -1,0 +1,173 @@
+********* Job Starts *********
+Tue Mar  4 04:38:36 PM EST 2025
+**** SLURM info ****
+User: rphillip
+Job id: 14807151
+Job name: 001_celltype
+Hostname: compute-098
+Task id: 6
+Loading LIBD SLURM module for r_nac/1.0
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Loading required package: scuttle
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+class: SingleCellExperiment 
+dim: 36601 103785 
+metadata(1): Samples
+assays(2): counts logcounts
+rownames(36601): ENSG00000243485 ENSG00000237613 ... ENSG00000278817
+  ENSG00000277196
+rowData names(7): source type ... gene_type binomial_deviance
+colnames(103785): 1_AAACCCAAGACCAACG-1 1_AAACCCACAGTCAGCC-1 ...
+  20_TTTGTTGCAAGATGTA-1 20_TTTGTTGGTACGAAAT-1
+colData names(41): Sample Barcode ... sizeFactor CellType.Final
+reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
+mainExpName: NULL
+altExpNames(0):
+
+FALSE  TRUE 
+34977  1624 
+[1]  34977 103339
+   Brain_ID
+1    Br8325
+2    Br8492
+3    Br2720
+4    Br6423
+5    Br2743
+6    Br3942
+7    Br6432
+8    Br6471
+9    Br6522
+10   Br8667
+   Brain_ID     Depth
+1    Br8325 Posterior
+2    Br8492    Middle
+3    Br2720    Middle
+4    Br6423  Anterior
+5    Br2743  Anterior
+6    Br3942 Posterior
+7    Br6432  Anterior
+8    Br6471    Middle
+9    Br6522    Middle
+10   Br8667 Posterior
+
+ Anterior    Middle Posterior 
+    32516     39913     30910 
+[1] "factor"
+Running CellType: Ependymal
+[1] 34977   957
+class: SingleCellExperiment 
+dim: 34977 9 
+metadata(1): Samples
+assays(1): counts
+rownames(34977): ENSG00000243485 ENSG00000186092 ... ENSG00000278817
+  ENSG00000277196
+rowData names(7): source type ... gene_type binomial_deviance
+colnames(9): Br2720 Br2743 ... Br8325 Br8667
+colData names(44): Sample Barcode ... ids ncells
+reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
+mainExpName: NULL
+altExpNames(0):
+class: SingleCellExperiment 
+dim: 34977 9 
+metadata(1): Samples
+assays(2): counts logcounts
+rownames(34977): ENSG00000243485 ENSG00000186092 ... ENSG00000278817
+  ENSG00000277196
+rowData names(7): source type ... gene_type binomial_deviance
+colnames(9): Br2720 Br2743 ... Br8325 Br8667
+colData names(44): Sample Barcode ... ids ncells
+reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
+mainExpName: NULL
+altExpNames(0):
+DataFrame with 9 rows and 2 columns
+           Depth depth_numeric
+        <factor>     <numeric>
+Br2720 Middle                2
+Br2743 Anterior              1
+Br3942 Posterior             3
+Br6423 Anterior              1
+Br6432 Anterior              1
+Br6471 Middle                2
+Br6522 Middle                2
+Br8325 Posterior             3
+Br8667 Posterior             3
+Error in `$<-.data.frame`(`*tmp*`, Prop_var_explained, value = c(PC1 = 0.47288,  : 
+  replacement has 9 rows, data has 10
+Calls: $<- -> $<-.data.frame
+Execution halted
+********* Job Ends *********
+Tue Mar  4 04:41:22 PM EST 2025
