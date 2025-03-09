@@ -28,21 +28,22 @@ sce
 # altExpNames(0):
 
 #Remove the Neuron_Ambig group
-sce <- sce[,sce$CellType.Final != "Neuron_Ambig"]
+sce <- sce[,sce$CellType.Final == "DRD1_MSN_B"]
 
 dim(sce)
-#[1]  36601 103339
+#[1] 36601  6544
 
 #Do any genes have 0 counts for every cell. 
 table(rowSums(assay(sce, "counts")) == 0)
 # FALSE  TRUE 
-# 34977  1624 
+# 31968  4633 
 
 #Remove the genes with 0 counts
 sce <- sce[!rowSums(assay(sce, "counts")) == 0, ]
 
 dim(sce)
-#[1]  34977 103339
+#[1] 31968  6544
+
 
 #For this each sample needs an anterior/middle/posterior designation. 
 #Combine the Anterior and Posterior samples into a single group called "Anterior_Posterior"
@@ -88,48 +89,31 @@ sce$Depth <- Ant_Mid_Post[match(sce$Brain_ID,Ant_Mid_Post$Brain_ID),"Depth"]
 
 as.data.frame(unique(colData(sce)[,c("Brain_ID","Depth")]))
 # Brain_ID              Depth
-# 1_AAACCCAAGACCAACG-1    Br8325 Anterior_Posterior
-# 3_AAACCCAAGGTGAGCT-1    Br8492             Middle
-# 5_AAACCCAGTAATTAGG-1    Br2720             Middle
-# 7_AAACCCACACCCTTAC-1    Br6423 Anterior_Posterior
-# 9_AAACCCACATTGTAGC-1    Br2743 Anterior_Posterior
-# 11_AAACCCAAGACTCCGC-1   Br3942 Anterior_Posterior
-# 13_AAACCCAAGGACTGGT-1   Br6432 Anterior_Posterior
-# 15_AAACCCAAGGGAGATA-1   Br6471             Middle
-# 17_AAACCCAAGATTGCGG-1   Br6522             Middle
-# 19_AAACCCACAAGGCCTC-1   Br8667 Anterior_Posterior
+# 1_AAAGGATAGCTCCACG-1    Br8325 Anterior_Posterior
+# 3_AAACGCTCAAGTCGTT-1    Br8492             Middle
+# 5_AAACGCTCAGCGAGTA-1    Br2720             Middle
+# 7_AACCTGATCTTTCCGG-1    Br6423 Anterior_Posterior
+# 9_AACGGGATCACCTTGC-1    Br2743 Anterior_Posterior
+# 11_AAACGAATCTCACTCG-1   Br3942 Anterior_Posterior
+# 13_AAATGGAGTAGATCCT-1   Br6432 Anterior_Posterior
+# 15_AAACGAAGTTCTCTCG-1   Br6471             Middle
+# 17_AAAGGATTCGACATTG-1   Br6522             Middle
+# 19_AAAGGTAGTCCTGTCT-1   Br8667 Anterior_Posterior
 
-#Now subset for DRD1_MSN_B samples only 
-sce <- sce[,sce$CellType.Final == "DRD1_MSN_B"]
-
-sce
-# class: SingleCellExperiment 
-# dim: 34977 6544 
-# metadata(1): Samples
-# assays(2): counts logcounts
-# rownames(34977): ENSG00000243485 ENSG00000186092 ... ENSG00000278817
-# ENSG00000277196
-# rowData names(7): source type ... gene_type binomial_deviance
-# colnames(6544): 1_AAAGGATAGCTCCACG-1 1_AAATGGAAGACGCCCT-1 ...
-# 20_TTTCCTCGTGGAAGTC-1 20_TTTGATCGTCGACGCT-1
-# colData names(42): Sample Barcode ... CellType.Final Depth
-# reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
-# mainExpName: NULL
-# altExpNames(0):
 
 #Pseudobulk across CellType and Brain_ID
-sce_pb <- aggregateAcrossCells(sce,ids = colData(sce)[,c("CellType.Final","Brain_ID")])
+sce_pb <- aggregateAcrossCells(sce,ids = colData(sce)[,c("Brain_ID")])
 
 sce_pb
 # class: SingleCellExperiment 
-# dim: 34977 10 
+# dim: 31968 10 
 # metadata(1): Samples
 # assays(1): counts
-# rownames(34977): ENSG00000243485 ENSG00000186092 ... ENSG00000278817
+# rownames(31968): ENSG00000243485 ENSG00000238009 ... ENSG00000278817
 # ENSG00000277196
 # rowData names(7): source type ... gene_type binomial_deviance
-# colnames: NULL
-# colData names(45): Sample Barcode ... Brain_ID ncells
+# colnames(10): Br2720 Br2743 ... Br8492 Br8667
+# colData names(44): Sample Barcode ... ids ncells
 # reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
 # mainExpName: NULL
 # altExpNames(0):
@@ -141,26 +125,4 @@ table(sce_pb$CellType.Final)
 table(sce_pb$Brain_ID)
 # Br2720 Br2743 Br3942 Br6423 Br6432 Br6471 Br6522 Br8325 Br8492 Br8667 
 # 1      1      1      1      1      1      1      1      1      1 
-
-#Are there any genes that have 0 counts for every gene within the DRD1_MSN_B cluster only. 
-table(rowSums(assay(sce_pb, "counts")) == 0)
-# FALSE  TRUE 
-# 31968  3009 
-#Yes let's remove those.
-
-sce_pb <- sce_pb[!rowSums(assay(sce_pb, "counts")) == 0, ]
-
-
-sce_pb
-# class: SingleCellExperiment 
-# dim: 31968 10 
-# metadata(1): Samples
-# assays(1): counts
-# rownames(31968): ENSG00000243485 ENSG00000238009 ... ENSG00000278817
-# ENSG00000277196
-# rowData names(7): source type ... gene_type binomial_deviance
-# colnames: NULL
-# colData names(45): Sample Barcode ... Brain_ID ncells
-# reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
-# mainExpName: NULL
-# altExpNames(0):
+#Only DRD1_MSN_B in the pseudobulked object and every sample is represented. 
