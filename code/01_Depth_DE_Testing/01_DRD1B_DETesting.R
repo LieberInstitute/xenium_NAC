@@ -2,6 +2,8 @@
 #cd cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
 
 
+
+
 library(SingleCellExperiment)
 library(sessioninfo)
 library(ggplot2)
@@ -28,40 +30,26 @@ sce
 # altExpNames(0):
 
 #Remove the Neuron_Ambig group
-sce <- sce[,sce$CellType.Final == "DRD1_MSN_B"]
+sce <- sce[,sce$CellType.Final != "Neuron_Ambig"]
 
 dim(sce)
-#[1] 36601  6544
+#[1]  36601 103339
 
 #Do any genes have 0 counts for every cell. 
 table(rowSums(assay(sce, "counts")) == 0)
 # FALSE  TRUE 
-# 31968  4633 
+# 34977  1624 
 
 #Remove the genes with 0 counts
 sce <- sce[!rowSums(assay(sce, "counts")) == 0, ]
 
 dim(sce)
-#[1] 31968  6544
-
+#[1]  34977 103339
 
 #For this each sample needs an anterior/middle/posterior designation. 
 #Combine the Anterior and Posterior samples into a single group called "Anterior_Posterior"
 #Make a dataframe. 
 Ant_Mid_Post <- data.frame(Brain_ID = unique(sce$Brain_ID))
-
-Ant_Mid_Post
-# Brain_ID
-# 1    Br8325
-# 2    Br8492
-# 3    Br2720
-# 4    Br6423
-# 5    Br2743
-# 6    Br3942
-# 7    Br6432
-# 8    Br6471
-# 9    Br6522
-# 10   Br8667
 
 Ant_Mid_Post <- cbind(Ant_Mid_Post,c("Anterior_Posterior","Middle",
                                      "Middle","Anterior_Posterior",
@@ -89,40 +77,182 @@ sce$Depth <- Ant_Mid_Post[match(sce$Brain_ID,Ant_Mid_Post$Brain_ID),"Depth"]
 
 as.data.frame(unique(colData(sce)[,c("Brain_ID","Depth")]))
 # Brain_ID              Depth
-# 1_AAAGGATAGCTCCACG-1    Br8325 Anterior_Posterior
-# 3_AAACGCTCAAGTCGTT-1    Br8492             Middle
-# 5_AAACGCTCAGCGAGTA-1    Br2720             Middle
-# 7_AACCTGATCTTTCCGG-1    Br6423 Anterior_Posterior
-# 9_AACGGGATCACCTTGC-1    Br2743 Anterior_Posterior
-# 11_AAACGAATCTCACTCG-1   Br3942 Anterior_Posterior
-# 13_AAATGGAGTAGATCCT-1   Br6432 Anterior_Posterior
-# 15_AAACGAAGTTCTCTCG-1   Br6471             Middle
-# 17_AAAGGATTCGACATTG-1   Br6522             Middle
-# 19_AAAGGTAGTCCTGTCT-1   Br8667 Anterior_Posterior
+# 1_AAACCCAAGACCAACG-1    Br8325 Anterior_Posterior
+# 3_AAACCCAAGGTGAGCT-1    Br8492             Middle
+# 5_AAACCCAGTAATTAGG-1    Br2720             Middle
+# 7_AAACCCACACCCTTAC-1    Br6423 Anterior_Posterior
+# 9_AAACCCACATTGTAGC-1    Br2743 Anterior_Posterior
+# 11_AAACCCAAGACTCCGC-1   Br3942 Anterior_Posterior
+# 13_AAACCCAAGGACTGGT-1   Br6432 Anterior_Posterior
+# 15_AAACCCAAGGGAGATA-1   Br6471             Middle
+# 17_AAACCCAAGATTGCGG-1   Br6522             Middle
+# 19_AAACCCACAAGGCCTC-1   Br8667 Anterior_Posterior
+
 
 
 #Pseudobulk across CellType and Brain_ID
-sce_pb <- aggregateAcrossCells(sce,ids = colData(sce)[,c("Brain_ID")])
+sce_pb <- aggregateAcrossCells(sce,ids = colData(sce)[,c("CellType.Final","Brain_ID")])
 
 sce_pb
 # class: SingleCellExperiment 
-# dim: 31968 10 
+# dim: 34977 199 
 # metadata(1): Samples
 # assays(1): counts
-# rownames(31968): ENSG00000243485 ENSG00000238009 ... ENSG00000278817
+# rownames(34977): ENSG00000243485 ENSG00000186092 ... ENSG00000278817
 # ENSG00000277196
 # rowData names(7): source type ... gene_type binomial_deviance
-# colnames(10): Br2720 Br2743 ... Br8492 Br8667
-# colData names(44): Sample Barcode ... ids ncells
+# colnames: NULL
+# colData names(45): Sample Barcode ... Brain_ID ncells
 # reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
 # mainExpName: NULL
 # altExpNames(0):
 
 table(sce_pb$CellType.Final)
-# DRD1_MSN_B 
-# 10 
+# Astrocyte_A Astrocyte_B  DRD1_MSN_A  DRD1_MSN_B  DRD1_MSN_C  DRD1_MSN_D 
+# 10          10          10          10          10          10 
+# DRD2_MSN_A  DRD2_MSN_B Endothelial   Ependymal  Excitatory       Inh_A 
+# 10          10          10           9          10          10 
+# Inh_B       Inh_C       Inh_D       Inh_E       Inh_F   Microglia 
+# 10          10          10          10          10          10 
+# Oligo         OPC 
+# 10          10 
 
 table(sce_pb$Brain_ID)
 # Br2720 Br2743 Br3942 Br6423 Br6432 Br6471 Br6522 Br8325 Br8492 Br8667 
-# 1      1      1      1      1      1      1      1      1      1 
-#Only DRD1_MSN_B in the pseudobulked object and every sample is represented. 
+# 20     20     20     20     20     20     20     20     19     20 
+
+de.results <- pseudoBulkDGE(sce_pb,
+                            label = sce_pb$CellType.Final,
+                            design = ~Depth,
+                            coef = "DepthMiddle",
+                            condition = sce_pb$Depth)
+
+is.de <- decideTestsPerLabel(de.results, threshold=0.05)
+summarizeTestsPerLabel(is.de)
+#             -1     0 1    NA
+# Astrocyte_A  0 17193 0 17784
+# Astrocyte_B  0  8953 0 26024
+# DRD1_MSN_A   0 23909 0 11068
+# DRD1_MSN_B   1 18615 0 16361
+# DRD1_MSN_C   0 14979 0 19998
+# DRD1_MSN_D   3 12442 0 22532
+# DRD2_MSN_A   0 23932 0 11045
+# DRD2_MSN_B   0 15491 0 19486
+# Endothelial  0  7931 0 27046
+# Ependymal    0 11526 0 23451
+# Excitatory   0 15784 0 19193
+# Inh_A        0 16003 0 18974
+# Inh_B        0  9554 0 25423
+# Inh_C        0 13567 0 21410
+# Inh_D        0  9631 3 25343
+# Inh_E        0 12101 0 22876
+# Inh_F        0 14664 0 20313
+# Microglia    0 12231 0 22746
+# Oligo        0 16042 0 18935
+# OPC          0 13931 0 21046
+
+###Reproduciblity
+print("Reproducibility information:")
+Sys.time()
+proc.time()
+options(width = 120)
+sessioninfo::session_info()
+# [1] "Reproducibility information:"
+# [1] "2025-03-09 18:13:31 EDT"
+# user   system  elapsed 
+# 216.287    6.620 3275.425 
+# ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────
+# setting  value
+# version  R version 4.3.2 (2023-10-31)
+# os       Rocky Linux 9.4 (Blue Onyx)
+# system   x86_64, linux-gnu
+# ui       X11
+# language (EN)
+# collate  en_US.UTF-8
+# ctype    en_US.UTF-8
+# tz       US/Eastern
+# date     2025-03-09
+# pandoc   3.1.3 @ /jhpce/shared/libd/core/r_nac/1.0/nac_env/bin/pandoc
+# 
+# ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────
+# package              * version   date (UTC) lib source
+# abind                  1.4-5     2016-07-21 [1] CRAN (R 4.3.2)
+# beachmat               2.18.0    2023-10-24 [1] Bioconductor
+# beeswarm               0.4.0     2021-06-01 [1] CRAN (R 4.3.2)
+# Biobase              * 2.62.0    2023-10-24 [1] Bioconductor
+# BiocGenerics         * 0.48.1    2023-11-01 [1] Bioconductor
+# BiocNeighbors          1.20.2    2024-01-07 [1] Bioconductor 3.18 (R 4.3.2)
+# BiocParallel           1.36.0    2023-10-24 [1] Bioconductor
+# BiocSingular           1.18.0    2023-10-24 [1] Bioconductor
+# bitops                 1.0-7     2021-04-24 [1] CRAN (R 4.3.2)
+# bluster                1.11.4    2024-02-02 [1] Github (LTLA/bluster@17dd9c8)
+# cli                    3.6.2     2023-12-11 [1] CRAN (R 4.3.2)
+# cluster                2.1.6     2023-12-01 [1] CRAN (R 4.3.2)
+# codetools              0.2-19    2023-02-01 [1] CRAN (R 4.3.0)
+# colorspace             2.1-0     2023-01-23 [1] CRAN (R 4.3.0)
+# crayon                 1.5.2     2022-09-29 [1] CRAN (R 4.3.0)
+# DelayedArray           0.28.0    2023-10-24 [1] Bioconductor
+# DelayedMatrixStats     1.24.0    2023-10-24 [1] Bioconductor
+# dplyr                  1.1.4     2023-11-17 [1] CRAN (R 4.3.2)
+# dqrng                  0.3.2     2023-11-29 [1] CRAN (R 4.3.2)
+# edgeR                * 4.0.3     2023-12-10 [1] Bioconductor 3.18 (R 4.3.2)
+# fansi                  1.0.6     2023-12-08 [1] CRAN (R 4.3.2)
+# generics               0.1.3     2022-07-05 [1] CRAN (R 4.3.0)
+# GenomeInfoDb         * 1.38.1    2023-11-08 [1] Bioconductor
+# GenomeInfoDbData       1.2.11    2023-12-12 [1] Bioconductor
+# GenomicRanges        * 1.54.1    2023-10-29 [1] Bioconductor
+# ggbeeswarm             0.7.2     2023-04-29 [1] CRAN (R 4.3.2)
+# ggplot2              * 3.5.1     2024-04-23 [1] CRAN (R 4.3.2)
+# ggrepel                0.9.4     2023-10-13 [1] CRAN (R 4.3.2)
+# glue                   1.7.0     2024-01-09 [1] CRAN (R 4.3.2)
+# gridExtra              2.3       2017-09-09 [1] CRAN (R 4.3.2)
+# gtable                 0.3.4     2023-08-21 [1] CRAN (R 4.3.1)
+# here                 * 1.0.1     2020-12-13 [1] CRAN (R 4.3.2)
+# igraph                 2.0.3     2024-03-13 [1] CRAN (R 4.3.2)
+# IRanges              * 2.36.0    2023-10-24 [1] Bioconductor
+# irlba                  2.3.5.1   2022-10-03 [1] CRAN (R 4.3.2)
+# lattice                0.22-5    2023-10-24 [1] CRAN (R 4.3.1)
+# lifecycle              1.0.4     2023-11-07 [1] CRAN (R 4.3.2)
+# limma                * 3.58.1    2023-10-31 [1] Bioconductor
+# locfit                 1.5-9.8   2023-06-11 [1] CRAN (R 4.3.2)
+# magrittr               2.0.3     2022-03-30 [1] CRAN (R 4.3.0)
+# Matrix                 1.6-4     2023-11-30 [1] CRAN (R 4.3.2)
+# MatrixGenerics       * 1.14.0    2023-10-24 [1] Bioconductor
+# matrixStats          * 1.2.0     2023-12-11 [1] CRAN (R 4.3.2)
+# metapod                1.10.0    2023-10-24 [1] Bioconductor
+# munsell                0.5.0     2018-06-12 [1] CRAN (R 4.3.0)
+# pillar                 1.9.0     2023-03-22 [1] CRAN (R 4.3.0)
+# pkgconfig              2.0.3     2019-09-22 [1] CRAN (R 4.3.0)
+# R6                     2.5.1     2021-08-19 [1] CRAN (R 4.3.0)
+# Rcpp                   1.0.12    2024-01-09 [1] CRAN (R 4.3.2)
+# RCurl                  1.98-1.13 2023-11-02 [1] CRAN (R 4.3.2)
+# rlang                  1.1.3     2024-01-10 [1] CRAN (R 4.3.2)
+# rprojroot              2.0.4     2023-11-05 [1] CRAN (R 4.3.2)
+# rsvd                   1.0.5     2021-04-16 [1] CRAN (R 4.3.2)
+# S4Arrays               1.2.0     2023-10-24 [1] Bioconductor
+# S4Vectors            * 0.40.2    2023-11-23 [1] Bioconductor 3.18 (R 4.3.2)
+# ScaledMatrix           1.10.0    2023-10-24 [1] Bioconductor
+# scales                 1.3.0     2023-11-28 [1] CRAN (R 4.3.2)
+# scater               * 1.30.1    2023-11-16 [1] Bioconductor
+# scran                * 1.30.0    2023-10-24 [1] Bioconductor
+# scuttle              * 1.12.0    2023-10-24 [1] Bioconductor
+# sessioninfo          * 1.2.2     2021-12-06 [1] CRAN (R 4.3.2)
+# SingleCellExperiment * 1.24.0    2023-10-24 [1] Bioconductor
+# SparseArray            1.2.2     2023-11-07 [1] Bioconductor
+# sparseMatrixStats      1.14.0    2023-10-24 [1] Bioconductor
+# statmod                1.5.0     2023-01-06 [1] CRAN (R 4.3.2)
+# SummarizedExperiment * 1.32.0    2023-10-24 [1] Bioconductor
+# tibble                 3.2.1     2023-03-20 [1] CRAN (R 4.3.0)
+# tidyselect             1.2.0     2022-10-10 [1] CRAN (R 4.3.0)
+# utf8                   1.2.4     2023-10-22 [1] CRAN (R 4.3.1)
+# vctrs                  0.6.5     2023-12-01 [1] CRAN (R 4.3.2)
+# vipor                  0.4.5     2017-03-22 [1] CRAN (R 4.3.2)
+# viridis                0.6.4     2023-07-22 [1] CRAN (R 4.3.2)
+# viridisLite            0.4.2     2023-05-02 [1] CRAN (R 4.3.0)
+# withr                  2.5.2     2023-10-30 [1] CRAN (R 4.3.1)
+# XVector                0.42.0    2023-10-24 [1] Bioconductor
+# zlibbioc               1.48.0    2023-10-24 [1] Bioconductor
+# 
+# [1] /jhpce/shared/libd/core/r_nac/1.0/nac_env/lib/R/library
+# 
+# ──────────────────────────────────────────────────────────────────────────────────────────────────────────
