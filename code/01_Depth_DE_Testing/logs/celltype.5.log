@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Tue Mar  4 04:38:36 PM EST 2025
+Mon Mar 10 09:06:29 AM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 14807150
+Job id: 14970731
 Job name: 001_celltype
-Hostname: compute-098
+Hostname: compute-155
 Task id: 5
 Loading LIBD SLURM module for r_nac/1.0
 Loading required package: SummarizedExperiment
@@ -197,9 +197,9 @@ Saving 7 x 7 in image
 Saving 7 x 7 in image
 `geom_smooth()` using formula = 'y ~ x'
 [1] "Reproducibility information:"
-[1] "2025-03-04 16:43:47 EST"
+[1] "2025-03-10 09:09:07 EDT"
    user  system elapsed 
-274.627  30.300 308.680 
+135.332  14.227 156.928 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.3.2 (2023-10-31)
@@ -210,7 +210,7 @@ Saving 7 x 7 in image
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-03-04
+ date     2025-03-10
  pandoc   3.1.3 @ /jhpce/shared/libd/core/r_nac/1.0/nac_env/bin/pandoc
 
 ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -314,4 +314,4 @@ Saving 7 x 7 in image
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Tue Mar  4 04:43:48 PM EST 2025
+Mon Mar 10 09:09:07 AM EDT 2025

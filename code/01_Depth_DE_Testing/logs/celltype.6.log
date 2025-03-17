@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Tue Mar  4 04:38:36 PM EST 2025
+Mon Mar 10 09:06:29 AM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 14807151
+Job id: 14970732
 Job name: 001_celltype
-Hostname: compute-098
+Hostname: compute-155
 Task id: 6
 Loading LIBD SLURM module for r_nac/1.0
 Loading required package: SummarizedExperiment
@@ -170,4 +170,4 @@ Error in `$<-.data.frame`(`*tmp*`, Prop_var_explained, value = c(PC1 = 0.47288, 
 Calls: $<- -> $<-.data.frame
 Execution halted
 ********* Job Ends *********
-Tue Mar  4 04:41:22 PM EST 2025
+Mon Mar 10 09:08:08 AM EDT 2025
