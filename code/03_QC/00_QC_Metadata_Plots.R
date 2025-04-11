@@ -1,9 +1,10 @@
-#Goal: Perform xenium QC
+#Goal: Plot metrics as violins + on top of tissue. 
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
 #module load conda_R/4.4.x
-#code modified from https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/02_xenium_qc/
+#code modified from https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/02_xenium_qc/00_plot_metrics_on_tissue.R
 
 library(SpatialExperiment)
+library(sessioninfo)
 library(scattermore)
 library(tidyverse)
 library(escheR)
@@ -49,3 +50,31 @@ plot_coldata_on_tissue <- function(x, column_name){
 }
 
 ###
+
+metrics_to_plot <- c("total_counts","unassigned_codeword_counts",
+                     "cell_area","nucleus_area","transcript_counts")
+
+for(i in metrics_to_plot){
+  message(paste0("Plotting",i,"-",Sys.time())
+  png(here("plots", "03_qc", paste0(i,".png"))
+  plot_colData_nac(object = spe, y = i,x = "Sample", color = "Sample")
+  plot_colData_nac(object = spe, y = i,x = "Slide_ID", color = "Sample")
+  plot_colData_nac(object = spe, y = i,x = "Slide_Sample_Reagent_Lot", color = "Sample")
+  plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_B_Lot", color = "Sample") 
+  plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_A_Lot", color = "Sample") 
+  plot_colData_nac(object = spe, y = i,x = "Human_Brain_Add_On_Lot", color = "Sample")
+  plot_colData_nac(object = spe, y = i,x = "Custom_Panel_Lot", color = "Sample") 
+  plot_colData_nac(object = spe, y = i,x = "Xenium_Instrument", color = "Sample") 
+  tissue_plots <- plot_coldata_on_tissue(spe, i)
+  lapply(tissue_plots, print)
+  dev.off()
+  message(paste0("Finished",i,"-",Sys.time()) 
+}
+
+
+###Reproduciblity
+print("Reproducibility information:")
+Sys.time()
+proc.time()
+options(width = 120)
+sessioninfo::session_info()
