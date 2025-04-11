@@ -54,23 +54,31 @@ plot_coldata_on_tissue <- function(x, column_name){
 metrics_to_plot <- c("total_counts","unassigned_codeword_counts",
                      "cell_area","nucleus_area","transcript_counts")
 
+#Violin plots
 for(i in metrics_to_plot){
-  message(paste0("Plotting",i,"-",Sys.time())
-  png(here("plots", "03_qc", paste0(i,".png"))
-  plot_colData_nac(object = spe, y = i,x = "Sample", color = "Sample")
-  plot_colData_nac(object = spe, y = i,x = "Slide_ID", color = "Sample")
-  plot_colData_nac(object = spe, y = i,x = "Slide_Sample_Reagent_Lot", color = "Sample")
-  plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_B_Lot", color = "Sample") 
-  plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_A_Lot", color = "Sample") 
-  plot_colData_nac(object = spe, y = i,x = "Human_Brain_Add_On_Lot", color = "Sample")
-  plot_colData_nac(object = spe, y = i,x = "Custom_Panel_Lot", color = "Sample") 
-  plot_colData_nac(object = spe, y = i,x = "Xenium_Instrument", color = "Sample") 
+  message(paste("Plotting",i,"-",Sys.time()))
+  png(here("plots", "03_qc", paste0(i,"_violins.png")))
+  print(plot_colData_nac(object = spe, y = i,x = "Sample", color = "Sample"))
+  print(plot_colData_nac(object = spe, y = i,x = "Slide_ID", color = "Sample"))
+  print(plot_colData_nac(object = spe, y = i,x = "Slide_Sample_Reagent_Lot", color = "Sample"))
+  print(plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_B_Lot", color = "Sample"))
+  print(plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_A_Lot", color = "Sample"))
+  print(plot_colData_nac(object = spe, y = i,x = "Human_Brain_Add_On_Lot", color = "Sample"))
+  print(plot_colData_nac(object = spe, y = i,x = "Custom_Panel_Lot", color = "Sample"))
+  print(plot_colData_nac(object = spe, y = i,x = "Xenium_Instrument", color = "Sample")) 
+  dev.off()
+}
+
+message(paste("Moving to plot metrics on tissue -",Sys.time())) 
+
+#on tissue
+for(i in metrics_to_plot){
+  message(paste("Plotting",i,"-",Sys.time()))
+  pdf(here("plots", "03_qc", paste0(i,"_ontissue.pdf")))
   tissue_plots <- plot_coldata_on_tissue(spe, i)
   lapply(tissue_plots, print)
   dev.off()
-  message(paste0("Finished",i,"-",Sys.time()) 
 }
-
 
 ###Reproduciblity
 print("Reproducibility information:")
