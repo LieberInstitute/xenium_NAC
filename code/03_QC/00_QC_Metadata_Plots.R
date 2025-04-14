@@ -6,6 +6,7 @@
 library(SpatialExperiment)
 library(sessioninfo)
 library(scattermore)
+library(patchwork)
 library(tidyverse)
 library(escheR)
 library(scater)
@@ -51,22 +52,42 @@ plot_coldata_on_tissue <- function(x, column_name){
 
 ###
 
+#Make sure the plot variables that could be numeric, are actually factors
+spe$Slide_ID <- as.factor(spe$Slide_ID)
+spe$Slide_Sample_Reagent_Lot <- as.factor(spe$Slide_Sample_Reagent_Lot)
+spe$Decoding_Reagent_B_Lot <- as.factor(spe$Decoding_Reagent_B_Lot)
+spe$Decoding_Reagent_A_Lot <- as.factor(spe$Decoding_Reagent_A_Lot)
+spe$Human_Brain_Add_On_Lot <- as.factor(spe$Human_Brain_Add_On_Lot)
+
+
+#Define some metricsa adn variables to plot. 
 metrics_to_plot <- c("total_counts","unassigned_codeword_counts",
                      "cell_area","nucleus_area","transcript_counts")
 
-#Violin plots
+plot_vars <- c("Sample", "Slide_ID", "Slide_Sample_Reagent_Lot",
+               "Decoding_Reagent_B_Lot", "Decoding_Reagent_A_Lot",
+               "Human_Brain_Add_On_Lot", "Custom_Panel_Lot", "Xenium_Instrument")
+
 for(i in metrics_to_plot){
-  message(paste("Plotting",i,"-",Sys.time()))
-  png(here("plots", "03_qc", paste0(i,"_violins.png")))
-  print(plot_colData_nac(object = spe, y = i,x = "Sample", color = "Sample"))
-  print(plot_colData_nac(object = spe, y = i,x = "Slide_ID", color = "Sample"))
-  print(plot_colData_nac(object = spe, y = i,x = "Slide_Sample_Reagent_Lot", color = "Sample"))
-  print(plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_B_Lot", color = "Sample"))
-  print(plot_colData_nac(object = spe, y = i,x = "Decoding_Reagent_A_Lot", color = "Sample"))
-  print(plot_colData_nac(object = spe, y = i,x = "Human_Brain_Add_On_Lot", color = "Sample"))
-  print(plot_colData_nac(object = spe, y = i,x = "Custom_Panel_Lot", color = "Sample"))
-  print(plot_colData_nac(object = spe, y = i,x = "Xenium_Instrument", color = "Sample")) 
-  dev.off()
+  message(paste("Plotting", i, "-", Sys.time()))
+  
+  plot_list <- lapply(plot_vars, function(j) {
+    plot_colData_nac(object = spe, y = i, x = j, color = j)
+  })
+  
+  # Combine with patchwork
+  combined_plot <- wrap_plots(plot_list, ncol = 4) + 
+    plot_annotation(title = paste(i, "QC Violin Plots"))
+  
+  # Save to file
+  ggsave(filename = here("plots", 
+                         "03_qc", 
+                         paste0(i, 
+                                "_violins_combined.png")),
+         plot = combined_plot,
+         width = 16, 
+         height = 16, 
+         dpi = 300)
 }
 
 message(paste("Moving to plot metrics on tissue -",Sys.time())) 
