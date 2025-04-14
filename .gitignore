@@ -10,3 +10,4 @@ processed-data/Pseudobulk_SCE/*
 processed-data/DE_Testing/*
 processed-data/02_build_spe/*
 processed-data/Sample_Info_NAcXenium.csv
+plots/03_qc/*.pdf
