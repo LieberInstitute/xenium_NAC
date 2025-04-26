@@ -111,6 +111,16 @@ ggplot(coldata_df, aes(x = nucleus_area, y = detected)) +
              scales = "free")
 dev.off()
 
+#Nuclei area by total_counts
+png(here("plots","03_qc","nucleus_area_by_totalcounts_split.png"),height = 2500, width = 2500,res = 300)
+ggplot(coldata_df, aes(x = nucleus_area, y = total_counts)) +
+  geom_point(alpha = 0.5,
+             size = 0.7) +
+  facet_wrap(~Sample,
+             scales = "free")
+dev.off()
+
+
 #Cell area by sum
 png(here("plots","03_qc","cell_area_by_sum_split.png"),height = 2500, width = 2500,res = 300)
 ggplot(coldata_df, aes(x = cell_area, y = sum)) +
@@ -120,12 +130,21 @@ ggplot(coldata_df, aes(x = cell_area, y = sum)) +
              scales = "free")
 dev.off()
 
-#Nuc area by nGenes
+#cell area by nGenes
 png(here("plots","03_qc","cell_area_by_nGenes_split.png"),height = 2500, width = 2500,res = 300)
 ggplot(coldata_df, aes(x = cell_area, y = detected)) +
   geom_point(alpha = 0.5, 
              size = 0.7) +
   facet_wrap(~Sample, 
+             scales = "free")
+dev.off()
+
+#cell area by total_counts
+png(here("plots","03_qc","cell_area_by_totalcounts_split.png"),height = 2500, width = 2500,res = 300)
+ggplot(coldata_df, aes(x = cell_area, y = total_counts)) +
+  geom_point(alpha = 0.5,
+             size = 0.7) +
+  facet_wrap(~Sample,
              scales = "free")
 dev.off()
 
@@ -144,7 +163,7 @@ rownames(outlier_mat) <- c("unassigned_outlier",
 
 
 for(i in unique(spe$Sample)){
-  print(sprintf("------------%s------------", unique(spe$Sample)[i]))
+  print(sprintf("------------%s------------",i))
   spe_sub <- spe[,spe$Sample == i]
   
   #unassigned, negProbe/Codeword will be calculated with quantiles
@@ -170,7 +189,7 @@ for(i in unique(spe$Sample)){
   spe_sub$total_counts_outlier <- isOutlier(spe_sub$total_counts,type = "lower")
   outlier_mat["total_counts_outlier",i] <- sum(spe_sub$total_counts_outlier)
   
-  pdf(here("plots","03_qc","Sample_Specific_outliers",paste0(i,"_outliers.pdf")))
+  pdf(here("plots","03_qc","Sample_Specific_Outliers",paste0(i,"_outliers.pdf")))
   tissue_plots <- plot_outliers_on_tissue(x = spe_sub,
                                           outliers = c("unassigned_outlier",
                                                        "negProbe_outlier",
@@ -182,7 +201,7 @@ for(i in unique(spe$Sample)){
   
   # aggregate all outliers by taking the union
   spe_sub$is_outlier <- spe_sub$unassigned_outlier | spe_sub$negProbe_outlier | spe_sub$negCodeword_outlier | spe_sub$detected_outlier | spe_sub$total_counts_outlier
-  outlier_ids <- ccolnames(spe_sub)[spe_sub$is_outlier]
+  outlier_ids <- colnames(spe_sub)[spe_sub$is_outlier]
   all_outlier_ids <- c(all_outlier_ids,outlier_ids)
 }
 
