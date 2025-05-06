@@ -13,5 +13,5 @@ processed-data/Sample_Info_NAcXenium.csv
 plots/03_qc/*.pdf
 plots/03_qc/Sample_Specific_Outliers/*
 processed-data/Xenium_QC/
-plots/06_label_transfer/
-processed-data/06_label_transfer/Br6660*
+plots/06_label_transfer/Br6660*
+processed-data/06_label_transfer/
