@@ -1,4 +1,4 @@
-#Goal: Build raw SPE from first 5 runs of NAc Xenium data
+#Goal: Build raw SPE
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
 #module load conda_R/4.4.x
 #code modified from https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/01_build_spe/01_build_spe.R
@@ -9,17 +9,15 @@ library(sessioninfo)
 library(tidyverse)
 library(here)
 
+
 #Load sample_info dataframe that contains information about each sample including depth and directories. 
-sample_info <- read.csv(here("processed-data","Sample_Info_NAcXenium.csv"))
+sample_info <- read.csv(here("processed-data","Sample_Info_NAcXenium_All.csv"))
 
 #Add the full sample path to the sample_info dataframe
 sample_info$full_data_path <- file.path(paste(here("raw-data","xenium"),sample_info$Output_Directory,sep = "/"))
 
 #Add  a column of the depth, which is the last aspect of the Sample_ID
 sample_info$Depth <- as.numeric(lapply(strsplit(sample_info$Sample_ID,"_"),"[",3))
-
-#Only going to read first sample in as all of the runs for that one sample are complete. 
-sample_info <- subset(sample_info,subset=(Donor == "Br6660"))
 
 all_spes <- vector(mode = "list",length = nrow(sample_info))
 names(all_spes) <- sample_info$Sample_ID
@@ -41,15 +39,15 @@ for(i in 1:nrow(sample_info)){
   counts(sce) <- methods::as(DelayedArray::realize(counts(sce)), "dgCMatrix") # Convert to delayed array
   
   cell_info <- vroom::vroom(cell_info_path) #reads in cell csv file much faster than standard functions
-
+  
   #Add cell info to sce
   colData(sce) <- cbind(colData(sce),cell_info)
   spe <- toSpatialExperiment(sce,spatialCoordsNames = c("x_centroid","y_centroid"))
   rownames(spe) <- rowData(spe)$Symbol #No need to uniquify because Ensembl speicifed during panel generation
-
+  
   #Need to assign donor-specific column names because we will merge everything after loop is finished. 
-   colnames(spe) <- paste(Sample,rownames(cell_info),sep = "_")
-
+  colnames(spe) <- paste(Sample,rownames(cell_info),sep = "_")
+  
   #Add in relevant metadata. 
   #First technical variables. 
   spe$Xenium_Run_ID <- sample_info_use$Xenium_Run_ID
@@ -67,11 +65,47 @@ for(i in 1:nrow(sample_info)){
   spe$Xenium_Start_Date <- sample_info_use$Start_Date_Xenium_Run
   
   #Now biological variables
+  #spe$sample_id <- Sample
   spe$Donor <- sample_info_use$Donor
   spe$Age <- sample_info_use$Age
   spe$Sex <- sample_info_use$Sex
   spe$Race <- sample_info_use$Race
   spe$PrimaryDx <- sample_info_use$PrimaryDx
+  
+  #Next step is to rotate and/or mirror the samples. 
+  #First, save the original coordinates in the metadata
+  coords <- spatialCoords(spe)
+  metadata(spe)$original_coords <- coords
+  
+  if(Sample %in% c("Br6660_NAc2_1090","Br6436_Nac_11_5650")){
+    #Mirror left to right. 
+    x_center <- mean(coords[,1]) #Where is the center of the object
+    mirrored <- coords
+    mirrored[,1] <- 2* x_center - mirrored[,1] #Mirror (2*center-previous x coordinate)
+   
+    #Update the mirrored coordinates
+    spatialCoords(spe) <- mirrored
+  }else{
+    #rotate 90 degrees counter clockwise
+    rotate_coords <- cbind(x_centroid = -coords[,2],#new x 
+                           y_centroid = coords[,1]) #new y
+    
+    #Mirror left to right. 
+    x_center <- mean(rotate_coords[,1]) #Where is the center of the object
+    mirrored <- rotate_coords
+    mirrored[,1] <- 2* x_center - mirrored[,1] #Mirror (2*center-previous x coordinate)
+    
+    spatialCoords(spe) <- mirrored
+  }
+  
+  #Plot total_counts on top of the tissue to visualize rotation. 
+  x <- escheR::make_escheR(spe) |>
+    escheR::add_fill("total_counts")
+  ggsave(plot = x,
+         filename = here("plots","02_build_spe","Rotation_check",
+                                  paste0(Sample,"_post_rotation.png")),
+         height = 16, width = 18)
+  
   
   all_spes[[Sample]] <- spe
   
@@ -80,6 +114,8 @@ for(i in 1:nrow(sample_info)){
   rm(cell_info)
   gc() #garbage collection
 }
+
+
 
 #Combine all of the spes 
 all_spes <- do.call(cbind,all_spes)
