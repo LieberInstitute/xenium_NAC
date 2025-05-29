@@ -4,8 +4,9 @@
 #SBATCH --job-name=Banksy
 #SBATCH --output=logs/Banksy.log
 #SBATCH --error=logs/Banksy.log 
-#SBATCH --mem=150G
+#SBATCH --mem=250G
 #SBATCH --cpus-per-task=1
+#SBATCH --time=5-00:00:00
 #SBATCH --mail-type=END
 #SBATCH --mail-user=Robert.Phillips@libd.org
 
