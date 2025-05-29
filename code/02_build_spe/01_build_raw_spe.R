@@ -75,7 +75,7 @@ for(i in 1:nrow(sample_info)){
   #Next step is to rotate and/or mirror the samples. 
   #First, save the original coordinates in the metadata
   coords <- spatialCoords(spe)
-  metadata(spe)$original_coords <- coords
+  #metadata(spe)$original_coords <- coords
   
   if(Sample %in% c("Br6660_NAc2_1090","Br6436_Nac_11_5650")){
     #Mirror left to right. 
@@ -115,10 +115,11 @@ for(i in 1:nrow(sample_info)){
   gc() #garbage collection
 }
 
-
-
 #Combine all of the spes 
+message(paste0("Combining the spes - ",Sys.time()))
 all_spes <- do.call(cbind,all_spes)
+
+message(paste0("Saving SPE - ",Sys.time()))
 saveRDS(all_spes,here("processed-data","02_build_spe","SPEs","spe_raw.Rds"))
 
 ###Reproduciblity

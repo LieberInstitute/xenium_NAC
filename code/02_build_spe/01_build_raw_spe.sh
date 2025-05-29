@@ -17,7 +17,7 @@ echo "Job name: ${SLURM_JOB_NAME}"
 echo "Hostname: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-module load conda_R/4.4.x
+module load conda_R/4.5
 Rscript 01_build_raw_spe.R
 
 echo "********* Job Ends *********"
