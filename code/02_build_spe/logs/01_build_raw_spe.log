@@ -1,12 +1,12 @@
 ********* Job Starts *********
-Fri Apr 11 12:16:23 PM EDT 2025
+Thu May 29 08:54:09 AM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 15977721
+Job id: 16857805
 Job name: 01_build
-Hostname: compute-149
+Hostname: compute-121
 Task id: 
-Loading conda_R/4.4.x
+Loading conda_R/4.5
 Loading required package: SummarizedExperiment
 Loading required package: MatrixGenerics
 Loading required package: matrixStats
@@ -34,6 +34,15 @@ The following objects are masked from ‘package:matrixStats’:
 Loading required package: GenomicRanges
 Loading required package: stats4
 Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
 
 Attaching package: ‘BiocGenerics’
 
@@ -45,10 +54,10 @@ The following objects are masked from ‘package:base’:
 
     anyDuplicated, aperm, append, as.data.frame, basename, cbind,
     colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
-    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
-    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
-    Position, rank, rbind, Reduce, rownames, sapply, saveRDS, setdiff,
-    table, tapply, union, unique, unsplit, which.max, which.min
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
 
 Loading required package: S4Vectors
 
@@ -205,14 +214,115 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac1_650----------"
+Rows: 299078 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac2_1150----------"
+Rows: 242149 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac3_1650----------"
+Rows: 263568 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_4_2150----------"
+Rows: 232557 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_5_2650----------"
+Rows: 252886 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_6_3150----------"
+Rows: 285208 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_7_3660----------"
+Rows: 279427 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_8_4150----------"
+Rows: 226743 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_9_4650----------"
+Rows: 146506 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_10_5150----------"
+Rows: 203837 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6436_Nac_11_5650----------"
+Rows: 68181 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Combining the spes - 2025-05-29 08:59:08.68557
 'sample_id's are duplicated across 'SpatialExperiment' objects to cbind; appending sample indices.
+Saving SPE - 2025-05-29 09:01:16.147131
 [1] "Reproducibility information:"
-[1] "2025-04-11 12:20:07 EDT"
+[1] "2025-05-29 09:05:52 EDT"
    user  system elapsed 
-211.660   4.774 223.186 
+578.155  73.338 702.725 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.4.3 Patched (2025-02-28 r88138)
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
  os       Rocky Linux 9.4 (Blue Onyx)
  system   x86_64, linux-gnu
  ui       X11
@@ -220,100 +330,107 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-04-11
- pandoc   3.2 @ /jhpce/shared/community/core/conda_R/4.4.x/bin/pandoc
+ date     2025-05-29
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
 ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
  package              * version  date (UTC) lib source
- abind                  1.4-8    2024-09-12 [2] CRAN (R 4.4.1)
- beachmat               2.22.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- Biobase              * 2.66.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- BiocGenerics         * 0.52.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- BiocParallel           1.40.2   2025-04-10 [2] Bioconductor
- bit                    4.6.0    2025-03-06 [2] CRAN (R 4.4.3)
- bit64                  4.6.0-1  2025-01-16 [2] CRAN (R 4.4.2)
- cli                    3.6.4    2025-02-13 [2] CRAN (R 4.4.2)
- codetools              0.2-20   2024-03-31 [3] CRAN (R 4.4.3)
- colorspace             2.1-1    2024-07-26 [2] CRAN (R 4.4.1)
- crayon                 1.5.3    2024-06-20 [2] CRAN (R 4.4.1)
- DelayedArray           0.32.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- DelayedMatrixStats     1.28.1   2025-01-09 [2] Bioconductor 3.20 (R 4.4.2)
- dplyr                * 1.1.4    2023-11-17 [2] CRAN (R 4.4.0)
- dqrng                  0.4.1    2024-05-28 [2] CRAN (R 4.4.0)
- DropletUtils           1.26.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- edgeR                  4.4.2    2025-01-27 [2] Bioconductor 3.20 (R 4.4.2)
- forcats              * 1.0.0    2023-01-29 [2] CRAN (R 4.4.0)
- generics               0.1.3    2022-07-05 [2] CRAN (R 4.4.0)
- GenomeInfoDb         * 1.42.3   2025-01-27 [2] Bioconductor 3.20 (R 4.4.2)
- GenomeInfoDbData       1.2.13   2024-10-01 [2] Bioconductor
- GenomicRanges        * 1.58.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- ggplot2              * 3.5.2    2025-04-09 [2] CRAN (R 4.4.3)
- glue                   1.8.0    2024-09-30 [2] CRAN (R 4.4.1)
- gtable                 0.3.6    2024-10-25 [2] CRAN (R 4.4.2)
- HDF5Array              1.34.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- here                 * 1.0.1    2020-12-13 [2] CRAN (R 4.4.0)
- hms                    1.1.3    2023-03-21 [2] CRAN (R 4.4.0)
- httr                   1.4.7    2023-08-15 [2] CRAN (R 4.4.0)
- IRanges              * 2.40.1   2024-12-05 [2] Bioconductor 3.20 (R 4.4.2)
- jsonlite               2.0.0    2025-03-27 [2] CRAN (R 4.4.3)
- lattice                0.22-6   2024-03-20 [3] CRAN (R 4.4.3)
- lifecycle              1.0.4    2023-11-07 [2] CRAN (R 4.4.0)
- limma                  3.62.2   2025-01-09 [2] Bioconductor 3.20 (R 4.4.2)
- locfit                 1.5-9.12 2025-03-05 [2] CRAN (R 4.4.3)
- lubridate            * 1.9.4    2024-12-08 [2] CRAN (R 4.4.2)
- magick                 2.8.6    2025-03-23 [2] CRAN (R 4.4.3)
- magrittr               2.0.3    2022-03-30 [2] CRAN (R 4.4.0)
- Matrix                 1.7-2    2025-01-23 [3] CRAN (R 4.4.3)
- MatrixGenerics       * 1.18.1   2025-01-09 [2] Bioconductor 3.20 (R 4.4.2)
- matrixStats          * 1.5.0    2025-01-07 [2] CRAN (R 4.4.2)
- munsell                0.5.1    2024-04-01 [2] CRAN (R 4.4.0)
- pillar                 1.10.2   2025-04-05 [2] CRAN (R 4.4.3)
- pkgconfig              2.0.3    2019-09-22 [2] CRAN (R 4.4.0)
- purrr                * 1.0.4    2025-02-05 [2] CRAN (R 4.4.2)
- R.methodsS3            1.8.2    2022-06-13 [2] CRAN (R 4.4.0)
- R.oo                   1.27.0   2024-11-01 [2] CRAN (R 4.4.2)
- R.utils                2.13.0   2025-02-24 [2] CRAN (R 4.4.3)
- R6                     2.6.1    2025-02-15 [2] CRAN (R 4.4.2)
- Rcpp                   1.0.14   2025-01-12 [2] CRAN (R 4.4.2)
- readr                * 2.1.5    2024-01-10 [2] CRAN (R 4.4.0)
- rhdf5                  2.50.2   2025-01-09 [2] Bioconductor 3.20 (R 4.4.2)
- rhdf5filters           1.18.1   2025-03-06 [2] Bioconductor 3.20 (R 4.4.3)
- Rhdf5lib               1.28.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- rjson                  0.2.23   2024-09-16 [2] CRAN (R 4.4.1)
- rlang                  1.1.6    2025-04-11 [2] CRAN (R 4.4.3)
- rprojroot              2.0.4    2023-11-05 [2] CRAN (R 4.4.0)
- S4Arrays               1.6.0    2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- S4Vectors            * 0.44.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- scales                 1.3.0    2023-11-28 [2] CRAN (R 4.4.0)
- scuttle                1.16.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- sessioninfo          * 1.2.3    2025-02-05 [2] CRAN (R 4.4.2)
- SingleCellExperiment * 1.28.1   2024-11-10 [2] Bioconductor 3.20 (R 4.4.2)
- SparseArray            1.6.2    2025-02-20 [2] Bioconductor 3.20 (R 4.4.3)
- sparseMatrixStats      1.18.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- SpatialExperiment    * 1.16.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- statmod                1.5.0    2023-01-06 [2] CRAN (R 4.4.0)
- stringi                1.8.7    2025-03-27 [2] CRAN (R 4.4.3)
- stringr              * 1.5.1    2023-11-14 [2] CRAN (R 4.4.0)
- SummarizedExperiment * 1.36.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- tibble               * 3.2.1    2023-03-20 [2] CRAN (R 4.4.0)
- tidyr                * 1.3.1    2024-01-24 [2] CRAN (R 4.4.0)
- tidyselect             1.2.1    2024-03-11 [2] CRAN (R 4.4.0)
- tidyverse            * 2.0.0    2023-02-22 [2] CRAN (R 4.4.0)
- timechange             0.3.0    2024-01-18 [2] CRAN (R 4.4.0)
- tzdb                   0.5.0    2025-03-15 [2] CRAN (R 4.4.3)
- UCSC.utils             1.2.0    2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- vctrs                  0.6.5    2023-12-01 [2] CRAN (R 4.4.0)
- vroom                  1.6.5    2023-12-05 [2] CRAN (R 4.4.0)
- withr                  3.0.2    2024-10-28 [2] CRAN (R 4.4.2)
- XVector                0.46.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- zlibbioc               1.52.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
+ abind                  1.4-8    2024-09-12 [2] CRAN (R 4.5.0)
+ beachmat               2.24.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Biobase              * 2.68.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocGenerics         * 0.54.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocParallel           1.42.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ bit                    4.6.0    2025-03-06 [2] CRAN (R 4.5.0)
+ bit64                  4.6.0-1  2025-01-16 [2] CRAN (R 4.5.0)
+ cli                    3.6.5    2025-04-23 [2] CRAN (R 4.5.0)
+ codetools              0.2-20   2024-03-31 [3] CRAN (R 4.5.0)
+ crayon                 1.5.3    2024-06-20 [2] CRAN (R 4.5.0)
+ DelayedArray           0.34.1   2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
+ DelayedMatrixStats     1.30.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ dichromat              2.0-0.1  2022-05-02 [2] CRAN (R 4.5.0)
+ dplyr                * 1.1.4    2023-11-17 [2] CRAN (R 4.5.0)
+ dqrng                  0.4.1    2024-05-28 [2] CRAN (R 4.5.0)
+ DropletUtils           1.28.0   2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
+ edgeR                  4.6.2    2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
+ escheR                 1.8.0    2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
+ farver                 2.1.2    2024-05-13 [2] CRAN (R 4.5.0)
+ forcats              * 1.0.0    2023-01-29 [2] CRAN (R 4.5.0)
+ generics             * 0.1.4    2025-05-09 [2] CRAN (R 4.5.0)
+ GenomeInfoDb         * 1.44.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ GenomeInfoDbData       1.2.14   2025-05-21 [2] Bioconductor
+ GenomicRanges        * 1.60.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ ggplot2              * 3.5.2    2025-04-09 [2] CRAN (R 4.5.0)
+ glue                   1.8.0    2024-09-30 [2] CRAN (R 4.5.0)
+ gtable                 0.3.6    2024-10-25 [2] CRAN (R 4.5.0)
+ h5mread                1.0.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ HDF5Array              1.36.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ here                 * 1.0.1    2020-12-13 [2] CRAN (R 4.5.0)
+ hms                    1.1.3    2023-03-21 [2] CRAN (R 4.5.0)
+ httr                   1.4.7    2023-08-15 [2] CRAN (R 4.5.0)
+ IRanges              * 2.42.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ jsonlite               2.0.0    2025-03-27 [2] CRAN (R 4.5.0)
+ labeling               0.4.3    2023-08-29 [2] CRAN (R 4.5.0)
+ lattice                0.22-7   2025-04-02 [3] CRAN (R 4.5.0)
+ lifecycle              1.0.4    2023-11-07 [2] CRAN (R 4.5.0)
+ limma                  3.64.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ locfit                 1.5-9.12 2025-03-05 [2] CRAN (R 4.5.0)
+ lubridate            * 1.9.4    2024-12-08 [2] CRAN (R 4.5.0)
+ magick                 2.8.6    2025-03-23 [2] CRAN (R 4.5.0)
+ magrittr               2.0.3    2022-03-30 [2] CRAN (R 4.5.0)
+ Matrix                 1.7-3    2025-03-11 [3] CRAN (R 4.5.0)
+ MatrixGenerics       * 1.20.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ matrixStats          * 1.5.0    2025-01-07 [2] CRAN (R 4.5.0)
+ pillar                 1.10.2   2025-04-05 [2] CRAN (R 4.5.0)
+ pkgconfig              2.0.3    2019-09-22 [2] CRAN (R 4.5.0)
+ purrr                * 1.0.4    2025-02-05 [2] CRAN (R 4.5.0)
+ R.methodsS3            1.8.2    2022-06-13 [2] CRAN (R 4.5.0)
+ R.oo                   1.27.1   2025-05-02 [2] CRAN (R 4.5.0)
+ R.utils                2.13.0   2025-02-24 [2] CRAN (R 4.5.0)
+ R6                     2.6.1    2025-02-15 [2] CRAN (R 4.5.0)
+ ragg                   1.4.0    2025-04-10 [2] CRAN (R 4.5.0)
+ RColorBrewer           1.1-3    2022-04-03 [2] CRAN (R 4.5.0)
+ Rcpp                   1.0.14   2025-01-12 [2] CRAN (R 4.5.0)
+ readr                * 2.1.5    2024-01-10 [2] CRAN (R 4.5.0)
+ rhdf5                  2.52.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rhdf5filters           1.20.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Rhdf5lib               1.30.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rjson                  0.2.23   2024-09-16 [2] CRAN (R 4.5.0)
+ rlang                  1.1.6    2025-04-11 [2] CRAN (R 4.5.0)
+ rprojroot              2.0.4    2023-11-05 [2] CRAN (R 4.5.0)
+ S4Arrays               1.8.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ S4Vectors            * 0.46.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ scales                 1.4.0    2025-04-24 [2] CRAN (R 4.5.0)
+ scuttle                1.18.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ sessioninfo          * 1.2.3    2025-02-05 [2] CRAN (R 4.5.0)
+ SingleCellExperiment * 1.30.1   2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
+ SparseArray            1.8.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ sparseMatrixStats      1.20.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ SpatialExperiment    * 1.18.1   2025-05-11 [2] Bioconductor 3.21 (R 4.5.0)
+ statmod                1.5.0    2023-01-06 [2] CRAN (R 4.5.0)
+ stringi                1.8.7    2025-03-27 [2] CRAN (R 4.5.0)
+ stringr              * 1.5.1    2023-11-14 [2] CRAN (R 4.5.0)
+ SummarizedExperiment * 1.38.1   2025-04-30 [2] Bioconductor 3.21 (R 4.5.0)
+ systemfonts            1.2.3    2025-04-30 [2] CRAN (R 4.5.0)
+ textshaping            1.0.1    2025-05-01 [2] CRAN (R 4.5.0)
+ tibble               * 3.2.1    2023-03-20 [2] CRAN (R 4.5.0)
+ tidyr                * 1.3.1    2024-01-24 [2] CRAN (R 4.5.0)
+ tidyselect             1.2.1    2024-03-11 [2] CRAN (R 4.5.0)
+ tidyverse            * 2.0.0    2023-02-22 [2] CRAN (R 4.5.0)
+ timechange             0.3.0    2024-01-18 [2] CRAN (R 4.5.0)
+ tzdb                   0.5.0    2025-03-15 [2] CRAN (R 4.5.0)
+ UCSC.utils             1.4.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ vctrs                  0.6.5    2023-12-01 [2] CRAN (R 4.5.0)
+ viridisLite            0.4.2    2023-05-02 [2] CRAN (R 4.5.0)
+ vroom                  1.6.5    2023-12-05 [2] CRAN (R 4.5.0)
+ withr                  3.0.2    2024-10-28 [2] CRAN (R 4.5.0)
+ XVector                0.48.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
 
- [1] /users/rphillip/R/4.4.x
- [2] /jhpce/shared/community/core/conda_R/4.4.x/R/lib64/R/site-library
- [3] /jhpce/shared/community/core/conda_R/4.4.x/R/lib64/R/library
+ [1] /users/rphillip/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
  * ── Packages attached to the search path.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Fri Apr 11 12:20:08 PM EDT 2025
+Thu May 29 09:05:56 AM EDT 2025
