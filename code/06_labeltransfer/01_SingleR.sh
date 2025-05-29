@@ -5,7 +5,7 @@
 #SBATCH --output=logs/SingleR.%a.log
 #SBATCH --error=logs/SingleR.%a.log 
 #SBATCH --mem=25G
-#SBATCH --array=1-11
+#SBATCH --array=1-22
 #SBATCH --mail-type=END
 #SBATCH --mail-user=Robert.Phillips@libd.org
 
