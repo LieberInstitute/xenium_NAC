@@ -8,7 +8,7 @@
 library(SpatialExperiment)
 library(scattermore)
 library(tidyverse)
-library(Voyager)
+#library(Voyager)
 library(scuttle)
 library(scater)
 library(escheR)
@@ -39,6 +39,10 @@ spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_raw.Rds"))
 
 spe
 
+#Make the sample column a factor
+spe$Sample <- factor(x = spe$Sample, levels = unique(spe$Sample))
+
+levels(spe$Sample)
 
 #Find genes for scuttle subsets 
 is_neg <- stringr::str_detect(rownames(spe), "^NegControlProbe")
@@ -262,102 +266,102 @@ ggplot(coldata_df, aes(x = cell_area, y = detected)) +
 dev.off()
 
 #Concert spe to sfe to use some of the colData  plotting functions
-sfe <- toSpatialFeatureExperiment(spe)
+#sfe <- toSpatialFeatureExperiment(spe)
 
 #Pull coldata columns that include percent counts mapping to negProbes/Codewords/unassigned/GEX
-cols_use <- names(colData(sfe))[str_detect(names(colData(sfe)), "_percent$")]
-cols_use
+#cols_use <- names(colData(sfe))[str_detect(names(colData(sfe)), "_percent$")]
+#cols_use
 
-p <- plotColDataHistogram(sfe, cols_use, bins = 100)
-ggsave(filename = here("plots","03_qc","subsets_histogram.pdf"),plot = p)
+#p <- plotColDataHistogram(sfe, cols_use, bins = 100)
+#ggsave(filename = here("plots","03_qc","subsets_histogram.pdf"),plot = p)
 
 #Just as in the Voyager Xenium QC workflow, the histrograms for negative control probes and unassigned are 
 #centered on 0. Additionally, most of the cells have 100% of their counts derived from actual genes.
 #Do for all but the GEX subset which is not centered on 0. 
-p2 <- plotColDataHistogram(sfe, cols_use[-5], bins = 100) + 
-  scale_x_log10() 
-ggsave(filename = here("plots","03_qc","subsets_histogram_logscale.pdf"),plot = p2)
+#p2 <- plotColDataHistogram(sfe, cols_use[-5], bins = 100) + 
+#  scale_x_log10() 
+#ggsave(filename = here("plots","03_qc","subsets_histogram_logscale.pdf"),plot = p2)
 
 #This actually looks pretty good with most cells falling under 1%. 
 #Let's make violin plots of the subsets by Sample
-for(i in cols_use){
-  print(i)
-  if(i == "subsets_GEX_percent"){
-    p_i <- plotColData(spe, 
-                       x = "Sample", 
-                       y = i,
-                       color_by = "Sample") +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1),
-            legend.position = "none")  +
-      stat_summary(fun = median, 
-                   fun.min = median, 
-                   fun.max = median,
-                   geom = "crossbar", 
-                   width = 0.3)
-    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i)
-  }else{
-    p_i <- plotColData(spe, 
-                       x = "Sample", 
-                       y = i,
-                       color_by = "Sample") +
-      scale_y_log10() +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1),
-            legend.position = "none")  +
-      stat_summary(fun = median, 
-                   fun.min = median, 
-                   fun.max = median,
-                   geom = "crossbar", 
-                   width = 0.3)
-    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i) 
-  }
-}
+#for(i in cols_use){
+#  print(i)
+#  if(i == "subsets_GEX_percent"){
+#    p_i <- plotColData(spe, 
+#                       x = "Sample", 
+#                       y = i,
+#                       color_by = "Sample") +
+#      theme(axis.text.x = element_text(angle = 45, hjust = 1),
+#            legend.position = "none")  +
+#      stat_summary(fun = median, 
+#                   fun.min = median, 
+#                   fun.max = median,
+#                   geom = "crossbar", 
+#                   width = 0.3)
+#    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i)
+#  }else{
+#    p_i <- plotColData(spe, 
+#                       x = "Sample", 
+#                       y = i,
+#                      color_by = "Sample") +
+#      scale_y_log10() +
+#      theme(axis.text.x = element_text(angle = 45, hjust = 1),
+#            legend.position = "none")  +
+#      stat_summary(fun = median, 
+#                   fun.min = median, 
+#                   fun.max = median,
+#                   geom = "crossbar", 
+#                   width = 0.3)
+#    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i) 
+#  }
+#}
 
 #Several warnings generated above from cells that have 0 values for these QC measures. 
 
 #Do the same but for sum or the total of each count. 
-cols_use <- names(colData(sfe))[str_detect(names(colData(sfe)), "_sum$")]
-cols_use
+#cols_use <- names(colData(sfe))[str_detect(names(colData(sfe)), "_sum$")]
+#cols_use
 
-p_sums <- plotColDataHistogram(sfe, cols_use, bins = 100, ncol = 2) +
-  scale_y_log10()
-ggsave(filename = here("plots","03_qc","sums_histograms.png"),plot = p_sums)
+#p_sums <- plotColDataHistogram(sfe, cols_use, bins = 100, ncol = 2) +
+#  scale_y_log10()
+#ggsave(filename = here("plots","03_qc","sums_histograms.png"),plot = p_sums)
 
 #Generate violins as above. 
-for(i in cols_use){
-  print(i)
-  if(i == "subsets_GEX_sum"){
-    p_i <- plotColData(spe, 
-                       x = "Sample", 
-                       y = i,
-                       color_by = "Sample") +
-      scale_y_log10() +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1),
-            legend.position = "none")  +
-      stat_summary(fun = median, 
-                   fun.min = median, 
-                   fun.max = median,
-                   geom = "crossbar", 
-                   width = 0.3)
-    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i)
-  }else{
-    p_i <- plotColData(spe, 
-                       x = "Sample", 
-                       y = i,
-                       color_by = "Sample") +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1),
-            legend.position = "none")  +
-      stat_summary(fun = median, 
-                   fun.min = median, 
-                   fun.max = median,
-                   geom = "crossbar", 
-                   width = 0.3)
-    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i)
-  }
-}
+#for(i in cols_use){
+#  print(i)
+#  if(i == "subsets_GEX_sum"){
+#    p_i <- plotColData(spe, 
+#                       x = "Sample", 
+#                       y = i,
+#                       color_by = "Sample") +
+#      scale_y_log10() +
+#      theme(axis.text.x = element_text(angle = 45, hjust = 1),
+#            legend.position = "none")  +
+#      stat_summary(fun = median, 
+#                   fun.min = median, 
+#                   fun.max = median,
+#                   geom = "crossbar", 
+#                   width = 0.3)
+#    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i)
+#  }else{
+#    p_i <- plotColData(spe, 
+#                       x = "Sample", 
+#                       y = i,
+#                       color_by = "Sample") +
+#      theme(axis.text.x = element_text(angle = 45, hjust = 1),
+#            legend.position = "none")  +
+#      stat_summary(fun = median, 
+#                  fun.min = median, 
+#                   fun.max = median,
+#                   geom = "crossbar", 
+#                   width = 0.3)
+#    ggsave(filename = here("plots","03_qc",paste0(i,"_violin_by_sample.png")),plot = p_i)
+#  }
+#}
 
 #What about cell size and nucleus area? Can these be used as a QC for the segmentation? 
-p <- plotColDataHistogram(sfe, c("cell_area", "nucleus_area"), scales = "free_x")
-ggsave(filename = here("plots","03_qc","cell_nucleus_area_freex.png"),plot = p)
+#p <- plotColDataHistogram(sfe, c("cell_area", "nucleus_area"), scales = "free_x")
+#ggsave(filename = here("plots","03_qc","cell_nucleus_area_freex.png"),plot = p)
 
 
 p <- plotColData(spe,x = "Sample", y = "cell_area") +
@@ -410,6 +414,7 @@ for(i in names(discard_tissue_plot)){
 }
 
 #Save spe before removing low quality cells
+message(paste0("Saving spe object with QC - ",Sys.time()))
 saveRDS(spe,here("processed-data","02_build_spe","SPEs","spe_withQC.Rds"))
 
 
@@ -419,6 +424,7 @@ dim(spe)
 spe
 
 #Save cleaned SPE
+message(paste0("Saving cleaned SPE object - ",Sys.time()))
 saveRDS(spe,here("processed-data","02_build_spe","SPEs","spe_clean.Rds"))
 
 
