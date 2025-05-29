@@ -15,3 +15,6 @@ plots/03_qc/Sample_Specific_Outliers/*
 processed-data/Xenium_QC/
 plots/06_label_transfer/Br6660*
 processed-data/06_label_transfer/
+plots/02_build_spe/
+plots/06_label_transfer/
+processed-data/05_Clustering/Banksy_clusters.csv
