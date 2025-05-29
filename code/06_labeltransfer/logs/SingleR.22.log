@@ -1,11 +1,11 @@
 ********* Job Starts *********
-Wed May 14 03:26:30 PM EDT 2025
+Wed May 14 03:26:31 PM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 16596810
+Job id: 16596801
 Job name: 01_SingleR
-Hostname: compute-147
-Task id: 9
+Hostname: compute-100
+Task id: 22
 Loading conda_R/4.4.x
 Loading required package: SummarizedExperiment
 Loading required package: MatrixGenerics
@@ -112,11 +112,8 @@ colData names(41): Sample Barcode ... sizeFactor CellType.Final
 reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
 mainExpName: NULL
 altExpNames(0):
-Running Sample: Br6660_NAc9_5080 (9/22)
-Number of cells in this sample:251448
-Warning message:
-In dir.create(dir) :
-  '/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/06_label_transfer/Br6660_NAc9_5080' already exists
+Running Sample: Br6436_Nac_11_5650 (22/22)
+Number of cells in this sample:65986
 [1]    366 103785
 Warning messages:
 1: did not converge in 10 iterations 
@@ -124,33 +121,30 @@ Warning messages:
 3: did not converge in 10 iterations 
 4: did not converge in 10 iterations 
 5: did not converge in 10 iterations 
-6: did not converge in 10 iterations 
-7: did not converge in 10 iterations 
-8: did not converge in 10 iterations 
-[1] "Oligo"
-[1] "Astrocyte_B"
-[1] "Microglia"
-[1] "Ependymal"
-[1] "Endothelial"
 [1] "OPC"
-[1] "Astrocyte_A"
+[1] "Astrocyte_B"
+[1] "Oligo"
 [1] "Inh_F"
-[1] "Inh_E"
-[1] "Inh_C"
-[1] "Inh_B"
-[1] "Inh_D"
-[1] "DRD1_MSN_B"
 [1] "Excitatory"
+[1] "Microglia"
+[1] "Endothelial"
+[1] "Astrocyte_A"
+[1] "DRD1_MSN_B"
+[1] "Inh_C"
+[1] "Inh_E"
+[1] "Inh_B"
+[1] "DRD2_MSN_B"
+[1] "Ependymal"
+[1] "DRD1_MSN_D"
+[1] "Inh_D"
+[1] "DRD2_MSN_A"
 [1] "DRD1_MSN_A"
 [1] "Inh_A"
-[1] "DRD1_MSN_D"
-[1] "DRD2_MSN_B"
 [1] "DRD1_MSN_C"
-[1] "DRD2_MSN_A"
 [1] "Reproducibility information:"
-[1] "2025-05-14 15:34:20 EDT"
-   user  system elapsed 
-377.812  17.971 468.967 
+[1] "2025-05-14 15:52:06 EDT"
+    user   system  elapsed 
+ 512.830   33.213 1533.901 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.4.3 Patched (2025-02-28 r88200)
@@ -260,4 +254,4 @@ Warning messages:
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Wed May 14 03:34:21 PM EDT 2025
+Wed May 14 03:52:07 PM EDT 2025

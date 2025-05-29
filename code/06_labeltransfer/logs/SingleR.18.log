@@ -1,11 +1,11 @@
 ********* Job Starts *********
-Wed May 14 03:26:30 PM EDT 2025
+Wed May 14 03:26:31 PM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 16596811
+Job id: 16596819
 Job name: 01_SingleR
-Hostname: compute-147
-Task id: 10
+Hostname: compute-099
+Task id: 18
 Loading conda_R/4.4.x
 Loading required package: SummarizedExperiment
 Loading required package: MatrixGenerics
@@ -112,29 +112,18 @@ colData names(41): Sample Barcode ... sizeFactor CellType.Final
 reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
 mainExpName: NULL
 altExpNames(0):
-Running Sample: Br6660_Nac10_4080 (10/22)
-Number of cells in this sample:261451
-Warning message:
-In dir.create(dir) :
-  '/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/06_label_transfer/Br6660_Nac10_4080' already exists
+Running Sample: Br6436_Nac_7_3660 (18/22)
+Number of cells in this sample:271118
 [1]    366 103785
 Warning messages:
 1: did not converge in 10 iterations 
 2: did not converge in 10 iterations 
 3: did not converge in 10 iterations 
 4: did not converge in 10 iterations 
-5: did not converge in 10 iterations 
-6: did not converge in 10 iterations 
-[1] "Oligo"
-[1] "Astrocyte_B"
-[1] "Endothelial"
-[1] "Inh_F"
-[1] "Microglia"
 [1] "OPC"
-[1] "Astrocyte_A"
-[1] "Inh_B"
-[1] "Inh_D"
-/var/spool/slurm/d/job16596811/slurm_script: line 22: 2328024 Killed                  Rscript 01_SingleR.R
+[1] "Inh_C"
+[1] "Inh_F"
+/var/spool/slurm/d/job16596819/slurm_script: line 22: 984485 Killed                  Rscript 01_SingleR.R
 ********* Job Ends *********
-Wed May 14 03:33:25 PM EDT 2025
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=16596811.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
+Wed May 14 04:03:46 PM EDT 2025
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=16596819.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.

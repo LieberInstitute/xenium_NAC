@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Mon Apr 14 10:39:12 AM EDT 2025
+Thu May 22 12:49:29 PM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 16022067
+Job id: 16677006
 Job name: 00_plot
-Hostname: compute-157
+Hostname: compute-163
 Task id: 
 Loading conda_R/4.4.x
 Loading required package: SingleCellExperiment
@@ -109,38 +109,38 @@ The following objects are masked from ‘package:matrixStats’:
 Loading required package: scuttle
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 class: SpatialExperiment 
-dim: 541 2452295 
-metadata(11): Samples Samples ... Samples Samples
+dim: 541 4952435 
+metadata(22): Samples Samples ... Samples Samples
 assays(1): counts
 rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
   DeprecatedCodeword_0393
 rowData names(3): ID Symbol Type
-colnames(2452295): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
-  Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
+colnames(4952435): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+  Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
 colData names(32): Sample Barcode ... Race PrimaryDx
 reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : x_centroid y_centroid
 imgData names(1): sample_id
-Plotting total_counts - 2025-04-14 10:39:53.813297
-Plotting unassigned_codeword_counts - 2025-04-14 10:52:33.246532
-Plotting cell_area - 2025-04-14 11:04:34.443708
-Plotting nucleus_area - 2025-04-14 11:17:06.994567
-Plotting transcript_counts - 2025-04-14 11:29:02.016192
-Moving to plot metrics on tissue - 2025-04-14 11:41:41.445858
-Plotting total_counts - 2025-04-14 11:41:41.452496
-Plotting unassigned_codeword_counts - 2025-04-14 11:43:00.538462
-Plotting cell_area - 2025-04-14 11:44:16.171016
-Plotting nucleus_area - 2025-04-14 11:45:32.52228
-Plotting transcript_counts - 2025-04-14 11:46:46.102807
+Plotting total_counts - 2025-05-22 12:50:43.49162
+Plotting unassigned_codeword_counts - 2025-05-22 13:39:32.081215
+Plotting cell_area - 2025-05-22 14:16:15.683392
+Plotting nucleus_area - 2025-05-22 14:43:39.120202
+Plotting transcript_counts - 2025-05-22 15:13:50.195489
+Moving to plot metrics on tissue - 2025-05-22 15:45:48.088515
+Plotting total_counts - 2025-05-22 15:45:48.106083
+Plotting unassigned_codeword_counts - 2025-05-22 15:48:38.591624
+Plotting cell_area - 2025-05-22 15:51:37.339961
+Plotting nucleus_area - 2025-05-22 15:54:21.60503
+Plotting transcript_counts - 2025-05-22 15:57:04.107071
 [1] "Reproducibility information:"
-[1] "2025-04-14 11:48:05 EDT"
-    user   system  elapsed 
-4094.053   25.528 4132.068 
+[1] "2025-05-22 16:00:01 EDT"
+     user    system   elapsed 
+11265.388   128.893 11430.488 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.4.3 Patched (2025-02-28 r88141)
+ version  R version 4.4.3 Patched (2025-02-28 r88218)
  os       Rocky Linux 9.4 (Blue Onyx)
  system   x86_64, linux-gnu
  ui       X11
@@ -148,7 +148,7 @@ Plotting transcript_counts - 2025-04-14 11:46:46.102807
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-04-14
+ date     2025-05-22
  pandoc   3.2 @ /jhpce/shared/community/core/conda_R/4.4.x/bin/pandoc
  quarto   NA
 
@@ -163,20 +163,20 @@ Plotting transcript_counts - 2025-04-14 11:46:46.102807
  BiocParallel           1.40.2   2025-04-10 [2] Bioconductor
  BiocSingular           1.22.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
  bluster                1.16.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- cli                    3.6.4    2025-02-13 [2] CRAN (R 4.4.2)
+ cli                    3.6.5    2025-04-23 [2] CRAN (R 4.4.3)
  cluster                2.1.8    2024-12-11 [3] CRAN (R 4.4.3)
  codetools              0.2-20   2024-03-31 [3] CRAN (R 4.4.3)
- colorspace             2.1-1    2024-07-26 [2] CRAN (R 4.4.1)
  cowplot                1.1.3    2024-01-22 [2] CRAN (R 4.4.0)
  crayon                 1.5.3    2024-06-20 [2] CRAN (R 4.4.1)
  DelayedArray           0.32.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
+ dichromat              2.0-0.1  2022-05-02 [2] CRAN (R 4.4.0)
  dplyr                * 1.1.4    2023-11-17 [2] CRAN (R 4.4.0)
  dqrng                  0.4.1    2024-05-28 [2] CRAN (R 4.4.0)
  edgeR                  4.4.2    2025-01-27 [2] Bioconductor 3.20 (R 4.4.2)
  escheR               * 1.6.0    2024-10-29 [1] Bioconductor 3.20 (R 4.4.3)
  farver                 2.1.2    2024-05-13 [2] CRAN (R 4.4.0)
  forcats              * 1.0.0    2023-01-29 [2] CRAN (R 4.4.0)
- generics               0.1.3    2022-07-05 [2] CRAN (R 4.4.0)
+ generics               0.1.4    2025-05-09 [2] CRAN (R 4.4.3)
  GenomeInfoDb         * 1.42.3   2025-01-27 [2] Bioconductor 3.20 (R 4.4.2)
  GenomeInfoDbData       1.2.13   2024-10-01 [2] Bioconductor
  GenomicRanges        * 1.58.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
@@ -205,13 +205,13 @@ Plotting transcript_counts - 2025-04-14 11:46:46.102807
  MatrixGenerics       * 1.18.1   2025-01-09 [2] Bioconductor 3.20 (R 4.4.2)
  matrixStats          * 1.5.0    2025-01-07 [2] CRAN (R 4.4.2)
  metapod                1.14.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- munsell                0.5.1    2024-04-01 [2] CRAN (R 4.4.0)
  patchwork            * 1.3.0    2024-09-16 [2] CRAN (R 4.4.1)
  pillar                 1.10.2   2025-04-05 [2] CRAN (R 4.4.3)
  pkgconfig              2.0.3    2019-09-22 [2] CRAN (R 4.4.0)
  purrr                * 1.0.4    2025-02-05 [2] CRAN (R 4.4.2)
  R6                     2.6.1    2025-02-15 [2] CRAN (R 4.4.2)
  ragg                   1.4.0    2025-04-10 [2] CRAN (R 4.4.3)
+ RColorBrewer           1.1-3    2022-04-03 [2] CRAN (R 4.4.0)
  Rcpp                   1.0.14   2025-01-12 [2] CRAN (R 4.4.2)
  readr                * 2.1.5    2024-01-10 [2] CRAN (R 4.4.0)
  rjson                  0.2.23   2024-09-16 [2] CRAN (R 4.4.1)
@@ -221,7 +221,7 @@ Plotting transcript_counts - 2025-04-14 11:46:46.102807
  S4Arrays               1.6.0    2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
  S4Vectors            * 0.44.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
  ScaledMatrix           1.14.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- scales                 1.3.0    2023-11-28 [2] CRAN (R 4.4.0)
+ scales                 1.4.0    2025-04-24 [2] CRAN (R 4.4.3)
  scater               * 1.34.1   2025-03-03 [2] Bioconductor 3.20 (R 4.4.3)
  scattermore          * 1.2      2023-06-12 [2] CRAN (R 4.4.0)
  scran                * 1.34.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
@@ -234,8 +234,8 @@ Plotting transcript_counts - 2025-04-14 11:46:46.102807
  stringi                1.8.7    2025-03-27 [2] CRAN (R 4.4.3)
  stringr              * 1.5.1    2023-11-14 [2] CRAN (R 4.4.0)
  SummarizedExperiment * 1.36.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
- systemfonts            1.2.2    2025-04-04 [2] CRAN (R 4.4.3)
- textshaping            1.0.0    2025-01-20 [2] CRAN (R 4.4.2)
+ systemfonts            1.2.3    2025-04-30 [2] CRAN (R 4.4.3)
+ textshaping            1.0.1    2025-05-01 [2] CRAN (R 4.4.3)
  tibble               * 3.2.1    2023-03-20 [2] CRAN (R 4.4.0)
  tidyr                * 1.3.1    2024-01-24 [2] CRAN (R 4.4.0)
  tidyselect             1.2.1    2024-03-11 [2] CRAN (R 4.4.0)
@@ -258,4 +258,4 @@ Plotting transcript_counts - 2025-04-14 11:46:46.102807
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Mon Apr 14 11:48:05 AM EDT 2025
+Thu May 22 04:00:02 PM EDT 2025
