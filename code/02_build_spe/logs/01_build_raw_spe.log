@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Thu May 29 08:54:09 AM EDT 2025
+Sat May 31 09:24:48 PM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 16857805
+Job id: 16910096
 Job name: 01_build
-Hostname: compute-121
+Hostname: compute-157
 Task id: 
 Loading conda_R/4.5
 Loading required package: SummarizedExperiment
@@ -313,13 +313,13 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Combining the spes - 2025-05-29 08:59:08.68557
+Combining the spes - 2025-05-31 21:28:39.407564
 'sample_id's are duplicated across 'SpatialExperiment' objects to cbind; appending sample indices.
-Saving SPE - 2025-05-29 09:01:16.147131
+Saving SPE - 2025-05-31 21:29:48.541957
 [1] "Reproducibility information:"
-[1] "2025-05-29 09:05:52 EDT"
+[1] "2025-05-31 21:33:45 EDT"
    user  system elapsed 
-578.155  73.338 702.725 
+470.502  18.048 536.413 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -330,7 +330,7 @@ Saving SPE - 2025-05-29 09:01:16.147131
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-05-29
+ date     2025-05-31
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -433,4 +433,4 @@ Saving SPE - 2025-05-29 09:01:16.147131
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Thu May 29 09:05:56 AM EDT 2025
+Sat May 31 09:33:46 PM EDT 2025
