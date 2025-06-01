@@ -1,6 +1,6 @@
 #Goal: Build raw SPE
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
-#module load conda_R/4.4.x
+#module load conda_R/4.5
 #code modified from https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/01_build_spe/01_build_spe.R
 
 library(SingleCellExperiment)
@@ -77,26 +77,15 @@ for(i in 1:nrow(sample_info)){
   coords <- spatialCoords(spe)
   #metadata(spe)$original_coords <- coords
   
-  if(Sample %in% c("Br6660_NAc2_1090","Br6436_Nac_11_5650")){
-    #Mirror left to right. 
-    x_center <- mean(coords[,1]) #Where is the center of the object
-    mirrored <- coords
-    mirrored[,1] <- 2* x_center - mirrored[,1] #Mirror (2*center-previous x coordinate)
-   
-    #Update the mirrored coordinates
-    spatialCoords(spe) <- mirrored
-  }else{
-    #rotate 90 degrees counter clockwise
-    rotate_coords <- cbind(x_centroid = -coords[,2],#new x 
+  if(Sample %in% c("Br6660_NAc1_580", "Br6660_NAc3_1580", "Br6660_NAc4_2080", "Br6660_NAc5_2580", "Br6660_NAc6_3080", 
+                   "Br6660_NAc7_3580", "Br6660_NAc8_4580", "Br6660_NAc9_5080", "Br6660_Nac10_4080", "Br6660_Nac11_5580", 
+                   "Br6436_Nac1_650", "Br6436_Nac2_1150", "Br6436_Nac3_1650", "Br6436_Nac_4_2150", "Br6436_Nac_5_2650", 
+                   "Br6436_Nac_6_3150", "Br6436_Nac_7_3660", "Br6436_Nac_8_4150", "Br6436_Nac_9_4650", "Br6436_Nac_10_5150")){
+  #rotate 90 degrees counter clockwise
+    rotate_coords <- cbind(x_centroid = -coords[,2],#new x
                            y_centroid = coords[,1]) #new y
-    
-    #Mirror left to right. 
-    x_center <- mean(rotate_coords[,1]) #Where is the center of the object
-    mirrored <- rotate_coords
-    mirrored[,1] <- 2* x_center - mirrored[,1] #Mirror (2*center-previous x coordinate)
-    
-    spatialCoords(spe) <- mirrored
-  }
+    spatialCoords(spe) <- rotate_coords
+ }
   
   #Plot total_counts on top of the tissue to visualize rotation. 
   x <- escheR::make_escheR(spe) |>
