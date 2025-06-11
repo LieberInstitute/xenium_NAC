@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #SBATCH -p shared
-#SBATCH --job-name=01_build
+#SBATCH --job-name=01_build_raw_spe
 #SBATCH --output=logs/01_build_raw_spe.log
 #SBATCH --error=logs/01_build_raw_spe.log 
 #SBATCH --mem=20G
 #SBATCH --mail-type=END
-#SBATCH --mail-user=Robert.Phillips@libd.org
+#SBATCH --mail-user=jyao37@jhmi.edu
 
 echo "********* Job Starts *********"
 date

@@ -8,6 +8,7 @@ library(SpatialExperiment)
 library(sessioninfo)
 library(tidyverse)
 library(here)
+library(escheR)
 
 
 #Load sample_info dataframe that contains information about each sample including depth and directories. 
@@ -17,11 +18,12 @@ sample_info <- read.csv(here("processed-data","Sample_Info_NAcXenium_All.csv"))
 sample_info$full_data_path <- file.path(paste(here("raw-data","xenium"),sample_info$Output_Directory,sep = "/"))
 
 #Add  a column of the depth, which is the last aspect of the Sample_ID
-sample_info$Depth <- as.numeric(lapply(strsplit(sample_info$Sample_ID,"_"),"[",3))
-
+sample_info$Depth <- as.numeric(sub(".*_(\\d{3,4})$", "\\1", sample_info$Sample_ID))
+  
 all_spes <- vector(mode = "list",length = nrow(sample_info))
 names(all_spes) <- sample_info$Sample_ID
 for(i in 1:nrow(sample_info)){
+  print(i)
   #Pull path to data and sample_ID
   sample_path <- sample_info[i,"full_data_path"]
   Sample <- sample_info[i,"Sample_ID"]
@@ -72,27 +74,66 @@ for(i in 1:nrow(sample_info)){
   spe$Race <- sample_info_use$Race
   spe$PrimaryDx <- sample_info_use$PrimaryDx
   
-  #Next step is to rotate and/or mirror the samples. 
-  #First, save the original coordinates in the metadata
+  #Next step is to rotate the samples. 
   coords <- spatialCoords(spe)
   #metadata(spe)$original_coords <- coords
   
-  if(Sample %in% c("Br6660_NAc1_580", "Br6660_NAc3_1580", "Br6660_NAc4_2080", "Br6660_NAc5_2580", "Br6660_NAc6_3080", 
-                   "Br6660_NAc7_3580", "Br6660_NAc8_4580", "Br6660_NAc9_5080", "Br6660_Nac10_4080", "Br6660_Nac11_5580", 
-                   "Br6436_Nac1_650", "Br6436_Nac2_1150", "Br6436_Nac3_1650", "Br6436_Nac_4_2150", "Br6436_Nac_5_2650", 
-                   "Br6436_Nac_6_3150", "Br6436_Nac_7_3660", "Br6436_Nac_8_4150", "Br6436_Nac_9_4650", "Br6436_Nac_10_5150")){
-  #rotate 90 degrees counter clockwise
-    rotate_coords <- cbind(x_centroid = -coords[,2],#new x
-                           y_centroid = coords[,1]) #new y
-    spatialCoords(spe) <- rotate_coords
- }
+  if(Sample %in% c("Br6660_NAc1_580", "Br6660_NAc3_1580", "Br6660_NAc4_2080", 
+                   "Br6660_NAc5_2580", "Br6660_NAc6_3080", "Br6660_NAc7_3580", 
+                   "Br6660_NAc8_4580", "Br6660_NAc9_5080", "Br6660_Nac10_4080", 
+                   "Br6660_Nac11_5580","Br6436_Nac1_650", "Br6436_Nac2_1150", 
+                   "Br6436_Nac3_1650", "Br6436_Nac_4_2150", "Br6436_Nac_5_2650", 
+                   "Br6436_Nac_6_3150", "Br6436_Nac_7_3660", "Br6436_Nac_8_4150", 
+                   "Br6436_Nac_9_4650", "Br6436_Nac_10_5150")){
+    #rotate 90 degrees COUNTER clockwise
+    #To do this, first find the center point
+    center_x <- mean(range(coords[,1])) 
+    center_y <- mean(range(coords[,2]))
+    
+    #Calculate distance of points from the origin. 
+    x0 <- coords[,1] - center_x
+    y0 <- coords[,2] - center_y
+    
+    #Apply the rotation by making x = -y and y = x
+    x_rot <- -y0
+    y_rot <- x0
+    
+    #Now add x0+x_rot and y0+y_rot to translate everything back to original space. 
+    x_final <- x_rot + center_x
+    y_final <- y_rot + center_y
+    
+    #Convert the coordinates
+    spatialCoords(spe) <- cbind(x_final,y_final)
+  }else{
+    if(Sample == "Br6436_Nac_11_5650"){
+      #rotate 90 degrees clockwise
+      #To do this, first find the center point
+      center_x <- mean(range(coords[,1])) 
+      center_y <- mean(range(coords[,2]))
+      
+      #Calculate distance of points from the origin. 
+      x0 <- coords[,1] - center_x
+      y0 <- coords[,2] - center_y
+      
+      #Apply the rotation by making x = -y and y = x
+      x_rot <- y0
+      y_rot <- -x0
+      
+      #Now add x0+x_rot and y0+y_rot to translate everything back to original space. 
+      x_final <- x_rot + center_x
+      y_final <- y_rot + center_y
+      
+      #Convert the coordinates
+      spatialCoords(spe) <- cbind(x_final,y_final)
+    }
+  }
   
   #Plot total_counts on top of the tissue to visualize rotation. 
   x <- escheR::make_escheR(spe) |>
     escheR::add_fill("total_counts")
   ggsave(plot = x,
          filename = here("plots","02_build_spe","Rotation_check",
-                                  paste0(Sample,"_post_rotation.png")),
+                         paste0(Sample,"_post_rotation.png")),
          height = 16, width = 18)
   
   
@@ -117,3 +158,30 @@ Sys.time()
 proc.time()
 options(width = 120)
 sessioninfo::session_info()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
