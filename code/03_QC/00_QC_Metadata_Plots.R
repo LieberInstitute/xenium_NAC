@@ -1,6 +1,6 @@
 #Goal: Plot metrics as violins + on top of tissue. 
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
-#module load conda_R/4.4.x
+#module load conda_R/4.5
 #code modified from https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/02_xenium_qc/00_plot_metrics_on_tissue.R
 
 library(SpatialExperiment)

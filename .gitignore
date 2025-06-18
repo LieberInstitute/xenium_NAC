@@ -18,3 +18,5 @@ processed-data/06_label_transfer/
 plots/02_build_spe/
 plots/06_label_transfer/
 processed-data/05_Clustering/Banksy_clusters.csv
+plots/03_qc/archive_R_4.4
+code/03_QC/logs/qc*

@@ -1,24 +1,29 @@
 #!/bin/bash
+#
+# run_all_qc.sh
+# Submit one SLURM job per sample in spe_raw.Rds
+#
 
-#SBATCH -p shared
-#SBATCH --job-name=01_qc
-#SBATCH --output=logs/01_qc.log
-#SBATCH --error=logs/01_qc.log 
+module load conda_R/4.5
+
+# pull the list of samples
+SAMPLES=( $( Rscript -e "
+  spe <- readRDS('../../processed-data/02_build_spe/SPEs/spe_raw.Rds');
+  cat(unique(as.character(spe\$Sample)), sep=' ')" ) )
+
+for samp in "${SAMPLES[@]}"; do
+  sbatch <<EOF
+#!/bin/bash
+#SBATCH --job-name=qc_${samp}
+#SBATCH --output=logs/qc_${samp}.out
+#SBATCH --error=logs/qc_${samp}.err
+#SBATCH --time=05:00:00
 #SBATCH --mem=50G
-#SBATCH --mail-type=END
-#SBATCH --mail-user=Robert.Phillips@libd.org
 
-echo "********* Job Starts *********"
-date
-echo "**** SLURM info ****"
-echo "User: ${USER}"
-echo "Job id: ${SLURM_JOB_ID}"
-echo "Job name: ${SLURM_JOB_NAME}"
-echo "Hostname: ${HOSTNAME}"
-echo "Task id: ${SLURM_ARRAY_TASK_ID}"
+module load conda_R/4.5
 
-module load conda_R/4.4.x
-Rscript 01_qc.R
-
-echo "********* Job Ends *********"
-date
+echo \"Starting QC for sample: ${samp} at \$(date)\"
+Rscript 01_qc.R "${samp}"
+echo \"Finished QC for sample: ${samp} at \$(date)\"
+EOF
+done

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #SBATCH -p shared
-#SBATCH --job-name=00_plot
-#SBATCH --output=logs/00_plot.log
-#SBATCH --error=logs/00_plot.log 
-#SBATCH --mem=25G
+#SBATCH --job-name=01_qc
+#SBATCH --output=logs/01_qc.log
+#SBATCH --error=logs/01_qc.log 
+#SBATCH --mem=50G
 #SBATCH --mail-type=END
 #SBATCH --mail-user=jyao37@jhmi.edu
 
@@ -17,8 +17,8 @@ echo "Job name: ${SLURM_JOB_NAME}"
 echo "Hostname: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-module load conda_R/4.5
-Rscript 00_QC_Metadata_Plots.R
+module load conda_R/4.4.x
+Rscript 01_qc_R_4.4.R
 
 echo "********* Job Ends *********"
 date
