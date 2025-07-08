@@ -6,7 +6,7 @@
 #SBATCH --error=logs/01_norm.log 
 #SBATCH --mem=20G
 #SBATCH --mail-type=END
-#SBATCH --mail-user=Robert.Phillips@libd.org
+#SBATCH --mail-user=jyao37@jhmi.edu
 
 echo "********* Job Starts *********"
 date
@@ -17,7 +17,7 @@ echo "Job name: ${SLURM_JOB_NAME}"
 echo "Hostname: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-module load conda_R/4.4.x
+module load conda_R/4.5
 Rscript 01_area_based_norm.R
 
 echo "********* Job Ends *********"

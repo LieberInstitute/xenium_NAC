@@ -35,7 +35,7 @@ nuc_area_hist <- ggplot(colData(spe),aes(x = nucleus_area.sf)) +
        title = "Nucleus area") +
   theme_bw() +
   theme(plot.title = element_text(hjust= 0.5))
-ggsave(plot = cell_area_hist,filename = here("plots","03_qc","nucleus_area_scaling_hist.pdf"))
+ggsave(plot = nuc_area_hist,filename = here("plots","03_qc","nucleus_area_scaling_hist.pdf"))
 
 #Lines 58-61 straight from: https://github.com/LieberInstitute/spatialAmygdala/blob/devel/code/Xenium/03_quality_control/01_perCellQC.R
 # normalize the counts by the nucleus and cell area scaling factors

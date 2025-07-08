@@ -277,6 +277,157 @@ ggsave(
 #Remove all of the low quality cells
 spe <- spe[,!spe$outliers]
 
+# Concert spe to sfe to use some of the colData  plotting functions
+library(Voyager)
+sfe <- toSpatialFeatureExperiment(spe)
+
+# Pull coldata columns that include percent counts mapping to negProbes/Codewords/unassigned/GEX
+cols_use <- names(colData(sfe))[str_detect(names(colData(sfe)), "_percent$")]
+cols_use
+
+#Let's make violin plots of the subsets by Sample
+for(i in cols_use){
+ print(i)
+ if(i == "subsets_GEX_percent"){
+   p_i <- plotColData(spe, 
+                      x = "Sample", 
+                      y = i,
+                      color_by = "Sample") +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1),
+           legend.position = "none")  +
+     stat_summary(fun = median, 
+                  fun.min = median, 
+                  fun.max = median,
+                  geom = "crossbar", 
+                  width = 0.3)
+   ggsave(filename = here("plots","03_qc",paste0(i,"_qc_violin_by_sample.png")),plot = p_i)
+ }else{
+   p_i <- plotColData(spe, 
+                      x = "Sample", 
+                      y = i,
+                     color_by = "Sample") +
+     scale_y_log10() +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1),
+           legend.position = "none")  +
+     stat_summary(fun = median, 
+                  fun.min = median, 
+                  fun.max = median,
+                  geom = "crossbar", 
+                  width = 0.3)
+   ggsave(filename = here("plots","03_qc",paste0(i,"_qc_violin_by_sample.png")),plot = p_i) 
+ }
+}
+
+# Several warnings generated above from cells that have 0 values for these QC measures. 
+
+# Do the same but for sum or the total of each count. 
+cols_use <- names(colData(sfe))[str_detect(names(colData(sfe)), "_sum$")]
+cols_use
+
+# Generate violins as above. 
+for(i in cols_use){
+ print(i)
+ if(i == "subsets_GEX_sum"){
+   p_i <- plotColData(spe, 
+                      x = "Sample", 
+                      y = i,
+                      color_by = "Sample") +
+     scale_y_log10() +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1),
+           legend.position = "none")  +
+     stat_summary(fun = median, 
+                  fun.min = median, 
+                  fun.max = median,
+                  geom = "crossbar", 
+                  width = 0.3)
+   ggsave(filename = here("plots","03_qc",paste0(i,"_qc_violin_by_sample.png")),plot = p_i)
+ }else{
+   p_i <- plotColData(spe, 
+                      x = "Sample", 
+                      y = i,
+                      color_by = "Sample") +
+     theme(axis.text.x = element_text(angle = 45, hjust = 1),
+           legend.position = "none")  +
+     stat_summary(fun = median, 
+                 fun.min = median, 
+                  fun.max = median,
+                  geom = "crossbar", 
+                  width = 0.3)
+   ggsave(filename = here("plots","03_qc",paste0(i,"_qc_violin_by_sample.png")),plot = p_i)
+ }
+}
+
+#How do nuclei/cell area correlate with counts + detected? 
+#Nuc area by UMIs
+png(here("plots","03_qc","Nucleus_area_by_sum.png"),height = 1000, width = 1000,res = 300)
+plotColData(spe,x = "nucleus_area", y = "sum")
+dev.off()
+
+#Nuc area by nGenes
+png(here("plots","03_qc","Nucleus_area_by_detected.png"),height = 1000, width = 1000,res = 300)
+plotColData(spe,x = "nucleus_area", y = "detected")
+dev.off()
+
+#Nuc area by total_counts
+png(here("plots","03_qc","Nucleus_area_by_totalcounts.png"),height = 1000, width = 1000,res = 300)
+plotColData(spe,x = "nucleus_area", y = "total_counts")
+dev.off()
+
+#Cell area by UMIs
+png(here("plots","03_qc","cell_area_by_sum.png"),height = 1000, width = 1000,res = 300)
+plotColData(spe,x = "cell_area", y = "sum")
+dev.off()
+
+#Cell area by nGenes
+png(here("plots","03_qc","cell_area_by_detected.png"),height = 1000, width = 1000,res = 300)
+plotColData(spe,x = "cell_area", y = "detected")
+dev.off()
+
+#Cell area by total_counts
+png(here("plots","03_qc","Cell_area_by_totalcounts.png"),height = 1000, width = 1000,res = 300)
+plotColData(spe,x = "cell_area", y = "total_counts")
+dev.off()
+
+
+#Split these plots by sample using facet_wrap
+coldata_df <- as.data.frame(colData(spe))
+
+#Nuc area by sum
+png(here("plots","03_qc","Nucleus_area_by_sum_split.png"),height = 2500, width = 2500,res = 300)
+ggplot(coldata_df, aes(x = nucleus_area, y = sum)) +
+  geom_point(alpha = 0.5, 
+             size = 0.7) +
+  facet_wrap(~Sample, 
+             scales = "free")
+dev.off()
+
+#Nuc area by nGenes
+png(here("plots","03_qc","Nucleus_area_by_detected_split.png"),height = 2500, width = 2500,res = 300)
+ggplot(coldata_df, aes(x = nucleus_area, y = detected)) +
+  geom_point(alpha = 0.5, 
+             size = 0.7) +
+  facet_wrap(~Sample, 
+             scales = "free")
+dev.off()
+
+#Cell area by sum
+png(here("plots","03_qc","cell_area_by_sum_split.png"),height = 2500, width = 2500,res = 300)
+ggplot(coldata_df, aes(x = cell_area, y = sum)) +
+  geom_point(alpha = 0.5, 
+             size = 0.7) +
+  facet_wrap(~Sample, 
+             scales = "free")
+dev.off()
+
+#Nuc area by nGenes
+png(here("plots","03_qc","cell_area_by_detected_split.png"),height = 2500, width = 2500,res = 300)
+ggplot(coldata_df, aes(x = cell_area, y = detected)) +
+  geom_point(alpha = 0.5, 
+             size = 0.7) +
+  facet_wrap(~Sample, 
+             scales = "free")
+dev.off()
+
 #Save cleaned SPE
 message(paste0("Saving cleaned SPE object - ",Sys.time()))
 saveRDS(spe,here("processed-data","02_build_spe","SPEs","spe_clean.Rds"))
