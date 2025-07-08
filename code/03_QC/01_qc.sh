@@ -14,11 +14,13 @@ SAMPLES=( $( Rscript -e "
 for samp in "${SAMPLES[@]}"; do
   sbatch <<EOF
 #!/bin/bash
+#SBATCH -p shared
 #SBATCH --job-name=qc_${samp}
 #SBATCH --output=logs/qc_${samp}.out
 #SBATCH --error=logs/qc_${samp}.err
 #SBATCH --time=05:00:00
 #SBATCH --mem=50G
+
 
 module load conda_R/4.5
 

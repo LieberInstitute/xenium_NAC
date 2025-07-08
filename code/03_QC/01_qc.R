@@ -26,16 +26,31 @@ library(scran)
 library(dplyr)
 library(here)
 library(SpotSweeper)
+library(sessioninfo)
 
   
 #Read in the RDS file from 01_build_spe. 
 spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_raw.Rds"))
+# spe_highneg <- spe[, !is.na(spe$subsets_any_neg_percent) & spe$subsets_any_neg_percent >= 25 ] # 365
+# table(spe_highneg$sum)
+# #  1   2   3   4   5   6   7   8 
+# # 41  73  85 147   4   7   5   3 
+# table(spe_highneg$subsets_any_neg_percent)
+
+#               25 28.5714285714286 33.3333333333333               40 
+#              147                5               92                3 
+#               50               60              100 
+#               76                1               41 
+
+# spe_lowcount <- spe[, spe$sum <= 2] # 47855
+# table(spe_lowcount$sum)
+# #    0     1     2 
+# # 20395 13375 14085 
+
 spe_sub <- spe[, spe$Sample == samp]
-# spe
 
 #Make the sample column a factor
 spe_sub$Sample <- factor(x = spe_sub$Sample, levels = unique(spe_sub$Sample))
-# levels(spe_sub$Sample)
 
 #Find genes for scuttle subsets 
 is_neg <- stringr::str_detect(rownames(spe_sub), "^NegControlProbe")
@@ -52,9 +67,7 @@ is_GEX <- rowData(spe_sub)$Type == "Gene Expression" #This will help identify QC
 # codewords" 
 #and
 # "By definition, a call made to negative control codeword is an error"
-
 #Unassigned probes help measure noise and off-target activity because they do not match any gene codewords
-
 #Negative control probes are sequences that should not bind anything and therefore measure false positive rates and specificity
 
 #Add QC metrics 
@@ -65,105 +78,54 @@ spe_sub <- scuttle::addPerCellQCMetrics(spe_sub, subsets = list(negProbe = is_ne
                                                         GEX = is_GEX))
 
 spe_sub$exclude_low_lib  <- colSums(counts(spe_sub)) == 0
-spe_sub$exclude_all_neg  <- spe_sub$subsets_any_neg_percent == 100
+# There are NAs in the 'subsets_any_neg_percent' because of 0 counts.
+spe_sub$exclude_any_neg  <- spe_sub$subsets_any_neg_percent >= 25
+spe_sub$exclude_any_neg[is.na(spe_sub$exclude_any_neg)] <- FALSE
+
+# Cell area
+spe_sub$cell_area_outliers <- isOutlier(
+  spe_sub$cell_area,
+  log = FALSE,
+  nmads = 6,
+  type = "both"
+)
 
 spe_sub$global_outliers <- as.logical(spe_sub$exclude_low_lib) |
-                           as.logical(spe_sub$exclude_all_neg)
+                           as.logical(spe_sub$exclude_any_neg) | 
+                           as.logical(spe_sub$cell_area_outliers)
 
 # save outlier tables
-outdir <- here("processed-data","Xenium_QC","SpotSweeper_outliers")
+outdir <- here("processed-data","Xenium_QC","Sample_outliers")
 dir.create(outdir, recursive=TRUE, showWarnings=FALSE)
 
 cd <- as.data.frame(colData(spe_sub))
 df <- cd[ cd$global_outliers , , drop = FALSE ]
 write.csv(df, file = file.path(outdir, paste0(samp,"_global_outliers.csv")), row.names = TRUE)
 
-
-# Remove cells with extremely low library size
-n0 <- ncol(spe_sub)
-spe_sub <- spe_sub[, colSums(counts(spe_sub)) > 0]
-n1 <- ncol(spe_sub)
-message(sprintf("Dropped %d cells with extremely low library size (from %d down to %d)", 
-                n0 - n1, n0, n1))
-
-
-#There are some cells within this object in which 100% of the reads are negative controls - Remove them
-spe_sub <- spe_sub[,spe_sub$subsets_any_neg_percent < 100]
-n2 <- ncol(spe_sub)
-message(sprintf("Dropped %d cells with 100%% negative control reads (from %d down to %d)", 
-                n1 - n2, n1, n2))
-
-colnames(colData(spe_sub))
-
-
-# subset to this sample
-message("Processing sample: ", samp, " (n cells = ", ncol(spe_sub), ")")
-
-# compute local outliers on library size within this sample
-spe_sub <- SpotSweeper::localOutliers(
-  spe_sub,
-  metric    = "sum",
-  direction = "lower",
-  log       = TRUE,
-  cutoff    = 3
-)
-# compute local outliers on any_neg within this sample
-spe_sub <- SpotSweeper::localOutliers(
-  spe_sub,
-  metric    = "subsets_any_neg_percent",
-  direction = "higher",
-  log       = FALSE,
-  cutoff    = 3
-)
-# compute local outliers on cell area within this sample
-spe_sub <- SpotSweeper::localOutliers(
-  spe_sub,
-  metric    = "cell_area",
-  direction = "both",
-  log       = FALSE,
-  cutoff    = 3
-)
-# compute local outliers on detected genes within this sample
-spe_sub <- SpotSweeper::localOutliers(
-  spe_sub,
-  metric    = "detected",
-  direction = "lower",
-  log       = TRUE,
-  cutoff    = 3
-)
-
-spe_sub$local_outliers <- as.logical(spe_sub$sum_outliers) |
-                          as.logical(spe_sub$subsets_any_neg_percent_outliers) |
-                          as.logical(spe_sub$cell_area_outliers) |
-                          as.logical(spe_sub$detected_outliers)
-
-cd <- as.data.frame(colData(spe_sub))
-df <- cd[ cd$local_outliers , , drop = FALSE ]
-write.csv(df, file = file.path(outdir, paste0(samp,"_local_outliers.csv")), row.names = TRUE)
-
 # plot & save
-plotdir <- here("plots","03_qc", "SpotSweeper_outliers")
+plotdir <- here("plots","03_qc", "Sample_outliers")
 dir.create(plotdir, recursive=TRUE, showWarnings=FALSE)
 
 p1 <- SpotSweeper::plotQCmetrics(
       spe_sub, 
-      metric     = "sum_log", 
-      outliers   = "sum_outliers",
+      metric     = "sum", 
+      outliers   = "exclude_low_lib",
       point_size = 0.5,
-      stroke     = 0.5) +
-      ggtitle(paste0("Library size outliers: ", samp))
-ggsave(file.path(plotdir, paste0(samp, "_library_size_outliers.png")),
+      stroke     = 0.5,
+      colors     = c("black","white")) +
+      ggtitle(paste0("Global low lib outliers: ", samp))
+ggsave(file.path(plotdir, paste0(samp, "_global_library_size_outliers.png")),
        p1, width=5, height=5, dpi=300)
 
 p2 <- SpotSweeper::plotQCmetrics(
       spe_sub, 
-      metric     = "subsets_any_neg_percent",
-      outliers   = "subsets_any_neg_percent_outliers",
+      metric     = "subsets_any_neg_percent", 
+      outliers   = "exclude_any_neg",
       point_size = 0.5,
       stroke     = 0.5,
       colors     = c("black","white")) +
-      ggtitle(paste0("Any neg outliers: ", samp))
-ggsave(file.path(plotdir, paste0(samp, "_any_neg_percent_outliers.png")),
+      ggtitle(paste0("Global any neg outliers: ", samp))
+ggsave(file.path(plotdir, paste0(samp, "_global_any_neg_percent_outliers.png")),
        p2, width=5, height=5, dpi=300)
 
 p3 <- SpotSweeper::plotQCmetrics(
@@ -174,32 +136,52 @@ p3 <- SpotSweeper::plotQCmetrics(
       stroke     = 0.5,
       colors     = c("white","black")) +
       ggtitle(paste0("Cell area outliers: ", samp))
-ggsave(file.path(plotdir, paste0(samp, "_cell_area_outliers.png")),
+ggsave(file.path(plotdir, paste0(samp, "_global_cell_area_outliers.png")),
        p3, width=5, height=5, dpi=300)
 
-p4 <- SpotSweeper::plotQCmetrics(
+# Remove cells with extremely low library size
+# There are some cells within this object in which a high percentage of the reads are negative controls - Remove them
+spe_sub <- spe_sub[, !spe_sub$global_outliers]
+
+
+# subset to this sample
+message("Processing sample: ", samp, " (n cells = ", ncol(spe_sub), ")")
+
+##### Any neg 
+hasNeg <- spe_sub$subsets_any_neg_percent > 0
+spe_nz <- spe_sub[, hasNeg]
+
+spe_nz <- localOutliers(
+  spe_nz,
+  metric      = "subsets_any_neg_percent",
+  direction   = "higher",
+  log         = FALSE,
+  n_neighbors = 50,
+  cutoff      = 6
+)
+
+spe_sub$subsets_any_neg_percent_outliers <- FALSE
+pos_in_sub <- match(colnames(spe_nz), colnames(spe_sub))
+spe_sub$subsets_any_neg_percent_outliers[pos_in_sub] <- spe_nz$subsets_any_neg_percent_outliers
+
+p3 <- SpotSweeper::plotQCmetrics(
       spe_sub, 
-      metric     = "detected",
-      outliers   = "detected_outliers",
+      metric     = "subsets_any_neg_percent",
+      outliers   = "subsets_any_neg_percent_outliers",
       point_size = 0.5,
       stroke     = 0.5,
-      colors     = c("white","black")) +
-      ggtitle(paste0("Detected genes outliers: ", samp))
-ggsave(file.path(plotdir, paste0(samp, "_detected_genes_outliers.png")),
-       p4, width=5, height=5, dpi=300)
+      colors     = c("black","white")) +
+      ggtitle(paste0("Any neg outliers: ", samp))
+ggsave(file.path(plotdir, paste0(samp, "_local_any_neg_percent_outliers.png")),
+       p3, width=5, height=5, dpi=300)
 
-p5 <- SpotSweeper::plotQCmetrics(
-      spe_sub, 
-      metric     = "sum_log", 
-      outliers   = "local_outliers",
-      point_size = 0.5,
-      stroke     = 0.5) +
-      ggtitle(paste0("Local outliers: ", samp))
-ggsave(file.path(plotdir, paste0(samp, "_local_outliers.png")),
-       p5, width=5, height=5, dpi=300)
+spe_sub$local_outliers <- as.logical(spe_sub$subsets_any_neg_percent_outliers) 
+
+cd <- as.data.frame(colData(spe_sub))
+df <- cd[ cd$local_outliers , , drop = FALSE ]
+write.csv(df, file = file.path(outdir, paste0(samp,"_local_outliers.csv")), row.names = TRUE)
 
 # reproducibility
 message("Session info for ", samp,":")
 print(session_info())
-
 
