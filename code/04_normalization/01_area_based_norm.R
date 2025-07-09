@@ -1,6 +1,6 @@
 #Goal: Calculate size factors based on nucleus and cell area
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
-#module load conda_R/4.4.x
+#module load conda_R/4.5
 #Code modified from: 
   #https://github.com/LieberInstitute/spatialAmygdala/blob/devel/code/Xenium/03_quality_control/01_perCellQC.R
   #https://github.com/LylaAtta123/normalization-analyses/blob/main/R/xenium.ipynb

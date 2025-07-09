@@ -1,12 +1,13 @@
 ********* Job Starts *********
-Mon May 12 09:19:32 AM EDT 2025
+Tue Jul  8 04:42:24 AM EDT 2025
 **** SLURM info ****
-User: rphillip
-Job id: 16564693
+User: jyao
+Job id: 19734701
 Job name: Banksy
-Hostname: compute-122
+Hostname: compute-169
 Task id: 
-Loading conda_R/4.4.x
+Unloading conda_R/4.5
+Loading conda_R/4.5
 Loading required package: SingleCellExperiment
 Loading required package: SummarizedExperiment
 Loading required package: MatrixGenerics
@@ -35,6 +36,15 @@ The following objects are masked from ‘package:matrixStats’:
 Loading required package: GenomicRanges
 Loading required package: stats4
 Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
 
 Attaching package: ‘BiocGenerics’
 
@@ -46,10 +56,10 @@ The following objects are masked from ‘package:base’:
 
     anyDuplicated, aperm, append, as.data.frame, basename, cbind,
     colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
-    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
-    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
-    Position, rank, rbind, Reduce, rownames, sapply, saveRDS, setdiff,
-    table, tapply, union, unique, unsplit, which.max, which.min
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
 
 Loading required package: S4Vectors
 
@@ -85,194 +95,150 @@ The following objects are masked from ‘package:matrixStats’:
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 class: SpatialExperiment 
-dim: 541 4780893 
+dim: 541 4884175 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
   DeprecatedCodeword_0393
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(4780893): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
-colData names(56): Sample Barcode ... cell_area.sf nucleus_area.sf
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
-spatialCoords names(2) : x_centroid y_centroid
+spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 class: SpatialExperiment 
-dim: 366 4780893 
+dim: 366 4884175 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(4780893): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
-colData names(56): Sample Barcode ... cell_area.sf nucleus_area.sf
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
-spatialCoords names(2) : x_centroid y_centroid
+spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
-Running computeBanksy - 2025-05-12 09:22:39.037967
+Running computeBanksy - 2025-07-08 04:45:01.582229
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
-Computing harmonic m = 0
-Using 15 neighbors
 Done
-Finished computeBanksy - 2025-05-12 09:36:17.536448
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Finished computeBanksy - 2025-07-08 04:54:15.646594
              used    (Mb)  gc trigger     (Mb)    max used    (Mb)
-Ncells   16111326   860.5    30741015   1641.8    30741015  1641.8
-Vcells 5355447563 40858.9 13151498818 100338.0 10959515682 83614.5
-Running PCA - 2025-05-12 09:37:08.369805
+Ncells   16650211   889.3    28336552   1513.4    28336552  1513.4
+Vcells 5303946154 40465.9 13805973074 105331.3 11504910895 87775.6
+Running PCA - 2025-07-08 04:54:59.250913
 Scaling nucleus_normcounts
 Group: Br6660_NAc1_580
 Group: Br6660_NAc2_1090
@@ -322,113 +288,9 @@ Group: Br6436_Nac_11_5650
 Using seed=1000
 Warning message:
 In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 13.0 GiB
-Finished PCA - 2025-05-12 09:54:20.926842
-Running UMAP - 2025-05-12 09:54:20.927394
+  sparse->dense coercion: allocating vector of size 13.3 GiB
+Finished PCA - 2025-07-08 05:06:27.534669
+Running UMAP - 2025-07-08 05:06:27.534971
 Using seed=1000
-Finished UMAP - 2025-05-12 13:19:57.575629
-Running Banksy clustering - 2025-05-12 13:19:57.583808
-Using seed=1000
-Finished Banksy clustering - 2025-05-15 20:34:08.969796
-     [,1] [,2]               
-[1,] "6"  "Br6660_NAc1_580_1"
-[2,] "6"  "Br6660_NAc1_580_2"
-[3,] "6"  "Br6660_NAc1_580_3"
-[4,] "6"  "Br6660_NAc1_580_4"
-[5,] "6"  "Br6660_NAc1_580_5"
-[6,] "6"  "Br6660_NAc1_580_6"
-[1] "Reproducibility information:"
-[1] "2025-05-15 20:34:17 EDT"
-      user     system    elapsed 
-290243.565   8797.916 299683.721 
-─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
- setting  value
- version  R version 4.4.3 Patched (2025-02-28 r88197)
- os       Rocky Linux 9.4 (Blue Onyx)
- system   x86_64, linux-gnu
- ui       X11
- language (EN)
- collate  en_US.UTF-8
- ctype    en_US.UTF-8
- tz       US/Eastern
- date     2025-05-15
- pandoc   3.2 @ /jhpce/shared/community/core/conda_R/4.4.x/bin/pandoc
- quarto   NA
-
-─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
- ! package              * version date (UTC) lib source
-   abind                  1.4-8   2024-09-12 [2] CRAN (R 4.4.1)
-   aricode                1.0.3   2023-10-20 [1] CRAN (R 4.4.3)
-   Banksy               * 1.2.0   2024-10-29 [1] Bioconductor 3.20 (R 4.4.3)
-   Biobase              * 2.66.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   BiocGenerics         * 0.52.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   cli                    3.6.5   2025-04-23 [2] CRAN (R 4.4.3)
-   codetools              0.2-20  2024-03-31 [3] CRAN (R 4.4.3)
-   crayon                 1.5.3   2024-06-20 [2] CRAN (R 4.4.1)
- V data.table             1.17.0  2025-05-12 [2] CRAN (R 4.4.3) (on disk 1.17.2)
-   dbscan                 1.2.2   2025-01-26 [1] CRAN (R 4.4.3)
-   DelayedArray           0.32.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   dichromat              2.0-0.1 2022-05-02 [2] CRAN (R 4.4.0)
-   dplyr                  1.1.4   2023-11-17 [2] CRAN (R 4.4.0)
-   escheR               * 1.6.0   2024-10-29 [1] Bioconductor 3.20 (R 4.4.3)
-   farver                 2.1.2   2024-05-13 [2] CRAN (R 4.4.0)
-   generics               0.1.4   2025-05-09 [2] CRAN (R 4.4.3)
-   GenomeInfoDb         * 1.42.3  2025-01-27 [2] Bioconductor 3.20 (R 4.4.2)
-   GenomeInfoDbData       1.2.13  2024-10-01 [2] Bioconductor
-   GenomicRanges        * 1.58.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   ggplot2              * 3.5.2   2025-04-09 [2] CRAN (R 4.4.3)
-   glue                   1.8.0   2024-09-30 [2] CRAN (R 4.4.1)
-   gtable                 0.3.6   2024-10-25 [2] CRAN (R 4.4.2)
-   here                 * 1.0.1   2020-12-13 [2] CRAN (R 4.4.0)
-   httr                   1.4.7   2023-08-15 [2] CRAN (R 4.4.0)
-   igraph                 2.1.4   2025-01-23 [2] CRAN (R 4.4.2)
-   IRanges              * 2.40.1  2024-12-05 [2] Bioconductor 3.20 (R 4.4.2)
-   irlba                  2.3.5.1 2022-10-03 [2] CRAN (R 4.4.0)
-   jsonlite               2.0.0   2025-03-27 [2] CRAN (R 4.4.3)
-   lattice                0.22-6  2024-03-20 [3] CRAN (R 4.4.3)
-   leidenAlg              1.1.5   2025-04-19 [1] CRAN (R 4.4.3)
-   lifecycle              1.0.4   2023-11-07 [2] CRAN (R 4.4.0)
-   magick                 2.8.6   2025-03-23 [2] CRAN (R 4.4.3)
-   magrittr               2.0.3   2022-03-30 [2] CRAN (R 4.4.0)
-   Matrix                 1.7-2   2025-01-23 [3] CRAN (R 4.4.3)
-   MatrixGenerics       * 1.18.1  2025-01-09 [2] Bioconductor 3.20 (R 4.4.2)
-   matrixStats          * 1.5.0   2025-01-07 [2] CRAN (R 4.4.2)
-   mclust                 6.1.1   2024-04-29 [2] CRAN (R 4.4.0)
-   pillar                 1.10.2  2025-04-05 [2] CRAN (R 4.4.3)
-   pkgconfig              2.0.3   2019-09-22 [2] CRAN (R 4.4.0)
-   R6                     2.6.1   2025-02-15 [2] CRAN (R 4.4.2)
-   RColorBrewer           1.1-3   2022-04-03 [2] CRAN (R 4.4.0)
-   Rcpp                   1.0.14  2025-01-12 [2] CRAN (R 4.4.2)
-   RcppAnnoy              0.0.22  2024-01-23 [2] CRAN (R 4.4.0)
-   RcppHungarian          0.3     2023-09-05 [1] CRAN (R 4.4.3)
-   rjson                  0.2.23  2024-09-16 [2] CRAN (R 4.4.1)
-   rlang                  1.1.6   2025-04-11 [2] CRAN (R 4.4.3)
-   rprojroot              2.0.4   2023-11-05 [2] CRAN (R 4.4.0)
-   S4Arrays               1.6.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   S4Vectors            * 0.44.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   scales                 1.4.0   2025-04-24 [2] CRAN (R 4.4.3)
-   sccore                 1.0.6   2025-04-13 [1] CRAN (R 4.4.3)
-   sessioninfo          * 1.2.3   2025-02-05 [2] CRAN (R 4.4.2)
-   SingleCellExperiment * 1.28.1  2024-11-10 [2] Bioconductor 3.20 (R 4.4.2)
-   SparseArray            1.6.2   2025-02-20 [2] Bioconductor 3.20 (R 4.4.3)
-   SpatialExperiment    * 1.16.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   SummarizedExperiment * 1.36.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   tibble                 3.2.1   2023-03-20 [2] CRAN (R 4.4.0)
-   tidyselect             1.2.1   2024-03-11 [2] CRAN (R 4.4.0)
-   UCSC.utils             1.2.0   2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   uwot                   0.2.3   2025-02-24 [2] CRAN (R 4.4.3)
-   vctrs                  0.6.5   2023-12-01 [2] CRAN (R 4.4.0)
-   withr                  3.0.2   2024-10-28 [2] CRAN (R 4.4.2)
-   XVector                0.46.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-   zlibbioc               1.52.0  2024-10-29 [2] Bioconductor 3.20 (R 4.4.2)
-
- [1] /users/rphillip/R/4.4.x
- [2] /jhpce/shared/community/core/conda_R/4.4.x/R/lib64/R/site-library
- [3] /jhpce/shared/community/core/conda_R/4.4.x/R/lib64/R/library
-
- * ── Packages attached to the search path.
- V ── Loaded and on-disk version mismatch.
-
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-********* Job Ends *********
-Thu May 15 08:34:23 PM EDT 2025
+Finished UMAP - 2025-07-08 06:56:52.408827
+Running Banksy clustering - 2025-07-08 06:56:52.425481

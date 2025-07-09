@@ -20,3 +20,6 @@ plots/06_label_transfer/
 processed-data/05_Clustering/Banksy_clusters.csv
 plots/03_qc/archive_R_4.4
 code/03_QC/logs/qc*
+processed-data/05_Clustering/Banksy_clusters_R_4.4.csv
+processed-data/05_Clustering/STAligner_initial_r0_mclust20.csv
+processed-data/05_Clustering/STAligner_initial_r15_mclust20.csv

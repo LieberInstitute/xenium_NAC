@@ -1,6 +1,6 @@
 #Goal: Run Banksy spatial clustering with default parameters
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
-# module load conda_R/4.4.x
+# module load conda_R/4.5
 #code modified from: 
   #https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/03_clustering/01_spatial_domains_banksy.R and
   #https://www.bioconductor.org/packages/release/bioc/vignettes/Banksy/inst/doc/multi-sample.html

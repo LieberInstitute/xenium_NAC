@@ -4,11 +4,11 @@
 #SBATCH --job-name=Banksy
 #SBATCH --output=logs/Banksy.log
 #SBATCH --error=logs/Banksy.log 
-#SBATCH --mem=250G
+#SBATCH --mem=350G
 #SBATCH --cpus-per-task=1
-#SBATCH --time=5-00:00:00
+#SBATCH --time=7-00:00:00
 #SBATCH --mail-type=END
-#SBATCH --mail-user=Robert.Phillips@libd.org
+#SBATCH --mail-user=jyao37@jhmi.edu
 
 echo "********* Job Starts *********"
 date
@@ -19,7 +19,7 @@ echo "Job name: ${SLURM_JOB_NAME}"
 echo "Hostname: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-module load conda_R/4.4.x
+module load conda_R/4.5
 Rscript Banksy_clustering.R
 
 echo "********* Job Ends *********"
