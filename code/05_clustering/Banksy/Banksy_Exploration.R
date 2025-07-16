@@ -12,19 +12,19 @@ spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_NormCounts.Rds")
 
 spe
 # class: SpatialExperiment 
-# dim: 541 2375058 
-# metadata(11): Samples Samples ... Samples Samples
+# dim: 541 4884175 
+# metadata(22): Samples Samples ... Samples Samples
 # assays(3): counts nucleus_normcounts cell_normcounts
 # rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
-# DeprecatedCodeword_0393
+#   DeprecatedCodeword_0393
 # rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-# colnames(2375058): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
-# Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
-# colData names(56): Sample Barcode ... cell_area.sf nucleus_area.sf
+# colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+#   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
+# colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 # reducedDimNames(0):
-#   mainExpName: NULL
+# mainExpName: NULL
 # altExpNames(0):
-#   spatialCoords names(2) : x_centroid y_centroid
+# spatialCoords names(2) : x_final y_final
 # imgData names(1): sample_id
 
 #Subset for only probes
@@ -33,36 +33,29 @@ spe <- spe[gene_expression_idx,]
 
 spe
 # class: SpatialExperiment 
-# dim: 366 2375058 
-# metadata(11): Samples Samples ... Samples Samples
+# dim: 366 4884175 
+# metadata(22): Samples Samples ... Samples Samples
 # assays(3): counts nucleus_normcounts cell_normcounts
 # rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 # rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-# colnames(2375058): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
-# Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
-# colData names(56): Sample Barcode ... cell_area.sf nucleus_area.sf
+# colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+#   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
+# colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 # reducedDimNames(0):
-#   mainExpName: NULL
+# mainExpName: NULL
 # altExpNames(0):
-#   spatialCoords names(2) : x_centroid y_centroid
+# spatialCoords names(2) : x_final y_final
 # imgData names(1): sample_id
 
 #Add Banksy clusters to the object. 
 Banksy_clusters <- read.csv(here("processed-data","05_Clustering","Banksy_clusters.csv"))
 head(Banksy_clusters)
-# X V1                V2
-# 1 1  5 Br6660_NAc1_580_1
-# 2 2  5 Br6660_NAc1_580_2
-# 3 3  5 Br6660_NAc1_580_3
-# 4 4  5 Br6660_NAc1_580_4
-# 5 5  5 Br6660_NAc1_580_5
-# 6 6  5 Br6660_NAc1_580_6
 
 table(Banksy_clusters$V1)
-# 1      2      3      4      5      6      7      8      9     10     11 
-# 564628 417918 323302 317806 237014 169281  89446  60439  55478  51784  37109 
-# 12     13 
-# 31097  19756 
+      1       2       3       4       5       6       7       8       9      10 
+1245255  645179  624322  616903  345006  327998  295049  219861  192707  115127 
+     11      12      13      14      15 
+ 114991   60695   56504   24434     144 
 
 #X is just rownames, remove it. 
 Banksy_clusters <- Banksy_clusters[,-1]
