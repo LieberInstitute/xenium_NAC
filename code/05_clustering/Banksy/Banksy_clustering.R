@@ -2,8 +2,8 @@
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
 # module load conda_R/4.5
 #code modified from: 
-  #https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/03_clustering/01_spatial_domains_banksy.R and
-  #https://www.bioconductor.org/packages/release/bioc/vignettes/Banksy/inst/doc/multi-sample.html
+#https://github.com/LieberInstitute/spatialDLPFC_SCZ_XENIUM/blob/devel/code/analysis/03_clustering/01_spatial_domains_banksy.R and
+#https://www.bioconductor.org/packages/release/bioc/vignettes/Banksy/inst/doc/multi-sample.html
 library(SpatialExperiment)
 library(sessioninfo)
 library(ggplot2)
@@ -59,6 +59,17 @@ message(paste0("Finished PCA - ", Sys.time()))
 message(paste0("Running UMAP - ", Sys.time()))
 spe_joint <- runBanksyUMAP(spe_joint, use_agf = use_agf, lambda = lambda, seed = 1000)
 message(paste0("Finished UMAP - ", Sys.time()))
+
+#Save the Banksy matrix, PCA, and UMAP
+#Banksy mat
+message(paste0("Saving matrix - ", Sys.time()))
+saveRDS(object = assay(spe_joint,"H0"),file = here("processed-data","05_Clustering","Banksy_matrix.Rds"))
+#Banksy PCA
+message(paste0("Saving PCA embedding - ", Sys.time()))
+saveRDS(object = reducedDim(spe_joint,"PCA_M0_lam0.8"),file = here("processed-data","05_Clustering","Banksy_PCA_Embedding.Rds"))
+#Banksy UMAP
+message(paste0("Saving UMAP embedding - ", Sys.time()))
+saveRDS(object = reducedDim(spe_joint,"UMAP_M0_lam0.8"),file = here("processed-data","05_Clustering","Banksy_UMAP_Embedding.Rds"))
 
 #Run Banksy leiden clustering
 message(paste0("Running Banksy clustering - ", Sys.time()))
