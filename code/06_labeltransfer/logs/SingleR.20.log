@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Wed May 14 03:26:31 PM EDT 2025
+Tue Aug 12 04:29:22 PM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 16596821
+Job id: 21312419
 Job name: 01_SingleR
-Hostname: compute-099
+Hostname: compute-121
 Task id: 20
 Loading conda_R/4.4.x
 Loading required package: SummarizedExperiment
@@ -85,19 +85,19 @@ The following objects are masked from ‘package:matrixStats’:
 Loading required package: scuttle
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 class: SpatialExperiment 
-dim: 541 4780893 
+dim: 541 4884175 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
   DeprecatedCodeword_0393
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(4780893): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
-colData names(56): Sample Barcode ... cell_area.sf nucleus_area.sf
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
-spatialCoords names(2) : x_centroid y_centroid
+spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 class: SingleCellExperiment 
 dim: 36601 103785 
@@ -113,7 +113,10 @@ reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
 mainExpName: NULL
 altExpNames(0):
 Running Sample: Br6436_Nac_9_4650 (20/22)
-Number of cells in this sample:137788
+Number of cells in this sample:144701
+Warning message:
+In dir.create(dir) :
+  '/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/06_label_transfer/Br6436_Nac_9_4650' already exists
 [1]    366 103785
 Warning messages:
 1: did not converge in 10 iterations 
@@ -121,6 +124,7 @@ Warning messages:
 3: did not converge in 10 iterations 
 4: did not converge in 10 iterations 
 5: did not converge in 10 iterations 
+6: did not converge in 10 iterations 
 [1] "Oligo"
 [1] "Endothelial"
 [1] "Astrocyte_B"
@@ -128,26 +132,26 @@ Warning messages:
 [1] "Inh_B"
 [1] "OPC"
 [1] "Microglia"
-[1] "Inh_C"
-[1] "Inh_E"
-[1] "Inh_F"
-[1] "Ependymal"
-[1] "Inh_D"
 [1] "Excitatory"
+[1] "Inh_C"
+[1] "Inh_F"
+[1] "Inh_E"
+[1] "Ependymal"
+[1] "DRD1_MSN_C"
+[1] "Inh_D"
 [1] "Inh_A"
 [1] "DRD1_MSN_D"
 [1] "DRD2_MSN_B"
 [1] "DRD1_MSN_B"
-[1] "DRD1_MSN_C"
 [1] "DRD2_MSN_A"
 [1] "DRD1_MSN_A"
 [1] "Reproducibility information:"
-[1] "2025-05-14 16:06:11 EDT"
-    user   system  elapsed 
- 605.361   44.664 2379.135 
+[1] "2025-08-12 16:35:41 EDT"
+   user  system elapsed 
+357.103  12.495 377.898 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.4.3 Patched (2025-02-28 r88200)
+ version  R version 4.4.3 Patched (2025-02-28 r88218)
  os       Rocky Linux 9.4 (Blue Onyx)
  system   x86_64, linux-gnu
  ui       X11
@@ -155,7 +159,7 @@ Warning messages:
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-05-14
+ date     2025-08-12
  pandoc   3.2 @ /jhpce/shared/community/core/conda_R/4.4.x/bin/pandoc
  quarto   NA
 
@@ -254,4 +258,4 @@ Warning messages:
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Wed May 14 04:06:13 PM EDT 2025
+Tue Aug 12 04:35:41 PM EDT 2025
