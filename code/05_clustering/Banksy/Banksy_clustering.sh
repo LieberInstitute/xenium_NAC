@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=7-00:00:00
 #SBATCH --mail-type=END
-#SBATCH --mail-user=jyao37@jhmi.edu
+#SBATCH --mail-user=robert.phillips@libd.org
 
 echo "********* Job Starts *********"
 date

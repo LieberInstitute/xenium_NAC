@@ -17,6 +17,13 @@ spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_NormCounts.Rds")
 spe
 
 
+#Keep only brain Br6660
+spe <- spe[,spe$Donor == "Br6660"]
+
+spe
+
+unique(spe$Donor)
+
 #Subset for only probes
 gene_expression_idx <- which(rowData(spe)$Type == "Gene Expression")
 spe <- spe[gene_expression_idx,]
