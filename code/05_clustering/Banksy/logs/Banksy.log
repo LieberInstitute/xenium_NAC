@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Thu Jul 31 03:39:12 PM EDT 2025
+Thu Aug 28 09:43:22 AM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 21152596
+Job id: 21683659
 Job name: Banksy
-Hostname: compute-154
+Hostname: compute-169
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -109,20 +109,36 @@ altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 class: SpatialExperiment 
-dim: 366 4884175 
+dim: 541 2444243 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
-rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
+rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
+  DeprecatedCodeword_0393
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
-  Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
+colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+  Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
-Running computeBanksy - 2025-07-31 15:41:46.422878
+[1] "Br6660"
+class: SpatialExperiment 
+dim: 366 2444243 
+metadata(22): Samples Samples ... Samples Samples
+assays(3): counts nucleus_normcounts cell_normcounts
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
+rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
+colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+  Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : x_final y_final
+imgData names(1): sample_id
+Running computeBanksy - 2025-08-28 09:45:48.259072
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=15
@@ -178,66 +194,11 @@ Spatial mode is kNN_median
 Parameters: k_geom=15
 Done
 Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=15
-Done
-Done
-Finished computeBanksy - 2025-07-31 15:50:41.693693
-             used    (Mb)  gc trigger     (Mb)    max used    (Mb)
-Ncells   16650210   889.3    28336527   1513.4    28336527  1513.4
-Vcells 5303946157 40465.9 13805973077 105331.3 11504910898 87775.6
-Running PCA - 2025-07-31 15:52:09.890615
+Finished computeBanksy - 2025-08-28 09:50:22.778396
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   11772452   628.8   28336541  1513.4   28336541  1513.4
+Vcells 2846370027 21716.1 7369390901 56224.0 6141092418 46852.9
+Running PCA - 2025-08-28 09:50:43.762646
 Scaling nucleus_normcounts
 Group: Br6660_NAc1_580
 Group: Br6660_NAc2_1090
@@ -250,17 +211,6 @@ Group: Br6660_NAc8_4580
 Group: Br6660_NAc9_5080
 Group: Br6660_Nac10_4080
 Group: Br6660_Nac11_5580
-Group: Br6436_Nac1_650
-Group: Br6436_Nac2_1150
-Group: Br6436_Nac3_1650
-Group: Br6436_Nac_4_2150
-Group: Br6436_Nac_5_2650
-Group: Br6436_Nac_6_3150
-Group: Br6436_Nac_7_3660
-Group: Br6436_Nac_8_4150
-Group: Br6436_Nac_9_4650
-Group: Br6436_Nac_10_5150
-Group: Br6436_Nac_11_5650
 Scaling harmonic m = 0
 Group: Br6660_NAc1_580
 Group: Br6660_NAc2_1090
@@ -273,42 +223,31 @@ Group: Br6660_NAc8_4580
 Group: Br6660_NAc9_5080
 Group: Br6660_Nac10_4080
 Group: Br6660_Nac11_5580
-Group: Br6436_Nac1_650
-Group: Br6436_Nac2_1150
-Group: Br6436_Nac3_1650
-Group: Br6436_Nac_4_2150
-Group: Br6436_Nac_5_2650
-Group: Br6436_Nac_6_3150
-Group: Br6436_Nac_7_3660
-Group: Br6436_Nac_8_4150
-Group: Br6436_Nac_9_4650
-Group: Br6436_Nac_10_5150
-Group: Br6436_Nac_11_5650
 Using seed=1000
 Warning message:
 In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 13.3 GiB
-Finished PCA - 2025-07-31 16:08:20.247409
-Running UMAP - 2025-07-31 16:08:20.247796
+  sparse->dense coercion: allocating vector of size 6.7 GiB
+Finished PCA - 2025-08-28 09:58:06.468673
+Running UMAP - 2025-08-28 09:58:06.469118
 Using seed=1000
-Finished UMAP - 2025-07-31 18:12:14.846084
-Saving matrix - 2025-07-31 18:12:14.853699
-Saving PCA embedding - 2025-07-31 18:19:20.555715
-Saving UMAP embedding - 2025-07-31 18:19:52.92352
-Running Banksy clustering - 2025-07-31 18:20:02.587746
+Finished UMAP - 2025-08-28 11:10:51.267163
+Saving matrix - 2025-08-28 11:10:51.274564
+Saving PCA embedding - 2025-08-28 11:14:06.670835
+Saving UMAP embedding - 2025-08-28 11:14:22.434605
+Running Banksy clustering - 2025-08-28 11:14:27.255023
 Using seed=1000
-Finished Banksy clustering - 2025-08-02 03:56:26.080001
+Finished Banksy clustering - 2025-08-29 06:21:28.002565
      [,1] [,2]               
-[1,] "6"  "Br6660_NAc1_580_1"
-[2,] "6"  "Br6660_NAc1_580_2"
-[3,] "6"  "Br6660_NAc1_580_3"
-[4,] "6"  "Br6660_NAc1_580_4"
-[5,] "6"  "Br6660_NAc1_580_5"
-[6,] "6"  "Br6660_NAc1_580_6"
+[1,] "5"  "Br6660_NAc1_580_1"
+[2,] "5"  "Br6660_NAc1_580_2"
+[3,] "5"  "Br6660_NAc1_580_3"
+[4,] "5"  "Br6660_NAc1_580_4"
+[5,] "5"  "Br6660_NAc1_580_5"
+[6,] "5"  "Br6660_NAc1_580_6"
 [1] "Reproducibility information:"
-[1] "2025-08-02 03:56:38 EDT"
-      user     system    elapsed 
-129693.649   2175.069 130645.769 
+[1] "2025-08-29 06:21:30 EDT"
+     user    system   elapsed 
+74386.037   558.249 74287.319 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -319,7 +258,7 @@ Finished Banksy clustering - 2025-08-02 03:56:26.080001
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-08-02
+ date     2025-08-29
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -396,4 +335,4 @@ Finished Banksy clustering - 2025-08-02 03:56:26.080001
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Sat Aug  2 03:56:43 AM EDT 2025
+Fri Aug 29 06:21:31 AM EDT 2025
