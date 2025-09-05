@@ -32,7 +32,7 @@ spe
 
 #######Banksy parameters
 lambda <- 0.8 #Per Banksy reference manual, "0.8 incorporates more spatial neighborhood" and is good for spatial domains
-res <- 0.5 
+res <- 1.0
 compute_agf <- FALSE #Run simpler version of Banksy 
 use_agf <- FALSE 
 k_geom <- 15 #Banksy reference manual suggest that values from 15-30 work well. 
@@ -78,9 +78,9 @@ saveRDS(object = reducedDim(spe_joint,"PCA_M0_lam0.8"),file = here("processed-da
 message(paste0("Saving UMAP embedding - ", Sys.time()))
 saveRDS(object = reducedDim(spe_joint,"UMAP_M0_lam0.8"),file = here("processed-data","05_Clustering","Banksy_UMAP_Embedding.Rds"))
 
-#Run Banksy leiden clustering
+#Run Banksy louvain clustering
 message(paste0("Running Banksy clustering - ", Sys.time()))
-spe_joint <- clusterBanksy(spe_joint, use_agf = use_agf, lambda = lambda, resolution = res, seed = 1000)
+spe_joint <- clusterBanksy(spe_joint, use_agf = use_agf, lambda = lambda, resolution = res, algo = "louvain",seed = 1000)
 message(paste0("Finished Banksy clustering - ", Sys.time()))
 
 
@@ -89,7 +89,7 @@ message(paste0("Finished Banksy clustering - ", Sys.time()))
 cluster_name <- colnames(colData(spe_joint))[grep('^clust_', colnames(colData(spe_joint)))]
 cluster_assign <- cbind(colData(spe_joint)[,cluster_name],rownames(colData(spe_joint)))
 head(cluster_assign)
-write.csv(cluster_assign,here("processed-data","05_Clustering","Banksy_clusters.csv"))
+write.csv(cluster_assign,here("processed-data","05_Clustering","Banksy_louvain_clusters.csv"))
 
 ###Reproduciblity
 print("Reproducibility information:")
