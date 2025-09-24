@@ -1,0 +1,249 @@
+********* Job Starts *********
+Tue Sep  9 05:34:12 PM EDT 2025
+**** SLURM info ****
+User: rphillip
+Job id: 22209237
+Job name: banksy_grid
+Hostname: compute-158
+Task id: 6
+Lambda: 
+k_geom: 15
+Loading conda_R/4.5
+Loading required package: SingleCellExperiment
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Loading required package: SparseArray
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:S4Vectors’:
+
+    expand
+
+Loading required package: S4Arrays
+Loading required package: abind
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+Running BANKSY with lambda= NA,kgeom=15 - 2025-09-09 17:34:19.258232
+class: SpatialExperiment 
+dim: 541 4884175 
+metadata(22): Samples Samples ... Samples Samples
+assays(3): counts nucleus_normcounts cell_normcounts
+rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
+  DeprecatedCodeword_0393
+rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
+colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+  Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : x_final y_final
+imgData names(1): sample_id
+class: SpatialExperiment 
+dim: 541 2444243 
+metadata(22): Samples Samples ... Samples Samples
+assays(3): counts nucleus_normcounts cell_normcounts
+rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
+  DeprecatedCodeword_0393
+rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
+colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+  Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : x_final y_final
+imgData names(1): sample_id
+[1] "Br6660"
+class: SpatialExperiment 
+dim: 366 2444243 
+metadata(22): Samples Samples ... Samples Samples
+assays(3): counts nucleus_normcounts cell_normcounts
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
+rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
+colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+  Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : x_final y_final
+imgData names(1): sample_id
+Running computeBanksy - 2025-09-09 17:37:16.498258
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=15
+Done
+Done
+Finished computeBanksy - 2025-09-09 17:40:39.782852
+             used    (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   12325121   658.3   27549501  1471.4   27549501  1471.4
+Vcells 2847374570 21723.8 7008910535 53473.8 5840692113 44561.0
+Running PCA - 2025-09-09 17:41:00.947929
+Error in checkBanksyPCA(as.list(environment())) : 
+  lambda should be a numeric vector with each entry in [0,1]
+Calls: runBanksyPCA -> checkBanksyPCA -> stopifnot
+Execution halted
+********* Job Ends *********
+Tue Sep  9 05:41:02 PM EDT 2025
