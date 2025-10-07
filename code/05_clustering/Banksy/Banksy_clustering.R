@@ -32,10 +32,10 @@ spe
 
 #######Banksy parameters
 lambda <- 0.8 #Per Banksy reference manual, "0.8 incorporates more spatial neighborhood" and is good for spatial domains
-res <- 1.0
-compute_agf <- FALSE #Run simpler version of Banksy 
-use_agf <- FALSE 
-k_geom <- 15 #Banksy reference manual suggest that values from 15-30 work well. 
+res <- 0.5
+compute_agf <- TRUE #Run simpler version of Banksy 
+use_agf <- TRUE
+k_geom <- 50 #Banksy reference manual suggest that values from 15-30 work well. 
 attr <- sprintf("clust_lam%s_k10_res%s",lambda, res)
 
 #split spe by sample
@@ -67,29 +67,47 @@ message(paste0("Running UMAP - ", Sys.time()))
 spe_joint <- runBanksyUMAP(spe_joint, use_agf = use_agf, lambda = lambda, seed = 1000)
 message(paste0("Finished UMAP - ", Sys.time()))
 
+
+
 #Save the Banksy matrix, PCA, and UMAP
 #Banksy mat
 message(paste0("Saving matrix - ", Sys.time()))
 saveRDS(object = assay(spe_joint,"H0"),file = here("processed-data","05_Clustering","Banksy_matrix.Rds"))
-#Banksy PCA
+
+#####Banksy PCA#########
 message(paste0("Saving PCA embedding - ", Sys.time()))
-saveRDS(object = reducedDim(spe_joint,"PCA_M0_lam0.8"),file = here("processed-data","05_Clustering","Banksy_PCA_Embedding.Rds"))
-#Banksy UMAP
+
+pca_names <- grep("pca", reducedDimNames(spe_joint), value = TRUE, ignore.case = TRUE)
+pca_names
+
+for(i in pca_names){
+ print(i)
+ saveRDS(object = reducedDim(spe_joint,i),file = here("processed-data","05_Clustering",paste0("PCA_Embedding",i,".Rds")))
+}
+
+
+#####Banksy UMAP#########
 message(paste0("Saving UMAP embedding - ", Sys.time()))
-saveRDS(object = reducedDim(spe_joint,"UMAP_M0_lam0.8"),file = here("processed-data","05_Clustering","Banksy_UMAP_Embedding.Rds"))
+
+umap_names <- grep("umap", reducedDimNames(spe_joint), value = TRUE, ignore.case = TRUE)
+umap_names
+
+for(i in umap_names){ 
+ print(i)
+ saveRDS(object = reducedDim(spe_joint,i),file = here("processed-data","05_Clustering",paste0("UMAP_Embedding",i,".Rds")))
+}
 
 #Run Banksy louvain clustering
 message(paste0("Running Banksy clustering - ", Sys.time()))
 spe_joint <- clusterBanksy(spe_joint, use_agf = use_agf, lambda = lambda, resolution = res, algo = "louvain",seed = 1000)
 message(paste0("Finished Banksy clustering - ", Sys.time()))
 
-
 #Save CSV of cluster assigments
 #Pull cluster name
 cluster_name <- colnames(colData(spe_joint))[grep('^clust_', colnames(colData(spe_joint)))]
 cluster_assign <- cbind(colData(spe_joint)[,cluster_name],rownames(colData(spe_joint)))
 head(cluster_assign)
-write.csv(cluster_assign,here("processed-data","05_Clustering","Banksy_louvain_clusters.csv"))
+write.csv(cluster_assign,here("processed-data","05_Clustering","Banksy_louvain_clusters_AGF_lambda0.8_res0.5_kgeom50.csv"))
 
 ###Reproduciblity
 print("Reproducibility information:")

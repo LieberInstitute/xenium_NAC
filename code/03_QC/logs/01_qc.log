@@ -8,3 +8,185 @@ Hostname: compute-120
 Task id: 
 Unloading conda_R/4.5
 Loading conda_R/4.5
+Loading required package: SingleCellExperiment
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ lubridate::%within%() masks IRanges::%within%()
+✖ dplyr::collapse()     masks IRanges::collapse()
+✖ dplyr::combine()      masks Biobase::combine(), BiocGenerics::combine()
+✖ dplyr::count()        masks matrixStats::count()
+✖ dplyr::desc()         masks IRanges::desc()
+✖ tidyr::expand()       masks S4Vectors::expand()
+✖ dplyr::filter()       masks stats::filter()
+✖ dplyr::first()        masks S4Vectors::first()
+✖ dplyr::lag()          masks stats::lag()
+✖ ggplot2::Position()   masks BiocGenerics::Position(), base::Position()
+✖ purrr::reduce()       masks GenomicRanges::reduce(), IRanges::reduce()
+✖ dplyr::rename()       masks S4Vectors::rename()
+✖ lubridate::second()   masks S4Vectors::second()
+✖ lubridate::second<-() masks S4Vectors::second<-()
+✖ dplyr::slice()        masks IRanges::slice()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+                    
+                      FALSE   TRUE
+  Br6660_NAc1_580    183841    135
+  Br6660_NAc2_1090   124017    843
+  Br6660_NAc3_1580   222137    564
+  Br6660_NAc4_2080   204313    228
+  Br6660_NAc5_2580   252283    497
+  Br6660_NAc6_3080   239048    850
+  Br6660_NAc7_3580   239650    999
+  Br6660_NAc8_4580   251441    468
+  Br6660_NAc9_5080   258430    620
+  Br6660_Nac10_4080  268492    518
+  Br6660_Nac11_5580  200623    388
+  Br6436_Nac1_650    298687    211
+  Br6436_Nac2_1150   241083    649
+  Br6436_Nac3_1650   261007      0
+  Br6436_Nac_4_2150  229932      0
+  Br6436_Nac_5_2650  210886      0
+  Br6436_Nac_6_3150  280422      0
+  Br6436_Nac_7_3660  278112    484
+  Br6436_Nac_8_4150  226608      0
+  Br6436_Nac_9_4650  145111      0
+  Br6436_Nac_10_5150 203527    182
+  Br6436_Nac_11_5650  67977    117
+                    
+                      FALSE   TRUE
+  Br6660_NAc1_580    183527    449
+  Br6660_NAc2_1090   123113   1747
+  Br6660_NAc3_1580   218733   3968
+  Br6660_NAc4_2080   203474   1067
+  Br6660_NAc5_2580   250676   2104
+  Br6660_NAc6_3080   236365   3533
+  Br6660_NAc7_3580   237414   3235
+  Br6660_NAc8_4580   250107   1802
+  Br6660_NAc9_5080   256988   2062
+  Br6660_Nac10_4080  266923   2087
+  Br6660_Nac11_5580  199780   1231
+  Br6436_Nac1_650    297194   1704
+  Br6436_Nac2_1150   237779   3953
+  Br6436_Nac3_1650   258766   2241
+  Br6436_Nac_4_2150  226735   3197
+  Br6436_Nac_5_2650  210886      0
+  Br6436_Nac_6_3150  280422      0
+  Br6436_Nac_7_3660  276291   2305
+  Br6436_Nac_8_4150  224800   1808
+  Br6436_Nac_9_4650  141505   3606
+  Br6436_Nac_10_5150 202810    899
+  Br6436_Nac_11_5650  67342    752
+                    
+                      FALSE   TRUE
+  Br6660_NAc1_580    183898     78
+  Br6660_NAc2_1090   124830     30
+  Br6660_NAc3_1580   222608     93
+  Br6660_NAc4_2080   204490     51
+  Br6660_NAc5_2580   252721     59
+  Br6660_NAc6_3080   239839     59
+  Br6660_NAc7_3580   240569     80
+  Br6660_NAc8_4580   251779    130
+  Br6660_NAc9_5080   258814    236
+  Br6660_Nac10_4080  268826    184
+  Br6660_Nac11_5580  200752    259
+  Br6436_Nac1_650    298821     77
+  Br6436_Nac2_1150   241687     45
+  Br6436_Nac3_1650   260906    101
+  Br6436_Nac_4_2150  229856     76
+  Br6436_Nac_5_2650  210849     37
+  Br6436_Nac_6_3150  280308    114
+  Br6436_Nac_7_3660  278377    219
+  Br6436_Nac_8_4150  226544     64
+  Br6436_Nac_9_4650  145058     53
+  Br6436_Nac_10_5150 203637     72
+  Br6436_Nac_11_5650  68054     40
+Saving 7 x 7 in image
