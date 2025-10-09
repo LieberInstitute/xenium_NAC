@@ -1,8 +1,8 @@
 ********* Job Starts *********
-Tue Oct  7 09:29:41 AM EDT 2025
+Thu Oct  9 05:31:47 AM EDT 2025
 **** SLURM info ****
 User: jyao
-Job id: 23099166
+Job id: 23160359
 Job name: 01_norm
 Hostname: compute-120
 Task id: 
@@ -111,9 +111,9 @@ imgData names(1): sample_id
 Saving 7 x 7 in image
 Saving 7 x 7 in image
 [1] "Reproducibility information:"
-[1] "2025-10-07 09:40:07 EDT"
+[1] "2025-10-09 05:42:38 EDT"
    user  system elapsed 
-610.392   9.615 624.844 
+634.905   9.617 649.561 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -124,7 +124,7 @@ Saving 7 x 7 in image
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-10-07
+ date     2025-10-09
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -195,4 +195,4 @@ Saving 7 x 7 in image
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Tue Oct  7 09:40:08 AM EDT 2025
+Thu Oct  9 05:42:39 AM EDT 2025

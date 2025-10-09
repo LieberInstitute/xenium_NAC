@@ -545,14 +545,30 @@ message(paste0("Saving spe object with QC - ",Sys.time()))
 saveRDS(spe,here("processed-data","02_build_spe","SPEs","spe_withQC.Rds"))
 
 #Remove all of the low quality cells
+table(spe$global_outliers)
 spe <- spe[,!spe$global_outliers]
 dim(spe)
-spe
-table(spe$global_outliers)
 
 #Save cleaned SPE
 message(paste0("Saving cleaned SPE object - ",Sys.time()))
 saveRDS(spe,here("processed-data","02_build_spe","SPEs","spe_clean.Rds"))
+
+# Check number of cells with low counts and detected genes after filtering
+table(spe$sum_gex < 10)
+table(spe$detected_gex < 4)
+table(spe$subsets_any_neg_percent >= 25)
+
+spe$sum_gex_tag <- factor(
+  ifelse(spe$sum_gex %in% 1:9, as.character(spe$sum_gex), ">=10"),
+  levels = c(as.character(1:9), ">=10")
+)
+table(spe$Sample, spe$sum_gex_tag)
+
+spe$detected_gex_tag <- factor(
+  ifelse(spe$detected_gex %in% 1:3, as.character(spe$detected_gex), ">=4"),
+  levels = c(as.character(1:3), ">=4")
+)
+table(spe$Sample, spe$detected_gex_tag)
 
 ###Reproduciblity
 print("Reproducibility information:")
