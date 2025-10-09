@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Sun Sep 28 06:24:26 PM EDT 2025
+Wed Oct  8 11:40:35 AM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 22813408
+Job id: 23119796
 Job name: 03_spatial_noAGF
-Hostname: compute-119
+Hostname: compute-124
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -94,13 +94,12 @@ The following objects are masked from ‘package:matrixStats’:
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 class: SpatialExperiment 
-dim: 541 4884175 
+dim: 366 4849373 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
-rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
-  DeprecatedCodeword_0393
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(4849373): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -109,13 +108,12 @@ altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 class: SpatialExperiment 
-dim: 541 2444243 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
-rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
-  DeprecatedCodeword_0393
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -125,12 +123,12 @@ spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 [1] "Br6660"
 class: SpatialExperiment 
-dim: 366 2444243 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -140,14 +138,14 @@ spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 
    TRUE 
-2444241 
+2425841 
 class: SpatialExperiment 
-dim: 366 2444241 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444241): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -155,55 +153,59 @@ mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
+[1] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/Spatial/NoAGF/Lambdapt8_res0.25_louvain.csv"
+[2] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/Spatial/NoAGF/Lambdapt8_res0.5_louvain.csv" 
+[3] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/Spatial/NoAGF/Lambdapt8_res0.75_louvain.csv"
+[4] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/Spatial/NoAGF/Lambdapt8_res1_louvain.csv"   
+[5] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/Spatial/NoAGF/Lambdapt8_res1.25_louvain.csv"
+[6] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/Spatial/NoAGF/Lambdapt8_res1.5_louvain.csv" 
 $res0.25
 
      1      2      3      4      5      6      7      8      9     10 
-202096 544153 740858 337857  41841 277205 159531  54298  54724  31678 
+199389 373082 513650 752530 336822  28766 112527  65782  10450  32843 
 
 $res0.5
 
      1      2      3      4      5      6      7      8      9     10     11 
-223638 238338  73879 402140 337200  77318  27000 223310 172350 266533 145416 
+205629  58595 239913  35039 194055 415107 328475  78614  29151 275906 121460 
     12     13     14     15     16 
- 64966  73301  67918  18107  32827 
+250303  33448  77690  69157  13299 
 
 $res0.75
 
      1      2      3      4      5      6      7      8      9     10     11 
-209193  68638  64228 184481 372802 327552  58230  46840 188098  21168 108932 
-    12     13     14     15     16     17     18     19     20     21     22 
- 28661 149890  90386 144342  10069  22458 113997  56195  54378  70119  20024 
-    23     24 
- 33391    169 
+218742  57759 112367  84690 146504 387456 324079  79819  41263 136843 196938 
+    12     13     14     15     16     17     18     19     20     21 
+ 24657 157477  33769   5274 211854  55762  23817  40877  72145  13749 
 
 $res1
 
      1      2      3      4      5      6      7      8      9     10     11 
- 76306  63155  51328 158151 219676 227659  58939  46656 157016 189801  21469 
+ 56238 110645  69029 109129 121263 235801 268179  56732  36737  41978  77932 
     12     13     14     15     16     17     18     19     20     21     22 
-105508  10684  35919  38650 120833 143656  65407 164264  24637 122974  92964 
+190095  23802  69919 128348 197713   9318 171563   5115  56856  24275  47403 
     23     24     25     26     27     28 
- 60876  54891  71563  21840  37955   1464 
+104175  44096  41074  43608  71388  13430 
 
 $res1.25
 
      1      2      3      4      5      6      7      8      9     10     11 
- 86615  68927  55212  93263 131511 123818 223852  59262  46716  94094  26670 
+ 56404  59596  61647  69587 101376  58497 228473 119558  57650  38533  28663 
     12     13     14     15     16     17     18     19     20     21     22 
- 91530  15305  56650  38409 143555 139784  66760 104350  11094  60970  62736 
+ 79099 197283 188361  24015 172716  69339  33328 115267 123261  36903   8903 
     23     24     25     26     27     28     29     30     31     32 
-103550  24928  95230  60593 120284  22939  72481  38855  97231   7067 
+172101  57446  24623   8889  45887  51394  73598  17771  12781  32892 
 
 $res1.5
 
      1      2      3      4      5      6      7      8      9     10     11 
- 65677  70007  47718  83653 125252 118699 220481  60793  47096  54139  25584 
+ 57985  59597  71931  65985  77773  59996  77273 108392  58512 133849  43071 
     12     13     14     15     16     17     18     19     20     21     22 
- 80009  43359  52325  40194 103611 140939 145823  35941  40489  57748  11100 
+ 28036  82418  87695 143460  28047  75786  33377  80956  75765  61503  54331 
     23     24     25     26     27     28     29     30     31     32     33 
- 61523  63427 101233  24148 117212  95914  68307  25389  72880  40169  95877 
-    34     35 
-  7372    153 
+111800  61558  38843   5272 130215  58682  24972  53747  21988  84069   9918 
+    34     35     36     37     38 
+ 36169  99198  18673  74951  30048 
 
 $res0.25
 [1] TRUE
@@ -423,9 +425,9 @@ Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "Reproducibility information:"
-[1] "2025-09-28 18:32:24 EDT"
+[1] "2025-10-08 11:48:38 EDT"
    user  system elapsed 
-449.171  21.060 476.563 
+457.008  17.499 481.484 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -436,7 +438,7 @@ Adding another scale for fill, which will replace the existing scale.
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-09-28
+ date     2025-10-08
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -504,4 +506,4 @@ Adding another scale for fill, which will replace the existing scale.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Sun Sep 28 06:32:25 PM EDT 2025
+Wed Oct  8 11:48:39 AM EDT 2025

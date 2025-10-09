@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Wed Oct  8 11:40:21 AM EDT 2025
+Wed Oct  8 12:00:45 PM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 23119795
-Job name: 03_spatial
-Hostname: compute-122
+Job id: 23119822
+Job name: 02_ns_mclust
+Hostname: compute-124
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -92,4 +92,25 @@ The following objects are masked from ‘package:matrixStats’:
 
     anyMissing, rowMedians
 
-slurmstepd: error: *** JOB 23119795 ON compute-122 CANCELLED AT 2025-10-08T11:40:28 ***
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+class: SpatialExperiment 
+dim: 366 2425841 
+metadata(253): Samples Samples ... Samples BANKSY_params
+assays(4): counts nucleus_normcounts cell_normcounts H0
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
+rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+  Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
+colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
+reducedDimNames(2): PCA_M0_lam0.8 UMAP_M0_lam0.8
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : x_final y_final
+imgData names(1): sample_id
+Running Banksy clustering - 2025-10-08 12:02:44.480135
+Error in checkPCA(se, har, lam, npcs) : 
+  Run PCA for (use_agf,lambda)=(0,0)
+Calls: clusterBanksy -> checkClusterArgs -> checkPCA
+Execution halted
+********* Job Ends *********
+Wed Oct  8 12:02:44 PM EDT 2025

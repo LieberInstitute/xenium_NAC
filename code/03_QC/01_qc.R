@@ -25,7 +25,7 @@ library(ggplot2)
   
 #Read in the RDS file from 01_build_spe. 
 spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_raw.Rds"))
-
+spe$Donor[spe$Donor == "Br6426"] <- "Br6436"
 #Make the sample column a factor
 spe$Sample <- factor(x = spe$Sample, levels = unique(spe$Sample))
 
@@ -315,7 +315,7 @@ p <- plotColData(spe, x = "Sample", y = "sum", color_by = "sum_gex_4MAD") +
                width = 0.3)
 ggsave(p, filename = here("plots","03_qc","sum_gex_4MAD_outliers_violin.png"))
 
-p <- plotColData(spe,x = "Sample", y = "cell_area_4MAD") +
+p <- plotColData(spe,x = "Sample", y = "cell_area", color_by = "cell_area_4MAD") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "none")  +
   stat_summary(fun = median, 

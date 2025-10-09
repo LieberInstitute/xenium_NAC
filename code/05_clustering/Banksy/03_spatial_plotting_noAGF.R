@@ -41,7 +41,10 @@ spe
 
 
 #Create a list that contains all of the clustering results from 02_nonspatial
-files <- list.files(path = here("processed-data","05_Clustering","Banksy_Results","Spatial","NoAGF"),full.names = TRUE)
+files <- list.files(path = here("processed-data","05_Clustering","Banksy_Results","Spatial","NoAGF"),pattern = "*.csv",full.names = TRUE)
+
+print(files)
+
 
 file_list <- lapply(X = files,FUN = function(x) read.csv(x))
 

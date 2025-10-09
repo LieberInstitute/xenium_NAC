@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Thu Sep 25 02:05:50 PM EDT 2025
+Tue Oct  7 10:13:57 AM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 22753585
+Job id: 23099286
 Job name: spatial
-Hostname: compute-168
+Hostname: compute-148
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -94,13 +94,12 @@ The following objects are masked from ‘package:matrixStats’:
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 class: SpatialExperiment 
-dim: 541 4884175 
+dim: 366 4849373 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
-rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
-  DeprecatedCodeword_0393
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(4849373): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -109,13 +108,12 @@ altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 class: SpatialExperiment 
-dim: 541 2444243 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
-rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
-  DeprecatedCodeword_0393
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -125,12 +123,12 @@ spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 [1] "Br6660"
 class: SpatialExperiment 
-dim: 366 2444243 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -140,14 +138,14 @@ spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 
    TRUE 
-2444241 
+2425841 
 class: SpatialExperiment 
-dim: 366 2444241 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444241): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -155,7 +153,7 @@ mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
-Running computeBanksy - 2025-09-25 14:08:39.212979
+Running computeBanksy - 2025-10-07 10:16:00.805397
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=30
@@ -211,11 +209,11 @@ Spatial mode is kNN_median
 Parameters: k_geom=30
 Done
 Done
-Finished computeBanksy - 2025-09-25 14:16:15.436855
+Finished computeBanksy - 2025-10-07 10:22:18.104753
              used    (Mb) gc trigger    (Mb)   max used    (Mb)
-Ncells   11775319   628.9   28336541  1513.4   28336541  1513.4
-Vcells 2846375518 21716.2 7007709792 53464.6 5839691494 44553.4
-Running PCA - 2025-09-25 14:16:38.276097
+Ncells   11739232   627.0   28316721  1512.3   28316721  1512.3
+Vcells 2841053885 21675.6 7272617548 55485.7 6060447957 46237.6
+Running PCA - 2025-10-07 10:22:32.819517
 Scaling nucleus_normcounts
 Group: Br6660_NAc1_580
 Group: Br6660_NAc2_1090
@@ -243,15 +241,15 @@ Group: Br6660_Nac11_5580
 Using seed=1000
 Warning message:
 In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 6.7 GiB
-Finished PCA - 2025-09-25 14:24:52.046818
-Running UMAP - 2025-09-25 14:24:52.04728
+  sparse->dense coercion: allocating vector of size 6.6 GiB
+Finished PCA - 2025-10-07 10:29:04.159099
+Running UMAP - 2025-10-07 10:29:04.159406
 Using seed=1000
-Finished UMAP - 2025-09-25 15:49:12.010303
+Finished UMAP - 2025-10-07 11:33:38.433643
 [1] "Reproducibility information:"
-[1] "2025-09-25 15:59:01 EDT"
+[1] "2025-10-07 11:42:25 EDT"
     user   system  elapsed 
-7475.480   99.087 6790.464 
+5943.444   73.092 5307.472 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -262,7 +260,7 @@ Finished UMAP - 2025-09-25 15:49:12.010303
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-09-25
+ date     2025-10-07
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -339,4 +337,4 @@ Finished UMAP - 2025-09-25 15:49:12.010303
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Thu Sep 25 03:59:02 PM EDT 2025
+Tue Oct  7 11:42:27 AM EDT 2025

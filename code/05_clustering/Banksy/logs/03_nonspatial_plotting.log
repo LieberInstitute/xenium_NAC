@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Wed Sep 24 01:18:02 PM EDT 2025
+Wed Oct  8 11:20:05 AM EDT 2025
 **** SLURM info ****
 User: rphillip
-Job id: 22731268
+Job id: 23119751
 Job name: 03_non_plotting
-Hostname: compute-176
+Hostname: compute-175
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -94,13 +94,12 @@ The following objects are masked from ‘package:matrixStats’:
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 class: SpatialExperiment 
-dim: 541 4884175 
+dim: 366 4849373 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
-rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
-  DeprecatedCodeword_0393
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(4884175): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(4849373): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -109,13 +108,12 @@ altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 class: SpatialExperiment 
-dim: 541 2444243 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
-rownames(541): ABCC9 ADAMTS12 ... DeprecatedCodeword_0381
-  DeprecatedCodeword_0393
+rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -125,12 +123,12 @@ spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 [1] "Br6660"
 class: SpatialExperiment 
-dim: 366 2444243 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444243): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -140,14 +138,14 @@ spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
 
    TRUE 
-2444241 
+2425841 
 class: SpatialExperiment 
-dim: 366 2444241 
+dim: 366 2425841 
 metadata(22): Samples Samples ... Samples Samples
 assays(3): counts nucleus_normcounts cell_normcounts
 rownames(366): ABCC9 ADAMTS12 ... ZBBX ZDHHC23
 rowData names(8): ID Symbol ... subsets_any_neg subsets_GEX
-colnames(2444241): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
+colnames(2425841): Br6660_NAc1_580_1 Br6660_NAc1_580_2 ...
   Br6660_Nac11_5580_201084 Br6660_Nac11_5580_201085
 colData names(59): Sample Barcode ... cell_area.sf nucleus_area.sf
 reducedDimNames(0):
@@ -155,59 +153,67 @@ mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : x_final y_final
 imgData names(1): sample_id
+[1] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/NonSpatial/Lambda0_res0.25_louvain.csv"
+[2] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/NonSpatial/Lambda0_res0.5_louvain.csv" 
+[3] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/NonSpatial/Lambda0_res0.75_louvain.csv"
+[4] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/NonSpatial/Lambda0_res1_louvain.csv"   
+[5] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/NonSpatial/Lambda0_res1.25_louvain.csv"
+[6] "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/05_Clustering/Banksy_Results/NonSpatial/Lambda0_res1.5_louvain.csv" 
 $res0.25
 
      1      2      3      4      5      6      7      8      9     10     11 
-190315 534890  36419 162755 217798 122151 360341 282794 131517 172030 131680 
+566786  47791 167303 291194 123207 377262 285429 132563 171577  86622  60187 
     12     13     14     15 
- 60775  12017  16622  12137 
+ 82218  10968  10635  12099 
 
 $res0.5
 
      1      2      3      4      5      6      7      8      9     10     11 
- 73586 183086 318377 173481 131009 177826 183473 152027 113858 130925 129064 
-    12     13     14     15     16     17     18     19     20     21 
-190567 119492 171934  60693  30541  16806  11963  21297  12144  42092 
+ 70156 169703 244702 235062 165022 131815 170163 165626  99478 130626 128682 
+    12     13     14     15     16     17     18     19     20     21     22 
+202949  99490 117740  60232  31380  18021  77964  33911  18962  12110  42047 
 
 $res0.75
 
      1      2      3      4      5      6      7      8      9     10     11 
- 55712 166682 301089 169052 131314 179232 145304 151978 113935 122635 129008 
+ 53467 170072 189709 179954 152147 132541 139890  86640 145839 123250 121529 
     12     13     14     15     16     17     18     19     20     21     22 
-190757  10691 172988  60706  30548  17116  47135 110830  30260   1072  23024 
-    23     24     25     26 
-  8330  12197  20447  42199 
+128411 193709 118202  82282  60226  26897  18273  38000  86401  37801  35658 
+    23     24     25     26     27 
+  9431  20511  12104  20796  42101 
 
 $res1
 
      1      2      3      4      5      6      7      8      9     10     11 
- 47777  30233  60338 162193  64191 123388 152785  31182 142405 190468   9269 
+ 45131   9525 132360 114610 149944 122671 106574 130408  68390 102800  38464 
     12     13     14     15     16     17     18     19     20     21     22 
-107670 143405 122416 122569 128367 188430 125061  10702  60678  30996  22354 
+  8880  31283 145950  76492 102035 121601 128299 181287  99307  10681 116652 
     23     24     25     26     27     28     29     30     31     32     33 
- 28618  40945  66254  50420  14442  32020  24590  47311   8336  12193  42235 
+ 60217  16078  22870  54551  10702  23417  20850  11997  11225  44756   9460 
+    34     35     36     37 
+ 21371  12100  20797  42106 
 
 $res1.25
 
      1      2      3      4      5      6      7      8      9     10     11 
- 58681  65615  69300 100832  67008 121777 144818  36853  49541 136039 169743 
+ 45859   9527 136147 106371 134806 122010  95140 117635  81334  76647 107408 
     12     13     14     15     16     17     18     19     20     21     22 
- 11590  27543 103791 136050 120482 123206 120797 182601  29113 118201  10710 
+ 53519  35536   8351 140242 102707 121387 128253 176499  18378 120245  10684 
     23     24     25     26     27     28     29     30     31     32     33 
- 60165  49581  22645  29790  68754  50013  14281  19797  13055  23794  47014 
-    34     35     36 
-  8395  12243  20423 
+ 60239  24404  88699  55920  24191  10687  23922  11801  23686  12157  12167 
+    34     35     36     37     38 
+ 44719   9470  12140  20809  42145 
 
 $res1.5
 
      1      2      3      4      5      6      7      8      9     10     11 
- 52056   9727  67067 103218  93744 169635 119834  77261  41325 135229  11945 
+ 48088   9526  40799 107812 130892 121695  87880 117356  87474  80152 107097 
     12     13     14     15     16     17     18     19     20     21     22 
- 28390  65275 103320 112957 100605 122261 127965 182213  19452  27378  10693 
+ 32748   8722  22509  60168 137679 102740 121006 128242  69278 174062  23416 
     23     24     25     26     27     28     29     30     31     32     33 
- 60186  84395  24765  29546  36343  52953  64924  42745  54062  10510  19553 
+120967  10717  60253  25854  89265  56541  10684  24014  10649  21351  12258 
     34     35     36     37     38     39     40     41 
- 13146  12219  26562  47442   8369  12315  20443  42213 
+ 12070  44735   9477  22619  12126  20797  21940  20183 
 
 $res0.25
 [1] TRUE
@@ -427,9 +433,9 @@ Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "Reproducibility information:"
-[1] "2025-09-24 13:25:00 EDT"
+[1] "2025-10-08 11:27:30 EDT"
    user  system elapsed 
-396.271  17.678 416.968 
+423.235  17.134 444.293 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -440,7 +446,7 @@ Adding another scale for fill, which will replace the existing scale.
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-09-24
+ date     2025-10-08
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -508,4 +514,4 @@ Adding another scale for fill, which will replace the existing scale.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Wed Sep 24 01:25:01 PM EDT 2025
+Wed Oct  8 11:27:31 AM EDT 2025

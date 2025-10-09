@@ -9,8 +9,8 @@ library(zellkonverter)
 library(ggplot2)
 
 spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_NormCounts.Rds"))
-spe$Donor[spe$Donor == "Br6426"] <- "Br6436"
-saveRDS(spe, here("processed-data","02_build_spe","SPEs","spe_NormCounts.Rds"))
+# spe$Donor[spe$Donor == "Br6426"] <- "Br6436"
+# saveRDS(spe, here("processed-data","02_build_spe","SPEs","spe_NormCounts.Rds"))
 
 # Nucleus area normalization
 spe_nuc <- spe

@@ -10,7 +10,7 @@ library(ggplot2)
 library(here)
 
 spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_clean.Rds"))
-
+spe$Donor[spe$Donor == "Br6426"] <- "Br6436"
 spe
 
 #Based on Atta et al. 2024, generate non-count based scaling factors
