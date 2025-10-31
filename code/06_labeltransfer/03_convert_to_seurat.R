@@ -15,6 +15,11 @@ logcounts(spe_6436) <- assay(spe_6436,"nucleus_normcounts")
 #Convert to seurat
 seurat_6436 <- as.Seurat(spe_6436,counts = "counts",data = "logcounts")
 
+#Run PCA 
+seurat_6436 <- FindVariableFeatures(seurat_6436)
+seurat_6436 <- ScaleData(seurat_6436)
+seurat_6436 <- RunPCA(seurat_6436,seed.use = 2051,npcs = 50,reduction.name = "seurat_pca")
+
 #Save the object
 saveRDS(seurat_6436, here("processed-data", "06_label_transfer", 
                           "Objects", "seurat_6436.Rds"))
@@ -25,6 +30,11 @@ logcounts(spe_anno) <- assay(spe_anno,"nucleus_normcounts")
 
 #Convert to seurat
 seurat_anno <- as.Seurat(spe_anno,counts = "counts",data = "logcounts")
+
+#Run PCA
+seurat_anno <- FindVariableFeatures(seurat_anno)
+seurat_anno <- ScaleData(seurat_anno)
+seurat_anno <- RunPCA(seurat_anno,seed.use = 2051,npcs = 50,reduction.name = "seurat_pca")
 
 #Save the object
 saveRDS(seurat_anno, here("processed-data", "06_label_transfer", 
