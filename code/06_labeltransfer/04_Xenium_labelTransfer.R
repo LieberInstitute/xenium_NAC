@@ -5,6 +5,10 @@
 library(Seurat)
 library(here)
 
+#Raise limit
+options(future.globals.maxSize = 16 * 1024^3) #16 GB
+
+
 #Load the seurat objects
 seurat_6436 <- readRDS(here("processed-data", "06_label_transfer", 
                             "Objects", "seurat_6436.Rds"))
