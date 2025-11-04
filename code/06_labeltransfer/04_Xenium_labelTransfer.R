@@ -38,9 +38,8 @@ seurat_6436 <- AddMetaData(seurat_6436,
 
 #Save the predictions  and updated seurat objectas an RDS file. 
 message(paste0("Saving objects - ", Sys.time()))
-saveRDS(object = predictions,file = here("processed-data","06_label_transfer","seurat_6436_predictions.RDS"))
-saveRDS(object = seurat_6436,file = saveRDS(seurat_anno, here("processed-data", "06_label_transfer", 
-                                                              "Objects", "seurat_6436_predictions.Rds")))
+saveRDS(object = predictions,file = here("processed-data","06_label_transfer","seurat_6436_predictions.Rds"))
+saveRDS(object = seurat_6436,file = here("processed-data", "06_label_transfer","Objects", "seurat_6436_predictions_object.Rds"))
 
 ###Reproduciblity
 print("Reproducibility information:")
