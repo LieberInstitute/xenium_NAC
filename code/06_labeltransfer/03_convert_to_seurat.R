@@ -19,6 +19,7 @@ seurat_6436 <- as.Seurat(spe_6436,counts = "counts",data = "logcounts")
 seurat_6436 <- FindVariableFeatures(seurat_6436)
 seurat_6436 <- ScaleData(seurat_6436)
 seurat_6436 <- RunPCA(seurat_6436,seed.use = 2051,npcs = 50,reduction.name = "seurat_pca")
+seurat_6436 <- RunUMAP(seurat_6436,seed.use = 2051, dims= 1:50,reduction = "seurat_pca") 
 
 #Save the object
 saveRDS(seurat_6436, here("processed-data", "06_label_transfer", 
@@ -35,6 +36,7 @@ seurat_anno <- as.Seurat(spe_anno,counts = "counts",data = "logcounts")
 seurat_anno <- FindVariableFeatures(seurat_anno)
 seurat_anno <- ScaleData(seurat_anno)
 seurat_anno <- RunPCA(seurat_anno,seed.use = 2051,npcs = 50,reduction.name = "seurat_pca")
+seurat_anno <- RunUMAP(seurat_anno,seed.use = 2051, dims= 1:50,reduction = "seurat_pca")
 
 #Save the object
 saveRDS(seurat_anno, here("processed-data", "06_label_transfer", 
