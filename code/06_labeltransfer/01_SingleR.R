@@ -1,6 +1,6 @@
 #Goal: Perform label transfer with SingleR on a per sample basis. 
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-#module load conda_R/4.4.x
+#module load conda_R/4.5
 
 library(SingleCellExperiment)
 library(SpatialExperiment)
@@ -26,11 +26,18 @@ sce <- readRDS("/dcs04/lieber/marmaypag/spatialNac_LIBD4125/spatial_NAc/processe
 
 sce
 
+#Remove the Neuron_Ambiguous cluster of cells. 
+sce <- sce[,sce$CellType.Final != "Neuron_Ambig"]
+
+#Subset to genes only in the xenium dataset
+sce_sub <- sce[rowData(sce)$gene_id %in% rowData(spe)$ID,]
+
 #Subset the spe for a single sample. 
 samples <- unique(spe$Sample)
 sample_run <- samples[[sample_i]]
 message("Running Sample: ", sample_run, " (", sample_i, "/", length(samples), ")")
 
+#Subset for the sample
 spe <- spe[, spe$Sample == sample_run]
 message("Number of cells in this sample:", ncol(spe))
 
@@ -38,13 +45,7 @@ message("Number of cells in this sample:", ncol(spe))
 dir <- file.path(here("plots","06_label_transfer",sample_run))
 dir.create(dir)
 
-#Subset to genes only in the xenium dataset
-sce_sub <- sce[rowData(sce)$gene_id %in% rowData(spe)$ID,]
-
 dim(sce_sub)
-
-#Remove the Neuron_Ambiguous cluster of cells. 
-sce_sub <- sce_sub[,sce_sub$CellType.Final != "Neuron_Ambig"]
 
 #set gene symbols as feature names
 rownames(sce_sub) <- rowData(sce_sub)$gene_name
@@ -81,11 +82,13 @@ for(l in labels_pruned){
   spe$CellType_of_Interest <- ifelse(spe$SingleR_labels_pruned == l,
                                      l,
                                      "Other")
-
+  colors <- c("red","lightgrey")
+  names(colors) <- c(l,"Other")
   #Generate escheR plot
   p <- make_escheR(spe,spot_size = 0.5) |>
     add_fill(var = "CellType_of_Interest") +
     ggtitle(l) +
+    scale_fill_manual(values = colors) +
     theme(plot.title = element_text(hjust = 0.5))
   
   
