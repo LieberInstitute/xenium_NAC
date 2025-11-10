@@ -4,7 +4,7 @@
 #SBATCH --job-name=06.1_Br6660
 #SBATCH --output=logs/06.1_Br6660.log
 #SBATCH --error=logs/06.1_Br6660.log 
-#SBATCH --mem=100G
+#SBATCH --mem=200G
 #SBATCH --mail-type=END
 #SBATCH --mail-user=Robert.Phillips@libd.org
 

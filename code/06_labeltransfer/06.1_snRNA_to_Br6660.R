@@ -21,14 +21,15 @@ seurat_anno <- readRDS(here("processed-data", "06_label_transfer",
 message(paste0("Finding transfer anchors - ", Sys.time()))
 anchors <- FindTransferAnchors(reference = snRNA, 
                                query = seurat_anno, 
-                               dims = 1:30,reduction = "cca",
-                               reference.reduction = "seurat_pca")
+                               dims = 1:50,
+                               reference.reduction = "seurat_pca",
+                               reduction = "rpca")
 
 #Perform the label transfer
 message(paste0("Transferring Data - ", Sys.time()))
 predictions <- TransferData(anchorset = anchors, 
                             refdata = snRNA$CellType.Final, 
-                            dims = 1:30)
+                            dims = 1:50)
 
 #Add predictions to the object
 message(paste0("Adding metadata - ", Sys.time()))
