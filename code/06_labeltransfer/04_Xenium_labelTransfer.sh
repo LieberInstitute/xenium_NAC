@@ -4,7 +4,7 @@
 #SBATCH --job-name=04_xenium
 #SBATCH --output=logs/04_xenium.log
 #SBATCH --error=logs/04_xenium.log 
-#SBATCH --mem=100G
+#SBATCH --mem=150G
 #SBATCH --mail-type=END
 #SBATCH --mail-user=Robert.Phillips@libd.org
 
