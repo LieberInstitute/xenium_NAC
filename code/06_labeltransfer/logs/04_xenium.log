@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Tue Nov  4 10:41:05 AM EST 2025
+Thu Nov  6 08:21:24 PM EST 2025
 **** SLURM info ****
 User: rphillip
-Job id: 23930791
+Job id: 24034116
 Job name: 04_xenium
-Hostname: compute-175
+Hostname: compute-122
 Task id: 
 Loading conda_R/4.5
 Loading required package: SeuratObject
@@ -17,29 +17,29 @@ The following objects are masked from ‘package:base’:
     intersect, t
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Finding transfer anchors - 2025-11-04 10:43:42.703101
+Finding transfer anchors - 2025-11-06 20:23:46.257519
 Projecting cell embeddings
 Finding neighborhoods
 Finding anchors
-	Found 2008915 anchors
+	Found 1508785 anchors
 Warning message:
 The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
 ℹ Please use the `layer` argument instead.
 ℹ The deprecated feature was likely used in the Seurat package.
   Please report the issue at <https://github.com/satijalab/seurat/issues>. 
-Transferring Data - 2025-11-04 12:34:20.696184
+Transferring Data - 2025-11-06 22:30:36.518528
 Finding integration vectors
 Finding integration vector weights
 0%   10   20   30   40   50   60   70   80   90   100%
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 Predicting cell labels
-Adding metadata - 2025-11-04 16:43:32.546115
-Saving objects - 2025-11-04 16:43:33.93199
+Adding metadata - 2025-11-07 03:35:35.342441
+Saving objects - 2025-11-07 03:35:37.281209
 [1] "Reproducibility information:"
-[1] "2025-11-04 16:47:59 EST"
+[1] "2025-11-07 03:40:47 EST"
      user    system   elapsed 
-21844.334   109.578 22013.157 
+25962.426   134.983 26362.014 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -50,7 +50,7 @@ Saving objects - 2025-11-04 16:43:33.93199
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-11-04
+ date     2025-11-07
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -166,4 +166,4 @@ Saving objects - 2025-11-04 16:43:33.93199
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Tue Nov  4 04:48:00 PM EST 2025
+Fri Nov  7 03:40:48 AM EST 2025

@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Thu Oct 30 08:54:39 PM EDT 2025
+Thu Nov  6 03:23:29 PM EST 2025
 **** SLURM info ****
 User: rphillip
-Job id: 23825345
+Job id: 24029789
 Job name: 03_seurat
-Hostname: compute-163
+Hostname: compute-121
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -199,6 +199,28 @@ Positive:  SEZ6L, GNG2, GABBR2, OPCML, CLSTN2, CALB2, NELL1, LHX6, KIT, ALK
 Negative:  COCH, CALB1, PPP1R1B, TTYH1, PENK, ADORA2A, SCN4B, ANO3, ONECUT2, TPBG 
 	   RASD2, HTR2C, GPR6, CRYM, FGFR3, FGFR2, WIF1, SOX9, APOE, AQP4 
 	   SPON1, GJA1, ADAMTS3, LAMP5, DRD2, HTR4, HHATL, CRLF1, MAL, OPRK1 
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+16:34:36 UMAP embedding parameters a = 0.9922 b = 1.112
+16:34:36 Read 2423532 rows and found 50 numeric columns
+16:34:36 Using Annoy for neighbor search, n_neighbors = 30
+16:34:36 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:40:28 Writing NN index file to temp file /tmp/Rtmp0ynzxB/file11f6b22490b47f
+16:40:30 Searching Annoy index using 1 thread, search_k = 3000
+17:05:50 Annoy recall = 86.94%
+17:05:54 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+17:07:10 Initializing from normalized Laplacian + noise (using RSpectra)
+17:15:26 Commencing optimization for 200 epochs, with 127130066 positive edges
+17:15:26 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:55:28 Optimization finished
 Calculating gene variances
 0%   10   20   30   40   50   60   70   80   90   100%
 [----|----|----|----|----|----|----|----|----|----|
@@ -244,10 +266,29 @@ Positive:  FLT1, CAV1, CLDN5, DCN, IFITM3, PHLDB2, PECAM1, KLF2, EBF1, NR2F2
 Negative:  P2RY12, CX3CR1, C3, GPR34, P2RY13, ITGAX, FCGR1A, FCGR3A, ITGAM, ITGB2 
 	   AIF1, PTPRC, HLA-DMB, RGS10, RNASET2, TMIGD3, CD86, TREM2, LY86, GPR183 
 	   CD68, FCER1G, CTSS, FGFR2, ARHGAP24, HLA-DQA1, TTYH1, ARHGAP15, LRRK1, MS4A6A 
+18:59:24 UMAP embedding parameters a = 0.9922 b = 1.112
+18:59:25 Read 2425841 rows and found 50 numeric columns
+18:59:25 Using Annoy for neighbor search, n_neighbors = 30
+18:59:25 Building Annoy index with metric = cosine, n_trees = 50
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+19:04:15 Writing NN index file to temp file /tmp/Rtmp0ynzxB/file11f6b23d74b824
+19:04:17 Searching Annoy index using 1 thread, search_k = 3000
+19:30:01 Annoy recall = 98.89%
+19:30:05 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+19:31:14 Initializing from normalized Laplacian + noise (using RSpectra)
+19:41:32 Commencing optimization for 200 epochs, with 126377250 positive edges
+19:41:32 Using rng type: pcg
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+20:12:39 Optimization finished
 [1] "Reproducibility information:"
-[1] "2025-10-30 23:11:56 EDT"
-    user   system  elapsed 
-8136.548   71.999 8236.158 
+[1] "2025-11-06 20:18:45 EST"
+     user    system   elapsed 
+17470.159    93.975 17715.292 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -258,7 +299,7 @@ Negative:  P2RY12, CX3CR1, C3, GPR34, P2RY13, ITGAX, FCGR1A, FCGR3A, ITGAM, ITGB
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-10-30
+ date     2025-11-06
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -395,4 +436,4 @@ Negative:  P2RY12, CX3CR1, C3, GPR34, P2RY13, ITGAX, FCGR1A, FCGR3A, ITGAM, ITGB
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Thu Oct 30 11:11:57 PM EDT 2025
+Thu Nov  6 08:18:46 PM EST 2025

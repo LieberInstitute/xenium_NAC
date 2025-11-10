@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Wed Nov  5 01:02:01 PM EST 2025
+Mon Nov 10 03:27:49 PM EST 2025
 **** SLURM info ****
 User: rphillip
-Job id: 23970593
+Job id: 24080957
 Job name: 06.1_Br6660
-Hostname: compute-124
+Hostname: compute-169
 Task id: 
 Loading conda_R/4.5
 Loading required package: SeuratObject
@@ -17,3 +17,12 @@ The following objects are masked from ‘package:base’:
     intersect, t
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+An object of class Seurat 
+34977 features across 103339 samples within 1 assay 
+Active assay: originalexp (34977 features, 2000 variable features)
+ 3 layers present: counts, data, scale.data
+ 5 dimensional reductions calculated: GLMPCA_approx, tSNE, HARMONY, tSNE_HARMONY, seurat_pca
+Finding transfer anchors - 2025-11-10 15:29:23.622691
+Performing PCA on the provided query using 209 features as input.
+Centering and scaling data matrix
+  |                                                                              |                                                                      |   0%
