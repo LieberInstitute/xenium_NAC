@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Fri Nov  7 12:48:28 PM EST 2025
+Thu Nov 13 01:28:32 PM EST 2025
 **** SLURM info ****
 User: rphillip
-Job id: 24039954
+Job id: 24131901
 Job name: 04.1_PlotPredictions
-Hostname: compute-122
+Hostname: compute-119
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -175,9 +175,9 @@ Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "Reproducibility information:"
-[1] "2025-11-07 12:53:18 EST"
+[1] "2025-11-13 13:32:57 EST"
    user  system elapsed 
-273.004  12.035 288.817 
+250.465  11.516 264.891 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -188,7 +188,7 @@ Adding another scale for fill, which will replace the existing scale.
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-11-07
+ date     2025-11-13
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -329,4 +329,4 @@ Adding another scale for fill, which will replace the existing scale.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Fri Nov  7 12:53:19 PM EST 2025
+Thu Nov 13 01:32:58 PM EST 2025
