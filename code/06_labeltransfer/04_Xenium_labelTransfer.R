@@ -17,13 +17,12 @@ seurat_anno <- readRDS(here(here("processed-data", "06_label_transfer",
                                  "Objects", "seurat_anno.Rds")))
 
 #Perform label transfer
-#Will use top 30 PCs for initial trial of Seurat label transfer
 #Identify the transfer anchors
 message(paste0("Finding transfer anchors - ", Sys.time()))
 anchors <- FindTransferAnchors(reference = seurat_anno, 
                                query = seurat_6436, 
                                dims = 1:50,
-                               reduction = "pcaproject",
+                               reduction = "rpca", #reciprocal PCA
                                reference.reduction = "seurat_pca")
 
 #Perform the label transfer
