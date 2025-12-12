@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Thu Nov  6 08:21:24 PM EST 2025
+Tue Dec  9 11:45:08 AM EST 2025
 **** SLURM info ****
 User: rphillip
-Job id: 24034116
+Job id: 25495069
 Job name: 04_xenium
-Hostname: compute-122
+Hostname: compute-142
 Task id: 
 Loading conda_R/4.5
 Loading required package: SeuratObject
@@ -17,29 +17,38 @@ The following objects are masked from ‘package:base’:
     intersect, t
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Finding transfer anchors - 2025-11-06 20:23:46.257519
+Finding transfer anchors - 2025-12-09 11:47:36.793939
+Performing PCA on the provided query using 366 features as input.
+Centering and scaling data matrix
+  |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%
+Projecting new data onto SVD
+Projecting new data onto SVD
 Projecting cell embeddings
 Finding neighborhoods
 Finding anchors
-	Found 1508785 anchors
-Warning message:
-The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+	Found 907844 anchors
+Warning messages:
+1: The `slot` argument of `SetAssayData()` is deprecated as of SeuratObject 5.0.0.
 ℹ Please use the `layer` argument instead.
 ℹ The deprecated feature was likely used in the Seurat package.
   Please report the issue at <https://github.com/satijalab/seurat/issues>. 
-Transferring Data - 2025-11-06 22:30:36.518528
+2: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>. 
+Transferring Data - 2025-12-09 13:36:35.301448
 Finding integration vectors
 Finding integration vector weights
 0%   10   20   30   40   50   60   70   80   90   100%
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 Predicting cell labels
-Adding metadata - 2025-11-07 03:35:35.342441
-Saving objects - 2025-11-07 03:35:37.281209
+Adding metadata - 2025-12-09 15:13:34.064515
+Saving objects - 2025-12-09 15:13:35.6751
 [1] "Reproducibility information:"
-[1] "2025-11-07 03:40:47 EST"
+[1] "2025-12-09 15:19:46 EST"
      user    system   elapsed 
-25962.426   134.983 26362.014 
+12615.959   193.717 12876.646 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -50,7 +59,7 @@ Saving objects - 2025-11-07 03:35:37.281209
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-11-07
+ date     2025-12-09
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -166,4 +175,4 @@ Saving objects - 2025-11-07 03:35:37.281209
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Fri Nov  7 03:40:48 AM EST 2025
+Tue Dec  9 03:19:48 PM EST 2025

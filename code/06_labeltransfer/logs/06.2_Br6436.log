@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Mon Nov 10 03:27:54 PM EST 2025
+Thu Dec  4 03:02:13 PM EST 2025
 **** SLURM info ****
 User: rphillip
-Job id: 24080958
+Job id: 25398977
 Job name: 06.2_Br6436
-Hostname: compute-150
+Hostname: compute-122
 Task id: 
 Loading conda_R/4.5
 Loading required package: SeuratObject
@@ -22,7 +22,7 @@ An object of class Seurat
 Active assay: originalexp (34977 features, 2000 variable features)
  3 layers present: counts, data, scale.data
  5 dimensional reductions calculated: GLMPCA_approx, tSNE, HARMONY, tSNE_HARMONY, seurat_pca
-Finding transfer anchors - 2025-11-10 15:30:01.86008
+Finding transfer anchors - 2025-12-04 15:04:12.046178
 Performing PCA on the provided query using 209 features as input.
 Centering and scaling data matrix
   |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%
@@ -41,19 +41,19 @@ Warning messages:
 ℹ Please use the `layer` argument instead.
 ℹ The deprecated feature was likely used in the Seurat package.
   Please report the issue at <https://github.com/satijalab/seurat/issues>. 
-Transferring Data - 2025-11-10 16:27:29.769268
+Transferring Data - 2025-12-04 15:51:47.887481
 Finding integration vectors
 Finding integration vector weights
 0%   10   20   30   40   50   60   70   80   90   100%
 [----|----|----|----|----|----|----|----|----|----|
 **************************************************|
 Predicting cell labels
-Adding metadata - 2025-11-10 16:39:25.043261
-Saving objects - 2025-11-10 16:39:26.774529
+Adding metadata - 2025-12-04 16:01:26.940772
+Saving objects - 2025-12-04 16:01:28.664885
 [1] "Reproducibility information:"
-[1] "2025-11-10 16:45:36 EST"
+[1] "2025-12-04 16:06:40 EST"
     user   system  elapsed 
-4443.873  197.355 4661.248 
+3771.839   59.375 3866.213 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -64,7 +64,7 @@ Saving objects - 2025-11-10 16:39:26.774529
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-11-10
+ date     2025-12-04
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -180,4 +180,4 @@ Saving objects - 2025-11-10 16:39:26.774529
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Mon Nov 10 04:45:39 PM EST 2025
+Thu Dec  4 04:06:41 PM EST 2025

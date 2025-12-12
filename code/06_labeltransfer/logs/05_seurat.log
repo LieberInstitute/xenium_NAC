@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Tue Nov  4 01:26:45 PM EST 2025
+Tue Dec  9 03:09:36 PM EST 2025
 **** SLURM info ****
 User: rphillip
-Job id: 23937990
+Job id: 25528908
 Job name: 05_seurat
-Hostname: compute-174
+Hostname: compute-163
 Task id: 
 Loading conda_R/4.5
 Loading required package: SummarizedExperiment
@@ -238,9 +238,9 @@ Active assay: originalexp (34977 features, 2000 variable features)
  3 layers present: counts, data, scale.data
  5 dimensional reductions calculated: GLMPCA_approx, tSNE, HARMONY, tSNE_HARMONY, seurat_pca
 [1] "Reproducibility information:"
-[1] "2025-11-04 13:34:48 EST"
+[1] "2025-12-09 15:20:18 EST"
    user  system elapsed 
-471.624   5.776 482.314 
+607.412  13.329 640.489 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -251,7 +251,7 @@ Active assay: originalexp (34977 features, 2000 variable features)
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2025-11-04
+ date     2025-12-09
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -386,4 +386,4 @@ Active assay: originalexp (34977 features, 2000 variable features)
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Tue Nov  4 01:34:49 PM EST 2025
+Tue Dec  9 03:20:19 PM EST 2025
