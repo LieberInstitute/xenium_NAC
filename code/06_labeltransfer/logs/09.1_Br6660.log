@@ -1,0 +1,183 @@
+********* Job Starts *********
+Fri Dec 12 01:38:09 PM EST 2025
+**** SLURM info ****
+User: rphillip
+Job id: 25714327
+Job name: 09.1_Br6660
+Hostname: compute-140
+Task id: 
+Loading conda_R/4.5
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+An object of class Seurat 
+361 features across 175945 samples within 1 assay 
+Active assay: originalexp (361 features, 361 variable features)
+ 3 layers present: counts, data, scale.data
+ 5 dimensional reductions calculated: X10x_pca, X10x_tsne, X10x_umap, seurat_pca, umap
+Finding transfer anchors - 2025-12-12 13:39:23.466899
+Performing PCA on the provided query using 361 features as input.
+Centering and scaling data matrix
+  |                                                                              |                                                                      |   0%  |                                                                              |======================================================================| 100%
+Projecting new data onto SVD
+Projecting new data onto SVD
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 6014 anchors
+Warning messages:
+1: The `slot` argument of `SetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>. 
+2: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>. 
+Transferring Data - 2025-12-12 14:51:43.351813
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Adding metadata - 2025-12-12 15:01:46.95487
+Saving objects - 2025-12-12 15:01:48.388405
+[1] "Reproducibility information:"
+[1] "2025-12-12 15:08:17 EST"
+    user   system  elapsed 
+5096.223  289.870 5407.765 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
+ os       Rocky Linux 9.4 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       US/Eastern
+ date     2025-12-12
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
+ quarto   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package          * version date (UTC) lib source
+ abind              1.4-8   2024-09-12 [2] CRAN (R 4.5.0)
+ cli                3.6.5   2025-04-23 [2] CRAN (R 4.5.0)
+ cluster            2.1.8.1 2025-03-12 [3] CRAN (R 4.5.0)
+ codetools          0.2-20  2024-03-31 [3] CRAN (R 4.5.0)
+ cowplot            1.1.3   2024-01-22 [2] CRAN (R 4.5.0)
+ data.table         1.17.2  2025-05-12 [2] CRAN (R 4.5.0)
+ deldir             2.0-4   2024-02-28 [2] CRAN (R 4.5.0)
+ dichromat          2.0-0.1 2022-05-02 [2] CRAN (R 4.5.0)
+ digest             0.6.37  2024-08-19 [2] CRAN (R 4.5.0)
+ dotCall64          1.2     2024-10-04 [2] CRAN (R 4.5.0)
+ dplyr              1.1.4   2023-11-17 [2] CRAN (R 4.5.0)
+ farver             2.1.2   2024-05-13 [2] CRAN (R 4.5.0)
+ fastDummies        1.7.5   2025-01-20 [2] CRAN (R 4.5.0)
+ fastmap            1.2.0   2024-05-15 [2] CRAN (R 4.5.0)
+ fitdistrplus       1.2-2   2025-01-07 [2] CRAN (R 4.5.0)
+ future           * 1.49.0  2025-05-09 [2] CRAN (R 4.5.0)
+ future.apply       1.11.3  2024-10-27 [2] CRAN (R 4.5.0)
+ generics           0.1.4   2025-05-09 [2] CRAN (R 4.5.0)
+ ggplot2            3.5.2   2025-04-09 [2] CRAN (R 4.5.0)
+ ggrepel            0.9.6   2024-09-07 [2] CRAN (R 4.5.0)
+ ggridges           0.5.6   2024-01-23 [2] CRAN (R 4.5.0)
+ globals            0.18.0  2025-05-08 [2] CRAN (R 4.5.0)
+ glue               1.8.0   2024-09-30 [2] CRAN (R 4.5.0)
+ goftest            1.2-3   2021-10-07 [2] CRAN (R 4.5.0)
+ gridExtra          2.3     2017-09-09 [2] CRAN (R 4.5.0)
+ gtable             0.3.6   2024-10-25 [2] CRAN (R 4.5.0)
+ here             * 1.0.1   2020-12-13 [2] CRAN (R 4.5.0)
+ htmltools          0.5.8.1 2024-04-04 [2] CRAN (R 4.5.0)
+ htmlwidgets        1.6.4   2023-12-06 [2] CRAN (R 4.5.0)
+ httpuv             1.6.16  2025-04-16 [2] CRAN (R 4.5.0)
+ httr               1.4.7   2023-08-15 [2] CRAN (R 4.5.0)
+ ica                1.0-3   2022-07-08 [2] CRAN (R 4.5.0)
+ igraph             2.1.4   2025-01-23 [2] CRAN (R 4.5.0)
+ irlba              2.3.5.1 2022-10-03 [2] CRAN (R 4.5.0)
+ jsonlite           2.0.0   2025-03-27 [2] CRAN (R 4.5.0)
+ KernSmooth         2.23-26 2025-01-01 [3] CRAN (R 4.5.0)
+ later              1.4.2   2025-04-08 [2] CRAN (R 4.5.0)
+ lattice            0.22-7  2025-04-02 [3] CRAN (R 4.5.0)
+ lazyeval           0.2.2   2019-03-15 [2] CRAN (R 4.5.0)
+ lifecycle          1.0.4   2023-11-07 [2] CRAN (R 4.5.0)
+ listenv            0.9.1   2024-01-29 [2] CRAN (R 4.5.0)
+ lmtest             0.9-40  2022-03-21 [2] CRAN (R 4.5.0)
+ magrittr           2.0.3   2022-03-30 [2] CRAN (R 4.5.0)
+ MASS               7.3-65  2025-02-28 [3] CRAN (R 4.5.0)
+ Matrix             1.7-3   2025-03-11 [3] CRAN (R 4.5.0)
+ matrixStats        1.5.0   2025-01-07 [2] CRAN (R 4.5.0)
+ mime               0.13    2025-03-17 [2] CRAN (R 4.5.0)
+ miniUI             0.1.2   2025-04-17 [2] CRAN (R 4.5.0)
+ nlme               3.1-168 2025-03-31 [3] CRAN (R 4.5.0)
+ parallelly         1.44.0  2025-05-07 [2] CRAN (R 4.5.0)
+ patchwork          1.3.0   2024-09-16 [2] CRAN (R 4.5.0)
+ pbapply            1.7-2   2023-06-27 [2] CRAN (R 4.5.0)
+ pillar             1.10.2  2025-04-05 [2] CRAN (R 4.5.0)
+ pkgconfig          2.0.3   2019-09-22 [2] CRAN (R 4.5.0)
+ plotly             4.10.4  2024-01-13 [2] CRAN (R 4.5.0)
+ plyr               1.8.9   2023-10-02 [2] CRAN (R 4.5.0)
+ png                0.1-8   2022-11-29 [2] CRAN (R 4.5.0)
+ polyclip           1.10-7  2024-07-23 [2] CRAN (R 4.5.0)
+ progressr          0.15.1  2024-11-22 [2] CRAN (R 4.5.0)
+ promises           1.3.2   2024-11-28 [2] CRAN (R 4.5.0)
+ purrr              1.0.4   2025-02-05 [2] CRAN (R 4.5.0)
+ R6                 2.6.1   2025-02-15 [2] CRAN (R 4.5.0)
+ RANN               2.6.2   2024-08-25 [2] CRAN (R 4.5.0)
+ RColorBrewer       1.1-3   2022-04-03 [2] CRAN (R 4.5.0)
+ Rcpp               1.0.14  2025-01-12 [2] CRAN (R 4.5.0)
+ RcppAnnoy          0.0.22  2024-01-23 [2] CRAN (R 4.5.0)
+ RcppHNSW           0.6.0   2024-02-04 [2] CRAN (R 4.5.0)
+ reshape2           1.4.4   2020-04-09 [2] CRAN (R 4.5.0)
+ reticulate         1.42.0  2025-03-25 [2] CRAN (R 4.5.0)
+ rlang              1.1.6   2025-04-11 [2] CRAN (R 4.5.0)
+ ROCR               1.0-11  2020-05-02 [2] CRAN (R 4.5.0)
+ rprojroot          2.0.4   2023-11-05 [2] CRAN (R 4.5.0)
+ RSpectra           0.16-2  2024-07-18 [2] CRAN (R 4.5.0)
+ Rtsne              0.17    2023-12-07 [2] CRAN (R 4.5.0)
+ scales             1.4.0   2025-04-24 [2] CRAN (R 4.5.0)
+ scattermore        1.2     2023-06-12 [2] CRAN (R 4.5.0)
+ sctransform        0.4.2   2025-04-30 [2] CRAN (R 4.5.0)
+ sessioninfo        1.2.3   2025-02-05 [2] CRAN (R 4.5.0)
+ Seurat           * 5.3.0   2025-04-23 [2] CRAN (R 4.5.0)
+ SeuratObject     * 5.1.0   2025-04-22 [2] CRAN (R 4.5.0)
+ shiny              1.10.0  2024-12-14 [2] CRAN (R 4.5.0)
+ sp               * 2.2-0   2025-02-01 [2] CRAN (R 4.5.0)
+ spam               2.11-1  2025-01-20 [2] CRAN (R 4.5.0)
+ spatstat.data      3.1-6   2025-03-17 [2] CRAN (R 4.5.0)
+ spatstat.explore   3.4-3   2025-05-21 [2] CRAN (R 4.5.0)
+ spatstat.geom      3.4-1   2025-05-20 [2] CRAN (R 4.5.0)
+ spatstat.random    3.4-1   2025-05-20 [2] CRAN (R 4.5.0)
+ spatstat.sparse    3.1-0   2024-06-21 [2] CRAN (R 4.5.0)
+ spatstat.univar    3.1-3   2025-05-08 [2] CRAN (R 4.5.0)
+ spatstat.utils     3.1-4   2025-05-15 [2] CRAN (R 4.5.0)
+ stringi            1.8.7   2025-03-27 [2] CRAN (R 4.5.0)
+ stringr            1.5.1   2023-11-14 [2] CRAN (R 4.5.0)
+ survival           3.8-3   2024-12-17 [3] CRAN (R 4.5.0)
+ tensor             1.5     2012-05-05 [2] CRAN (R 4.5.0)
+ tibble             3.2.1   2023-03-20 [2] CRAN (R 4.5.0)
+ tidyr              1.3.1   2024-01-24 [2] CRAN (R 4.5.0)
+ tidyselect         1.2.1   2024-03-11 [2] CRAN (R 4.5.0)
+ uwot               0.2.3   2025-02-24 [2] CRAN (R 4.5.0)
+ vctrs              0.6.5   2023-12-01 [2] CRAN (R 4.5.0)
+ viridisLite        0.4.2   2023-05-02 [2] CRAN (R 4.5.0)
+ xtable             1.8-4   2019-04-21 [2] CRAN (R 4.5.0)
+ zoo                1.8-14  2025-04-10 [2] CRAN (R 4.5.0)
+
+ [1] /users/rphillip/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
+ * ── Packages attached to the search path.
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+********* Job Ends *********
+Fri Dec 12 03:08:23 PM EST 2025
