@@ -38,3 +38,28 @@ p <- lapply(files_list,FUN = function(x){
 
 ggsave(plot = p,
        file = here("plots","05_clustering","Banksy","Non_spatial_Number_clusters.pdf"))
+
+#make a dataframe of clusters
+#First make the names of the lists the second column
+for(i in names(files_list)){
+  print(i)
+  colnames(files_list[[i]])[2] <- as.character(lapply(strsplit(i,split = ".csv"),"[",1))
+}
+
+#Are they all in the same order
+all(sapply(list(files_list[[2]]$cell_id, files_list[[3]]$cell_id,
+                files_list[[4]]$cell_id, files_list[[5]]$cell_id,
+                files_list[[6]]$cell_id), FUN = identical, files_list[[1]]$cell_id))
+#[1] TRUE
+
+#Now create a dataframe that is the cell_id and all of the clustering options? 
+clustering_options <- data.frame(cell_id = files_list[[1]]$cell_id,
+                                 Lambda0_res0.25_louvain  = files_list[[1]]$Lambda0_res0.25_louvain,
+                                 Lambda0_res0.5_louvain   = files_list[[2]]$Lambda0_res0.5_louvain,
+                                 Lambda0_res0.75_louvain  = files_list[[3]]$Lambda0_res0.75_louvain,
+                                 Lambda0_res1_louvain     = files_list[[4]]$Lambda0_res1_louvain,
+                                 Lambda0_res1.25_louvain  = files_list[[5]]$Lambda0_res1.25_louvain,
+                                 Lambda0_res1.50_louvain  = files_list[[6]]$Lambda0_res1.5_louvain)
+
+saveRDS(object = clustering_options,
+        file = here("processed-data","05_Clustering","Non_spatial_results_combined.RDS"))
