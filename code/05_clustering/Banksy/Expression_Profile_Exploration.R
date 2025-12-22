@@ -208,7 +208,7 @@ hm <- ComplexHeatmap::Heatmap(matrix = hm_mat,
                               rect_gp = grid::gpar(col = "gray50", lwd = 0.5),
                               col = col_fun)
 
-pdf(file = here("plots","05_clustering","Banksy","Expression_heatmap.pdf"),height = 12, width = 12)
+pdf(file = here("plots","05_clustering","Banksy","Expression_heatmap.pdf"),height = 12, width = 18)
 draw(hm)
 dev.off()
 
