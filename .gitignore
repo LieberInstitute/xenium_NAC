@@ -29,3 +29,7 @@ processed-data/05_Clustering/*
 plots/05_clustering/*
 **/archive*/
 **/202509/
+processed-data/Day_Lab_Panel/*
+processed-data/HD/*
+processed-data/WM_pairwise_DEGs.Rds
+processed-data/spatial_registration/*
