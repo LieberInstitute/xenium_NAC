@@ -1,0 +1,1702 @@
+********* Job Starts *********
+Sun Jan 25 05:53:34 PM EST 2026
+**** SLURM info ****
+User: rphillip
+Job id: 27104896
+Job name: 02_snRNA_plot
+Hostname: compute-121
+Task id: 
+Loading conda_R/4.5
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Loading required package: singlet
+Loading required package: Seurat
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘sp’
+
+The following object is masked from ‘package:IRanges’:
+
+    %over%
+
+
+Attaching package: ‘SeuratObject’
+
+The following object is masked from ‘package:SummarizedExperiment’:
+
+    Assays
+
+The following object is masked from ‘package:GenomicRanges’:
+
+    intersect
+
+The following object is masked from ‘package:GenomeInfoDb’:
+
+    intersect
+
+The following object is masked from ‘package:IRanges’:
+
+    intersect
+
+The following object is masked from ‘package:S4Vectors’:
+
+    intersect
+
+The following object is masked from ‘package:BiocGenerics’:
+
+    intersect
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SummarizedExperiment’:
+
+    Assays
+
+Loading required package: RcppML
+RcppML v0.5.5 using 'options(RcppML.threads = 0)' (all available threads), 'options(RcppML.verbose = FALSE)'
+
+Attaching package: ‘RcppML’
+
+The following object is masked from ‘package:generics’:
+
+    evaluate
+
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following object is masked from ‘package:Biobase’:
+
+    combine
+
+The following objects are masked from ‘package:GenomicRanges’:
+
+    intersect, setdiff, union
+
+The following object is masked from ‘package:GenomeInfoDb’:
+
+    intersect
+
+The following objects are masked from ‘package:IRanges’:
+
+    collapse, desc, intersect, setdiff, slice, union
+
+The following objects are masked from ‘package:S4Vectors’:
+
+    first, intersect, rename, setdiff, setequal, union
+
+The following objects are masked from ‘package:BiocGenerics’:
+
+    combine, intersect, setdiff, setequal, union
+
+The following object is masked from ‘package:generics’:
+
+    explain
+
+The following object is masked from ‘package:matrixStats’:
+
+    count
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: RcppEigen
+
+Attaching package: ‘singlet’
+
+The following object is masked from ‘package:Seurat’:
+
+    ProjectData
+
+
+Attaching package: ‘nmfLabelTransfer’
+
+The following object is masked from ‘package:singlet’:
+
+    run_nmf
+
+Warning messages:
+1: replacing previous import ‘SummarizedExperiment::start’ by ‘stats::start’ when loading ‘nmfLabelTransfer’ 
+2: replacing previous import ‘RcppML::predict’ by ‘stats::predict’ when loading ‘nmfLabelTransfer’ 
+3: replacing previous import ‘SummarizedExperiment::end’ by ‘stats::end’ when loading ‘nmfLabelTransfer’ 
+4: replacing previous import ‘SingleCellExperiment::weights’ by ‘stats::weights’ when loading ‘nmfLabelTransfer’ 
+5: replacing previous import ‘RcppML::biplot’ by ‘stats::biplot’ when loading ‘nmfLabelTransfer’ 
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+Loading objects:
+  cluster_cols
+      Oligo  DRD1_MSN_A  DRD2_MSN_A         OPC   Microglia   Ependymal 
+  "#4F4753"   "#ECA31C"   "#58B6ED"   "#0D9F72"   "#F2E642"   "#0077B9" 
+Astrocyte_A  DRD1_MSN_B Endothelial       Inh_A  DRD2_MSN_B Astrocyte_B 
+  "#D95F00"   "#D079AA"   "#D00DFF"   "#35FB00"   "#F80091"   "#FF0016" 
+ DRD1_MSN_C  DRD1_MSN_D       Inh_B       Inh_C       Inh_D       Inh_E 
+  "#2A4BF9"   "#FB3DD9"   "#7A0096"   "#854222"   "#A7F281"   "#0DFBFA" 
+ Excitatory       Inh_F 
+  "#5C6300"     "black" 
+[1] "Br6660_NAc1_580"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc2_1090"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc3_1580"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc4_2080"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc5_2580"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc6_3080"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc7_3580"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc8_4580"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc9_5080"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_Nac10_4080"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_Nac11_5580"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac1_650"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac2_1150"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac3_1650"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_4_2150"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_5_2650"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_6_3150"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_7_3660"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_8_4150"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_9_4650"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_10_5150"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_11_5650"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc1_580"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc2_1090"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc3_1580"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc4_2080"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc5_2580"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc6_3080"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc7_3580"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc8_4580"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_NAc9_5080"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_Nac10_4080"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6660_Nac11_5580"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac1_650"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac2_1150"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac3_1650"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_4_2150"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_5_2650"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_6_3150"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_7_3660"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_8_4150"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_9_4650"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_10_5150"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Br6436_Nac_11_5650"
+[1] "DRD1_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Oligo"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Excitatory"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Astrocyte_A"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Microglia"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_F"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_C"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_E"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "OPC"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Endothelial"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Ependymal"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD2_MSN_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_B"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "DRD1_MSN_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Inh_D"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "Reproducibility information:"
+[1] "2026-01-25 18:38:04 EST"
+    user   system  elapsed 
+2404.529  124.209 2668.812 
+R version 4.5.0 Patched (2025-05-21 r88220)
+Platform: x86_64-conda-linux-gnu
+Running under: Rocky Linux 9.4 (Blue Onyx)
+
+Matrix products: default
+BLAS:   /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRblas.so 
+LAPACK: /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRlapack.so;  LAPACK version 3.12.1
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Eastern
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats4    stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] here_1.0.1                  escheR_1.8.0                ggplot2_3.5.2               sessioninfo_1.2.3          
+ [5] nmfLabelTransfer_0.0.0.9000 singlet_0.99.8              RcppEigen_0.3.4.0.2         dplyr_1.1.4                
+ [9] RcppML_0.5.6                Seurat_5.3.0                SeuratObject_5.1.0          sp_2.2-0                   
+[13] SpatialExperiment_1.18.1    SingleCellExperiment_1.30.1 SummarizedExperiment_1.38.1 Biobase_2.68.0             
+[17] GenomicRanges_1.60.0        GenomeInfoDb_1.44.0         IRanges_2.42.0              S4Vectors_0.46.0           
+[21] BiocGenerics_0.54.0         generics_0.1.4              MatrixGenerics_1.20.0       matrixStats_1.5.0          
+
+loaded via a namespace (and not attached):
+  [1] RColorBrewer_1.1-3      shape_1.4.6.1           jsonlite_2.0.0          magrittr_2.0.3         
+  [5] spatstat.utils_3.1-4    magick_2.8.6            farver_2.1.2            ragg_1.4.0             
+  [9] vctrs_0.6.5             ROCR_1.0-11             spatstat.explore_3.4-3  htmltools_0.5.8.1      
+ [13] S4Arrays_1.8.0          curl_6.2.2              SparseArray_1.8.0       sctransform_0.4.2      
+ [17] parallelly_1.44.0       KernSmooth_2.23-26      htmlwidgets_1.6.4       ica_1.0-3              
+ [21] plyr_1.8.9              plotly_4.10.4           zoo_1.8-14              igraph_2.1.4           
+ [25] iterators_1.0.14        mime_0.13               lifecycle_1.0.4         pkgconfig_2.0.3        
+ [29] Matrix_1.7-3            R6_2.6.1                fastmap_1.2.0           GenomeInfoDbData_1.2.14
+ [33] fitdistrplus_1.2-2      future_1.49.0           shiny_1.10.0            digest_0.6.37          
+ [37] patchwork_1.3.0         rprojroot_2.0.4         tensor_1.5              RSpectra_0.16-2        
+ [41] irlba_2.3.5.1           textshaping_1.0.1       labeling_0.4.3          progressr_0.15.1       
+ [45] spatstat.sparse_3.1-0   httr_1.4.7              polyclip_1.10-7         abind_1.4-8            
+ [49] compiler_4.5.0          withr_3.0.2             BiocParallel_1.42.0     fastDummies_1.7.5      
+ [53] MASS_7.3-65             DelayedArray_0.34.1     rjson_0.2.23            tools_4.5.0            
+ [57] lmtest_0.9-40           msigdbr_25.1.1          httpuv_1.6.16           future.apply_1.11.3    
+ [61] goftest_1.2-3           glue_1.8.0              dbscan_1.2.2            nlme_3.1-168           
+ [65] promises_1.3.2          grid_4.5.0              Rtsne_0.17              cluster_2.1.8.1        
+ [69] reshape2_1.4.4          fgsea_1.34.2            gtable_0.3.6            spatstat.data_3.1-6    
+ [73] tidyr_1.3.1             data.table_1.17.2       XVector_0.48.0          spatstat.geom_3.4-1    
+ [77] RcppAnnoy_0.0.22        foreach_1.5.2           ggrepel_0.9.6           RANN_2.6.2             
+ [81] pillar_1.10.2           stringr_1.5.1           babelgene_22.9          limma_3.64.3           
+ [85] spam_2.11-1             RcppHNSW_0.6.0          later_1.4.2             splines_4.5.0          
+ [89] lattice_0.22-7          survival_3.8-3          deldir_2.0-4            tidyselect_1.2.1       
+ [93] miniUI_0.1.2            pbapply_1.7-2           knitr_1.50              gridExtra_2.3          
+ [97] scattermore_1.2         xfun_0.52               statmod_1.5.0           stringi_1.8.7          
+[101] UCSC.utils_1.4.0        lazyeval_0.2.2          evaluate_1.0.3          codetools_0.2-20       
+[105] tibble_3.2.1            cli_3.6.5               uwot_0.2.3              systemfonts_1.2.3      
+[109] xtable_1.8-4            reticulate_1.42.0       dichromat_2.0-0.1       Rcpp_1.0.14            
+[113] globals_0.18.0          spatstat.random_3.4-1   png_0.1-8               spatstat.univar_3.1-3  
+[117] parallel_4.5.0          assertthat_0.2.1        dotCall64_1.2           glmnet_4.1-8           
+[121] listenv_0.9.1           viridisLite_0.4.2       scales_1.4.0            ggridges_0.5.6         
+[125] purrr_1.0.4             crayon_1.5.3            rlang_1.1.6             fastmatch_1.1-6        
+[129] cowplot_1.1.3          
+********* Job Ends *********
+Sun Jan 25 06:38:08 PM EST 2026
