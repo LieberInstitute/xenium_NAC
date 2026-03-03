@@ -39,3 +39,5 @@ processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_008um/spa
 processed-data/01_spaceranger/H1-XKYDCP3_A1/outs/binned_outputs/square_008um/spatial/tissue_positions.csv
 processed-data/01_spaceranger/H1-XKYDCP3_D1/outs/binned_outputs/square_008um/spatial/tissue_positions.csv
 processed-data/HD_Full_Analysis/*
+plots/Figure1/*
+processed-data/CellType_Cols_v2.Rds
