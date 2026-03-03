@@ -33,3 +33,9 @@ processed-data/Day_Lab_Panel/*
 processed-data/HD/*
 processed-data/WM_pairwise_DEGs.Rds
 processed-data/spatial_registration/*
+plots/HD_Full_Analysis/*
+processed-data/01_spaceranger/H1-M3TCP9V_A1/outs/binned_outputs/square_008um/spatial/tissue_positions.csv
+processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_008um/spatial/tissue_positions.csv
+processed-data/01_spaceranger/H1-XKYDCP3_A1/outs/binned_outputs/square_008um/spatial/tissue_positions.csv
+processed-data/01_spaceranger/H1-XKYDCP3_D1/outs/binned_outputs/square_008um/spatial/tissue_positions.csv
+processed-data/HD_Full_Analysis/*
