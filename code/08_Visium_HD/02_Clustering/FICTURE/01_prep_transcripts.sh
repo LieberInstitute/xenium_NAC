@@ -47,7 +47,9 @@ spatula convert-sge \
     --units-per-um $(python -c "print(1/${microns_per_pixel})") \
     --colnames-count Count \
     --out-tsv $out_dir \
-    --icols-mtx 1
+    --icols-mtx 1 \
+    --pos-colname-x pxl_col_in_fullres \
+    --pos-colname-y pxl_row_in_fullres
 
 ## Sort by the X-coordinate
 (gzip -cd $out_dir/transcripts.unsorted.tsv.gz \
@@ -57,3 +59,4 @@ spatula convert-sge \
 
 echo "**** Job ends ****"
 date
+
