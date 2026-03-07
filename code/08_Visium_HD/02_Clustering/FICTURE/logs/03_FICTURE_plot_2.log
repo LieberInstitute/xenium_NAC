@@ -1,0 +1,89 @@
+**** Job starts ****
+Sat Mar  7 05:12:37 PM EST 2026
+Loading LIBD SLURM module for visium_hd/1.0
+Loading LIBD SLURM module for htslib/1.18
+--------------------------------------------------------------
+Plotting nFactor=8 for H1-XKYDCP3_D1
+--------------------------------------------------------------
+  pixel_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-XKYDCP3_D1/nF_8/analysis/nF8.d_12//nF8.d_12.decode.prj_12.r_4_5.pixel.sorted.tsv.gz
+  color_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-XKYDCP3_D1/nF_8/analysis/nF8.d_12/figure/nF8.d_12.rgb.tsv
+05:12:39 PM Background color 000000
+05:12:39 PM Read color table (8)
+05:12:39 PM Read header {'K': 8, 'TOPK': 3, 'BLOCK_SIZE': 2000, 'BLOCK_AXIS': 'X', 'INDEX_AXIS': 'Y', 'OFFSET_X': 19764.124, 'OFFSET_Y': 5261.086, 'SIZE_X': 6793, 'SIZE_Y': 6793, 'SCALE': 100}
+05:12:39 PM Image size 3397 x 3397
+05:12:41 PM Reading pixels... 999, 1323, 872023
+05:12:43 PM Reading pixels... 999, 2586, 871559
+05:12:45 PM Reading pixels... 1999, 431, 871080
+05:12:47 PM Reading pixels... 1999, 1283, 848898
+05:12:48 PM Reading pixels... 1999, 2148, 862276
+05:12:50 PM Reading pixels... 1999, 3049, 884164
+05:12:52 PM Reading pixels... 2999, 635, 867997
+05:12:54 PM Reading pixels... 2999, 1509, 857858
+05:12:56 PM Reading pixels... 2999, 2386, 864032
+05:12:58 PM Reading pixels... 2999, 3296, 871881
+05:13:00 PM Reading pixels... 3391, 404, 845791
+05:13:01 PM Reading pixels... 3363, 2348, 305541
+05:13:01 PM Finished
+/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-XKYDCP3_D1/nF_8_H1-XKYDCP3_D1_clusters.png
+Index(['0', '1', '2', '3', '4', '5', '6', '7'], dtype='object', name='Name')
+['BLOCK', 'X', 'Y', 'K1', 'K2', 'K3', 'P1', 'P2', 'P3']
+Plot saved: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-XKYDCP3_D1/nF_8_H1-XKYDCP3_D1_clusters.png 
+Sat Mar  7 05:13:02 PM EST 2026
+--------------------------------------------------------------
+Plotting nFactor=12 for H1-XKYDCP3_D1
+--------------------------------------------------------------
+  pixel_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-XKYDCP3_D1/nF_12/analysis/nF12.d_12//nF12.d_12.decode.prj_12.r_4_5.pixel.sorted.tsv.gz
+  color_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-XKYDCP3_D1/nF_12/analysis/nF12.d_12/figure/nF12.d_12.rgb.tsv
+05:13:02 PM Background color 000000
+05:13:02 PM Read color table (12)
+05:13:02 PM Read header {'K': 12, 'TOPK': 3, 'BLOCK_SIZE': 2000, 'BLOCK_AXIS': 'X', 'INDEX_AXIS': 'Y', 'OFFSET_X': 19764.124, 'OFFSET_Y': 5261.086, 'SIZE_X': 6793, 'SIZE_Y': 6793, 'SCALE': 100}
+05:13:02 PM Image size 3397 x 3397
+05:13:05 PM Reading pixels... 999, 1325, 873764
+05:13:07 PM Reading pixels... 999, 2574, 861532
+05:13:09 PM Reading pixels... 1999, 435, 883156
+05:13:11 PM Reading pixels... 1999, 1306, 867782
+05:13:13 PM Reading pixels... 1999, 2158, 849560
+05:13:15 PM Reading pixels... 1999, 3059, 883836
+05:13:17 PM Reading pixels... 2999, 647, 869459
+05:13:19 PM Reading pixels... 2999, 1526, 863692
+05:13:22 PM Reading pixels... 2999, 2395, 855865
+05:13:24 PM Reading pixels... 2999, 3325, 888777
+05:13:26 PM Reading pixels... 3391, 404, 855155
+05:13:27 PM Reading pixels... 3362, 2418, 270022
+05:13:28 PM Finished
+/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-XKYDCP3_D1/nF_12_H1-XKYDCP3_D1_clusters.png
+Index(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'], dtype='object', name='Name')
+['BLOCK', 'X', 'Y', 'K1', 'K2', 'K3', 'P1', 'P2', 'P3']
+Plot saved: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-XKYDCP3_D1/nF_12_H1-XKYDCP3_D1_clusters.png 
+Sat Mar  7 05:13:28 PM EST 2026
+--------------------------------------------------------------
+Plotting nFactor=16 for H1-XKYDCP3_D1
+--------------------------------------------------------------
+  pixel_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-XKYDCP3_D1/nF_16/analysis/nF16.d_12//nF16.d_12.decode.prj_12.r_4_5.pixel.sorted.tsv.gz
+  color_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-XKYDCP3_D1/nF_16/analysis/nF16.d_12/figure/nF16.d_12.rgb.tsv
+05:13:28 PM Background color 000000
+05:13:28 PM Read color table (16)
+05:13:28 PM Read header {'K': 16, 'TOPK': 3, 'BLOCK_SIZE': 2000, 'BLOCK_AXIS': 'X', 'INDEX_AXIS': 'Y', 'OFFSET_X': 19764.124, 'OFFSET_Y': 5261.086, 'SIZE_X': 6793, 'SIZE_Y': 6793, 'SCALE': 100}
+05:13:28 PM Image size 3397 x 3397
+05:13:31 PM Reading pixels... 999, 1331, 877502
+05:13:33 PM Reading pixels... 999, 2582, 863282
+05:13:35 PM Reading pixels... 1999, 436, 878333
+05:13:37 PM Reading pixels... 1999, 1297, 858339
+05:13:39 PM Reading pixels... 1999, 2157, 857436
+05:13:42 PM Reading pixels... 1999, 3063, 888229
+05:13:44 PM Reading pixels... 2999, 655, 874331
+05:13:46 PM Reading pixels... 2999, 1533, 861976
+05:13:48 PM Reading pixels... 2999, 2397, 850385
+05:13:50 PM Reading pixels... 2999, 3319, 882279
+05:13:53 PM Reading pixels... 3391, 404, 857374
+05:13:54 PM Reading pixels... 3362, 2418, 273302
+05:13:54 PM Finished
+/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-XKYDCP3_D1/nF_16_H1-XKYDCP3_D1_clusters.png
+Index(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
+       '13', '14', '15'],
+      dtype='object', name='Name')
+['BLOCK', 'X', 'Y', 'K1', 'K2', 'K3', 'P1', 'P2', 'P3']
+Plot saved: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-XKYDCP3_D1/nF_16_H1-XKYDCP3_D1_clusters.png 
+Sat Mar  7 05:13:54 PM EST 2026
+**** Job ends ****
+Sat Mar  7 05:13:54 PM EST 2026

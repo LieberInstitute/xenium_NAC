@@ -1,0 +1,92 @@
+**** Job starts ****
+Sat Mar  7 05:12:37 PM EST 2026
+Loading LIBD SLURM module for visium_hd/1.0
+Loading LIBD SLURM module for htslib/1.18
+--------------------------------------------------------------
+Plotting nFactor=8 for H1-M3TCP9V_D1
+--------------------------------------------------------------
+  pixel_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-M3TCP9V_D1/nF_8/analysis/nF8.d_12//nF8.d_12.decode.prj_12.r_4_5.pixel.sorted.tsv.gz
+  color_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-M3TCP9V_D1/nF_8/analysis/nF8.d_12/figure/nF8.d_12.rgb.tsv
+05:12:39 PM Background color 000000
+05:12:39 PM Read color table (8)
+05:12:39 PM Read header {'K': 8, 'TOPK': 3, 'BLOCK_SIZE': 2000, 'BLOCK_AXIS': 'X', 'INDEX_AXIS': 'Y', 'OFFSET_X': 1669.503, 'OFFSET_Y': 1316.256, 'SIZE_X': 6724, 'SIZE_Y': 6724, 'SCALE': 100}
+05:12:39 PM Image size 3362 x 3362
+05:12:41 PM Reading pixels... 999, 923, 896604
+05:12:43 PM Reading pixels... 999, 1808, 862177
+05:12:45 PM Reading pixels... 999, 2726, 879447
+05:12:47 PM Reading pixels... 1999, 344, 899904
+05:12:50 PM Reading pixels... 1999, 1263, 874630
+05:12:52 PM Reading pixels... 1999, 2172, 875524
+05:12:54 PM Reading pixels... 1999, 3086, 884407
+05:12:56 PM Reading pixels... 2999, 680, 898367
+05:12:58 PM Reading pixels... 2999, 1555, 861560
+05:13:00 PM Reading pixels... 2999, 2429, 852781
+05:13:02 PM Reading pixels... 3356, 34, 886092
+05:13:04 PM Reading pixels... 3356, 1503, 840540
+05:13:05 PM Reading pixels... 3352, 2631, 172102
+05:13:06 PM Finished
+/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-M3TCP9V_D1/nF_8_H1-M3TCP9V_D1_clusters.png
+Index(['0', '1', '2', '3', '4', '5', '6', '7'], dtype='object', name='Name')
+['BLOCK', 'X', 'Y', 'K1', 'K2', 'K3', 'P1', 'P2', 'P3']
+Plot saved: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-M3TCP9V_D1/nF_8_H1-M3TCP9V_D1_clusters.png 
+Sat Mar  7 05:13:06 PM EST 2026
+--------------------------------------------------------------
+Plotting nFactor=12 for H1-M3TCP9V_D1
+--------------------------------------------------------------
+  pixel_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-M3TCP9V_D1/nF_12/analysis/nF12.d_12//nF12.d_12.decode.prj_12.r_4_5.pixel.sorted.tsv.gz
+  color_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-M3TCP9V_D1/nF_12/analysis/nF12.d_12/figure/nF12.d_12.rgb.tsv
+05:13:06 PM Background color 000000
+05:13:06 PM Read color table (12)
+05:13:06 PM Read header {'K': 12, 'TOPK': 3, 'BLOCK_SIZE': 2000, 'BLOCK_AXIS': 'X', 'INDEX_AXIS': 'Y', 'OFFSET_X': 1669.503, 'OFFSET_Y': 1316.256, 'SIZE_X': 6724, 'SIZE_Y': 6724, 'SCALE': 100}
+05:13:06 PM Image size 3362 x 3362
+05:13:09 PM Reading pixels... 999, 926, 899454
+05:13:11 PM Reading pixels... 999, 1818, 869714
+05:13:13 PM Reading pixels... 999, 2735, 877354
+05:13:15 PM Reading pixels... 1999, 354, 900111
+05:13:17 PM Reading pixels... 1999, 1272, 875144
+05:13:20 PM Reading pixels... 1999, 2175, 870060
+05:13:22 PM Reading pixels... 1999, 3084, 879074
+05:13:24 PM Reading pixels... 2999, 689, 909012
+05:13:26 PM Reading pixels... 2999, 1566, 863874
+05:13:28 PM Reading pixels... 2999, 2457, 868773
+05:13:30 PM Reading pixels... 3356, 92, 882339
+05:13:32 PM Reading pixels... 3356, 1503, 851852
+05:13:33 PM Reading pixels... 3351, 2913, 137389
+05:13:34 PM Finished
+/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-M3TCP9V_D1/nF_12_H1-M3TCP9V_D1_clusters.png
+Index(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'], dtype='object', name='Name')
+['BLOCK', 'X', 'Y', 'K1', 'K2', 'K3', 'P1', 'P2', 'P3']
+Plot saved: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-M3TCP9V_D1/nF_12_H1-M3TCP9V_D1_clusters.png 
+Sat Mar  7 05:13:34 PM EST 2026
+--------------------------------------------------------------
+Plotting nFactor=16 for H1-M3TCP9V_D1
+--------------------------------------------------------------
+  pixel_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-M3TCP9V_D1/nF_16/analysis/nF16.d_12//nF16.d_12.decode.prj_12.r_4_5.pixel.sorted.tsv.gz
+  color_file: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/outputs/H1-M3TCP9V_D1/nF_16/analysis/nF16.d_12/figure/nF16.d_12.rgb.tsv
+05:13:34 PM Background color 000000
+05:13:34 PM Read color table (16)
+05:13:34 PM Read header {'K': 16, 'TOPK': 3, 'BLOCK_SIZE': 2000, 'BLOCK_AXIS': 'X', 'INDEX_AXIS': 'Y', 'OFFSET_X': 1669.503, 'OFFSET_Y': 1316.256, 'SIZE_X': 6724, 'SIZE_Y': 6724, 'SCALE': 100}
+05:13:34 PM Image size 3362 x 3362
+05:13:37 PM Reading pixels... 999, 931, 904075
+05:13:39 PM Reading pixels... 999, 1820, 866537
+05:13:41 PM Reading pixels... 999, 2723, 864526
+05:13:43 PM Reading pixels... 1999, 334, 893263
+05:13:45 PM Reading pixels... 1999, 1252, 873603
+05:13:47 PM Reading pixels... 1999, 2159, 873587
+05:13:50 PM Reading pixels... 1999, 3065, 877235
+05:13:52 PM Reading pixels... 2999, 650, 888263
+05:13:54 PM Reading pixels... 2999, 1535, 872004
+05:13:56 PM Reading pixels... 2999, 2424, 866459
+05:13:58 PM Reading pixels... 3356, 14, 885137
+05:14:00 PM Reading pixels... 3356, 1503, 850663
+05:14:01 PM Reading pixels... 3352, 2631, 168457
+05:14:01 PM Finished
+/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-M3TCP9V_D1/nF_16_H1-M3TCP9V_D1_clusters.png
+Index(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
+       '13', '14', '15'],
+      dtype='object', name='Name')
+['BLOCK', 'X', 'Y', 'K1', 'K2', 'K3', 'P1', 'P2', 'P3']
+Plot saved: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/FICTURE/H1-M3TCP9V_D1/nF_16_H1-M3TCP9V_D1_clusters.png 
+Sat Mar  7 05:14:01 PM EST 2026
+**** Job ends ****
+Sat Mar  7 05:14:01 PM EST 2026

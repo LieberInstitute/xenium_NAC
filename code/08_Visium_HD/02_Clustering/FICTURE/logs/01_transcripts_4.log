@@ -1,7 +1,5 @@
 **** Job starts ****
-Thu Mar  5 04:29:24 PM EST 2026
-Unloading LIBD SLURM module for visium_hd/1.0
-Unloading LIBD SLURM module for htslib/1.18
+Fri Mar  6 12:13:05 PM EST 2026
 Loading LIBD SLURM module for visium_hd/1.0
 Loading LIBD SLURM module for htslib/1.18
 Converting spatial coords to CSV...
@@ -29,8 +27,8 @@ The following parameters are available. Ones with "[]" are in effect:
                                             --icol-ftr-name [2]
          Additional Barcode Position File : --pos [/fastscratch/myscratch/rphillip/H1-M3TCP9V_D1_tissue_positions.csv.gz],
                                             --pos-colname-barcode [barcode],
-                                            --pos-colname-x [pxl_row_in_fullres],
-                                            --pos-colname-y [pxl_col_in_fullres],
+                                            --pos-colname-x [pxl_col_in_fullres],
+                                            --pos-colname-y [pxl_row_in_fullres],
                                             --pos-delim [,]
                   Input Filtering Options : --include-feature-list,
                                             --exclude-feature-list,
@@ -49,157 +47,157 @@ The following parameters are available. Ones with "[]" are in effect:
 
 Run with --help for more detailed help messages of each argument.
 
-NOTICE [2026/03/05 16:31:06] - Output directory /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/inputs/H1-M3TCP9V_D1 already exists.
-NOTICE [2026/03/05 16:31:06] - Analysis started
-NOTICE [2026/03/05 16:31:06] - No feature filtering is applied
-NOTICE [2026/03/05 16:31:06] - Feature name ARMCX5-GPRASP2 (ID : ENSG00000271147) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name ARMCX5-GPRASP2 (ID : ENSG00000286237) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name DDX11L16 (ID : ENSG00000290824) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name DDX11L16 (ID : ENSG00000290355) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name DNAJC9-AS1 (ID : ENSG00000236756) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name DNAJC9-AS1 (ID : ENSG00000227540) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name ELFN2 (ID : ENSG00000243902) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name ELFN2 (ID : ENSG00000166897) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name GOLGA8M (ID : ENSG00000188626) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name GOLGA8M (ID : ENSG00000261480) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name GPR84-AS1 (ID : ENSG00000258137) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name GPR84-AS1 (ID : ENSG00000258086) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC00484 (ID : ENSG00000229694) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC00484 (ID : ENSG00000235641) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC01115 (ID : ENSG00000272342) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC01115 (ID : ENSG00000237667) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC01238 (ID : ENSG00000237940) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC01238 (ID : ENSG00000261186) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC01605 (ID : ENSG00000253161) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC01605 (ID : ENSG00000253414) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC02256 (ID : ENSG00000289083) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC02256 (ID : ENSG00000261064) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC03021 (ID : ENSG00000277526) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC03021 (ID : ENSG00000254319) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC03023 (ID : ENSG00000253147) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC03023 (ID : ENSG00000254026) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LINC03025 (ID : ENSG00000276462) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LINC03025 (ID : ENSG00000234394) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name LSP1P5 (ID : ENSG00000288905) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name LSP1P5 (ID : ENSG00000291150) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name MKKS (ID : ENSG00000125863) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name MKKS (ID : ENSG00000285508) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name MKKS (ID : ENSG00000285723) is not unique. Resolving the conflict by appending the suffix v3
-NOTICE [2026/03/05 16:31:06] - Feature name NPIPA9 (ID : ENSG00000183889) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name NPIPA9 (ID : ENSG00000233024) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name PRICKLE2-AS1 (ID : ENSG00000241111) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name PRICKLE2-AS1 (ID : ENSG00000241572) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name RAET1E-AS1 (ID : ENSG00000268592) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name RAET1E-AS1 (ID : ENSG00000223701) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name SPATA13 (ID : ENSG00000182957) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name SPATA13 (ID : ENSG00000228741) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Feature name TNFRSF10A-DT (ID : ENSG00000246582) is not unique. Resolving the conflict by appending the suffix v1
-NOTICE [2026/03/05 16:31:06] - Feature name TNFRSF10A-DT (ID : ENSG00000250714) is not unique. Resolving the conflict by appending the suffix v2
-NOTICE [2026/03/05 16:31:06] - Processing SGE directory /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix ...
-NOTICE [2026/03/05 16:31:06] - Loading position file /fastscratch/myscratch/rphillip/H1-M3TCP9V_D1_tissue_positions.csv.gz ...
-NOTICE [2026/03/05 16:31:20] - Opening the SGE directory /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix ...
-NOTICE [2026/03/05 16:31:20] - Processing 0 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:22] - Processing 1000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:23] - Processing 2000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:25] - Processing 3000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:27] - Processing 4000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:29] - Processing 5000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:31] - Processing 6000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:32] - Processing 7000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:34] - Processing 8000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:36] - Processing 9000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:38] - Processing 10000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:40] - Processing 11000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:41] - Processing 12000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:43] - Processing 13000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:45] - Processing 14000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:47] - Processing 15000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:48] - Processing 16000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:50] - Processing 17000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:51] - strid = s_002um_00660_00461-1, nid = 2211462, px = 140525009084992, py = 140525009085004
-NOTICE [2026/03/05 16:31:52] - Processing 18000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:54] - Processing 19000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:56] - Processing 20000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:57] - Processing 21000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:31:59] - Processing 22000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:01] - Processing 23000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:03] - Processing 24000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:05] - Processing 25000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:06] - Processing 26000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:08] - Processing 27000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:10] - Processing 28000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:12] - Processing 29000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:14] - Processing 30000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:15] - Processing 31000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:17] - Processing 32000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:19] - Processing 33000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:21] - Processing 34000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:23] - Processing 35000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:25] - Processing 36000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:26] - Processing 37000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:28] - Processing 38000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:30] - Processing 39000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:32] - Processing 40000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:33] - Processing 41000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:35] - Processing 42000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:37] - Processing 43000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:39] - Processing 44000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:41] - Processing 45000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:42] - Processing 46000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:44] - Processing 47000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:46] - Processing 48000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:48] - Processing 49000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:49] - Processing 50000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:51] - Processing 51000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:53] - Processing 52000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:55] - Processing 53000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:57] - Processing 54000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:32:58] - Processing 55000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:00] - Processing 56000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:02] - Processing 57000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:04] - Processing 58000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:05] - Processing 59000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:07] - Processing 60000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:09] - Processing 61000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:11] - Processing 62000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:12] - Processing 63000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:14] - Processing 64000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:16] - Processing 65000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:16] - strid = s_002um_02258_01832-1, nid = 7566133, px = 140525009085032, py = 140525009085044
-NOTICE [2026/03/05 16:33:18] - Processing 66000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:20] - Processing 67000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:21] - Processing 68000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:23] - Processing 69000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:25] - Processing 70000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:27] - Processing 71000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:29] - Processing 72000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:30] - Processing 73000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:32] - Processing 74000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:34] - Processing 75000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:36] - Processing 76000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:37] - Processing 77000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:39] - Processing 78000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:41] - Processing 79000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:43] - Processing 80000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:45] - Processing 81000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:46] - Processing 82000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:48] - Processing 83000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:50] - Processing 84000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:52] - Processing 85000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:53] - Processing 86000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:55] - Processing 87000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:57] - Processing 88000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:33:59] - Processing 89000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:01] - Processing 90000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:02] - Processing 91000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:04] - Processing 92000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:06] - Processing 93000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:08] - Processing 94000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:09] - Processing 95000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:11] - Processing 96000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:12] - strid = s_002um_03284_00101-1, nid = 11001502, px = 140525009084952, py = 140525009084964
-NOTICE [2026/03/05 16:34:13] - Processing 97000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
-NOTICE [2026/03/05 16:34:15] - EOF reached: cur_line = 97865647, cur_iftr = 36622, cur_sbcd.nid = 11222500
-NOTICE [2026/03/05 16:34:15] - Analysis finished
+NOTICE [2026/03/06 12:18:41] - Output directory /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/FICTURE/inputs/H1-M3TCP9V_D1 already exists.
+NOTICE [2026/03/06 12:18:41] - Analysis started
+NOTICE [2026/03/06 12:18:41] - No feature filtering is applied
+NOTICE [2026/03/06 12:18:42] - Feature name ARMCX5-GPRASP2 (ID : ENSG00000271147) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name ARMCX5-GPRASP2 (ID : ENSG00000286237) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name DDX11L16 (ID : ENSG00000290824) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name DDX11L16 (ID : ENSG00000290355) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name DNAJC9-AS1 (ID : ENSG00000236756) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name DNAJC9-AS1 (ID : ENSG00000227540) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name ELFN2 (ID : ENSG00000243902) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name ELFN2 (ID : ENSG00000166897) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name GOLGA8M (ID : ENSG00000188626) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name GOLGA8M (ID : ENSG00000261480) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name GPR84-AS1 (ID : ENSG00000258137) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name GPR84-AS1 (ID : ENSG00000258086) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC00484 (ID : ENSG00000229694) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC00484 (ID : ENSG00000235641) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC01115 (ID : ENSG00000272342) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC01115 (ID : ENSG00000237667) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC01238 (ID : ENSG00000237940) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC01238 (ID : ENSG00000261186) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC01605 (ID : ENSG00000253161) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC01605 (ID : ENSG00000253414) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC02256 (ID : ENSG00000289083) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC02256 (ID : ENSG00000261064) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC03021 (ID : ENSG00000277526) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC03021 (ID : ENSG00000254319) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC03023 (ID : ENSG00000253147) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC03023 (ID : ENSG00000254026) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LINC03025 (ID : ENSG00000276462) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LINC03025 (ID : ENSG00000234394) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name LSP1P5 (ID : ENSG00000288905) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name LSP1P5 (ID : ENSG00000291150) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name MKKS (ID : ENSG00000125863) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name MKKS (ID : ENSG00000285508) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name MKKS (ID : ENSG00000285723) is not unique. Resolving the conflict by appending the suffix v3
+NOTICE [2026/03/06 12:18:42] - Feature name NPIPA9 (ID : ENSG00000183889) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name NPIPA9 (ID : ENSG00000233024) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name PRICKLE2-AS1 (ID : ENSG00000241111) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name PRICKLE2-AS1 (ID : ENSG00000241572) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name RAET1E-AS1 (ID : ENSG00000268592) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name RAET1E-AS1 (ID : ENSG00000223701) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name SPATA13 (ID : ENSG00000182957) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name SPATA13 (ID : ENSG00000228741) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Feature name TNFRSF10A-DT (ID : ENSG00000246582) is not unique. Resolving the conflict by appending the suffix v1
+NOTICE [2026/03/06 12:18:42] - Feature name TNFRSF10A-DT (ID : ENSG00000250714) is not unique. Resolving the conflict by appending the suffix v2
+NOTICE [2026/03/06 12:18:42] - Processing SGE directory /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix ...
+NOTICE [2026/03/06 12:18:42] - Loading position file /fastscratch/myscratch/rphillip/H1-M3TCP9V_D1_tissue_positions.csv.gz ...
+NOTICE [2026/03/06 12:19:33] - Opening the SGE directory /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix ...
+NOTICE [2026/03/06 12:19:33] - Processing 0 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:19:39] - Processing 1000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:19:46] - Processing 2000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:19:52] - Processing 3000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:19:58] - Processing 4000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:05] - Processing 5000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:11] - Processing 6000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:18] - Processing 7000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:24] - Processing 8000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:30] - Processing 9000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:36] - Processing 10000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:42] - Processing 11000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:48] - Processing 12000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:20:54] - Processing 13000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:00] - Processing 14000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:06] - Processing 15000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:12] - Processing 16000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:17] - Processing 17000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:21] - strid = s_002um_00660_00461-1, nid = 2211462, px = 140246758957632, py = 140246758957644
+NOTICE [2026/03/06 12:21:23] - Processing 18000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:29] - Processing 19000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:35] - Processing 20000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:41] - Processing 21000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:47] - Processing 22000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:53] - Processing 23000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:21:59] - Processing 24000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:05] - Processing 25000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:11] - Processing 26000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:17] - Processing 27000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:23] - Processing 28000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:29] - Processing 29000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:35] - Processing 30000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:41] - Processing 31000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:47] - Processing 32000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:53] - Processing 33000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:22:59] - Processing 34000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:05] - Processing 35000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:12] - Processing 36000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:17] - Processing 37000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:23] - Processing 38000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:30] - Processing 39000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:36] - Processing 40000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:42] - Processing 41000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:48] - Processing 42000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:23:54] - Processing 43000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:00] - Processing 44000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:06] - Processing 45000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:12] - Processing 46000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:18] - Processing 47000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:24] - Processing 48000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:30] - Processing 49000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:36] - Processing 50000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:42] - Processing 51000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:49] - Processing 52000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:24:55] - Processing 53000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:01] - Processing 54000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:08] - Processing 55000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:14] - Processing 56000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:20] - Processing 57000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:26] - Processing 58000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:32] - Processing 59000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:38] - Processing 60000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:44] - Processing 61000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:50] - Processing 62000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:25:56] - Processing 63000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:02] - Processing 64000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:08] - Processing 65000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:10] - strid = s_002um_02258_01832-1, nid = 7566133, px = 140246758957672, py = 140246758957684
+NOTICE [2026/03/06 12:26:15] - Processing 66000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:21] - Processing 67000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:27] - Processing 68000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:33] - Processing 69000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:40] - Processing 70000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:46] - Processing 71000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:52] - Processing 72000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:26:58] - Processing 73000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:05] - Processing 74000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:11] - Processing 75000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:17] - Processing 76000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:23] - Processing 77000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:29] - Processing 78000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:35] - Processing 79000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:42] - Processing 80000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:48] - Processing 81000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:27:54] - Processing 82000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:00] - Processing 83000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:06] - Processing 84000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:13] - Processing 85000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:19] - Processing 86000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:26] - Processing 87000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:32] - Processing 88000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:38] - Processing 89000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:44] - Processing 90000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:50] - Processing 91000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:28:56] - Processing 92000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:29:02] - Processing 93000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:29:08] - Processing 94000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:29:14] - Processing 95000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:29:20] - Processing 96000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:29:22] - strid = s_002um_03284_00101-1, nid = 11001502, px = 140246758957592, py = 140246758957604
+NOTICE [2026/03/06 12:29:26] - Processing 97000000 lines... from /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1/outs/binned_outputs/square_002um/raw_feature_bc_matrix/matrix.mtx.gz
+NOTICE [2026/03/06 12:29:31] - EOF reached: cur_line = 97865647, cur_iftr = 36622, cur_sbcd.nid = 11222500
+NOTICE [2026/03/06 12:29:32] - Analysis finished
 **** Job ends ****
-Thu Mar  5 04:42:16 PM EST 2026
+Fri Mar  6 01:00:18 PM EST 2026
