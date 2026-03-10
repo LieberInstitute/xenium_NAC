@@ -1,11 +1,5 @@
 ********* Job Starts *********
-Tue Mar  3 04:14:25 PM EST 2026
-**** SLURM info ****
-User: rphillip
-Job id: 29358318
-Job name: spatial
-Hostname: compute-156
-Task id: 
+Mon Mar  9 08:42:26 AM EDT 2026
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
 Loading required package: SummarizedExperiment
@@ -92,92 +86,107 @@ The following objects are masked from ‘package:matrixStats’:
 
     anyMissing, rowMedians
 
-here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Loading required package: scuttle
+Loading required package: SparseArray
+Loading required package: Matrix
 
-   TRUE 
-2589504 
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:S4Vectors’:
+
+    expand
+
+Loading required package: S4Arrays
+Loading required package: abind
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+Loading required package: scuttle
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+
+  TRUE 
+590816 
 class: SpatialExperiment 
-dim: 18147 2589504 
+dim: 17909 590816 
 metadata(0):
 assays(2): counts logcounts
-rownames(18147): OR4F5 SAMD11 ... MT-ND6 MT-CYB
+rownames(17909): OR4F5 SAMD11 ... MT-ND6 MT-CYB
 rowData names(8): source type ... gene_search subsets_mito
-colnames(2589504): s_008um_00000_00000-1 s_008um_00000_00001-1 ...
-  s_008um_00837_00836-1 s_008um_00837_00837-1
-colData names(33): sample_id in_tissue ... qc_high_mito qc_discard
-reducedDimNames(2): 10x_pca 10x_umap
+colnames(590816): 1_H1-XKYDCP3_A1 3_H1-XKYDCP3_A1 ...
+  254743_H1-M3TCP9V_D1 254746_H1-M3TCP9V_D1
+colData names(23): object_id bin_count ... qc_low_bin_count qc_discard
+reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
 imgData names(4): sample_id image_id data scaleFactor
-2026-03-03 16:16:05.459023 | Selecting top HVGs
-  Selected 4000 HVGs
-4000854536 | Dimensions of subsetted object
-  Subsampled: 2589504 -> 854536 bins (33.0%)
-    H1-XKYDCP3_A1: 649058 -> 214189 bins
-    H1-XKYDCP3_D1: 624510 -> 206088 bins
-    H1-M3TCP9V_A1: 646249 -> 213262 bins
-    H1-M3TCP9V_D1: 669687 -> 220997 bins
-Running computeBanksy - 2026-03-03 16:16:20.244959
+2026-03-09 08:55:20.321249 | Selecting top HVGs
+  Selected 2000 HVGs
+2026-03-09 09:40:28.743992 | Subsetting SPE for the top 2000 HVGs
+class: SpatialExperiment 
+dim: 2000 590816 
+metadata(0):
+assays(2): counts logcounts
+rownames(2000): MBP GFAP ... PDCD4 ARHGAP31
+rowData names(8): source type ... gene_search subsets_mito
+colnames(590816): 1_H1-XKYDCP3_A1 3_H1-XKYDCP3_A1 ...
+  254743_H1-M3TCP9V_D1 254746_H1-M3TCP9V_D1
+colData names(23): object_id bin_count ... qc_low_bin_count qc_discard
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
+imgData names(4): sample_id image_id data scaleFactor
+Running computeBanksy - 2026-03-09 09:40:30.003577
 Computing neighbors...
 Spatial mode is kNN_median
-Parameters: k_geom=50
+Parameters: k_geom=30
 Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=50
-Done
-Done
-Centering
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=50
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=50
-Done
-Done
-Centering
 Done
 Computing neighbors...
 Spatial mode is kNN_median
-Parameters: k_geom=50
+Parameters: k_geom=30
+Done
 Done
 Computing neighbors...
 Spatial mode is kNN_median
-Parameters: k_geom=50
+Parameters: k_geom=30
 Done
-Done
-Centering
 Done
 Computing neighbors...
 Spatial mode is kNN_median
-Parameters: k_geom=50
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=50
+Parameters: k_geom=30
 Done
 Done
-Centering
-Done
-Warning messages:
-1: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 6.4 GiB
-2: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 6.1 GiB
-3: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 6.4 GiB
-4: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 6.6 GiB
-Finished computeBanksy - 2026-03-03 17:38:36.022518
-             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
-Ncells   11079014   591.7    17519325    935.7    17519325    935.7
-Vcells 8548714144 65221.6 20192372789 154055.6 20192372789 154055.6
-Running PCA - 2026-03-03 17:39:15.970923
+Finished computeBanksy - 2026-03-09 09:52:41.206268
+             used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells    9179746  490.3   17012521   908.6   17012521   908.6
+Vcells 1230974685 9391.6 3651432526 27858.3 3651432151 27858.3
+Running PCA - 2026-03-09 09:52:49.539261
 Scaling logcounts
 Group: H1-XKYDCP3_A1
 Group: H1-XKYDCP3_D1
@@ -188,26 +197,25 @@ Group: H1-XKYDCP3_A1
 Group: H1-XKYDCP3_D1
 Group: H1-M3TCP9V_A1
 Group: H1-M3TCP9V_D1
-Scaling harmonic m = 1
-Group: H1-XKYDCP3_A1
-Group: H1-XKYDCP3_D1
-Group: H1-M3TCP9V_A1
-Group: H1-M3TCP9V_D1
 Using seed=1000
-Warning message:
-In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 25.5 GiB
-Finished PCA - 2026-03-03 18:47:58.535304
-Running UMAP - 2026-03-03 18:47:58.535632
+Finished PCA - 2026-03-09 10:08:09.834343
+Running UMAP - 2026-03-09 10:08:09.845634
 Using seed=1000
-Finished UMAP - 2026-03-03 19:10:49.17836
-2026-03-03 19:10:49.185065 | Saving subsampled BANKSY object
-2026-03-03 19:37:42.908514 | Saving subsampled spe object pre-BANSKY
-2026-03-03 19:39:12.346095 | Saving subsampled cellular IDs
+Finished UMAP - 2026-03-09 10:31:22.068091
+Running clusterBanksy - 2026-03-09 10:31:22.075291
+Using seed=1747
+Using seed=1747
+Using seed=1747
+Finished clusterBanksy - 2026-03-09 18:27:17.9358
+Cluster columns created: clust_M0_lam0_k50_res0.5, clust_M0_lam0_k50_res0.8, clust_M0_lam0_k50_res1
+  clust_M0_lam0_k50_res0.5: 14 clusters
+  clust_M0_lam0_k50_res0.8: 16 clusters
+  clust_M0_lam0_k50_res1: 19 clusters
+2026-03-09 18:27:17.948446 | Saving subsampled BANKSY object
 [1] "Reproducibility information:"
-[1] "2026-03-03 19:39:12 EST"
-     user    system   elapsed 
-11276.100  1220.755 12287.149 
+[1] "2026-03-09 19:40:34 EDT"
+    user   system  elapsed 
+38827.28   501.46 39486.28 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -218,13 +226,13 @@ Finished UMAP - 2026-03-03 19:10:49.17836
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-03-03
+ date     2026-03-09
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
 ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
  package              * version  date (UTC) lib source
- abind                  1.4-8    2024-09-12 [2] CRAN (R 4.5.0)
+ abind                * 1.4-8    2024-09-12 [2] CRAN (R 4.5.0)
  aricode                1.0.3    2023-10-20 [1] CRAN (R 4.5.0)
  Banksy               * 1.4.0    2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
  beachmat               2.24.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
@@ -240,7 +248,7 @@ Finished UMAP - 2026-03-03 19:10:49.17836
  crayon                 1.5.3    2024-06-20 [2] CRAN (R 4.5.0)
  data.table             1.17.2   2025-05-12 [2] CRAN (R 4.5.0)
  dbscan                 1.2.2    2025-01-26 [1] CRAN (R 4.5.0)
- DelayedArray           0.34.1   2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
+ DelayedArray         * 0.34.1   2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
  dichromat              2.0-0.1  2022-05-02 [2] CRAN (R 4.5.0)
  dplyr                  1.1.4    2023-11-17 [2] CRAN (R 4.5.0)
  dqrng                  0.4.1    2024-05-28 [2] CRAN (R 4.5.0)
@@ -254,6 +262,8 @@ Finished UMAP - 2026-03-03 19:10:49.17836
  ggplot2              * 3.5.2    2025-04-09 [2] CRAN (R 4.5.0)
  glue                   1.8.0    2024-09-30 [2] CRAN (R 4.5.0)
  gtable                 0.3.6    2024-10-25 [2] CRAN (R 4.5.0)
+ h5mread              * 1.0.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ HDF5Array            * 1.36.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  here                 * 1.0.1    2020-12-13 [2] CRAN (R 4.5.0)
  httr                   1.4.7    2023-08-15 [2] CRAN (R 4.5.0)
  igraph                 2.1.4    2025-01-23 [2] CRAN (R 4.5.0)
@@ -267,7 +277,7 @@ Finished UMAP - 2026-03-03 19:10:49.17836
  locfit                 1.5-9.12 2025-03-05 [2] CRAN (R 4.5.0)
  magick                 2.8.6    2025-03-23 [2] CRAN (R 4.5.0)
  magrittr               2.0.3    2022-03-30 [2] CRAN (R 4.5.0)
- Matrix                 1.7-3    2025-03-11 [3] CRAN (R 4.5.0)
+ Matrix               * 1.7-3    2025-03-11 [3] CRAN (R 4.5.0)
  MatrixGenerics       * 1.20.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  matrixStats          * 1.5.0    2025-01-07 [2] CRAN (R 4.5.0)
  mclust                 6.1.1    2024-04-29 [2] CRAN (R 4.5.0)
@@ -279,11 +289,14 @@ Finished UMAP - 2026-03-03 19:10:49.17836
  Rcpp                   1.0.14   2025-01-12 [2] CRAN (R 4.5.0)
  RcppAnnoy              0.0.22   2024-01-23 [2] CRAN (R 4.5.0)
  RcppHungarian          0.3      2023-09-05 [1] CRAN (R 4.5.0)
+ rhdf5                * 2.52.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rhdf5filters           1.20.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Rhdf5lib               1.30.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  rjson                  0.2.23   2024-09-16 [2] CRAN (R 4.5.0)
  rlang                  1.1.6    2025-04-11 [2] CRAN (R 4.5.0)
  rprojroot              2.0.4    2023-11-05 [2] CRAN (R 4.5.0)
  rsvd                   1.0.5    2021-04-16 [2] CRAN (R 4.5.0)
- S4Arrays               1.8.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ S4Arrays             * 1.8.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  S4Vectors            * 0.46.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  ScaledMatrix           1.16.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  scales                 1.4.0    2025-04-24 [2] CRAN (R 4.5.0)
@@ -292,7 +305,7 @@ Finished UMAP - 2026-03-03 19:10:49.17836
  scuttle              * 1.18.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  sessioninfo          * 1.2.3    2025-02-05 [2] CRAN (R 4.5.0)
  SingleCellExperiment * 1.30.1   2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
- SparseArray            1.8.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ SparseArray          * 1.8.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  SpatialExperiment    * 1.18.1   2025-05-11 [2] Bioconductor 3.21 (R 4.5.0)
  statmod                1.5.0    2023-01-06 [2] CRAN (R 4.5.0)
  SummarizedExperiment * 1.38.1   2025-04-30 [2] Bioconductor 3.21 (R 4.5.0)
@@ -311,4 +324,4 @@ Finished UMAP - 2026-03-03 19:10:49.17836
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Tue Mar  3 07:39:15 PM EST 2026
+Mon Mar  9 07:40:38 PM EDT 2026
