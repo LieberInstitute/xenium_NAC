@@ -42,7 +42,7 @@ spe <- spe[top_hvgs,]
 spe
 
 #######Banksy parameters
-lambda <- 0
+lambda <- 0.2
 compute_agf <- FALSE 
 use_agf <- FALSE
 k_geom <- 30 
