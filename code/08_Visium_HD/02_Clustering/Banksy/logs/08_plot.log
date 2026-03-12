@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Mon Mar  9 08:57:13 PM EDT 2026
+Wed Mar 11 04:47:02 PM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 29661450
+Job id: 29710447
 Job name: 08_plot
-Hostname: compute-124
+Hostname: compute-094
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -133,8 +133,8 @@ The following object is masked from ‘package:rhdf5’:
 
 Loading required package: ggplot2
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-2026-03-09 20:57:41.199414 | Generating Colors
-2026-03-09 20:57:51.032411 | Plotting clusters on samples
+2026-03-11 16:47:55.591566 | Generating Colors
+2026-03-11 16:48:06.115317 | Plotting clusters on samples
 [1] "H1-XKYDCP3_A1"
 [1] "clust_M0_lam0_k50_res0.5"
 Scale for fill is already present.
@@ -176,9 +176,9 @@ Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "Reproducibility information:"
-[1] "2026-03-09 20:58:37 EDT"
+[1] "2026-03-11 16:49:15 EDT"
    user  system elapsed 
- 77.215   3.279  82.405 
+101.987   5.054 118.925 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -189,7 +189,7 @@ Adding another scale for fill, which will replace the existing scale.
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-03-09
+ date     2026-03-11
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -265,4 +265,4 @@ Adding another scale for fill, which will replace the existing scale.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Mon Mar  9 08:58:37 PM EDT 2026
+Wed Mar 11 04:49:20 PM EDT 2026
