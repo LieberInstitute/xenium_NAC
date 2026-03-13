@@ -41,3 +41,5 @@ processed-data/01_spaceranger/H1-XKYDCP3_D1/outs/binned_outputs/square_008um/spa
 processed-data/HD_Full_Analysis/*
 plots/Figure1/*
 processed-data/CellType_Cols_v2.Rds
+processed-data/02_FICTURE/*
+processed-data/NHP_Data/*
