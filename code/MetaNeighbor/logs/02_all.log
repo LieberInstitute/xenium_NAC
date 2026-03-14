@@ -1,0 +1,426 @@
+********* Job Starts *********
+Sat Mar 14 12:43:00 AM EDT 2026
+**** SLURM info ****
+User: rphillip
+Job id: 29780592
+Job name: 02_all
+Hostname: compute-119
+Task id: 
+Loading conda_R/4.5
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘sp’
+
+The following object is masked from ‘package:IRanges’:
+
+    %over%
+
+
+Attaching package: ‘SeuratObject’
+
+The following object is masked from ‘package:SummarizedExperiment’:
+
+    Assays
+
+The following object is masked from ‘package:GenomicRanges’:
+
+    intersect
+
+The following object is masked from ‘package:GenomeInfoDb’:
+
+    intersect
+
+The following object is masked from ‘package:IRanges’:
+
+    intersect
+
+The following object is masked from ‘package:S4Vectors’:
+
+    intersect
+
+The following object is masked from ‘package:BiocGenerics’:
+
+    intersect
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+
+Attaching package: ‘Seurat’
+
+The following object is masked from ‘package:SummarizedExperiment’:
+
+    Assays
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+Loading human objects |2026-03-14 00:43:15.932393
+Loading required namespace: SpatialExperiment
+Loading Rat object |2026-03-14 00:47:02.558949
+Warning messages:
+1: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
+ℹ Please use `rlang::check_installed()` instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>. 
+2: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead.
+ℹ The deprecated feature was likely used in the Seurat package.
+  Please report the issue at <https://github.com/satijalab/seurat/issues>. 
+class: SingleCellExperiment 
+dim: 22821 44592 
+metadata(0):
+assays(2): counts logcounts
+rownames(22821): Vom2r3 LOC120093136 ... Sry3 ENSRNOG00000069298
+rowData names(0):
+colnames(44592): S1M_AAACCAAAGAAGCCAG-1 S1M_AAACCAAAGGCGATTC-1 ...
+  S6M_TGTGTACGTTCGGGTC-1 S6M_TGTGTTGAGGGTACTC-1
+colData names(29): orig.ident nCount_RNA ... RNA_snn_res.0.5 ident
+reducedDimNames(3): PCA HARMONY_RNA RNAHARMONY.UMAP
+mainExpName: RNA
+altExpNames(0):
+Preparing gene_df.
+sparseMatrix format detected.
+Extracting genes from rownames.
+22,821 genes extracted.
+Converting rat ==> human orthologs using: gprofiler
+Retrieving all organisms available in gprofiler.
+Using stored `gprofiler_orgs`.
+Mapping species name: rat
+Common name mapping found for rat
+1 organism identified from search: rnorvegicus
+Retrieving all organisms available in gprofiler.
+Using stored `gprofiler_orgs`.
+Mapping species name: human
+Common name mapping found for human
+1 organism identified from search: hsapiens
+Checking for genes without orthologs in human.
+Extracting genes from input_gene.
+25,021 genes extracted.
+Extracting genes from ortholog_gene.
+25,021 genes extracted.
+Dropping 6,052 NAs of all kinds from ortholog_gene.
+Checking for genes without 1:1 orthologs.
+Dropping 1,296 genes that have multiple input_gene per ortholog_gene (many:1).
+Dropping 1,822 genes that have multiple ortholog_gene per input_gene (1:many).
+Filtering gene_df with gene_map
+Returning gene_map as dictionary
+
+=========== REPORT SUMMARY ===========
+
+Total genes dropped after convert_orthologs :
+   7,664 / 22,821 (34%)
+Total genes remaining after convert_orthologs :
+   15,157 / 22,821 (66%)
+   Lrp11    Pcmt1    Nup43    Lats1   Katna1    Ginm1 
+ "LRP11"  "PCMT1"  "NUP43"  "LATS1" "KATNA1"  "GINM1" 
+[1] TRUE
+Loading NHP object |2026-03-14 00:47:33.976063
+class: SingleCellExperiment 
+dim: 30165 7387 
+metadata(0):
+assays(2): counts logcounts
+rownames(30165): AP006222.1 MTND1P23 ... S100B PRMT2
+rowData names(0):
+colnames(7387): AGGAATACATGGATCT-7 CAGCCAGGTGCCGAAA-7 ...
+  nacc_TTTGACTCAGATACTC nacc_TTTGACTTCCCTGGTT
+colData names(6): nFeature_RNA integrated_snn_res.0.3 ... monkey ident
+reducedDimNames(0):
+mainExpName: RNA
+altExpNames(1): integrated
+Preparing gene_df.
+sparseMatrix format detected.
+Extracting genes from rownames.
+30,165 genes extracted.
+Converting macaque ==> human orthologs using: gprofiler
+Retrieving all organisms available in gprofiler.
+Using stored `gprofiler_orgs`.
+Mapping species name: macaque
+Common name mapping found for macaque
+1 organism identified from search: mmulatta
+Retrieving all organisms available in gprofiler.
+Using stored `gprofiler_orgs`.
+Mapping species name: human
+Common name mapping found for human
+1 organism identified from search: hsapiens
+Checking for genes without orthologs in human.
+Extracting genes from input_gene.
+30,304 genes extracted.
+Extracting genes from ortholog_gene.
+30,304 genes extracted.
+Dropping 15,428 NAs of all kinds from ortholog_gene.
+Checking for genes without 1:1 orthologs.
+Dropping 81 genes that have multiple input_gene per ortholog_gene (many:1).
+Dropping 193 genes that have multiple ortholog_gene per input_gene (1:many).
+Filtering gene_df with gene_map
+Returning gene_map as dictionary
+
+=========== REPORT SUMMARY ===========
+
+Total genes dropped after convert_orthologs :
+   15,828 / 30,165 (52%)
+Total genes remaining after convert_orthologs :
+   14,337 / 30,165 (48%)
+   SAMD11     NOC2L    KLHL17   PLEKHN1     PERM1      HES4 
+ "SAMD11"   "NOC2L"  "KLHL17" "PLEKHN1"   "PERM1"    "HES4" 
+[1] TRUE
+Set up combo object |2026-03-14 00:47:47.713232
+[1] 309
+class: SingleCellExperiment 
+dim: 309 24249 
+metadata(0):
+assays(2): counts logcounts
+rownames(309): SAMD5 UTRN ... CD2 GZMA
+rowData names(0):
+colnames(24249): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
+  S6M_TGTGGTCAGCAATCCA-1 S6M_TGTGTTGAGGGTACTC-1
+colData names(29): orig.ident nCount_RNA ... RNA_snn_res.0.5 ident
+reducedDimNames(3): PCA HARMONY_RNA RNAHARMONY.UMAP
+mainExpName: RNA
+altExpNames(0):
+class: SingleCellExperiment 
+dim: 309 7387 
+metadata(0):
+assays(2): counts logcounts
+rownames(309): SAMD5 UTRN ... CD2 GZMA
+rowData names(0):
+colnames(7387): AGGAATACATGGATCT-7 CAGCCAGGTGCCGAAA-7 ...
+  nacc_TTTGACTCAGATACTC nacc_TTTGACTTCCCTGGTT
+colData names(6): nFeature_RNA integrated_snn_res.0.3 ... monkey ident
+reducedDimNames(0):
+mainExpName: RNA
+altExpNames(1): integrated
+class: SummarizedExperiment 
+dim: 309 24249 
+metadata(0):
+assays(2): counts logcounts
+rownames: NULL
+rowData names(0):
+colnames(24249): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
+  S6M_TGTGGTCAGCAATCCA-1 S6M_TGTGTTGAGGGTACTC-1
+colData names(3): Sample CellType dataset
+class: SummarizedExperiment 
+dim: 309 7387 
+metadata(0):
+assays(2): counts logcounts
+rownames: NULL
+rowData names(0):
+colnames(7387): AGGAATACATGGATCT-7 CAGCCAGGTGCCGAAA-7 ...
+  nacc_TTTGACTCAGATACTC nacc_TTTGACTTCCCTGGTT
+colData names(3): Sample CellType dataset
+class: SummarizedExperiment 
+dim: 309 103339 
+metadata(1): Samples
+assays(2): counts logcounts
+rownames: NULL
+rowData names(0):
+colnames(103339): 1_AAACCCAAGACCAACG-1 1_AAACCCACAGTCAGCC-1 ...
+  20_TTTGTTGCAAGATGTA-1 20_TTTGTTGGTACGAAAT-1
+colData names(3): Sample CellType dataset
+Warning message:
+In methods:::.selectDotsMethod(classes, .MTable, .AllMTable) :
+  multiple direct matches: "SummarizedExperiment", "SingleCellExperiment"; using the first of these
+class: SummarizedExperiment 
+dim: 309 4984348 
+metadata(1): Samples
+assays(2): counts logcounts
+rownames(309): SAMD5 UTRN ... CD2 GZMA
+rowData names(0):
+colnames(4984348): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
+  Br6436_Nac_11_5650_68180 Br6436_Nac_11_5650_68181
+colData names(3): Sample CellType dataset
+Combo object finished |2026-03-14 00:48:44.997253
+Calculating HVGs |2026-03-14 00:48:44.997652
+Running MetaNeighbor |2026-03-14 00:48:47.509033
+Finished MetaNeighbor |2026-03-14 00:50:00.078113
+R version 4.5.0 Patched (2025-05-21 r88220)
+Platform: x86_64-conda-linux-gnu
+Running under: Rocky Linux 9.4 (Blue Onyx)
+
+Matrix products: default
+BLAS:   /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRblas.so 
+LAPACK: /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRlapack.so;  LAPACK version 3.12.1
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Eastern
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats4    stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] here_1.0.1                  Seurat_5.3.0               
+ [3] SeuratObject_5.1.0          sp_2.2-0                   
+ [5] orthogene_1.14.0            MetaNeighbor_1.28.0        
+ [7] SingleCellExperiment_1.30.1 SummarizedExperiment_1.38.1
+ [9] Biobase_2.68.0              GenomicRanges_1.60.0       
+[11] GenomeInfoDb_1.44.0         IRanges_2.42.0             
+[13] S4Vectors_0.46.0            BiocGenerics_0.54.0        
+[15] generics_0.1.4              MatrixGenerics_1.20.0      
+[17] matrixStats_1.5.0          
+
+loaded via a namespace (and not attached):
+  [1] RColorBrewer_1.1-3        jsonlite_2.0.0           
+  [3] magrittr_2.0.3            magick_2.8.6             
+  [5] spatstat.utils_3.1-4      farver_2.1.2             
+  [7] fs_1.6.6                  vctrs_0.6.5              
+  [9] ROCR_1.0-11               spatstat.explore_3.4-3   
+ [11] RCurl_1.98-1.17           ggtree_3.16.0            
+ [13] rstatix_0.7.2             htmltools_0.5.8.1        
+ [15] S4Arrays_1.8.0            broom_1.0.8              
+ [17] SparseArray_1.8.0         Formula_1.2-5            
+ [19] gridGraphics_0.5-1        sctransform_0.4.2        
+ [21] parallelly_1.44.0         KernSmooth_2.23-26       
+ [23] htmlwidgets_1.6.4         ica_1.0-3                
+ [25] plyr_1.8.9                plotly_4.10.4            
+ [27] zoo_1.8-14                igraph_2.1.4             
+ [29] mime_0.13                 lifecycle_1.0.4          
+ [31] pkgconfig_2.0.3           Matrix_1.7-3             
+ [33] R6_2.6.1                  fastmap_1.2.0            
+ [35] GenomeInfoDbData_1.2.14   fitdistrplus_1.2-2       
+ [37] future_1.49.0             shiny_1.10.0             
+ [39] digest_0.6.37             aplot_0.2.7              
+ [41] patchwork_1.3.0           rprojroot_2.0.4          
+ [43] tensor_1.5                grr_0.9.5                
+ [45] RSpectra_0.16-2           irlba_2.3.5.1            
+ [47] beachmat_2.24.0           ggpubr_0.6.0             
+ [49] progressr_0.15.1          spatstat.sparse_3.1-0    
+ [51] polyclip_1.10-7           httr_1.4.7               
+ [53] abind_1.4-8               compiler_4.5.0           
+ [55] withr_3.0.2               backports_1.5.0          
+ [57] BiocParallel_1.42.0       carData_3.0-5            
+ [59] homologene_1.4.68.19.3.27 fastDummies_1.7.5        
+ [61] ggsignif_0.6.4            MASS_7.3-65              
+ [63] rappdirs_0.3.3            DelayedArray_0.34.1      
+ [65] rjson_0.2.23              tools_4.5.0              
+ [67] lmtest_0.9-40             ape_5.8-1                
+ [69] httpuv_1.6.16             future.apply_1.11.3      
+ [71] goftest_1.2-3             glue_1.8.0               
+ [73] nlme_3.1-168              promises_1.3.2           
+ [75] grid_4.5.0                Rtsne_0.17               
+ [77] reshape2_1.4.4            cluster_2.1.8.1          
+ [79] spatstat.data_3.1-6       gtable_0.3.6             
+ [81] tidyr_1.3.1               data.table_1.17.2        
+ [83] car_3.1-3                 XVector_0.48.0           
+ [85] spatstat.geom_3.4-1       RcppAnnoy_0.0.22         
+ [87] stringr_1.5.1             ggrepel_0.9.6            
+ [89] RANN_2.6.2                pillar_1.10.2            
+ [91] yulab.utils_0.2.4         spam_2.11-1              
+ [93] babelgene_22.9            RcppHNSW_0.6.0           
+ [95] later_1.4.2               splines_4.5.0            
+ [97] dplyr_1.1.4               treeio_1.32.0            
+ [99] lattice_0.22-7            deldir_2.0-4             
+[101] survival_3.8-3            tidyselect_1.2.1         
+[103] scuttle_1.18.0            miniUI_0.1.2             
+[105] pbapply_1.7-2             gridExtra_2.3            
+[107] scattermore_1.2           stringi_1.8.7            
+[109] UCSC.utils_1.4.0          lazyeval_0.2.2           
+[111] ggfun_0.1.8               codetools_0.2-20         
+[113] tibble_3.2.1              ggplotify_0.1.2          
+[115] cli_3.6.5                 uwot_0.2.3               
+[117] xtable_1.8-4              reticulate_1.42.0        
+[119] dichromat_2.0-0.1         Rcpp_1.0.14              
+[121] spatstat.random_3.4-1     globals_0.18.0           
+[123] gprofiler2_0.2.3          png_0.1-8                
+[125] spatstat.univar_3.1-3     parallel_4.5.0           
+[127] ggplot2_3.5.2             dotCall64_1.2            
+[129] bitops_1.0-9              SpatialExperiment_1.18.1 
+[131] listenv_0.9.1             viridisLite_0.4.2        
+[133] tidytree_0.4.6            scales_1.4.0             
+[135] ggridges_0.5.6            purrr_1.0.4              
+[137] crayon_1.5.3              rlang_1.1.6              
+[139] cowplot_1.1.3            
+********* Job Ends *********
+Sat Mar 14 12:50:01 AM EDT 2026
