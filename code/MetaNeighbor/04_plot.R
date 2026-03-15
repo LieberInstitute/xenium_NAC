@@ -60,6 +60,13 @@ legend("bottomleft",
 )
 dev.off()
 
+pdf(file = here("plots","MetaNeighbor","Human_Both_Rat_snRNA_Heatmap_Assymetric.pdf"),width = 12,height = 12)
+plotHeatmapPretrained(output_02,
+            cex = 0.55)
+dev.off()
+
+
+
 ########################################
 ############## 03 MSNs ################
 #######################################
@@ -114,5 +121,12 @@ legend("bottomleft",
        cex    = 0.7
 )
 dev.off()
+
+pdf(file = here("plots","MetaNeighbor","All_Species_MSNs_Heatmap_Assymetric.pdf"),width = 12,height = 12)
+plotHeatmapPretrained(output_03,
+            cex = 0.55)
+dev.off()
+
+
 
 sessionInfo()
