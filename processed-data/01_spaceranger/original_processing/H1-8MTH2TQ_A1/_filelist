@@ -1,0 +1,113 @@
+335645731     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/BIN_HD_DATA/SETUP_BINNING/fork0/chnk0-u9d6db812aa/files
+    80869     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/BIN_HD_DATA/SETUP_BINNING/fork0/join/files
+335646004      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/BIN_HD_DATA/SETUP_BINNING/fork0/files -> chnk0-u9d6db812aa/files
+    95566     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/BIN_HD_DATA/SETUP_BINNING/fork0/split/files
+    88166      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_SD_ONLY_STAGES/fork0/files -> chnk0-u9d6db812aa/files
+    91605     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_SD_ONLY_STAGES/fork0/split/files
+    93766     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_SD_ONLY_STAGES/fork0/chnk0-u9d6db812aa/files
+    94173     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_SD_ONLY_STAGES/fork0/join/files
+    94186      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/WEBSUMMARY_ALERTS/fork0/files -> chnk0-u9d6db812aa/files
+335645997     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/WEBSUMMARY_ALERTS/fork0/join/files
+    94180     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/WEBSUMMARY_ALERTS/fork0/split/files
+    96853     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/WEBSUMMARY_ALERTS/fork0/chnk0-u9d6db812aa/files
+    88317      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_FEATURE_STAGES/fork0/files -> chnk0-u9d6db812a6/files
+    97456     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_FEATURE_STAGES/fork0/chnk0-u9d6db812a6/files
+    96273     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_FEATURE_STAGES/fork0/split/files
+    79477     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER/SPATIAL_POST_MATRIX_COMPUTATION/DISABLE_FEATURE_STAGES/fork0/join/files
+    94273     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPACERANGER_PREFLIGHT_LOCAL/fork0/split/files
+    97180      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPACERANGER_PREFLIGHT_LOCAL/fork0/files -> chnk0-u9d6db81273/files
+    97179     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPACERANGER_PREFLIGHT_LOCAL/fork0/chnk0-u9d6db81273/files
+    94274     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPACERANGER_PREFLIGHT_LOCAL/fork0/join/files
+    96565      1 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GPR_READER/fork0/files
+    96568      1 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GPR_READER/fork0/join/files
+    96567      1 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GPR_READER/fork0/split/files
+335650562      1 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/HD_LAYOUT_READER/fork0/split/files
+335643243      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/HD_LAYOUT_READER/fork0/files -> chnk0-u9d6db816fb/files
+335650564      1 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/HD_LAYOUT_READER/fork0/join/files
+335643241      1 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/HD_LAYOUT_READER/fork0/chnk0-u9d6db816fb/files
+    88673     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DETERMINE_PIPELINE_MODE/fork0/split/files
+    88162      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DETERMINE_PIPELINE_MODE/fork0/files -> chnk0-u9d6db812a9/files
+335646374     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DETERMINE_PIPELINE_MODE/fork0/join/files
+    91975     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DETERMINE_PIPELINE_MODE/fork0/chnk0-u9d6db812a9/files
+    93758     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DISABLE_IMAGING_STAGES/fork0/chnk0-u9d6db812aa/files
+    90476     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DISABLE_IMAGING_STAGES/fork0/split/files
+    90477     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DISABLE_IMAGING_STAGES/fork0/join/files
+    88687      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/DISABLE_IMAGING_STAGES/fork0/files -> chnk0-u9d6db812aa/files
+    79099      1 lrwxrwxrwx   1 rmiller  lieber_marmaypag       23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GET_CYTASSIST_RUN_METADATA/fork0/files -> chnk0-u9d6db812a6/files
+    90463     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GET_CYTASSIST_RUN_METADATA/fork0/split/files
+335646213     18 drwxrws---   2 rmiller  lieber_marmaypag        2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GET_CYTASSIST_RUN_METADATA/fork0/join/files
+    79096     18 drwxrws---   2 rmiller  lieber_marmaypag        3 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GET_CYTASSIST_RUN_METADATA/fork0/chnk0-u9d6db812a6/files
+    89016      9 -rw-rw----   1 rmiller  lieber_marmaypag      461 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/GET_CYTASSIST_RUN_METADATA/fork0/chnk0-u9d6db812a6/files/cytassist_run_metrics.json
+    90702     35 drwxrws---   2 rmiller  lieber_marmaypag       12 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files
+    95605      1 -rw-rw----   1 rmiller  lieber_marmaypag      154 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/scalefactors_json.json
+    88934      1 -rw-rw----   1 rmiller  lieber_marmaypag       80 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/crop_info_json.json
+335648421  35269 -rw-rw----   1 rmiller  lieber_marmaypag 36079078 Mar 16 10:41 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/tissue_hires_image.png
+335650065      1 -rw-rw----   1 rmiller  lieber_marmaypag 22020256 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/registration_target_image.tiff
+    91759   5495 -rw-rw----   1 rmiller  lieber_marmaypag  5610830 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/tissue_detection_grayscale_image.png
+335643967   5401 -rw-rw----   1 rmiller  lieber_marmaypag  5507216 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/fiducials_detection_image.png
+335645802   5418 -rw-rw----   1 rmiller  lieber_marmaypag  5526167 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/tissue_detection_saturation_image.png
+335645792  28222 -rwxrw-r--   1 rmiller  lieber_marmaypag 28866614 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/cytassist_image.tiff
+    96643 32448457 -rwxrw-r--   2 rmiller  lieber_marmaypag 33853045761 Nov 18 12:45 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/Br6660_40x_2040um_third_scan.tif
+335646685      359 -rw-rw----   1 rmiller  lieber_marmaypag      347741 Mar 16 10:42 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/join-u9d6db812aa/files/tissue_lowres_image.png
+    96852        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          22 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/files -> join-u9d6db812aa/files
+    94183       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/STANDARDIZE_IMAGES/fork0/split-u9d6db812aa/files
+    95607        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          22 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/LOUPE_ALIGNMENT_READER/fork0/files -> join-u9d6db816f9/files
+    94308        1 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/LOUPE_ALIGNMENT_READER/fork0/split-u9d6db816f9/files
+335646117        1 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_IMAGING_CS/LOUPE_ALIGNMENT_READER/fork0/join-u9d6db816f9/files
+    88641       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/fork0/join/files
+    88640       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/fork0/files
+    94266       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/fork0/split/files
+    93303       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/USER_PROVIDED_SEGMENTATIONS/fork0/chnk0-u9d6db812a6/files
+    79474       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/USER_PROVIDED_SEGMENTATIONS/fork0/split/files
+    96263       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/USER_PROVIDED_SEGMENTATIONS/fork0/join/files
+    93305        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/USER_PROVIDED_SEGMENTATIONS/fork0/files -> chnk0-u9d6db812a6/files
+335645708        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/WRITE_GENE_INDEX/fork0/files -> chnk0-u9d6db812a6/files
+335645706       18 drwxrws---   2 rmiller  lieber_marmaypag           3 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/WRITE_GENE_INDEX/fork0/chnk0-u9d6db812a6/files
+    97755    60325 -rw-rw----   1 rmiller  lieber_marmaypag   187831897 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/WRITE_GENE_INDEX/fork0/chnk0-u9d6db812a6/files/gene_index.json
+    96260       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/WRITE_GENE_INDEX/fork0/join/files
+    96258       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/WRITE_GENE_INDEX/fork0/split/files
+335643711        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/PARSE_TARGET_FEATURES/fork0/files -> chnk0-u9d6db812b1/files
+    80229       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/PARSE_TARGET_FEATURES/fork0/join/files
+    96536       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/PARSE_TARGET_FEATURES/fork0/split/files
+    92607       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_MATRIX_COMPUTER/PARSE_TARGET_FEATURES/fork0/chnk0-u9d6db812b1/files
+335650304        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          22 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/CLOUPE_TILE_IMAGES/fork0/files -> join-u9d6db816f9/files
+335646119        1 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/CLOUPE_TILE_IMAGES/fork0/split-u9d6db816f9/files
+    95613        1 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:43 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/CLOUPE_TILE_IMAGES/fork0/join-u9d6db816f9/files
+335645740       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/fork0/files
+    97262       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/fork0/join/files
+    90202       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/fork0/split/files
+    90674       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/MULTI_SETUP_CHUNKS/fork0/join/files
+    90677       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/MULTI_SETUP_CHUNKS/fork0/chnk0-u9d6db812a9/files
+335644704       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/MULTI_SETUP_CHUNKS/fork0/split/files
+    90680        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/MULTI_SETUP_CHUNKS/fork0/files -> chnk0-u9d6db812a9/files
+    88153        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/EXPECT_SINGLE_BARCODE_WHITELIST/fork0/files -> chnk0-u9d6db812a9/files
+    89026       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/EXPECT_SINGLE_BARCODE_WHITELIST/fork0/split/files
+    89031       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/EXPECT_SINGLE_BARCODE_WHITELIST/fork0/chnk0-u9d6db812a9/files
+    89028       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/EXPECT_SINGLE_BARCODE_WHITELIST/fork0/join/files
+    91583       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/WRITE_SPATIAL_BARCODE_INDEX/fork0/split-u9d6db812a9/files
+    92126        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          22 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/WRITE_SPATIAL_BARCODE_INDEX/fork0/files -> join-u9d6db812a9/files
+    88674       18 drwxrws---   2 rmiller  lieber_marmaypag           3 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/WRITE_SPATIAL_BARCODE_INDEX/fork0/join-u9d6db812a9/files
+335644354    79111 -rw-rw----   1 rmiller  lieber_marmaypag   303007582 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/WRITE_SPATIAL_BARCODE_INDEX/fork0/join-u9d6db812a9/files/barcode_index.bi.bincode
+    96278       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/COPY_CHEMISTRY_SPEC/fork0/join/files
+    79482       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/COPY_CHEMISTRY_SPEC/fork0/split/files
+335645843        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/COPY_CHEMISTRY_SPEC/fork0/files -> chnk0-u9d6db812a6/files
+335645958       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/COPY_CHEMISTRY_SPEC/fork0/chnk0-u9d6db812a6/files
+    96330       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DETECT_CHEMISTRY/fork0/split/files
+    88147        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DETECT_CHEMISTRY/fork0/files -> chnk0-u9d6db812a6/files
+    80853       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DETECT_CHEMISTRY/fork0/chnk0-u9d6db812a6/files
+335645717       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DETECT_CHEMISTRY/fork0/join/files
+    96283       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DISABLE_CORRECTION_FACTOR/fork0/join/files
+335645852        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DISABLE_CORRECTION_FACTOR/fork0/files -> chnk0-u9d6db812a6/files
+335645851       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DISABLE_CORRECTION_FACTOR/fork0/chnk0-u9d6db812a6/files
+    88298       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/DISABLE_CORRECTION_FACTOR/fork0/split/files
+335646370       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/COMPUTE_CORRECTION_FACTOR/fork0/files
+    88159       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/COMPUTE_CORRECTION_FACTOR/fork0/split/files
+    88672       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPATIAL_RNA_COUNTER_PREP/COMPUTE_CORRECTION_FACTOR/fork0/join/files
+    87672       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPACERANGER_PREFLIGHT/fork0/join-u9d6db81273/files
+    97173        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          22 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPACERANGER_PREFLIGHT/fork0/files -> join-u9d6db81273/files
+    79094       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:23 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/SPACERANGER_PREFLIGHT/fork0/split-u9d6db81273/files
+335645702       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/FIX_CYTASSIST_IMAGE_COMPATIBILITY/fork0/join/files
+    90441        1 lrwxrwxrwx   1 rmiller  lieber_marmaypag          23 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/FIX_CYTASSIST_IMAGE_COMPATIBILITY/fork0/files -> chnk0-u9d6db812a6/files
+335645972       69 drwxrws---   2 rmiller  lieber_marmaypag           3 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/FIX_CYTASSIST_IMAGE_COMPATIBILITY/fork0/chnk0-u9d6db812a6/files
+    95649    28222 -rwxrw-r--   2 rmiller  lieber_marmaypag    28866614 Nov 19 20:25 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/FIX_CYTASSIST_IMAGE_COMPATIBILITY/fork0/chnk0-u9d6db812a6/files/CAVG10676_2025-11-19_14-41-35_2025-11-19_14-04-56_H1-8MTH2TQ_A1_sample-2040.tif
+    96293       18 drwxrws---   2 rmiller  lieber_marmaypag           2 Mar 16 10:24 H1-8MTH2TQ_A1/SPATIAL_RNA_COUNTER_CS/FIX_CYTASSIST_IMAGE_COMPATIBILITY/fork0/split/files
