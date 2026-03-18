@@ -1,10 +1,13 @@
-# Use metaneighbor to compare human, NHP, rat snRNA-seq
+# Use metaneighbor to compare human, NHP, rat MSNs
 # cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
 # module load conda_R/4.5
 
 library(SingleCellExperiment)
+library(ComplexHeatmap)
+library(RColorBrewer)
 library(MetaNeighbor)
 library(orthogene)
+library(circlize)
 library(Seurat)
 library(here)
 
@@ -138,11 +141,12 @@ length(all_orthos)
 #rat
 rat_sub <- rat_sce[all_orthos,]
 rat_sub
+rm(rat_sce)
 
 #nhp
 nhp_sub <- nhp_sce[all_orthos,]
 nhp_sub
-
+rm(nhp_sce)
 #Subset the human objects
 sce <- sce[all_orthos, ]
 spe <- spe[all_orthos, ]
@@ -207,7 +211,13 @@ rownames(combo) <- all_orthos
 
 combo
 
+rm(nhp_sub,rat_sub,sce,spe)
 message("Combo object finished |", Sys.time())
+
+
+message("Saving combo object |", Sys.time())
+saveRDS(combo,here("processed-data","02_build_spe","SPEs","all_species_MSNs_only.Rds"))
+
 message("Running MetaNeighbor |", Sys.time())
 #   Run unsupervised MetaNeighbor
 aurocs <- MetaNeighborUS(
@@ -218,9 +228,131 @@ aurocs <- MetaNeighborUS(
   fast_version = TRUE,
   one_vs_best = TRUE, symmetric_output = FALSE
 )
-message("Finished MetaNeighbor |", Sys.time())
 
 #Save the output
 saveRDS(aurocs,file = here("processed-data","MetaNeighbor","All_Species_MSNs_Only_aurocs.Rds"))
 
+message("Finished MetaNeighbor |", Sys.time())
+
+message("Making heatmaps |", Sys.time())
+# --- Prep the AUROC matrix ---
+auroc <- aurocs
+auroc_no_na <- auroc
+auroc_no_na[is.na(auroc_no_na)] <- 0
+
+# --- Exact plotHeatmapPretrained color scale ---
+auroc_cols <- rev(colorRampPalette(brewer.pal(11, "RdYlBu"))(100))
+
+# --- Column dendrogram: exact match ---
+alpha_col <- 1
+col_dend <- as.dendrogram(hclust(dist(t(auroc_no_na)^alpha_col), method = "average"))
+
+# --- Row order: exact match ---
+alpha_row <- 10
+M <- auroc_no_na[, labels(col_dend)]^alpha_row
+row_score <- colSums(t(M) * seq_len(ncol(M)), na.rm = TRUE) / rowSums(M, na.rm = TRUE)
+row_order <- order(row_score)
+
+# --- Metadata ---
+col_study <- sub("\\|.*", "", colnames(auroc))
+col_celltype <- sub(".*\\|", "", colnames(auroc))
+row_study <- sub("\\|.*", "", rownames(auroc))
+row_celltype <- sub(".*\\|", "", rownames(auroc))
+
+class_map <- setNames(
+  c("Island", "D1-MSN", "D1-MSN", "D2-MSN", "D2-MSN",
+    "Island", "Island", "Island", "D1-MSN", "Island",
+    "D1-MSN", "D1-MSN", "D1-MSN", "D2-MSN", "D2-MSN",
+    "D2-MSN", "D1-MSN", "Island", "D1-MSN", "Island",
+    "D2-MSN", "D2-MSN", "Island", "Island", "D1-MSN",
+    "D2-MSN"),
+  c("Chst9", "Drd1.1", "Drd1.2", "Drd2.1", "Drd2.2",
+    "Drd3", "Sema5a", "D1-ICj", "D1-Matrix", "D1-NUDAP",
+    "D1-Shell/OT", "D1-Striosome", "D1/D2-Hybrid", "D2-Matrix", "D2-Shell/OT",
+    "D2-Striosome", "DRD1_MSN_A", "DRD1_MSN_B", "DRD1_MSN_C", "DRD1_MSN_D",
+    "DRD2_MSN_A", "DRD2_MSN_B", "D1_Island_A", "D1_Island_B", "DRD1_MSN",
+    "DRD2_MSN")
+)
+
+col_class <- class_map[col_celltype]
+row_class <- class_map[row_celltype]
+
+study_levels <- unique(c(col_study, row_study))
+study_cols <- setNames(
+  brewer.pal(max(3, length(study_levels)), "Dark2")[seq_along(study_levels)],
+  study_levels
+)
+class_cols <- c("Island" = "black", "D1-MSN" = "grey85", "D2-MSN" = "grey55")
+
+# --- Annotations ---
+ha_col <- HeatmapAnnotation(
+  Study = col_study,
+  Class = col_class,
+  col = list(Study = study_cols, Class = class_cols),
+  annotation_name_side = "left",
+  simple_anno_size = unit(4, "mm")
+)
+
+ha_row <- rowAnnotation(
+  Study = row_study,
+  Class = row_class,
+  col = list(Study = study_cols, Class = class_cols),
+  simple_anno_size = unit(4, "mm")
+)
+
+# --- Draw ---
+ht <- Heatmap(
+  auroc,
+  name = "AUROC",
+  col = colorRamp2(seq(0, 1, length = 100), auroc_cols),
+  na_col = gray(0.95),
+  cluster_columns = col_dend,
+  cluster_rows = FALSE,
+  row_order = row_order,
+  top_annotation = ha_col,
+  right_annotation = ha_row,
+  row_names_side = "right",
+  column_names_rot = 45,
+  column_names_gp = gpar(fontsize = 7),
+  row_names_gp = gpar(fontsize = 7),
+  heatmap_legend_param = list(
+    title = "AUROC",
+    at = c(0, 0.2, 0.4, 0.6, 0.8, 1),
+    legend_height = unit(3, "cm")
+  )
+)
+
+pdf(file = here("plots","MetaNeighbor","All_Species_MSNs_ComplexHeatmap.pdf"),width = 12,height = 12)
+draw(ht, merge_legend = TRUE)
+dev.off()
+
+# Just the dendrogram + color bars + column names
+ha <- HeatmapAnnotation(
+  Study = col_study,
+  Class = col_class,
+  col = list(Study = study_cols, Class = class_cols),
+  annotation_name_side = "left",
+  simple_anno_size = unit(4, "mm")
+)
+
+ht <- Heatmap(
+  matrix(NA, nrow = 1, ncol = ncol(auroc),
+         dimnames = list("", colnames(auroc))),
+  cluster_columns = col_dend,
+  cluster_rows = FALSE,
+  show_row_names = FALSE,
+  show_heatmap_legend = FALSE,
+  top_annotation = ha,
+#  column_names_rot = 45,
+  column_names_gp = gpar(fontsize = 7),
+  na_col = "white",
+  height = unit(1, "mm"),
+  border = FALSE
+)
+
+pdf(file = here("plots","MetaNeighbor","All_Species_MSNs_LegendOnly.pdf"),width = 12,height = 12)
+draw(ht, padding = unit(c(2, 20, 2, 2), "mm"))
+dev.off()
+
+#Reproducibility
 sessionInfo()

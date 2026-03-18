@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Sat Mar 14 09:36:54 PM EDT 2026
+Wed Mar 18 11:59:09 AM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 29887132
+Job id: 30125579
 Job name: 03_MSNs
-Hostname: compute-127
+Hostname: compute-124
 Task id: 
 Loading conda_R/4.5
 Loading required package: SummarizedExperiment
@@ -91,6 +91,40 @@ The following objects are masked from ‘package:matrixStats’:
 
     anyMissing, rowMedians
 
+Loading required package: grid
+========================================
+ComplexHeatmap version 2.24.0
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================
+
+========================================
+circlize version 0.4.16
+CRAN page: https://cran.r-project.org/package=circlize
+Github page: https://github.com/jokergoo/circlize
+Documentation: https://jokergoo.github.io/circlize_book/book/
+
+If you use it in published research, please cite:
+Gu, Z. circlize implements and enhances circular visualization
+  in R. Bioinformatics 2014.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(circlize))
+========================================
+
 Loading required package: SeuratObject
 Loading required package: sp
 
@@ -139,9 +173,9 @@ The following object is masked from ‘package:SummarizedExperiment’:
     Assays
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Loading human objects |2026-03-14 21:37:05.944611
+Loading human objects |2026-03-18 11:59:25.871349
 Loading required namespace: SpatialExperiment
-Loading Rat object |2026-03-14 21:40:04.708411
+Loading Rat object |2026-03-18 12:03:10.263799
 Warning messages:
 1: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
 ℹ Please use `rlang::check_installed()` instead.
@@ -199,7 +233,7 @@ Total genes remaining after convert_orthologs :
    Lrp11    Pcmt1    Nup43    Lats1   Katna1    Ginm1 
  "LRP11"  "PCMT1"  "NUP43"  "LATS1" "KATNA1"  "GINM1" 
 [1] TRUE
-Loading NHP object |2026-03-14 21:40:28.550587
+Loading NHP object |2026-03-18 12:03:39.520453
 class: SingleCellExperiment 
 dim: 30165 7387 
 metadata(0):
@@ -248,7 +282,7 @@ Total genes remaining after convert_orthologs :
    SAMD11     NOC2L    KLHL17   PLEKHN1     PERM1      HES4 
  "SAMD11"   "NOC2L"  "KLHL17" "PLEKHN1"   "PERM1"    "HES4" 
 [1] TRUE
-Set up combo object |2026-03-14 21:40:41.065329
+Set up combo object |2026-03-18 12:03:52.8235
 [1] 309
 class: SingleCellExperiment 
 dim: 309 20353 
@@ -313,12 +347,18 @@ rowData names(0):
 colnames(796938): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
   Br6436_Nac_11_5650_68128 Br6436_Nac_11_5650_68141
 colData names(3): Sample CellType dataset
-Combo object finished |2026-03-14 21:40:51.350364
-Running MetaNeighbor |2026-03-14 21:40:51.350733
+Combo object finished |2026-03-18 12:04:08.890766
+Saving combo object |2026-03-18 12:04:08.891163
+Running MetaNeighbor |2026-03-18 12:05:13.395063
 Warning message:
 In asMethod(object) :
   sparse->dense coercion: allocating vector of size 1.8 GiB
-Finished MetaNeighbor |2026-03-14 21:41:23.110384
+Finished MetaNeighbor |2026-03-18 12:05:54.967927
+Making heatmaps |2026-03-18 12:05:54.968584
+null device 
+          1 
+null device 
+          1 
 R version 4.5.0 Patched (2025-05-21 r88220)
 Platform: x86_64-conda-linux-gnu
 Running under: Rocky Linux 9.4 (Blue Onyx)
@@ -339,90 +379,94 @@ time zone: US/Eastern
 tzcode source: system (glibc)
 
 attached base packages:
-[1] stats4    stats     graphics  grDevices utils     datasets  methods  
-[8] base     
+[1] grid      stats4    stats     graphics  grDevices utils     datasets 
+[8] methods   base     
 
 other attached packages:
  [1] here_1.0.1                  Seurat_5.3.0               
  [3] SeuratObject_5.1.0          sp_2.2-0                   
- [5] orthogene_1.14.0            MetaNeighbor_1.28.0        
- [7] SingleCellExperiment_1.30.1 SummarizedExperiment_1.38.1
- [9] Biobase_2.68.0              GenomicRanges_1.60.0       
-[11] GenomeInfoDb_1.44.0         IRanges_2.42.0             
-[13] S4Vectors_0.46.0            BiocGenerics_0.54.0        
-[15] generics_0.1.4              MatrixGenerics_1.20.0      
-[17] matrixStats_1.5.0          
+ [5] circlize_0.4.16             orthogene_1.14.0           
+ [7] MetaNeighbor_1.28.0         RColorBrewer_1.1-3         
+ [9] ComplexHeatmap_2.24.0       SingleCellExperiment_1.30.1
+[11] SummarizedExperiment_1.38.1 Biobase_2.68.0             
+[13] GenomicRanges_1.60.0        GenomeInfoDb_1.44.0        
+[15] IRanges_2.42.0              S4Vectors_0.46.0           
+[17] BiocGenerics_0.54.0         generics_0.1.4             
+[19] MatrixGenerics_1.20.0       matrixStats_1.5.0          
 
 loaded via a namespace (and not attached):
-  [1] RColorBrewer_1.1-3        jsonlite_2.0.0           
-  [3] magrittr_2.0.3            magick_2.8.6             
-  [5] spatstat.utils_3.1-4      farver_2.1.2             
-  [7] fs_1.6.6                  vctrs_0.6.5              
-  [9] ROCR_1.0-11               spatstat.explore_3.4-3   
- [11] RCurl_1.98-1.17           ggtree_3.16.0            
- [13] rstatix_0.7.2             htmltools_0.5.8.1        
- [15] S4Arrays_1.8.0            broom_1.0.8              
- [17] SparseArray_1.8.0         Formula_1.2-5            
- [19] gridGraphics_0.5-1        sctransform_0.4.2        
- [21] parallelly_1.44.0         KernSmooth_2.23-26       
- [23] htmlwidgets_1.6.4         ica_1.0-3                
- [25] plyr_1.8.9                plotly_4.10.4            
- [27] zoo_1.8-14                igraph_2.1.4             
- [29] mime_0.13                 lifecycle_1.0.4          
- [31] pkgconfig_2.0.3           Matrix_1.7-3             
- [33] R6_2.6.1                  fastmap_1.2.0            
- [35] GenomeInfoDbData_1.2.14   fitdistrplus_1.2-2       
- [37] future_1.49.0             shiny_1.10.0             
- [39] digest_0.6.37             aplot_0.2.7              
- [41] patchwork_1.3.0           rprojroot_2.0.4          
- [43] tensor_1.5                grr_0.9.5                
- [45] RSpectra_0.16-2           irlba_2.3.5.1            
- [47] beachmat_2.24.0           ggpubr_0.6.0             
- [49] progressr_0.15.1          spatstat.sparse_3.1-0    
- [51] polyclip_1.10-7           httr_1.4.7               
- [53] abind_1.4-8               compiler_4.5.0           
- [55] withr_3.0.2               backports_1.5.0          
- [57] BiocParallel_1.42.0       carData_3.0-5            
- [59] homologene_1.4.68.19.3.27 fastDummies_1.7.5        
- [61] ggsignif_0.6.4            MASS_7.3-65              
- [63] rappdirs_0.3.3            DelayedArray_0.34.1      
- [65] rjson_0.2.23              tools_4.5.0              
- [67] lmtest_0.9-40             ape_5.8-1                
- [69] httpuv_1.6.16             future.apply_1.11.3      
- [71] goftest_1.2-3             glue_1.8.0               
- [73] nlme_3.1-168              promises_1.3.2           
- [75] grid_4.5.0                Rtsne_0.17               
- [77] reshape2_1.4.4            cluster_2.1.8.1          
- [79] spatstat.data_3.1-6       gtable_0.3.6             
- [81] tidyr_1.3.1               data.table_1.17.2        
- [83] car_3.1-3                 XVector_0.48.0           
- [85] spatstat.geom_3.4-1       RcppAnnoy_0.0.22         
- [87] stringr_1.5.1             ggrepel_0.9.6            
- [89] RANN_2.6.2                pillar_1.10.2            
- [91] yulab.utils_0.2.4         spam_2.11-1              
- [93] babelgene_22.9            RcppHNSW_0.6.0           
- [95] later_1.4.2               splines_4.5.0            
- [97] dplyr_1.1.4               treeio_1.32.0            
- [99] lattice_0.22-7            deldir_2.0-4             
-[101] survival_3.8-3            tidyselect_1.2.1         
-[103] scuttle_1.18.0            miniUI_0.1.2             
-[105] pbapply_1.7-2             gridExtra_2.3            
-[107] scattermore_1.2           stringi_1.8.7            
-[109] UCSC.utils_1.4.0          lazyeval_0.2.2           
-[111] ggfun_0.1.8               codetools_0.2-20         
-[113] tibble_3.2.1              ggplotify_0.1.2          
-[115] cli_3.6.5                 uwot_0.2.3               
-[117] xtable_1.8-4              reticulate_1.42.0        
-[119] dichromat_2.0-0.1         Rcpp_1.0.14              
-[121] spatstat.random_3.4-1     globals_0.18.0           
-[123] gprofiler2_0.2.3          png_0.1-8                
-[125] spatstat.univar_3.1-3     parallel_4.5.0           
-[127] ggplot2_3.5.2             dotCall64_1.2            
-[129] bitops_1.0-9              SpatialExperiment_1.18.1 
-[131] listenv_0.9.1             viridisLite_0.4.2        
-[133] tidytree_0.4.6            scales_1.4.0             
-[135] ggridges_0.5.6            purrr_1.0.4              
-[137] crayon_1.5.3              rlang_1.1.6              
-[139] cowplot_1.1.3            
+  [1] RcppAnnoy_0.0.22          splines_4.5.0            
+  [3] later_1.4.2               bitops_1.0-9             
+  [5] ggplotify_0.1.2           tibble_3.2.1             
+  [7] polyclip_1.10-7           fastDummies_1.7.5        
+  [9] lifecycle_1.0.4           rstatix_0.7.2            
+ [11] doParallel_1.0.17         rprojroot_2.0.4          
+ [13] globals_0.18.0            lattice_0.22-7           
+ [15] MASS_7.3-65               backports_1.5.0          
+ [17] magrittr_2.0.3            plotly_4.10.4            
+ [19] httpuv_1.6.16             sctransform_0.4.2        
+ [21] spam_2.11-1               spatstat.sparse_3.1-0    
+ [23] reticulate_1.42.0         cowplot_1.1.3            
+ [25] pbapply_1.7-2             abind_1.4-8              
+ [27] Rtsne_0.17                purrr_1.0.4              
+ [29] RCurl_1.98-1.17           yulab.utils_0.2.4        
+ [31] rappdirs_0.3.3            GenomeInfoDbData_1.2.14  
+ [33] ggrepel_0.9.6             irlba_2.3.5.1            
+ [35] listenv_0.9.1             spatstat.utils_3.1-4     
+ [37] tidytree_0.4.6            goftest_1.2-3            
+ [39] RSpectra_0.16-2           spatstat.random_3.4-1    
+ [41] fitdistrplus_1.2-2        parallelly_1.44.0        
+ [43] codetools_0.2-20          DelayedArray_0.34.1      
+ [45] scuttle_1.18.0            tidyselect_1.2.1         
+ [47] shape_1.4.6.1             aplot_0.2.7              
+ [49] UCSC.utils_1.4.0          farver_2.1.2             
+ [51] spatstat.explore_3.4-3    jsonlite_2.0.0           
+ [53] GetoptLong_1.0.5          progressr_0.15.1         
+ [55] Formula_1.2-5             ggridges_0.5.6           
+ [57] survival_3.8-3            iterators_1.0.14         
+ [59] foreach_1.5.2             tools_4.5.0              
+ [61] treeio_1.32.0             ica_1.0-3                
+ [63] Rcpp_1.0.14               glue_1.8.0               
+ [65] gridExtra_2.3             SparseArray_1.8.0        
+ [67] dplyr_1.1.4               withr_3.0.2              
+ [69] fastmap_1.2.0             digest_0.6.37            
+ [71] R6_2.6.1                  mime_0.13                
+ [73] gridGraphics_0.5-1        colorspace_2.1-1         
+ [75] Cairo_1.6-2               scattermore_1.2          
+ [77] tensor_1.5                dichromat_2.0-0.1        
+ [79] spatstat.data_3.1-6       tidyr_1.3.1              
+ [81] data.table_1.17.2         httr_1.4.7               
+ [83] htmlwidgets_1.6.4         S4Arrays_1.8.0           
+ [85] uwot_0.2.3                pkgconfig_2.0.3          
+ [87] gtable_0.3.6              lmtest_0.9-40            
+ [89] XVector_0.48.0            htmltools_0.5.8.1        
+ [91] carData_3.0-5             dotCall64_1.2            
+ [93] clue_0.3-66               scales_1.4.0             
+ [95] png_0.1-8                 SpatialExperiment_1.18.1 
+ [97] spatstat.univar_3.1-3     ggfun_0.1.8              
+ [99] reshape2_1.4.4            rjson_0.2.23             
+[101] nlme_3.1-168              zoo_1.8-14               
+[103] GlobalOptions_0.1.2       stringr_1.5.1            
+[105] KernSmooth_2.23-26        parallel_4.5.0           
+[107] miniUI_0.1.2              pillar_1.10.2            
+[109] vctrs_0.6.5               RANN_2.6.2               
+[111] promises_1.3.2            ggpubr_0.6.0             
+[113] car_3.1-3                 beachmat_2.24.0          
+[115] xtable_1.8-4              cluster_2.1.8.1          
+[117] magick_2.8.6              cli_3.6.5                
+[119] compiler_4.5.0            rlang_1.1.6              
+[121] crayon_1.5.3              grr_0.9.5                
+[123] future.apply_1.11.3       ggsignif_0.6.4           
+[125] gprofiler2_0.2.3          plyr_1.8.9               
+[127] fs_1.6.6                  stringi_1.8.7            
+[129] BiocParallel_1.42.0       viridisLite_0.4.2        
+[131] deldir_2.0-4              babelgene_22.9           
+[133] lazyeval_0.2.2            spatstat.geom_3.4-1      
+[135] homologene_1.4.68.19.3.27 Matrix_1.7-3             
+[137] RcppHNSW_0.6.0            patchwork_1.3.0          
+[139] future_1.49.0             ggplot2_3.5.2            
+[141] shiny_1.10.0              ROCR_1.0-11              
+[143] igraph_2.1.4              broom_1.0.8              
+[145] ggtree_3.16.0             ape_5.8-1                
 ********* Job Ends *********
-Sat Mar 14 09:41:23 PM EDT 2026
+Wed Mar 18 12:06:00 PM EDT 2026
