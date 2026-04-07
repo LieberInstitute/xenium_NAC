@@ -97,7 +97,7 @@ mad_thresholds <- qc_df |>
         ),
         #   Upper threshold for mito percent (not log-transformed)
         mito_cutoff = median(subsets_mito_percent, na.rm = TRUE) +
-            3 * mad(subsets_mito_percent, na.rm = TRUE),
+            4 * mad(subsets_mito_percent, na.rm = TRUE),
         .groups = "drop"
     )
 
@@ -323,7 +323,7 @@ for (sid in sample_ids) {
         spe$detected[idx], type = "lower", log = TRUE, nmads = 3
     )
     high_mito <- isOutlier(
-        spe$subsets_mito_percent[idx], type = "higher", nmads = 3
+        spe$subsets_mito_percent[idx], type = "higher", nmads = 4
     )
 
     spe$qc_low_umi[idx] <- low_umi

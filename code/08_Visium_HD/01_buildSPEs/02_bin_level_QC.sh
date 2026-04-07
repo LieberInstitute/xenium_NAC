@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mem=50G
+#SBATCH --mem=100G
 #SBATCH --job-name=02_bin_QC
 #SBATCH -t 1-0:00:00
 #SBATCH -o logs/02_bin_QC.log
