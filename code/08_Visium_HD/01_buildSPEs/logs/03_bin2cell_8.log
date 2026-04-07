@@ -1,0 +1,75 @@
+**** Job starts ****
+Mon Mar 23 01:56:32 PM EDT 2026
+**** JHPCE info ****
+User: rphillip
+Job id: 30254148
+Job name: 03_bin2cell
+Node name: compute-174
+Task id: 8
+Loading LIBD SLURM module for visium_hd/1.0
+Loading LIBD SLURM module for htslib/1.18
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-24.3.0   5) visium_hd/1.0
+  2) JHPCE_tools/3.0            4) htslib/1.18
+
+ 
+
+anndata.py (1820): Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+anndata.py (1820): Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+anndata.py (1820): Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+2026-03-23 14:15:31.740509: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-03-23 14:15:32.078108: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-03-23 14:15:32.198592: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-03-23 14:15:32.228909: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-03-23 14:15:32.483582: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-03-23 14:15:33.972581: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-03-23 13:56:37.028451 | mpp for H1-XNQ4F2B_D1: 0.25270219232706487
+2026-03-23 13:56:37.028489 | Building and preprocessing AnnData
+Cropped spatial coordinates key: spatial_cropped_150_buffer
+Image key: 0.25270219232706487_mpp_150_buffer
+2026-03-23 14:15:30.679803 | img_key for H1-XNQ4F2B_D1: hires
+2026-03-23 14:15:30.679863 | Performing nuclear-based ('primary') segmentation
+Found model '2D_versatile_he' for 'StarDist2D'.
+Loading network weights from 'weights_best.h5'.
+Loading thresholds from 'thresholds.json'.
+Using default values: prob_thresh=0.692478, nms_thresh=0.3.
+effective: block_size=(4096, 4096, 3), min_overlap=(128, 128, 0), context=(128, 128, 0)
+functional.py (225): The structure of `inputs` doesn't match the expected structure: ['input']. Received: the structure of inputs=*
+  0%|          | 0/64 [00:00<?, ?it/s]  2%|▏         | 1/64 [00:13<13:43, 13.07s/it]  3%|▎         | 2/64 [00:23<11:49, 11.44s/it]  5%|▍         | 3/64 [00:33<10:58, 10.79s/it]  6%|▋         | 4/64 [00:44<10:51, 10.86s/it]  8%|▊         | 5/64 [00:59<12:02, 12.24s/it]  9%|▉         | 6/64 [01:14<12:48, 13.25s/it] 11%|█         | 7/64 [01:27<12:32, 13.20s/it] 12%|█▎        | 8/64 [01:44<13:38, 14.61s/it] 14%|█▍        | 9/64 [01:54<12:00, 13.10s/it] 16%|█▌        | 10/64 [02:07<11:43, 13.03s/it] 17%|█▋        | 11/64 [02:20<11:27, 12.97s/it] 19%|█▉        | 12/64 [02:30<10:23, 11.99s/it] 20%|██        | 13/64 [02:43<10:30, 12.37s/it] 22%|██▏       | 14/64 [02:57<10:48, 12.96s/it] 23%|██▎       | 15/64 [03:10<10:33, 12.93s/it] 25%|██▌       | 16/64 [03:28<11:33, 14.44s/it] 27%|██▋       | 17/64 [03:38<10:10, 12.99s/it] 28%|██▊       | 18/64 [03:48<09:13, 12.03s/it] 30%|██▉       | 19/64 [04:00<09:11, 12.25s/it] 31%|███▏      | 20/64 [04:13<09:05, 12.40s/it] 33%|███▎      | 21/64 [04:26<09:03, 12.65s/it] 34%|███▍      | 22/64 [04:40<09:00, 12.87s/it] 36%|███▌      | 23/64 [04:54<09:07, 13.36s/it] 38%|███▊      | 24/64 [05:11<09:31, 14.30s/it] 39%|███▉      | 25/64 [05:23<08:58, 13.81s/it] 41%|████      | 26/64 [05:36<08:35, 13.56s/it] 42%|████▏     | 27/64 [05:49<08:11, 13.29s/it] 44%|████▍     | 28/64 [06:02<07:50, 13.08s/it] 45%|████▌     | 29/64 [06:14<07:33, 12.96s/it] 47%|████▋     | 30/64 [06:27<07:19, 12.91s/it] 48%|████▊     | 31/64 [06:41<07:14, 13.18s/it] 50%|█████     | 32/64 [06:55<07:09, 13.41s/it] 52%|█████▏    | 33/64 [07:04<06:18, 12.20s/it] 53%|█████▎    | 34/64 [07:14<05:40, 11.36s/it] 55%|█████▍    | 35/64 [07:26<05:39, 11.69s/it] 56%|█████▋    | 36/64 [07:36<05:10, 11.09s/it] 58%|█████▊    | 37/64 [07:49<05:15, 11.67s/it] 59%|█████▉    | 38/64 [08:02<05:16, 12.17s/it] 61%|██████    | 39/64 [08:16<05:14, 12.57s/it] 62%|██████▎   | 40/64 [08:28<05:01, 12.57s/it] 64%|██████▍   | 41/64 [08:41<04:48, 12.53s/it] 66%|██████▌   | 42/64 [08:53<04:34, 12.50s/it] 67%|██████▋   | 43/64 [09:03<04:05, 11.70s/it] 69%|██████▉   | 44/64 [09:16<03:59, 12.00s/it] 70%|███████   | 45/64 [09:26<03:40, 11.60s/it] 72%|███████▏  | 46/64 [09:38<03:28, 11.56s/it] 73%|███████▎  | 47/64 [09:48<03:08, 11.09s/it] 75%|███████▌  | 48/64 [09:59<02:59, 11.21s/it] 77%|███████▋  | 49/64 [10:09<02:44, 10.94s/it] 78%|███████▊  | 50/64 [10:19<02:28, 10.59s/it] 80%|███████▉  | 51/64 [10:32<02:26, 11.28s/it] 81%|████████▏ | 52/64 [10:45<02:20, 11.68s/it] 83%|████████▎ | 53/64 [10:58<02:12, 12.06s/it] 84%|████████▍ | 54/64 [11:09<01:58, 11.85s/it] 86%|████████▌ | 55/64 [11:19<01:40, 11.15s/it] 88%|████████▊ | 56/64 [11:27<01:21, 10.21s/it] 89%|████████▉ | 57/64 [11:40<01:18, 11.17s/it] 91%|█████████ | 58/64 [11:53<01:10, 11.78s/it] 92%|█████████▏| 59/64 [12:06<01:00, 12.11s/it] 94%|█████████▍| 60/64 [12:15<00:45, 11.31s/it] 95%|█████████▌| 61/64 [12:25<00:32, 10.76s/it] 97%|█████████▋| 62/64 [12:37<00:22, 11.01s/it] 98%|█████████▊| 63/64 [12:47<00:10, 10.99s/it]100%|██████████| 64/64 [12:55<00:00,  9.91s/it]100%|██████████| 64/64 [12:55<00:00, 12.12s/it]
+Found 132711 objects
+2026-03-23 14:29:52.569164 | Performing gene-expression-based ('secondary') segmentation
+Found model '2D_versatile_fluo' for 'StarDist2D'.
+Loading network weights from 'weights_best.h5'.
+Loading thresholds from 'thresholds.json'.
+Using default values: prob_thresh=0.479071, nms_thresh=0.3.
+effective: block_size=(4096, 4096), min_overlap=(128, 128), context=(128, 128)
+functional.py (225): The structure of `inputs` doesn't match the expected structure: ['input']. Received: the structure of inputs=*
+  0%|          | 0/64 [00:00<?, ?it/s]  2%|▏         | 1/64 [00:13<14:35, 13.89s/it]  3%|▎         | 2/64 [00:30<15:45, 15.25s/it]  5%|▍         | 3/64 [00:46<16:03, 15.80s/it]  6%|▋         | 4/64 [01:04<16:34, 16.57s/it]  8%|▊         | 5/64 [01:22<16:46, 17.07s/it]  9%|▉         | 6/64 [01:35<15:18, 15.84s/it] 11%|█         | 7/64 [01:47<13:46, 14.50s/it] 12%|█▎        | 8/64 [01:56<11:59, 12.84s/it] 14%|█▍        | 9/64 [02:12<12:36, 13.76s/it] 16%|█▌        | 10/64 [02:30<13:31, 15.03s/it] 17%|█▋        | 11/64 [02:48<14:04, 15.93s/it] 19%|█▉        | 12/64 [03:04<13:49, 15.95s/it] 20%|██        | 13/64 [03:20<13:42, 16.12s/it] 22%|██▏       | 14/64 [03:38<13:47, 16.55s/it] 23%|██▎       | 15/64 [03:57<14:10, 17.36s/it] 25%|██▌       | 16/64 [04:10<12:53, 16.11s/it] 27%|██▋       | 17/64 [04:25<12:21, 15.77s/it] 28%|██▊       | 18/64 [04:39<11:33, 15.08s/it] 30%|██▉       | 19/64 [04:52<10:57, 14.60s/it] 31%|███▏      | 20/64 [05:09<11:13, 15.31s/it] 33%|███▎      | 21/64 [05:28<11:44, 16.38s/it] 34%|███▍      | 22/64 [05:47<11:55, 17.03s/it] 36%|███▌      | 23/64 [06:03<11:33, 16.92s/it] 38%|███▊      | 24/64 [06:17<10:35, 15.89s/it] 39%|███▉      | 25/64 [06:36<10:52, 16.73s/it] 41%|████      | 26/64 [06:54<10:51, 17.15s/it] 42%|████▏     | 27/64 [07:10<10:30, 17.05s/it] 44%|████▍     | 28/64 [07:24<09:30, 15.85s/it] 45%|████▌     | 29/64 [07:40<09:25, 16.15s/it] 47%|████▋     | 30/64 [07:56<08:58, 15.85s/it] 48%|████▊     | 31/64 [08:09<08:23, 15.27s/it] 50%|█████     | 32/64 [08:20<07:20, 13.75s/it] 52%|█████▏    | 33/64 [08:40<08:03, 15.60s/it] 53%|█████▎    | 34/64 [08:58<08:16, 16.56s/it] 55%|█████▍    | 35/64 [09:15<07:57, 16.48s/it] 56%|█████▋    | 36/64 [09:27<07:07, 15.28s/it] 58%|█████▊    | 37/64 [09:40<06:29, 14.42s/it] 59%|█████▉    | 38/64 [09:57<06:41, 15.46s/it] 61%|██████    | 39/64 [10:12<06:21, 15.25s/it] 62%|██████▎   | 40/64 [10:22<05:27, 13.66s/it] 64%|██████▍   | 41/64 [10:40<05:42, 14.90s/it] 66%|██████▌   | 42/64 [10:54<05:21, 14.60s/it] 67%|██████▋   | 43/64 [11:11<05:20, 15.27s/it] 69%|██████▉   | 44/64 [11:27<05:10, 15.50s/it] 70%|███████   | 45/64 [11:43<04:58, 15.74s/it] 72%|███████▏  | 46/64 [12:01<04:54, 16.38s/it] 73%|███████▎  | 47/64 [12:16<04:33, 16.08s/it] 75%|███████▌  | 48/64 [12:28<03:57, 14.81s/it] 77%|███████▋  | 49/64 [12:42<03:37, 14.51s/it] 78%|███████▊  | 50/64 [12:58<03:29, 14.95s/it] 80%|███████▉  | 51/64 [13:16<03:25, 15.84s/it] 81%|████████▏ | 52/64 [13:29<02:59, 14.99s/it] 83%|████████▎ | 53/64 [13:40<02:32, 13.90s/it] 84%|████████▍ | 54/64 [13:55<02:21, 14.19s/it] 86%|████████▌ | 55/64 [14:06<01:59, 13.30s/it] 88%|████████▊ | 56/64 [14:15<01:34, 11.79s/it] 89%|████████▉ | 57/64 [14:27<01:23, 11.95s/it] 91%|█████████ | 58/64 [14:41<01:15, 12.63s/it] 92%|█████████▏| 59/64 [14:56<01:06, 13.30s/it] 94%|█████████▍| 60/64 [15:10<00:53, 13.42s/it] 95%|█████████▌| 61/64 [15:23<00:40, 13.51s/it] 97%|█████████▋| 62/64 [15:36<00:26, 13.15s/it] 98%|█████████▊| 63/64 [15:46<00:12, 12.41s/it]100%|██████████| 64/64 [15:57<00:00, 11.82s/it]100%|██████████| 64/64 [15:57<00:00, 14.96s/it]
+03_bin2cell.py (243): Trying to modify attribute `.obs` of view, initializing view as actual.
+_utils.py (347): FigureCanvasAgg is non-interactive, and thus cannot be shown
+03_bin2cell.py (243): Trying to modify attribute `.obs` of view, initializing view as actual.
+_utils.py (347): FigureCanvasAgg is non-interactive, and thus cannot be shown
+03_bin2cell.py (243): Trying to modify attribute `.obs` of view, initializing view as actual.
+_utils.py (347): FigureCanvasAgg is non-interactive, and thus cannot be shown
+anndata.py (1209): Trying to modify attribute `.obs` of view, initializing view as actual.
+_utils.py (347): FigureCanvasAgg is non-interactive, and thus cannot be shown
+Found 210321 objects
+Salvaged 109093 secondary labels
+2026-03-23 14:49:16.039771 | Aggregating bins into cells
+-----
+anndata             0.10.8
+bin2cell            0.3.3
+matplotlib          3.9.2
+pandas              2.2.3
+pyhere              1.0.3
+scanpy              1.10.2
+session_info        1.0.0
+-----
+Python 3.9.20 | packaged by conda-forge | (main, Sep 30 2024, 17:49:10) [GCC 13.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-03-23 14:50
+**** Job ends ****
+Mon Mar 23 02:51:07 PM EDT 2026

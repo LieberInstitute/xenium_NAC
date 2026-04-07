@@ -4,7 +4,7 @@
 #SBATCH -t 1-0:00:00
 #SBATCH -o logs/03_bin2cell_%a.log
 #SBATCH -e logs/03_bin2cell_%a.log
-#SBATCH --array=1-4
+#SBATCH --array=1-8
 
 echo "**** Job starts ****"
 date

@@ -6,6 +6,7 @@ import session_info
 import bin2cell as b2c
 import datetime
 import pandas as pd
+import json
 
 #   Grab this sample ID from the full list, using the array task ID
 sample_info_path = here('processed-data','visiumHD_sample_info_NAc.csv')
@@ -15,11 +16,11 @@ sample_id = sample_info.iloc[task_id]['sample_id']
 space_ranger_dir = sample_info.iloc[task_id]['spaceranger_dir']
 
 
-#Set directories 
+#   Set directories
 
 stardist_dir = here(
   'processed-data', 'HD_Full_Analysis', 'bin2cell', 'stardist'
-  )
+)
 
 final_out_path = here(
   'processed-data', 'HD_Full_Analysis', 'bin2cell', f'{sample_id}.h5ad'
@@ -38,14 +39,27 @@ sr_dir = here(
 sr_spatial_dir = here(
   'processed-data', '01_spaceranger', sample_id, 'outs', 'spatial'
 )
+
 plot_dir = here('plots', 'HD_Full_Analysis')
 
 raw_image_path = sample_info.iloc[task_id]['raw_image_path']
 
-mpp = 0.3 #microns per pixel
-
 os.makedirs(stardist_dir, exist_ok=True)
 os.makedirs(plot_dir, exist_ok=True)
+
+################################################################################
+#   Dynamically set mpp from scalefactors_json.json
+################################################################################
+
+scalefactors_path = here(
+    'processed-data', '01_spaceranger', sample_id, 'outs',
+    'binned_outputs', 'square_002um', 'spatial', 'scalefactors_json.json'
+)
+with open(scalefactors_path) as f:
+    scalefactors = json.load(f)
+
+mpp = scalefactors['microns_per_pixel']
+print(f"{datetime.datetime.now()} | mpp for {sample_id}: {mpp}")
 
 ################################################################################
 #   Build and preprocess AnnData
@@ -99,6 +113,12 @@ b2c.scaled_he_image(
   save_path = os.path.join(stardist_dir, f'he_{sample_id}.tiff')
 )
 
+#   Capture the img_key that bin2cell stored in adata.uns['spatial'] so that
+#   sc.pl.spatial() calls later can reference it correctly. 
+sample_key = list(adata.uns['spatial'].keys())[0]
+img_key = list(adata.uns['spatial'][sample_key]['images'].keys())[0]
+print(f"{datetime.datetime.now()} | img_key for {sample_id}: {img_key}")
+
 ################################################################################
 #   Perform nuclear-based ("primary") segmentation
 ################################################################################
@@ -113,26 +133,26 @@ b2c.stardist(
   labels_npz_path=os.path.join(
     stardist_dir, f'he_{sample_id}.npz'
   ),
-  stardist_model="2D_versatile_he", 
+  stardist_model="2D_versatile_he",
   prob_thresh=0.01
 )
 
 #   Add segmentations to object
 b2c.insert_labels(
-  adata, 
+  adata,
   labels_npz_path=os.path.join(
     stardist_dir, f'he_{sample_id}.npz'
-  ), 
-  basis="spatial", 
+  ),
+  basis="spatial",
   spatial_key="spatial_cropped_150_buffer",
-  mpp=mpp, 
+  mpp=mpp,
   labels_key="labels_he"
 )
 
 #   Expand labels to attempt to capture cells and not nuclei
 b2c.expand_labels(
-  adata, 
-  labels_key='labels_he', 
+  adata,
+  labels_key='labels_he',
   expanded_labels_key="labels_he_expanded"
 )
 
@@ -162,31 +182,31 @@ adata.uns['bin2cell']['array_check'] = adata_filtered.uns['bin2cell']['array_che
 b2c.stardist(
   image_path=os.path.join(
     stardist_dir, f'gex_{sample_id}.tiff'
-  ), 
+  ),
   labels_npz_path = os.path.join(
     stardist_dir, f'gex_{sample_id}.npz'
-  ), 
-  stardist_model="2D_versatile_fluo", 
-  prob_thresh=0.05, 
+  ),
+  stardist_model="2D_versatile_fluo",
+  prob_thresh=0.05,
   nms_thresh=0.5
 )
 
 #   Add segmentations to object
 b2c.insert_labels(
-  adata, 
+  adata,
   labels_npz_path = os.path.join(
     stardist_dir, f'gex_{sample_id}.npz'
-  ), 
-  basis="array", 
-  mpp=mpp, 
+  ),
+  basis="array",
+  mpp=mpp,
   labels_key="labels_gex"
 )
 
 #   Take the union of cell labels from both segmentation methods
 b2c.salvage_secondary_labels(
-  adata, 
-  primary_label="labels_he_expanded", 
-  secondary_label="labels_gex", 
+  adata,
+  primary_label="labels_he_expanded",
+  secondary_label="labels_gex",
   labels_key="labels_joint"
 )
 
@@ -198,75 +218,75 @@ b2c.salvage_secondary_labels(
 for i in range(3):
   #   Region for plots
   mask = (
-    (adata.obs['array_row'] >= 1000 + 500 * i) & 
-      (adata.obs['array_row'] <= 1050 + 500 * i) & 
-      (adata.obs['array_col'] >= 1000 + 500 * i) & 
+    (adata.obs['array_row'] >= 1000 + 500 * i) &
+      (adata.obs['array_row'] <= 1050 + 500 * i) &
+      (adata.obs['array_col'] >= 1000 + 500 * i) &
       (adata.obs['array_col'] <= 1050 + 500 * i)
   )
 
-#   If the region has no cells, try to iterate over other regions until
-#   cells are found
-offset = 150
-while not any(mask) and offset < 1000:
-  mask = (
-    (adata.obs['array_row'] >= 1000 + 500 * i + offset) & 
-      (adata.obs['array_row'] <= 1050 + 500 * i + offset) & 
-      (adata.obs['array_col'] >= 1000 + 500 * i + offset) & 
-      (adata.obs['array_col'] <= 1050 + 500 * i + offset)
+  #   If the region has no cells, try to iterate over other regions until
+  #   cells are found
+  offset = 150
+  while not any(mask) and offset < 1000:
+    mask = (
+      (adata.obs['array_row'] >= 1000 + 500 * i + offset) &
+        (adata.obs['array_row'] <= 1050 + 500 * i + offset) &
+        (adata.obs['array_col'] >= 1000 + 500 * i + offset) &
+        (adata.obs['array_col'] <= 1050 + 500 * i + offset)
+    )
+    offset += 150
+  assert any(mask), "Failed to find a region with cells for plotting"
+
+  #   Plot union of cell labels
+  bdata = adata[mask]
+  bdata = bdata[bdata.obs['labels_joint'] > 0]
+  bdata.obs['labels_joint'] = bdata.obs['labels_joint'].astype(str)
+  sc.pl.spatial(
+    bdata, color=[None, "labels_joint_source", "labels_joint"],
+    img_key=img_key, basis="spatial_cropped_150_buffer"
   )
-offset += 150
-assert any(mask), "Failed to find a region with cells for plotting"
+  plt.savefig(
+    os.path.join(plot_dir, f'{sample_id}_cells{i+1}.png')
+  )
+  plt.close('all')
 
-#   Plot union of cell labels
-bdata = adata[mask]
-bdata = bdata[bdata.obs['labels_joint'] > 0]
-bdata.obs['labels_joint'] = bdata.obs['labels_joint'].astype(str)
-sc.pl.spatial(
-  bdata, color=[None, "labels_joint_source", "labels_joint"],
-  img_key=f"{mpp}_mpp_150_buffer", basis="spatial_cropped_150_buffer"
-)
-plt.savefig(
-  os.path.join(plot_dir, f'{sample_id}_cells{i+1}.png')
-)
-plt.close('all')
+  #   Plot primary segmentations
+  crop = b2c.get_crop(
+    adata[mask], basis="spatial", spatial_key="spatial_cropped_150_buffer",
+    mpp=mpp
+  )
+  rendered = b2c.view_labels(
+    image_path = os.path.join(
+      stardist_dir, f'he_{sample_id}.tiff'
+    ),
+    labels_npz_path = os.path.join(
+      stardist_dir, f'he_{sample_id}.npz'
+    ),
+    crop = crop
+  )
+  plt.imshow(rendered)
+  plt.savefig(
+    os.path.join(plot_dir, f'{sample_id}_primary_segmentation{i+1}.png')
+  )
+  plt.close('all')
 
-#   Plot primary segmentations
-crop = b2c.get_crop(
-  adata[mask], basis="spatial", spatial_key="spatial_cropped_150_buffer",
-  mpp=mpp
-)
-rendered = b2c.view_labels(
-  image_path = os.path.join(
-    stardist_dir, f'he_{sample_id}.tiff'
-  ),
-  labels_npz_path = os.path.join(
-    stardist_dir, f'he_{sample_id}.npz'
-  ),  
-  crop = crop
-)
-plt.imshow(rendered)
-plt.savefig(
-  os.path.join(plot_dir, f'{sample_id}_primary_segmentation{i+1}.png')
-)
-plt.close('all')
-
-#   Plot secondary segmentations
-crop = b2c.get_crop(adata[mask], basis="array", mpp=mpp)
-rendered = b2c.view_labels(
-  image_path = os.path.join(
-    stardist_dir, f'gex_{sample_id}.tiff'
-  ),
-  labels_npz_path = os.path.join(
-    stardist_dir, f'gex_{sample_id}.npz'
-  ),  
-  crop = crop,
-  stardist_normalize = True
-)
-plt.imshow(rendered)
-plt.savefig(
-  os.path.join(plot_dir, f'{sample_id}_secondary_segmentation{i+1}.png')
-)
-plt.close('all')
+  #   Plot secondary segmentations
+  crop = b2c.get_crop(adata[mask], basis="array", mpp=mpp)
+  rendered = b2c.view_labels(
+    image_path = os.path.join(
+      stardist_dir, f'gex_{sample_id}.tiff'
+    ),
+    labels_npz_path = os.path.join(
+      stardist_dir, f'gex_{sample_id}.npz'
+    ),
+    crop = crop,
+    stardist_normalize = True
+  )
+  plt.imshow(rendered)
+  plt.savefig(
+    os.path.join(plot_dir, f'{sample_id}_secondary_segmentation{i+1}.png')
+  )
+  plt.close('all')
 
 #   Keep a copy of the AnnData before aggregation (to enable interactive
 #   plotting later, for example)
@@ -284,23 +304,22 @@ adata = b2c.bin_to_cell(
 )
 
 cell_mask = (
-  (adata.obs['array_row'] >= 1450) & 
-    (adata.obs['array_row'] <= 1550) & 
-    (adata.obs['array_col'] >= 250) & 
+  (adata.obs['array_row'] >= 1450) &
+    (adata.obs['array_row'] <= 1550) &
+    (adata.obs['array_col'] >= 250) &
     (adata.obs['array_col'] <= 450)
 )
 
 #   Plot counts within cells after aggregation of bins
 bdata = adata[cell_mask]
 sc.pl.spatial(
-  bdata, color="bin_count", img_key=f"{mpp}_mpp_150_buffer",
+  bdata, color="bin_count", img_key=img_key,
   basis="spatial_cropped_150_buffer"
 )
 plt.savefig(
   os.path.join(plot_dir, f'{sample_id}_cells_aggregated.png')
 )
 plt.close('all')
-
 
 sc.write(final_out_path, adata)
 session_info.show()
