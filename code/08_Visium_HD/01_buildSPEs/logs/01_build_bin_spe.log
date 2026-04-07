@@ -1,10 +1,10 @@
 **** Job starts ****
-Thu Feb 19 09:59:44 PM EST 2026
+Fri Mar 20 06:05:15 PM EDT 2026
 **** JHPCE info ****
 User: rphillip
-Job id: 29064930
+Job id: 30200335
 Job name: 01_build_bin_spe
-Node name: compute-145
+Node name: compute-100
 Task id: 
 Loading LIBD SLURM module for visium_hd/1.0
 Loading LIBD SLURM module for htslib/1.18
@@ -169,47 +169,60 @@ The following object is masked from ‘package:rhdf5’:
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 Loading required package: scuttle
-Warning message:
-In read.table(file = file, header = header, sep = sep, quote = quote,  :
-  incomplete final line found by readTableHeader on '/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/visiumHD_sample_info_NAc.csv'
       sample_id          in_house_id brain_id depth
 1 H1-XKYDCP3_A1 01_VHD_S1_3540um_SVB   Br6660  3540
 2 H1-XKYDCP3_D1 02_VHD_S1_4120um_SVB   Br6660  4120
 3 H1-M3TCP9V_A1 03_VHD_S2_3040um_SVB   Br6660  3040
 4 H1-M3TCP9V_D1 04_VHD_S2_4550um_SVB   Br6660  4550
+5 H1-8MTH2TQ_A1 07_VHD_S4_2040um_SVB   Br6660  2040
+6 H1-8MTH2TQ_D1 08_VHD_S4_3630um_SVB   Br6660  3630
+7 H1-XNQ4F2B_A1  05_VHD_S3_630um_SVB   Br6436   630
+8 H1-XNQ4F2B_D1 06_VHD_S3_4630um_SVB   Br6436  4630
                                                                                      spaceranger_dir
 1 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-XKYDCP3_A1
 2 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-XKYDCP3_D1
 3 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_A1
 4 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-M3TCP9V_D1
+5 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-8MTH2TQ_A1
+6 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-8MTH2TQ_D1
+7 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-XNQ4F2B_A1
+8 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-XNQ4F2B_D1
                                                                                                                                   raw_image_path
 1 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6660_NAc_3540_ventral_medial_islands_crop_40x_scan3_good.tif
 2             /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6600_NAc_4120_drosal_medial_islands_full_40X.tif
 3                                      /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6660_59_40x_cropped.tif
 4                                       /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6660_84_40X_crop_2.tif
-                                                                                                                                            cyt_image_path
-1 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/CAVG10676_2025-10-24_13-51-26_2025-10-24_13-12-56_H1-XKYDCP3_A1_sample-3540um.tif
-2 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/CAVG10676_2025-10-24_13-51-26_2025-10-24_13-12-56_H1-XKYDCP3_D1_sample-4120um.tif
-3     /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/CAVG10676_2025-11-05_13-37-56_2025-11-05_13-07-01_H1-M3TCP9V_A1_sample-59.tif
-4     /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/CAVG10676_2025-11-05_13-37-56_2025-11-05_13-07-01_H1-M3TCP9V_D1_sample-84.tif
-2026-02-19 21:59:58.212111 | Building SpatialExperiment...
-2026-02-19 21:59:58.281151 SpatialExperiment::read10xVisium: reading basic data from SpaceRanger
-2026-02-19 22:03:14.010916 read10xVisiumAnalysis: reading analysis output from SpaceRanger
-2026-02-19 22:06:07.081618 add10xVisiumAnalysis: adding analysis output from SpaceRanger
-2026-02-19 22:06:47.360395 rtracklayer::import: reading the reference GTF file
-2026-02-19 22:07:23.607844 adding gene information to the SPE object
-2026-02-19 22:07:27.307801 adding information used by spatialLIBD
+5                                            /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/Br6660_40x_2040um_third_scan.tif
+6                                                       /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/Br6660_40x_3630um.tif
+7                                                          /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/Br6436_4um_40x.tif
+8                                                         /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/Br6436_75um_40x.tif
+                                                                                                                                                     cyt_image_path
+1 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/CAVG10676_2025-10-24_13-51-26_2025-10-24_13-12-56_H1-XKYDCP3_A1_sample-3540um.tif
+2 /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/CAVG10676_2025-10-24_13-51-26_2025-10-24_13-12-56_H1-XKYDCP3_D1_sample-4120um.tif
+3     /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/CAVG10676_2025-11-05_13-37-56_2025-11-05_13-07-01_H1-M3TCP9V_A1_sample-59.tif
+4     /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/CAVG10676_2025-11-05_13-37-56_2025-11-05_13-07-01_H1-M3TCP9V_D1_sample-84.tif
+5                /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/CAVG10676_2025-11-19_14-41-35_2025-11-19_14-04-56_H1-8MTH2TQ_A1_sample-2040.tif
+6                /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/CAVG10676_2025-11-19_14-41-35_2025-11-19_14-04-56_H1-8MTH2TQ_D1_sample-3630.tif
+7               /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/CAVG10676_2025-11-12_12-18-34_2025-11-12_11-41-28_H1-XNQ4F2B_A1_sample-630um.tif
+8                /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/CAVG10676_2025-11-12_12-18-34_2025-11-12_11-41-28_H1-XNQ4F2B_D1_sample-4630.tif
+2026-03-20 18:05:44.104021 | Building SpatialExperiment...
+2026-03-20 18:05:44.118152 SpatialExperiment::read10xVisium: reading basic data from SpaceRanger
+2026-03-20 18:21:59.297145 read10xVisiumAnalysis: reading analysis output from SpaceRanger
+2026-03-20 18:33:43.389293 add10xVisiumAnalysis: adding analysis output from SpaceRanger
+2026-03-20 18:36:31.895121 rtracklayer::import: reading the reference GTF file
+2026-03-20 18:37:39.457903 adding gene information to the SPE object
+2026-03-20 18:38:01.545486 adding information used by spatialLIBD
 Warning message:
 Dropping 519 out of 39125 genes for which we don't have information on the reference GTF file. This typically happens when you are not using the same GTF file as the one that was used by SpaceRanger. 
-2026-02-19 22:07:46.084585 | Saving raw SPE
-2026-02-19 22:11:44.724341 | Filtering bins, genes, and to tissue...
-2026-02-19 22:11:51.481654 | Performing log normalization...
-2026-02-19 22:12:10.818817 | Saving normalized SPE
-11.88 GB
+2026-03-20 18:39:07.625544 | Saving raw SPE
+2026-03-20 18:56:16.859875 | Filtering bins, genes, and to tissue...
+2026-03-20 18:56:47.30077 | Performing log normalization...
+2026-03-20 18:58:04.363806 | Saving normalized SPE
+26.69 GB
 [1] "Reproducibility information:"
-[1] "2026-02-19 22:23:42 EST"
+[1] "2026-03-20 19:47:28 EDT"
     user   system  elapsed 
-1406.259   21.712 1436.831 
+5975.597   98.527 6129.974 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -220,7 +233,7 @@ Dropping 519 out of 39125 genes for which we don't have information on the refer
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-02-19
+ date     2026-03-20
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -400,4 +413,4 @@ Dropping 519 out of 39125 genes for which we don't have information on the refer
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 **** Job ends ****
-Thu Feb 19 10:23:43 PM EST 2026
+Fri Mar 20 07:47:30 PM EDT 2026

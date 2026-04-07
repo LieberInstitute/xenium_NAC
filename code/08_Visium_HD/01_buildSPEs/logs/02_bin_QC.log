@@ -1,10 +1,10 @@
 **** Job starts ****
-Mon Mar  2 06:59:14 PM EST 2026
+Thu Mar 26 03:32:01 PM EDT 2026
 **** JHPCE info ****
 User: rphillip
-Job id: 29336985
+Job id: 30369869
 Job name: 02_bin_QC
-Node name: compute-143
+Node name: compute-120
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -116,28 +116,36 @@ The following objects are masked from ‘package:matrixStats’:
 ✖ dplyr::slice()        masks IRanges::slice()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-2026-03-02 19:02:15.209523 | Setting rownames to gene symbols via uniquifyFeatureNames
-2026-03-02 19:02:15.231867 | Computing bin-level QC metrics with addPerCellQCMetrics
-  Found 12 mitochondrial genes out of 18147 total
-2026-03-02 19:02:30.63925 | Generating per-sample distribution plots
+2026-03-26 15:41:33.069951 | Setting rownames to gene symbols via uniquifyFeatureNames
+2026-03-26 15:41:33.137343 | Computing bin-level QC metrics with addPerCellQCMetrics
+  Found 12 mitochondrial genes out of 18304 total
+2026-03-26 15:42:44.487613 | Generating per-sample distribution plots
 Per-sample 3x MAD thresholds:
-# A tibble: 4 × 4
+# A tibble: 8 × 4
   sample_id     sum_cutoff detected_cutoff mito_cutoff
   <chr>              <dbl>           <dbl>       <dbl>
-1 H1-M3TCP9V_A1      10.8            10.5         23.8
-2 H1-M3TCP9V_D1      13.7            13.8         21.9
-3 H1-XKYDCP3_A1      11.8            10.5         29.9
-4 H1-XKYDCP3_D1       7.00            6.84        30.1
+1 H1-8MTH2TQ_A1      19.9            18.8         31.0
+2 H1-8MTH2TQ_D1      29.8            25.7         39.0
+3 H1-M3TCP9V_A1      10.8            10.5         29.0
+4 H1-M3TCP9V_D1      13.7            13.8         26.9
+5 H1-XKYDCP3_A1      11.8            10.5         36.4
+6 H1-XKYDCP3_D1       7.00            6.84        36.9
+7 H1-XNQ4F2B_A1       5.32            5.09        31.4
+8 H1-XNQ4F2B_D1      27.6            26.6         25.8
 Per-sample QC summary:
-# A tibble: 4 × 7
+# A tibble: 8 × 7
   sample_id     n_bins median_umi median_genes median_mito_pct pct_below_5_umi
   <chr>          <int>      <dbl>        <dbl>           <dbl>           <dbl>
-1 H1-M3TCP9V_A1 668323        101           93            8.14           0.493
-2 H1-M3TCP9V_D1 686137         94           88            6.94           0.613
-3 H1-XKYDCP3_A1 665280        111          100           10.7            0.188
-4 H1-XKYDCP3_D1 664111        105           96            9.80           4.17 
+1 H1-8MTH2TQ_A1 694391        142          128            9.91          0.0243
+2 H1-8MTH2TQ_D1 693420        155          137           13.1           0.0193
+3 H1-M3TCP9V_A1 668323        101           93            8.14          0.493 
+4 H1-M3TCP9V_D1 686137         94           88            6.94          0.613 
+5 H1-XKYDCP3_A1 665280        111          100           10.7           0.188 
+6 H1-XKYDCP3_D1 664111        105           96            9.80          4.17  
+7 H1-XNQ4F2B_A1 684337         99           92            7.19          6.14  
+8 H1-XNQ4F2B_D1 630020        149          137            8.49          0.0833
 # ℹ 1 more variable: pct_mito_above_20 <dbl>
-2026-03-02 19:02:44.206347 | Generating spatial QC plots with escheR
+2026-03-26 15:43:39.342983 | Generating spatial QC plots with escheR
   Plotting sample: H1-XKYDCP3_A1
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
@@ -166,12 +174,44 @@ Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-2026-03-02 19:03:30.480822 | Flagging outlier bins (per sample, MAD-based)
-  H1-XKYDCP3_A1: 16222/665280 bins flagged (2.4%) — low_umi: 8808, low_gene: 7883, high_mito: 8701
-  H1-XKYDCP3_D1: 39601/664111 bins flagged (6.0%) — low_umi: 31725, low_gene: 30560, high_mito: 12132
-  H1-M3TCP9V_A1: 22074/668323 bins flagged (3.3%) — low_umi: 11787, low_gene: 12431, high_mito: 11227
-  H1-M3TCP9V_D1: 16450/686137 bins flagged (2.4%) — low_umi: 7979, low_gene: 8155, high_mito: 9000
-2026-03-02 19:03:57.193315 | Plotting QC-flagged bins spatially
+  Plotting sample: H1-8MTH2TQ_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-8MTH2TQ_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-XNQ4F2B_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-XNQ4F2B_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-03-26 15:46:34.925291 | Flagging outlier bins (per sample, MAD-based)
+  H1-XKYDCP3_A1: 10573/665280 bins flagged (1.6%) — low_umi: 8808, low_gene: 7883, high_mito: 2377
+  H1-XKYDCP3_D1: 33906/664111 bins flagged (5.1%) — low_umi: 31725, low_gene: 30560, high_mito: 5457
+  H1-M3TCP9V_A1: 14934/668323 bins flagged (2.2%) — low_umi: 11787, low_gene: 12431, high_mito: 3466
+  H1-M3TCP9V_D1: 9566/686137 bins flagged (1.4%) — low_umi: 7979, low_gene: 8155, high_mito: 1882
+  H1-8MTH2TQ_A1: 7371/694391 bins flagged (1.1%) — low_umi: 6231, low_gene: 5786, high_mito: 1162
+  H1-8MTH2TQ_D1: 3684/693420 bins flagged (0.5%) — low_umi: 2877, low_gene: 2327, high_mito: 805
+  H1-XNQ4F2B_A1: 49465/684337 bins flagged (7.2%) — low_umi: 48016, low_gene: 48162, high_mito: 4789
+  H1-XNQ4F2B_D1: 10945/630020 bins flagged (1.7%) — low_umi: 6847, low_gene: 6901, high_mito: 4126
+2026-03-26 15:49:02.53871 | Plotting QC-flagged bins spatially
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
@@ -180,25 +220,41 @@ Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-2026-03-02 19:04:18.429895 | Saving SPE with QC annotations
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-03-26 15:50:55.752132 | Saving SPE with QC annotations
 Saved to: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/SPEs/spe_norm_with_binQC.Rds
-Total bins flagged: 94347 / 2683851 (3.5%)
-2026-03-02 19:15:10.439164 | Filtering out QC-flagged bins
-  Removed 94347 bins: 2683851 -> 2589504 (96.5% retained)
-  H1-XKYDCP3_A1: 665280 -> 649058 bins (97.6% retained)
-  H1-XKYDCP3_D1: 664111 -> 624510 bins (94.0% retained)
-  H1-M3TCP9V_A1: 668323 -> 646249 bins (96.7% retained)
-  H1-M3TCP9V_D1: 686137 -> 669687 bins (97.6% retained)
+Total bins flagged: 140444 / 5386019 (2.6%)
+2026-03-26 16:16:25.900447 | Filtering out QC-flagged bins
+  Removed 140444 bins: 5386019 -> 5245575 (97.4% retained)
+  H1-XKYDCP3_A1: 665280 -> 654707 bins (98.4% retained)
+  H1-XKYDCP3_D1: 664111 -> 630205 bins (94.9% retained)
+  H1-M3TCP9V_A1: 668323 -> 653389 bins (97.8% retained)
+  H1-M3TCP9V_D1: 686137 -> 676571 bins (98.6% retained)
+  H1-8MTH2TQ_A1: 694391 -> 687020 bins (98.9% retained)
+  H1-8MTH2TQ_D1: 693420 -> 689736 bins (99.5% retained)
+  H1-XNQ4F2B_A1: 684337 -> 634872 bins (92.8% retained)
+  H1-XNQ4F2B_D1: 630020 -> 619075 bins (98.3% retained)
 Saved filtered SPE to: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/SPEs/spe_norm_binQC_filtered.Rds
-  Wrote 649058 passing barcodes for H1-XKYDCP3_A1
-  Wrote 624510 passing barcodes for H1-XKYDCP3_D1
-  Wrote 646249 passing barcodes for H1-M3TCP9V_A1
-  Wrote 669687 passing barcodes for H1-M3TCP9V_D1
+  Wrote 654707 passing barcodes for H1-XKYDCP3_A1
+  Wrote 630205 passing barcodes for H1-XKYDCP3_D1
+  Wrote 653389 passing barcodes for H1-M3TCP9V_A1
+  Wrote 676571 passing barcodes for H1-M3TCP9V_D1
+  Wrote 687020 passing barcodes for H1-8MTH2TQ_A1
+  Wrote 689736 passing barcodes for H1-8MTH2TQ_D1
+  Wrote 634872 passing barcodes for H1-XNQ4F2B_A1
+  Wrote 619075 passing barcodes for H1-XNQ4F2B_D1
 
 Reproducibility information:
-[1] "2026-03-02 19:23:59 EST"
+[1] "2026-03-26 16:38:07 EDT"
     user   system  elapsed 
-1452.215   15.612 1484.309 
+3694.432  236.691 3964.324 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -209,7 +265,7 @@ Reproducibility information:
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-03-02
+ date     2026-03-26
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -378,4 +434,4 @@ Reproducibility information:
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 **** Job ends ****
-Mon Mar  2 07:24:00 PM EST 2026
+Thu Mar 26 04:38:21 PM EDT 2026
