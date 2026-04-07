@@ -46,7 +46,7 @@ spe
 lambda <- 0.8 #0.8 for spatial
 compute_agf <- TRUE 
 use_agf <- TRUE
-k_geom <- 50  #Increase k value to find larger domains. 
+k_geom <- c(25,50)  #Increase k value to find larger domains. 
 
 #split spe by sample
 samples <- unique(spe$sample_id)

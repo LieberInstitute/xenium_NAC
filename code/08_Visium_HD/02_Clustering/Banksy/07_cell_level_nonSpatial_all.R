@@ -43,9 +43,9 @@ spe
 
 #######Banksy parameters
 lambda <- 0.2
-compute_agf <- FALSE 
-use_agf <- FALSE
-k_geom <- 30 
+compute_agf <- TRUE 
+use_agf <- TRUE
+k_geom <- c(15,30)
 
 #split spe by sample
 samples <- unique(spe$sample_id)
@@ -84,7 +84,7 @@ spe_joint <- clusterBanksy(
   use_agf = use_agf,
   lambda = lambda,
   algo = "leiden",
-  resolution = c(0.5, 0.8, 1.0),
+  resolution = seq(0.2,1,by = .2),
   seed = 1747
 )
 message(paste0("Finished clusterBanksy - ", Sys.time()))
@@ -104,7 +104,7 @@ message(Sys.time(), " | Saving subsampled BANKSY object")
 
 saveHDF5SummarizedExperiment(spe_joint, here(
   "processed-data", "HD_Full_Analysis", "SPEs",
-  "spe_banksy_0_cell_level"
+  "spe_banksy_0.2_cell_level"
 ))
 
 ###Reproduciblity
