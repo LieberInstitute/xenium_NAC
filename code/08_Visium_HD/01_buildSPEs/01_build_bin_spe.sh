@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mem=32G
+#SBATCH --mem=64G
 #SBATCH --job-name=01_build_bin_spe
 #SBATCH -t 1-0:00:00
 #SBATCH -o logs/01_build_bin_spe.log
@@ -20,7 +20,7 @@ repo_dir="/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/"
 #   Get spatial coordinates as a CSV (from parquet format) for each sample where
 #   it doesn't exist
 module load visium_hd/1.0
-for sample_id in H1-XKYDCP3_A1 H1-XKYDCP3_D1 H1-M3TCP9V_A1 H1-M3TCP9V_D1; do
+for sample_id in H1-XKYDCP3_A1 H1-XKYDCP3_D1 H1-M3TCP9V_A1 H1-M3TCP9V_D1 H1-8MTH2TQ_A1 H1-8MTH2TQ_D1 H1-XNQ4F2B_A1 H1-XNQ4F2B_D1; do
     spatial_dir=$repo_dir/processed-data/01_spaceranger/$sample_id/outs/binned_outputs/square_008um/spatial
 
     if [[ ! -f $spatial_dir/tissue_positions.csv ]]; then
