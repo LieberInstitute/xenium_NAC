@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Thu Mar  5 03:15:44 PM EST 2026
+Fri Apr  3 10:27:15 AM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 29429172
+Job id: 30557201
 Job name: 04_cell_spatial
-Hostname: compute-169
+Hostname: compute-155
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -134,40 +134,40 @@ The following object is masked from ‘package:rhdf5’:
 Loading required package: scuttle
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 
-  TRUE 
-590816 
+   TRUE 
+1925144 
 class: SpatialExperiment 
-dim: 17909 590816 
+dim: 18140 1925144 
 metadata(0):
 assays(2): counts logcounts
-rownames(17909): OR4F5 SAMD11 ... MT-ND6 MT-CYB
+rownames(18140): OR4F5 SAMD11 ... MT-ND6 MT-CYB
 rowData names(8): source type ... gene_search subsets_mito
-colnames(590816): 1_H1-XKYDCP3_A1 3_H1-XKYDCP3_A1 ...
-  254743_H1-M3TCP9V_D1 254746_H1-M3TCP9V_D1
+colnames(1925144): 1_H1-XKYDCP3_A1 2_H1-XKYDCP3_A1 ...
+  343034_H1-XNQ4F2B_D1 343035_H1-XNQ4F2B_D1
 colData names(23): object_id bin_count ... qc_low_bin_count qc_discard
 reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
 imgData names(4): sample_id image_id data scaleFactor
-2026-03-05 15:21:39.074351 | Selecting top HVGs
+2026-04-03 10:41:03.916196 | Selecting top HVGs
   Selected 2000 HVGs
-2026-03-05 15:52:51.177279 | Subsetting SPE for the top 2000 HVGs
+2026-04-03 13:17:04.74279 | Subsetting SPE for the top 2000 HVGs
 class: SpatialExperiment 
-dim: 2000 590816 
+dim: 2000 1925144 
 metadata(0):
 assays(2): counts logcounts
-rownames(2000): MBP GFAP ... PDCD4 ARHGAP31
+rownames(2000): MBP GFAP ... ELOVL2 DVL1
 rowData names(8): source type ... gene_search subsets_mito
-colnames(590816): 1_H1-XKYDCP3_A1 3_H1-XKYDCP3_A1 ...
-  254743_H1-M3TCP9V_D1 254746_H1-M3TCP9V_D1
+colnames(1925144): 1_H1-XKYDCP3_A1 2_H1-XKYDCP3_A1 ...
+  343034_H1-XNQ4F2B_D1 343035_H1-XNQ4F2B_D1
 colData names(23): object_id bin_count ... qc_low_bin_count qc_discard
 reducedDimNames(0):
 mainExpName: NULL
 altExpNames(0):
 spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
 imgData names(4): sample_id image_id data scaleFactor
-Running computeBanksy - 2026-03-05 15:52:51.877742
+Running computeBanksy - 2026-04-03 13:17:07.937968
 Computing neighbors...
 Spatial mode is kNN_median
 Parameters: k_geom=50
@@ -212,36 +212,92 @@ Done
 Done
 Centering
 Done
-Finished computeBanksy - 2026-03-05 16:13:32.694755
-             used    (Mb) gc trigger    (Mb)   max used    (Mb)
-Ncells    9179808   490.3   17012521   908.6   17012521   908.6
-Vcells 2413197599 18411.3 6522140958 49760.0 6522140958 49760.0
-Running PCA - 2026-03-05 16:13:41.604551
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Done
+Centering
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Done
+Centering
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Done
+Centering
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Computing neighbors...
+Spatial mode is kNN_median
+Parameters: k_geom=50
+Done
+Done
+Centering
+Done
+Finished computeBanksy - 2026-04-03 14:25:51.859459
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells   10762195   574.8    31998934   1709.0    36861162   1968.6
+Vcells 7827973841 59722.8 23298591600 177754.2 19415426334 148128.0
+Running PCA - 2026-04-03 14:26:20.906747
 Scaling logcounts
 Group: H1-XKYDCP3_A1
 Group: H1-XKYDCP3_D1
 Group: H1-M3TCP9V_A1
 Group: H1-M3TCP9V_D1
+Group: H1-8MTH2TQ_A1
+Group: H1-8MTH2TQ_D1
+Group: H1-XNQ4F2B_A1
+Group: H1-XNQ4F2B_D1
 Scaling harmonic m = 0
 Group: H1-XKYDCP3_A1
 Group: H1-XKYDCP3_D1
 Group: H1-M3TCP9V_A1
 Group: H1-M3TCP9V_D1
+Group: H1-8MTH2TQ_A1
+Group: H1-8MTH2TQ_D1
+Group: H1-XNQ4F2B_A1
+Group: H1-XNQ4F2B_D1
 Scaling harmonic m = 1
 Group: H1-XKYDCP3_A1
 Group: H1-XKYDCP3_D1
 Group: H1-M3TCP9V_A1
 Group: H1-M3TCP9V_D1
+Group: H1-8MTH2TQ_A1
+Group: H1-8MTH2TQ_D1
+Group: H1-XNQ4F2B_A1
+Group: H1-XNQ4F2B_D1
 Using seed=1000
-Finished PCA - 2026-03-05 16:27:22.564852
-Running UMAP - 2026-03-05 16:27:22.56561
+Finished PCA - 2026-04-03 15:19:56.506393
+Running UMAP - 2026-04-03 15:19:56.50968
 Using seed=1000
-Finished UMAP - 2026-03-05 16:36:38.1981
-2026-03-05 16:36:38.204365 | Saving subsampled BANKSY object
+Finished UMAP - 2026-04-03 15:50:49.209214
+2026-04-03 15:50:49.215965 | Saving subsampled BANKSY object
 [1] "Reproducibility information:"
-[1] "2026-03-05 17:34:33 EST"
-    user   system  elapsed 
-8122.489  196.873 8328.642 
+[1] "2026-04-03 19:54:04 EDT"
+     user    system   elapsed 
+33209.800   956.267 34008.456 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -252,7 +308,7 @@ Finished UMAP - 2026-03-05 16:36:38.1981
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-03-05
+ date     2026-04-03
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -350,4 +406,4 @@ Finished UMAP - 2026-03-05 16:36:38.1981
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Thu Mar  5 05:34:35 PM EST 2026
+Fri Apr  3 07:54:09 PM EDT 2026

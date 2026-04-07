@@ -4,7 +4,7 @@
 #SBATCH --job-name=09_cell_nonspatial
 #SBATCH --output=logs/09_cell_nonspatial_noAGF.log
 #SBATCH --error=logs/09_cell_nonspatial_noAGF.log 
-#SBATCH --mem=75G
+#SBATCH --mem=150G
 #SBATCH --cpus-per-task=1
 #SBATCH --time=7-00:00:00
 #SBATCH --mail-type=END

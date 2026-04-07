@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Wed Mar 11 04:47:02 PM EDT 2026
+Mon Apr  6 11:28:12 AM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 29710447
+Job id: 30610153
 Job name: 08_plot
-Hostname: compute-094
+Hostname: compute-119
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -133,52 +133,92 @@ The following object is masked from ‘package:rhdf5’:
 
 Loading required package: ggplot2
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-2026-03-11 16:47:55.591566 | Generating Colors
-2026-03-11 16:48:06.115317 | Plotting clusters on samples
+2026-04-06 11:28:41.672923 | Generating Colors
+2026-04-06 11:28:49.900526 | Plotting clusters on samples
 [1] "H1-XKYDCP3_A1"
-[1] "clust_M0_lam0_k50_res0.5"
+[1] "clust_M0_lam0.2_k50_res0.5"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res0.8"
+[1] "clust_M0_lam0.2_k50_res0.8"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res1"
+[1] "clust_M0_lam0.2_k50_res1"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "H1-XKYDCP3_D1"
-[1] "clust_M0_lam0_k50_res0.5"
+[1] "clust_M0_lam0.2_k50_res0.5"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res0.8"
+[1] "clust_M0_lam0.2_k50_res0.8"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res1"
+[1] "clust_M0_lam0.2_k50_res1"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "H1-M3TCP9V_A1"
-[1] "clust_M0_lam0_k50_res0.5"
+[1] "clust_M0_lam0.2_k50_res0.5"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res0.8"
+[1] "clust_M0_lam0.2_k50_res0.8"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res1"
+[1] "clust_M0_lam0.2_k50_res1"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "H1-M3TCP9V_D1"
-[1] "clust_M0_lam0_k50_res0.5"
+[1] "clust_M0_lam0.2_k50_res0.5"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res0.8"
+[1] "clust_M0_lam0.2_k50_res0.8"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
-[1] "clust_M0_lam0_k50_res1"
+[1] "clust_M0_lam0.2_k50_res1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-8MTH2TQ_A1"
+[1] "clust_M0_lam0.2_k50_res0.5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res0.8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-8MTH2TQ_D1"
+[1] "clust_M0_lam0.2_k50_res0.5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res0.8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XNQ4F2B_A1"
+[1] "clust_M0_lam0.2_k50_res0.5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res0.8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XNQ4F2B_D1"
+[1] "clust_M0_lam0.2_k50_res0.5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res0.8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "clust_M0_lam0.2_k50_res1"
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 [1] "Reproducibility information:"
-[1] "2026-03-11 16:49:15 EDT"
+[1] "2026-04-06 11:30:19 EDT"
    user  system elapsed 
-101.987   5.054 118.925 
+117.263   3.936 125.491 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -189,7 +229,7 @@ Adding another scale for fill, which will replace the existing scale.
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-03-11
+ date     2026-04-06
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -265,4 +305,4 @@ Adding another scale for fill, which will replace the existing scale.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Wed Mar 11 04:49:20 PM EDT 2026
+Mon Apr  6 11:30:19 AM EDT 2026
