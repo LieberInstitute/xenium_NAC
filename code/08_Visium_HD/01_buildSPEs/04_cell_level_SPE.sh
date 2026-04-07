@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mem=350G
+#SBATCH --mem=500G
 #SBATCH --job-name=04_cell_spe
 #SBATCH -o logs/04_cell_spe.log
 #SBATCH -e logs/04_cell_spe.log

@@ -10,7 +10,8 @@ library(escheR)
 library(scran)
 library(here)
 
-sample_ids <- c("H1-XKYDCP3_A1","H1-XKYDCP3_D1","H1-M3TCP9V_A1","H1-M3TCP9V_D1")
+message(Sys.time(), " - Setting up variables")
+sample_ids <- c("H1-XKYDCP3_A1","H1-XKYDCP3_D1","H1-M3TCP9V_A1","H1-M3TCP9V_D1","H1-8MTH2TQ_A1","H1-8MTH2TQ_D1","H1-XNQ4F2B_A1","H1-XNQ4F2B_D1")
 adata_in_paths <- here("processed-data","HD_Full_Analysis","bin2cell",sprintf('%s.h5ad', sample_ids))
 
 spe_bin_dir <- here("processed-data","HD_Full_Analysis","SPEs","spe_raw.Rds")
@@ -31,7 +32,7 @@ anndata_to_spe <- function(sample_id, ad_in_path, spe_bin) {
   )
   
   #   Read AnnData into a SingleCellExperiment via zellkonverter
-  sce <- readH5AD(ad_in_path, use_hdf5 = TRUE)
+  sce <- readH5AD(ad_in_path, use_hdf5 = FALSE,uns = FALSE)
   
   #   readH5AD stores the main matrix as assay "X" by default.
   #   Rename to "counts" so that counts(sce) works downstream.
@@ -105,9 +106,9 @@ anndata_to_spe <- function(sample_id, ad_in_path, spe_bin) {
   )
   
   is_mito <- as.logical(seqnames(spe_bin[rownames(spe),]) == "chrM")
-
+  
   spe <- addPerCellQCMetrics(spe, subsets = list(mito = is_mito))
-
+  
   #   spatialLIBD-specific columns
   rowData(spe)$gene_search <- paste0(
     rowData(spe)$gene_name, "; ", rowData(spe)$gene_id
@@ -123,13 +124,16 @@ anndata_to_spe <- function(sample_id, ad_in_path, spe_bin) {
 #-------------------------------------------------------------------------------
 #   Build and save raw SpatialExperiment
 #-------------------------------------------------------------------------------
-
+message(Sys.time(), " - Read in bin object")
 spe_bin <- readRDS(spe_bin_dir)
 
+
+message(Sys.time(), " - Build individual anndatas")
 #   Individually build single-sample SPEs from the individual AnnDatas, then
 #   merge
 spe_list <- list()
 for (i in seq_len(length(sample_ids))) {
+  print(i)
   spe_list[[sample_ids[[i]]]] <- anndata_to_spe(
     sample_ids[[i]], adata_in_paths[[i]],
     spe_bin[, spe_bin$sample_id == sample_ids[[i]]]
@@ -151,34 +155,34 @@ plot_dir <- here("plots", "HD_Full_Analysis", "cell_spe_build")
 dir.create(plot_dir, recursive = TRUE, showWarnings = FALSE)
 
 for (sid in sample_ids) {
-    spe_sub <- spe[, spe$sample_id == sid]
-
-    #   Trim colData for plotting speed
-    colData(spe_sub) <- colData(spe_sub)[, c("sample_id", "sum")]
-
-    p <- make_escheR(spe_sub, spot_size = 0.5) |>
-        add_fill(var = "sum", point_size = 0.5) +
-        scale_fill_gradientn(
-            colors = viridisLite::plasma(256),
-            name = "Total UMI"
-        ) +
-        ggtitle(paste(sid, "- Spatial coordinate check")) +
-        theme_void() +
-        theme(
-            plot.title = element_text(hjust = 0.5, size = 14),
-            legend.position = "right"
-        )
-
-    ggsave(
-        file.path(plot_dir, sprintf("%s_coord_check.png", sid)), p,
-        width = 10, height = 8, dpi = 200
+  spe_sub <- spe[, spe$sample_id == sid]
+  
+  #   Trim colData for plotting speed
+  colData(spe_sub) <- colData(spe_sub)[, c("sample_id", "sum")]
+  
+  p <- make_escheR(spe_sub, spot_size = 0.5) |>
+    add_fill(var = "sum", point_size = 0.5) +
+    scale_fill_gradientn(
+      colors = viridisLite::plasma(256),
+      name = "Total UMI"
+    ) +
+    ggtitle(paste(sid, "- Spatial coordinate check")) +
+    theme_void() +
+    theme(
+      plot.title = element_text(hjust = 0.5, size = 14),
+      legend.position = "right"
     )
+  
+  ggsave(
+    file.path(plot_dir, sprintf("%s_coord_check.png", sid)), p,
+    width = 10, height = 8, dpi = 200
+  )
 }
 
 message(
-    "  >> Inspect plots in ", plot_dir, "\n",
-    "  >> If tissue appears transposed or flipped, swap or negate the\n",
-    "  >> coordinate columns in the anndata_to_spe() function."
+  "  >> Inspect plots in ", plot_dir, "\n",
+  "  >> If tissue appears transposed or flipped, swap or negate the\n",
+  "  >> coordinate columns in the anndata_to_spe() function."
 )
 
 #   Save now to allow assays to become HDF5-backed in hopes of driving memory
