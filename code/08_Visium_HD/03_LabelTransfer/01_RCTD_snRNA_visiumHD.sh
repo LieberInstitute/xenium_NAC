@@ -1,14 +1,15 @@
 #!/bin/bash
-
-#SBATCH -p shared
-#SBATCH --job-name=spatial
-#SBATCH --output=logs/01_RCTD.log
-#SBATCH --error=logs/01_RCTD.log 
-#SBATCH --mem=350G
-#SBATCH --cpus-per-task=1
+#SBATCH --job-name=rctd_array
+#SBATCH --array=1-8
+#SBATCH --mem=100G
+#SBATCH --cpus-per-task=15
+#SBATCH --output=logs/rctd_%a.out
+#SBATCH --error=logs/rctd_%a.err
 #SBATCH --time=7-00:00:00
 #SBATCH --mail-type=END
 #SBATCH --mail-user=robert.phillips@libd.org
+
+
 
 echo "********* Job Starts *********"
 date
