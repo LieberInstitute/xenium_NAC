@@ -183,9 +183,71 @@ transformation = st.align.morpho_align_transformation(
 # Save the transformation matrix
 import pickle
 transformation_path = git_root / "processed-data" / "05_Clustering" / "Spateo" / "Spateo_transformation_Br6660.pkl"
-
 with open(transformation_path, "wb") as f:
     pickle.dump(transformation, f, protocol=pickle.HIGHEST_PROTOCOL)
+## read transformation
+# with open(transformation_path, "rb") as f:
+#     transformation = pickle.load(f)
 
+# Apply the transformation to the slices
+aligned_slices = st.align.morpho_align_apply_transformation(
+    models=slices,
+    spatial_key=spatial_key,
+    key_added=key_added,
+    transformation=transformation,
+)
 
+# Ovrelaid plot of aligned slices (first pass)
+plt.ioff()
+st.pl.overlay_slices_2d(
+    slices=aligned_slices,
+    spatial_key=key_added,
+    height=2,
+    overlay_type="backward",
+)
+
+plt.savefig(
+    plot_outdir / "Br6660_overlay_slices_2d_initial_spateo.png",
+    dpi=300,
+    bbox_inches="tight",
+)
+plt.close("all")
+
+# Overlaid plot of aligned slices colored by cell type (first pass)
+import re
+
+plt.ioff()
+
+plot_outdir = git_root / "plots" / "05_clustering" / "Spateo" / "Br6660_initial_pass_by_celltype"
+plot_outdir.mkdir(parents=True, exist_ok=True)
+
+# get cell types, then sort alphabetically (case-insensitive)
+celltypes = (
+    adata_all.obs["CellType"].unique().tolist()
+    if "adata_all" in globals()
+    else sorted(set().union(*[ad.obs["CellType"].unique().tolist() for ad in aligned_slices]))
+)
+celltypes = sorted(celltypes, key=lambda x: str(x).lower())
+
+for ct in celltypes:
+    aligned_slices_ct = []
+    for ad in aligned_slices:
+        ad_ct = ad[ad.obs["CellType"] == ct].copy()
+        if ad_ct.n_obs > 0:
+            aligned_slices_ct.append(ad_ct)
+    if not aligned_slices_ct:
+        continue
+    ct_safe = re.sub(r"[^A-Za-z0-9._-]+", "_", str(ct))
+    st.pl.overlay_slices_2d(
+        slices=aligned_slices_ct,
+        spatial_key=key_added,
+        height=2,
+        overlay_type="backward",
+    )
+    plt.savefig(
+        plot_outdir / f"{ct_safe}_overlay_slices_2d.png",
+        dpi=300,
+        bbox_inches="tight",
+    )
+    plt.close("all")
 
