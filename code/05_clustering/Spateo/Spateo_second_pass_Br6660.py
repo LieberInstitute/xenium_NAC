@@ -138,6 +138,7 @@ import pickle
 transformation_path = git_root / "processed-data" / "05_Clustering" / "Spateo" / "Spateo_transformation_Br6660.pkl"
 with open(transformation_path, "rb") as f:
     transformation = pickle.load(f)
+
 # Apply the transformation to the slices
 spatial_key = 'spatial'
 key_added = 'align_spatial'
@@ -232,7 +233,6 @@ for ct in celltypes:
     plt.close("all")
 
 save_path = git_root / "processed-data" / "05_Clustering" / "Spateo" / "Spateo_transformation_adjusted_Br6660.pkl"
-
 with open(save_path, "wb") as f:
     pickle.dump(transformation, f, protocol=pickle.HIGHEST_PROTOCOL)
 
@@ -288,4 +288,100 @@ st.pl.three_d_plot(
     outline_kwargs={"show_labels": True, "outline_width": 3},
     plotter_filename=str(git_root / "plots" / "05_clustering" / "Spateo" / "Br6660_rigid_alignment_reconstruction_flipped_z.html")
 )
+
+# Make plots of aligned slices colored by cell type using three views
+########## The commented part below is using the original color code for each cell type
+# cluster_key = 'CellType'
+# highlight_tissues = ['D1_Island_A']
+# pc_highlight = point_cloud_flipped.copy()
+# pc_highlight['annotation_rgba'][:,3] = 0.003
+# pc_highlight['annotation_rgba'][aligned_adata.obs[cluster_key].isin(highlight_tissues),3] = 0.2
+##########
+
+## 2d plots colored by cell type
+cluster_key = "CellType"
+outdir = git_root / "plots" / "05_clustering" / "Spateo" / "Br6660_3d_xyz_by_celltype"
+pv.Plotter.export_vtkjs = lambda self, filename: self.screenshot(filename)
+celltypes = pd.unique(aligned_adata.obs[cluster_key])
+celltypes = sorted(celltypes, key=lambda x: str(x).lower())
+
+for ct in celltypes:
+    print(f"Generating plot for: {ct}")
+    pc_highlight = point_cloud_flipped.copy()
+    rgba = pc_highlight["annotation_rgba"].copy()
+    highlight_mask = aligned_adata.obs[cluster_key].isin([ct]).to_numpy()
+    rgba[:, 0:3] = np.array([0.7, 0.7, 0.7])   # grey RGB
+    rgba[:, 3] = 0.01                          # low opacity for background
+    # restore original color for highlighted cells
+    rgba[highlight_mask, 0:3] = point_cloud_flipped["annotation_rgba"][highlight_mask, 0:3]
+    rgba[highlight_mask, 3] = 0.8              # higher opacity for highlighted cells
+    pc_highlight["annotation_rgba"] = rgba
+    ct_safe = re.sub(r"[^A-Za-z0-9._-]+", "_", str(ct))
+    st.pl.three_d_multi_plot(
+        model=st.tdr.collect_models([pc_highlight, pc_highlight, pc_highlight]),
+        key="annotation",
+        model_style="points",
+        model_size=3,
+        cpo=["xy", "xz", "yz"],
+        jupyter="static",   
+        off_screen=True,
+        window_size=(1500, 1500),
+        text=[f"{ct} xy", f"{ct} xz", f"{ct} yz"],
+        show_legend=False,
+        plotter_filename=str(outdir / f"Br6660_rigid_alignment_reconstruction_{ct_safe}.png"),
+    )
+
+print(f"Generating plot for: D1_Island_A and D1_Island_B")
+pc_highlight = point_cloud_flipped.copy()
+rgba = pc_highlight["annotation_rgba"].copy()
+highlight_mask = aligned_adata.obs[cluster_key].isin(["D1_Island_A", "D1_Island_B"]).to_numpy()
+rgba[:, 0:3] = np.array([0.7, 0.7, 0.7])   # grey RGB
+rgba[:, 3] = 0.01                          # low opacity for background
+# restore original color for highlighted cells
+rgba[highlight_mask, 0:3] = point_cloud_flipped["annotation_rgba"][highlight_mask, 0:3]
+rgba[highlight_mask, 3] = 0.8              # higher opacity for highlighted cells
+pc_highlight["annotation_rgba"] = rgba
+ct_safe = re.sub(r"[^A-Za-z0-9._-]+", "_", "D1_Island_A_and_D1_Island_B")
+st.pl.three_d_multi_plot(
+    model=st.tdr.collect_models([pc_highlight, pc_highlight, pc_highlight]),
+    key="annotation",
+    model_style="points",
+    model_size=3,
+    cpo=["xy", "xz", "yz"],
+    jupyter="static",   
+    off_screen=True,
+    window_size=(1500, 1500),
+    text=[f"D1_Island_A_and_D1_Island_B xy", f"D1_Island_A_and_D1_Island_B xz", f"D1_Island_A_and_D1_Island_B yz"],
+    show_legend=False,
+    plotter_filename=str(outdir / f"Br6660_rigid_alignment_reconstruction_{ct_safe}.png"),
+)
+
+## 3d plots colored by cell type and save in html
+delattr(pv.Plotter, "export_vtkjs")
+outdir = git_root / "plots" / "05_clustering" / "Spateo" / "Br6660_3d_xy_interactive_by_celltype"
+
+for ct in celltypes:
+    print(f"Generating interative html plot for: {ct}")
+    pc_highlight = point_cloud_flipped.copy()
+    rgba = pc_highlight["annotation_rgba"].copy()
+    highlight_mask = aligned_adata.obs[cluster_key].isin([ct]).to_numpy()
+    rgba[:, 0:3] = np.array([0.7, 0.7, 0.7])   # grey RGB
+    rgba[:, 3] = 0.01                          # low opacity for background
+    # restore original color for highlighted cells
+    rgba[highlight_mask, 0:3] = point_cloud_flipped["annotation_rgba"][highlight_mask, 0:3]
+    rgba[highlight_mask, 3] = 0.8              # higher opacity for highlighted cells
+    pc_highlight["annotation_rgba"] = rgba
+    ct_safe = re.sub(r"[^A-Za-z0-9._-]+", "_", str(ct))
+    st.pl.three_d_multi_plot(
+        model=st.tdr.collect_models([pc_highlight]),
+        key="annotation",
+        model_style="points",
+        model_size=3,
+        cpo=["xy"],
+        jupyter="static",   
+        off_screen=True,
+        window_size=(1500, 1500),
+        show_legend=False,
+        plotter_filename=str(outdir / f"Br6660_interative_{ct_safe}.html"),
+    )
 
