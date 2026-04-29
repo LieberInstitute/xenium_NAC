@@ -197,7 +197,7 @@ aligned_slices = st.align.morpho_align_apply_transformation(
     transformation=transformation,
 )
 
-# Ovrelaid plot of aligned slices (first pass)
+# Overlaid plot of aligned slices (first pass)
 plt.ioff()
 st.pl.overlay_slices_2d(
     slices=aligned_slices,
