@@ -424,21 +424,21 @@ for xv in xbins:
 for yv in ybins:
     ax.axhline(y=yv, color="black", lw=0.8, alpha=0.75)
 
-# # Optional: label grid cells
-# for i in range(grid_size):
-#     for j in range(grid_size):
-#         xc = 0.5 * (xbins[i] + xbins[i + 1])
-#         yc = 0.5 * (ybins[j] + ybins[j + 1])
-#         ax.text(
-#             xc,
-#             yc,
-#             f"{i + 1},{j + 1}",
-#             ha="center",
-#             va="center",
-#             fontsize=7,
-#             color="black",
-#             alpha=0.8,
-#         )
+# Optional: label grid cells
+for i in range(grid_size):
+    for j in range(grid_size):
+        xc = 0.5 * (xbins[i] + xbins[i + 1])
+        yc = 0.5 * (ybins[j] + ybins[j + 1])
+        ax.text(
+            xc,
+            yc,
+            f"{i + 1},{j + 1}",
+            ha="center",
+            va="center",
+            fontsize=7,
+            color="black",
+            alpha=0.8,
+        )
 
 ax.set_xlim(x.min(), x.max())
 ax.set_ylim(y.min(), y.max())
@@ -448,7 +448,7 @@ ax.set_yticks([])
 ax.set_title(f"5×5 spatial grid on representative slice\n{selected_sample}", fontsize=10)
 
 plt.savefig(
-    plot_outdir / f"{selected_sample}_grid_overlay.png",
+    plot_outdir / f"{selected_sample}_grid_overlay_reference.png",
     dpi=600,
     bbox_inches="tight",
 )
