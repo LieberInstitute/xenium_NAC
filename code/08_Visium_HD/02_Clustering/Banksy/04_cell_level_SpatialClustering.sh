@@ -4,7 +4,7 @@
 #SBATCH --job-name=04_cell_spatial
 #SBATCH --output=logs/04_cell_spatial.log
 #SBATCH --error=logs/04_cell_spatial.log 
-#SBATCH --mem=550G
+#SBATCH --mem=400G
 #SBATCH --cpus-per-task=1
 #SBATCH --time=7-00:00:00
 #SBATCH --mail-type=END

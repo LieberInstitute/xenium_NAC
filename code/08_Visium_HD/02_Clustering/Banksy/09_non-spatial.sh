@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #SBATCH -p shared
-#SBATCH --job-name=spatial
-#SBATCH --output=logs/01_spatial.log
-#SBATCH --error=logs/01_spatial.log 
-#SBATCH --mem=750G
+#SBATCH --job-name=non-spatial
+#SBATCH --output=logs/09_banksy_step1.log
+#SBATCH --error=logs/09_banksy_step1.log 
+#SBATCH --mem=250G
 #SBATCH --cpus-per-task=1
 #SBATCH --time=7-00:00:00
 #SBATCH --mail-type=END
@@ -20,7 +20,7 @@ echo "Hostname: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
 module load conda_R/4.5
-Rscript 01_BinLevel_SpatialClustering.R
+Rscript 09_non-spatial.R
 
 echo "********* Job Ends *********"
 date

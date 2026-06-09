@@ -26,40 +26,36 @@ message(sprintf("Running clusterBanksy with resolution=%.2f", res))
 # Read in SPE
 spe <- loadHDF5SummarizedExperiment(here(
   "processed-data", "HD_Full_Analysis", "SPEs",
-  "spe_banksy_0.8_cell_level"
+  "spe_banksy_0.2_cell_level"
 ))
-
-spe
-
 
 samples <- unique(spe$sample_id)
 
 # Cluster
 message(paste0("Running Banksy clustering - ", Sys.time()))
-spe <- clusterBanksy(spe, use_agf = TRUE, lambda = 0.8,
-                     algo = "leiden", resolution = res, seed = 948)
+spe <- clusterBanksy(spe, use_agf = TRUE, lambda = 0.2,
+                     algo = "leiden", resolution = res, seed = 1313)
 message(paste0("Finished Banksy clustering - ", Sys.time()))
 
 # Cluster name
-clust_cols <- paste0("clust_M1_lam0.8_k50_res",res)
+clust_cols <- paste0("clust_M1_lam0.2_k50_res",res)
 message("Created columns: ", clust_cols)
 
 # Save cluster assignments
 cluster_assign <- cbind(colData(spe)[, clust_cols], rownames(colData(spe)))
 write.csv(cluster_assign,
           here("processed-data", "HD_Full_Analysis",
-               paste0("spatial_banksy_clusters_res_", res, ".csv")))
+               paste0("banksy_clusters_res_", res, ".csv")))
 
 # Generate and save colors
 cluster_colors <- Polychrome::createPalette(
   length(unique(spe[[clust_cols]])),
   c("#D81B60", "#1E88E5", "#ffcd14", "#ff7814", "#004D40")
 )
-
 names(cluster_colors) <- unique(spe[[clust_cols]])
 saveRDS(cluster_colors,
         here("processed-data", "HD_Full_Analysis", "Cluster_colors",
-             paste0(clust_cols, "_cell_level_spatial_colors.Rds")))
+             paste0(clust_cols, "_cell_level_colors.Rds")))
 
 # Plot per sample
 for (sample in samples) {
@@ -70,7 +66,7 @@ for (sample in samples) {
     scale_fill_manual(values = cluster_colors)
   ggsave(
     here("plots", "HD_Full_Analysis", "Banksy",
-         "Cell_Level", "Spatial",
+         "Cell_Level", "Spatial_CellTyping",
          paste0(sample, "_", clust_cols, ".png")),
     p, width = 20, height = 14, dpi = 200
   )

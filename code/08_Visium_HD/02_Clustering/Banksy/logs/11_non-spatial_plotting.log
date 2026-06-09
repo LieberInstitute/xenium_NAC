@@ -1,0 +1,2344 @@
+********* Job Starts *********
+Sat May 16 10:46:01 PM EDT 2026
+**** SLURM info ****
+User: rphillip
+Job id: 31947706
+Job name: 11_non-spatial_plotting
+Hostname: compute-115
+Task id: 
+Loading conda_R/4.5
+Loading required package: SingleCellExperiment
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Loading required package: SparseArray
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:S4Vectors’:
+
+    expand
+
+Loading required package: S4Arrays
+Loading required package: abind
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+[1] TRUE
+[1] "nonspatial_banksy_res_0.4"
+[1] "nonspatial_banksy_res_0.6"
+[1] "nonspatial_banksy_res_0.8"
+[1] "nonspatial_banksy_res_1.2"
+[1] "nonspatial_banksy_res_1"
+[1] "H1-XKYDCP3_A1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XKYDCP3_D1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-M3TCP9V_A1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-M3TCP9V_D1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-8MTH2TQ_A1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-8MTH2TQ_D1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XNQ4F2B_A1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XNQ4F2B_D1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XKYDCP3_A1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XKYDCP3_D1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-M3TCP9V_A1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-M3TCP9V_D1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-8MTH2TQ_A1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-8MTH2TQ_D1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XNQ4F2B_A1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "H1-XNQ4F2B_D1"
+[1] "nonspatial_banksy_res_0.4"
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.6"
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_0.8"
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1.2"
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "20"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "21"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "nonspatial_banksy_res_1"
+[1] "1"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "18"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "16"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "11"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "13"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "8"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "9"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "17"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "10"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "15"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "19"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "12"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "14"
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+R version 4.5.0 Patched (2025-05-21 r88220)
+Platform: x86_64-conda-linux-gnu
+Running under: Rocky Linux 9.4 (Blue Onyx)
+
+Matrix products: default
+BLAS:   /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRblas.so 
+LAPACK: /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRlapack.so;  LAPACK version 3.12.1
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Eastern
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats4    stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] here_1.0.1                  escheR_1.8.0               
+ [3] ggplot2_3.5.2               HDF5Array_1.36.0           
+ [5] h5mread_1.0.0               rhdf5_2.52.0               
+ [7] DelayedArray_0.34.1         SparseArray_1.8.0          
+ [9] S4Arrays_1.8.0              abind_1.4-8                
+[11] Matrix_1.7-3                SpatialExperiment_1.18.1   
+[13] SingleCellExperiment_1.30.1 SummarizedExperiment_1.38.1
+[15] Biobase_2.68.0              GenomicRanges_1.60.0       
+[17] GenomeInfoDb_1.44.0         IRanges_2.42.0             
+[19] S4Vectors_0.46.0            BiocGenerics_0.54.0        
+[21] generics_0.1.4              MatrixGenerics_1.20.0      
+[23] matrixStats_1.5.0          
+
+loaded via a namespace (and not attached):
+ [1] lattice_0.22-7          magrittr_2.0.3          grid_4.5.0             
+ [4] RColorBrewer_1.1-3      rprojroot_2.0.4         jsonlite_2.0.0         
+ [7] httr_1.4.7              UCSC.utils_1.4.0        scales_1.4.0           
+[10] textshaping_1.0.1       cli_3.6.5               rlang_1.1.6            
+[13] crayon_1.5.3            scatterplot3d_0.3-44    XVector_0.48.0         
+[16] withr_3.0.2             tools_4.5.0             dplyr_1.1.4            
+[19] colorspace_2.1-1        Rhdf5lib_1.30.0         GenomeInfoDbData_1.2.14
+[22] vctrs_0.6.5             R6_2.6.1                lifecycle_1.0.4        
+[25] magick_2.8.6            ragg_1.4.0              pkgconfig_2.0.3        
+[28] pillar_1.10.2           gtable_0.3.6            glue_1.8.0             
+[31] Rcpp_1.0.14             systemfonts_1.2.3       tibble_3.2.1           
+[34] tidyselect_1.2.1        dichromat_2.0-0.1       rhdf5filters_1.20.0    
+[37] farver_2.1.2            rjson_0.2.23            labeling_0.4.3         
+[40] Polychrome_1.5.4        compiler_4.5.0         

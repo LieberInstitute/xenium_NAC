@@ -1,4 +1,3 @@
-#Goal: Run Banksy spatial clustering with parameters equating to spatial clustering for domain finding
 #cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
 # module load conda_R/4.5
 library(SpatialExperiment)
@@ -12,11 +11,11 @@ library(here)
 
 
 #Read in the filtered spe object
-spe_filtered_dir <- here(
-  "processed-data", "HD_Full_Analysis", "SPEs", "spe_cell_norm_QC_filtered_v2"
+spe_filtered_path <- here(
+  "processed-data", "HD_Full_Analysis", "SPEs", "spe_cell_norm_QC_filtered"
 )
 
-spe <- loadHDF5SummarizedExperiment(spe_filtered_dir)
+spe <- loadHDF5SummarizedExperiment(spe_filtered_path)
 
 #Remove any cells with 0 counts for all genes 
 #Remove cells with 0 counts
@@ -43,10 +42,10 @@ spe <- spe[top_hvgs,]
 spe
 
 #######Banksy parameters
-lambda <- 0.8 #0.8 for spatial
+lambda <- 0.2
 compute_agf <- TRUE 
 use_agf <- TRUE
-k_geom <- c(25,50)  #Increase k value to find larger domains. 
+k_geom <- c(15,30)
 
 #split spe by sample
 samples <- unique(spe$sample_id)
@@ -76,14 +75,14 @@ spe_joint <- runBanksyUMAP(spe_joint, use_agf = use_agf, lambda = lambda, seed =
 message(paste0("Finished UMAP - ", Sys.time()))
 
 ################################################################################
-#   Save subsampled BANKSY object
+#   Save BANKSY object
 ################################################################################
 
 message(Sys.time(), " | Saving subsampled BANKSY object")
 
 saveHDF5SummarizedExperiment(spe_joint, here(
   "processed-data", "HD_Full_Analysis", "SPEs",
-  "spe_banksy_0.8_cell_level"
+  "spe_banksy_0.2_cell_level"
 ),replace = TRUE)
 
 ###Reproduciblity

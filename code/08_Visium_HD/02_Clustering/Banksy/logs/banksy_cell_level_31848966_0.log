@@ -1,12 +1,13 @@
 ********* Job Starts *********
-Sat Apr 11 11:57:04 AM EDT 2026
+Sun May 10 05:12:05 PM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 30731862
-Job name: 05_cell_nonspatial
-Hostname: compute-153
-Task id: 
+Job id: 31848967
+Job name: banksy_cell_level
+Hostname: compute-140
+Task id: 0
 Loading conda_R/4.5
+>>> Sun May 10 05:12:06 PM EDT 2026 : Running clusterBanksy with resolution=0.4
 Loading required package: SingleCellExperiment
 Loading required package: SummarizedExperiment
 Loading required package: MatrixGenerics
@@ -131,30 +132,41 @@ The following object is masked from ‘package:rhdf5’:
 
     h5ls
 
+Loading required package: ggplot2
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-2026-04-11 11:57:12.800928 | Loading BANKSY object
-Loaded: 2000 genes x 1925144 cells
-Running clusterBanksy - 2026-04-11 11:57:27.135802
-Using seed=1747
-Using seed=1747
-Using seed=1747
-Using seed=1747
-Using seed=1747
-Using seed=1747
-Finished clusterBanksy - 2026-04-14 11:49:03.269953
-Cluster columns created: clust_M1_lam0.8_k50_res0.2, clust_M1_lam0.8_k50_res0.4, clust_M1_lam0.8_k50_res0.6, clust_M1_lam0.8_k50_res0.8, clust_M1_lam0.8_k50_res1, clust_M1_lam0.8_k50_res1.2
-  clust_M1_lam0.8_k50_res0.2: 7 clusters
-  clust_M1_lam0.8_k50_res0.4: 15 clusters
-  clust_M1_lam0.8_k50_res0.6: 17 clusters
-  clust_M1_lam0.8_k50_res0.8: 20 clusters
-  clust_M1_lam0.8_k50_res1: 23 clusters
-  clust_M1_lam0.8_k50_res1.2: 29 clusters
-2026-04-14 11:49:03.287071 | Saving
-Done.
+Running clusterBanksy with resolution=0.40
+Running Banksy clustering - 2026-05-10 17:12:27.634585
+Using seed=1313
+Finished Banksy clustering - 2026-05-11 12:30:17.981547
+Created columns: clust_M1_lam0.2_k50_res0.4
+2026-05-11 12:30:22.465337 | Plotting: H1-XKYDCP3_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-05-11 12:30:25.915777 | Plotting: H1-XKYDCP3_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-05-11 12:30:29.796347 | Plotting: H1-M3TCP9V_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-05-11 12:30:32.708983 | Plotting: H1-M3TCP9V_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-05-11 12:30:40.011369 | Plotting: H1-8MTH2TQ_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-05-11 12:30:42.691944 | Plotting: H1-8MTH2TQ_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-05-11 12:30:45.901803 | Plotting: H1-XNQ4F2B_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-05-11 12:30:49.550638 | Plotting: H1-XNQ4F2B_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
 [1] "Reproducibility information:"
-[1] "2026-04-14 14:47:06 EDT"
-    user   system  elapsed 
-266549.6   1587.8 269401.6 
+[1] "2026-05-11 12:30:52 EDT"
+     user    system   elapsed 
+69017.975   270.624 69526.176 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -165,7 +177,7 @@ Done.
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-04-14
+ date     2026-05-11
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -177,18 +189,21 @@ Done.
  Biobase              * 2.68.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  BiocGenerics         * 0.54.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  cli                    3.6.5   2025-04-23 [2] CRAN (R 4.5.0)
+ colorspace             2.1-1   2024-07-26 [2] CRAN (R 4.5.0)
  crayon                 1.5.3   2024-06-20 [2] CRAN (R 4.5.0)
  data.table             1.17.2  2025-05-12 [2] CRAN (R 4.5.0)
  dbscan                 1.2.2   2025-01-26 [1] CRAN (R 4.5.0)
  DelayedArray         * 0.34.1  2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
  dichromat              2.0-0.1 2022-05-02 [2] CRAN (R 4.5.0)
  dplyr                  1.1.4   2023-11-17 [2] CRAN (R 4.5.0)
+ escheR               * 1.8.0   2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
  farver                 2.1.2   2024-05-13 [2] CRAN (R 4.5.0)
  generics             * 0.1.4   2025-05-09 [2] CRAN (R 4.5.0)
  GenomeInfoDb         * 1.44.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  GenomeInfoDbData       1.2.14  2025-05-21 [2] Bioconductor
  GenomicRanges        * 1.60.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
- ggplot2                3.5.2   2025-04-09 [2] CRAN (R 4.5.0)
+ getopt                 1.20.4  2023-10-01 [1] CRAN (R 4.5.0)
+ ggplot2              * 3.5.2   2025-04-09 [2] CRAN (R 4.5.0)
  glue                   1.8.0   2024-09-30 [2] CRAN (R 4.5.0)
  gtable                 0.3.6   2024-10-25 [2] CRAN (R 4.5.0)
  h5mread              * 1.0.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
@@ -199,6 +214,7 @@ Done.
  IRanges              * 2.42.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  irlba                  2.3.5.1 2022-10-03 [2] CRAN (R 4.5.0)
  jsonlite               2.0.0   2025-03-27 [2] CRAN (R 4.5.0)
+ labeling               0.4.3   2023-08-29 [2] CRAN (R 4.5.0)
  lattice                0.22-7  2025-04-02 [3] CRAN (R 4.5.0)
  leidenAlg              1.1.5   2025-04-19 [1] CRAN (R 4.5.0)
  lifecycle              1.0.4   2023-11-07 [2] CRAN (R 4.5.0)
@@ -208,9 +224,12 @@ Done.
  MatrixGenerics       * 1.20.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  matrixStats          * 1.5.0   2025-01-07 [2] CRAN (R 4.5.0)
  mclust                 6.1.1   2024-04-29 [2] CRAN (R 4.5.0)
+ optparse             * 1.7.5   2024-04-16 [1] CRAN (R 4.5.0)
  pillar                 1.10.2  2025-04-05 [2] CRAN (R 4.5.0)
  pkgconfig              2.0.3   2019-09-22 [2] CRAN (R 4.5.0)
+ Polychrome             1.5.4   2025-04-06 [1] CRAN (R 4.5.0)
  R6                     2.6.1   2025-02-15 [2] CRAN (R 4.5.0)
+ ragg                   1.4.0   2025-04-10 [2] CRAN (R 4.5.0)
  RColorBrewer           1.1-3   2022-04-03 [2] CRAN (R 4.5.0)
  Rcpp                   1.0.14  2025-01-12 [2] CRAN (R 4.5.0)
  RcppHungarian          0.3     2023-09-05 [1] CRAN (R 4.5.0)
@@ -223,17 +242,21 @@ Done.
  S4Arrays             * 1.8.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  S4Vectors            * 0.46.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  scales                 1.4.0   2025-04-24 [2] CRAN (R 4.5.0)
+ scatterplot3d          0.3-44  2023-05-05 [1] CRAN (R 4.5.0)
  sccore                 1.0.6   2025-04-13 [1] CRAN (R 4.5.0)
  sessioninfo          * 1.2.3   2025-02-05 [2] CRAN (R 4.5.0)
  SingleCellExperiment * 1.30.1  2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
  SparseArray          * 1.8.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  SpatialExperiment    * 1.18.1  2025-05-11 [2] Bioconductor 3.21 (R 4.5.0)
  SummarizedExperiment * 1.38.1  2025-04-30 [2] Bioconductor 3.21 (R 4.5.0)
+ systemfonts            1.2.3   2025-04-30 [2] CRAN (R 4.5.0)
+ textshaping            1.0.1   2025-05-01 [2] CRAN (R 4.5.0)
  tibble                 3.2.1   2023-03-20 [2] CRAN (R 4.5.0)
  tidyselect             1.2.1   2024-03-11 [2] CRAN (R 4.5.0)
  UCSC.utils             1.4.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  uwot                   0.2.3   2025-02-24 [2] CRAN (R 4.5.0)
  vctrs                  0.6.5   2023-12-01 [2] CRAN (R 4.5.0)
+ withr                  3.0.2   2024-10-28 [2] CRAN (R 4.5.0)
  XVector                0.48.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
 
  [1] /users/rphillip/R/4.5
@@ -242,5 +265,3 @@ Done.
  * ── Packages attached to the search path.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-********* Job Ends *********
-Tue Apr 14 02:47:07 PM EDT 2026

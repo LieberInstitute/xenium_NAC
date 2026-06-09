@@ -44,7 +44,7 @@ message(sprintf("  Selected %d HVGs", length(top_hvgs)))
 #Running into memory errors. Subsampling bins will help. Can then use label transfer to transfer to surrounding bins. 
 
 set.seed(1607)
-subsample_pct <- 0.33  # 33% of bins per sample
+subsample_pct <- 0.20  # 20% of bins per sample
 
 samples <- unique(spe$sample_id)
 
@@ -76,10 +76,12 @@ for (sid in samples) {
 }
 
 #######Banksy parameters
+#######Banksy parameters
 lambda <- 0.8 #0.8 for spatial
 compute_agf <- TRUE 
 use_agf <- TRUE
-k_geom <- 50  #Increase k value to find larger domains. 
+k_geom <- c(25,50)  #Increase k value to find larger domains. 
+
 
 #split spe by sample
 samples <- unique(spe$sample_id)
@@ -104,10 +106,6 @@ message(paste0("Running PCA - ", Sys.time()))
 spe_joint <- runBanksyPCA(spe_joint, use_agf = use_agf, lambda = lambda, group = "sample_id", seed = 1000)
 message(paste0("Finished PCA - ", Sys.time()))
 
-message(paste0("Running UMAP - ", Sys.time()))
-spe_joint <- runBanksyUMAP(spe_joint, use_agf = use_agf, lambda = lambda, seed = 1000)
-message(paste0("Finished UMAP - ", Sys.time()))
-
 ################################################################################
 #   Save subsampled BANKSY object
 ################################################################################
@@ -131,6 +129,3 @@ Sys.time()
 proc.time()
 options(width = 120)
 sessioninfo::session_info()
-
-
-

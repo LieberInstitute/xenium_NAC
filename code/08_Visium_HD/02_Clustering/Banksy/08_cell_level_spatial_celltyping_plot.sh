@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=banksy_spatial_cell_level
+#SBATCH --job-name=banksy_cell_level
 #SBATCH --array=0-4
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=120G
@@ -23,4 +23,4 @@ RES_LIST=(0.4 0.6 0.8 1.0 1.2)
 RES="${RES_LIST[$SLURM_ARRAY_TASK_ID]}"
 
 echo ">>> $(date) : Running clusterBanksy with resolution=${RES}"
-Rscript 05_cell_level_clustering.R --res "${RES}"
+Rscript 08_cell_level_spatial_celltyping_plot.R --res "${RES}"

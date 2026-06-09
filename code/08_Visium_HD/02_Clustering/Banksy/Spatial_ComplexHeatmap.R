@@ -1,12 +1,12 @@
-#Investigate 0.2 Lambda clusters
 # cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/
-# module load conda_R/4.5
+# moudle load ocnda
+
 library(SpatialExperiment)
 library(DeconvoBuddies)
 library(ComplexHeatmap)
-library(sessioninfo)
+library(circlize)
 library(HDF5Array)
-library(escheR)
+library(ggplot2)
 library(here)
 
 ###### Prep spatial data
@@ -20,29 +20,28 @@ spe <- loadHDF5SummarizedExperiment(spe_filtered_dir)
 spe
 
 #Add spatial clusters and non-spatial clusters
-non_spatial_cluster <- readRDS(here("processed-data","HD_Full_Analysis",
-                                    "Banksy","NonSpatial_colData",
-                                    "nonspatial_banksy_res_1.Rds"))
+spatial_clust <- read.csv(here("processed-data", "HD_Full_Analysis",
+                               "spatial_banksy_clusters_res_0.4.csv"))
 
-#Add nonspatial clusters 
-stopifnot(identical(rownames(non_spatial_cluster),colnames(spe)))
+#Add spatial data to spe 
+stopifnot(identical(spatial_clust$V2,colnames(spe)))
 
-#Load cluster colors
-non_spatial_colors <- readRDS(file = here("processed-data","HD_Full_Analysis",
-                                          "Cluster_colors",
-                                          "nonspatial_banksy_res_1_cell_level_non-spatial_colors.Rds"))
+spe$spatial_0.4 <- spatial_clust$V1
 
-spe$non_spatial_1 <- non_spatial_cluster$clust_M0_lam0_k50_res1
+#Load colors for the clusters 
+spatial_colors <- readRDS(here("processed-data", "HD_Full_Analysis", "Cluster_colors",
+                               "clust_M1_lam0.8_k50_res0.4_cell_level_spatial_colors.Rds"))
 
 #Make a complexheatmap of genes
 ###########Complext heatmap of basic markers
 #Code from https://github.com/LieberInstitute/septum_lateral/blob/main/snRNAseq_mouse/code/02_analyses/Complex%20Heatmap.R
 splitit <- function(x) split(seq(along = x), x)
 
+#Factorize the Banksy_CellType
 set.seed(123)
 
 # Create a grouping variable combining donor and cluster
-group <- paste0(spe$sample_id, "_", spe$non_spatial_1)
+group <- paste0(spe$sample_id, "_", spe$spatial_0.4)
 
 # Sample 25% from each group
 keep_idx <- unlist(lapply(splitit(group), function(i) {
@@ -53,7 +52,7 @@ keep_idx <- unlist(lapply(splitit(group), function(i) {
 # Subset the spe
 spe_sub <- spe[, keep_idx]
 
-cell_idx <- splitit(spe_sub$non_spatial_1)
+cell_idx <- splitit(spe_sub$spatial_0.4)
 
 ############set up columns for heatmaps. 
 #Set marker genes to be included on the heatmap.  
@@ -94,7 +93,7 @@ cluster_labels <- rownames(hm_mat)
 # Build row annotation with your spatial colors
 row_ha <- ComplexHeatmap::rowAnnotation(
   Cluster = cluster_labels,
-  col = list(Cluster = non_spatial_colors),
+  col = list(Cluster = spatial_colors),
   show_legend = TRUE
 )
 
@@ -108,9 +107,10 @@ hm <- ComplexHeatmap::Heatmap(matrix = hm_mat,
                               left_annotation = row_ha)
 
 pdf(file = here("plots","HD_Full_Analysis",
-                "Banksy","non_spatial_1_Expression_heatmap.pdf"),height = 12, width = 18)
+                "Banksy","spatial_0.4_Expression_heatmap.pdf"),height = 12, width = 18)
 draw(hm)
 dev.off()
+
 
 ################################################################################
 #  Find Markers of each cluster to help with annotation
@@ -118,23 +118,23 @@ dev.off()
 message("Calculate mean ratio - ",Sys.time())
 #Run mean ratio
 gmr <- get_mean_ratio(spe,
-                       cellType_col = "non_spatial_1",
+                       cellType_col = "spatial_0.4",
                        assay_name = "logcounts")
 
 save(gmr,
-     file = here("processed-data","HD_Full_Analysis","Banksy","non_spatial_1_getmeanratio.rda"))
+     file = here("processed-data","HD_Full_Analysis","Banksy","spatial_0.4_getmeanratio.rda"))
 
 ###############
 message("Starting DEG testing",Sys.time())
 ################################################
 message("Pairwise DEG testing",Sys.time())
 #Pairwise DEG testing
-mod <- with(colData(spe), model.matrix(~ Sample))
+mod <- with(colData(spe), model.matrix(~ sample_id))
 mod <- mod[ , -1, drop=F] # intercept otherwise automatically dropped by `findMarkers()`
 
 # Run pairwise t-tests
 markers_pairwise <- findMarkers(spe, 
-                                groups=spe$non_spatial_1,
+                                groups=spe$spatial_0.4,
                                 assay.type="logcounts", 
                                 design=mod, 
                                 test="t",
@@ -146,18 +146,22 @@ markers_pairwise <- findMarkers(spe,
 sapply(markers_pairwise, function(x){table(x$FDR<0.05)})
 
 save(markers_pairwise,
-     file = here("processed-data","HD_Full_Analysis","Banksy","non_spatial_1_pairwise.rda"))
+     file = here("processed-data","HD_Full_Analysis","Banksy","spatial_0.4_pairwise.rda"))
 
 
 ################################################
 message("1vALL DEG testing",Sys.time())
 markers_1vALL_enrich <- findMarkers_1vAll(spe, 
                                           assay_name = "logcounts", 
-                                          cellType_col = "non_spatial_1", 
-                                          mod = "~Sample")
+                                          cellType_col = "spatial_0.4", 
+                                          mod = "~sample_id")
 
 
-save(markers_1vALL_enrich,file = here("processed-data","HD_Full_Analysis","Banksy","non_spatial_1_1vALL.rda"))
+save(markers_1vALL_enrich,file = here("processed-data","HD_Full_Analysis","Banksy","spatial_0.4_1vALL.rda"))
 
-
-sessionInfo()
+###Reproduciblity
+print("Reproducibility information:")
+Sys.time()
+proc.time()
+options(width = 120)
+sessioninfo::session_info()

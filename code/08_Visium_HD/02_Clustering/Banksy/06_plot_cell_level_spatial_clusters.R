@@ -26,7 +26,7 @@ samples <- unique(spe$sample_id)
 ################################################################################
 message(Sys.time(), " | Generating Colors")
 
-cluster_colors <- vector(mode = "list", length = 3)
+cluster_colors <- vector(mode = "list", length = 6)
 names(cluster_colors) <- clust_cols
 ### Generate cluster colors for each clust_fol
 for(clust_col in clust_cols){
@@ -53,7 +53,7 @@ for(sample in samples){
     ggsave(
       here("plots","HD_Full_Analysis","Banksy","Cell_Level","Spatial",paste0(sample,"_",clust_col,".png")), 
       p,
-      width = 10, height = 8, dpi = 200
+      width = 18, height = 18, dpi = 200
     )
   }
 }
