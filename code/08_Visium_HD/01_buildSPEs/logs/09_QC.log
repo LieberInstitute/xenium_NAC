@@ -1,0 +1,522 @@
+**** Job starts ****
+Sat Jun  6 09:24:55 PM EDT 2026
+**** JHPCE info ****
+User: rphillip
+Job id: 32446033
+Job name: 09_QC
+Node name: compute-153
+Task id: 
+Loading conda_R/4.5
+
+Attaching package: ‘SpatialFeatureExperiment’
+
+The following object is masked from ‘package:base’:
+
+    scale
+
+Loading required package: SparseArray
+Loading required package: Matrix
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: S4Vectors
+Loading required package: stats4
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:Matrix’:
+
+    expand, unname
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: S4Arrays
+Loading required package: abind
+Loading required package: IRanges
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following object is masked from ‘package:SpatialFeatureExperiment’:
+
+    scale
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ lubridate::%within%() masks IRanges::%within%()
+✖ dplyr::collapse()     masks IRanges::collapse()
+✖ dplyr::combine()      masks BiocGenerics::combine()
+✖ dplyr::count()        masks matrixStats::count()
+✖ dplyr::desc()         masks IRanges::desc()
+✖ tidyr::expand()       masks S4Vectors::expand(), Matrix::expand()
+✖ dplyr::filter()       masks stats::filter()
+✖ dplyr::first()        masks S4Vectors::first()
+✖ dplyr::lag()          masks stats::lag()
+✖ tidyr::pack()         masks Matrix::pack()
+✖ ggplot2::Position()   masks BiocGenerics::Position(), base::Position()
+✖ purrr::reduce()       masks IRanges::reduce()
+✖ dplyr::rename()       masks S4Vectors::rename()
+✖ lubridate::second()   masks S4Vectors::second()
+✖ lubridate::second<-() masks S4Vectors::second<-()
+✖ purrr::simplify()     masks DelayedArray::simplify()
+✖ dplyr::slice()        masks IRanges::slice()
+✖ purrr::transpose()    masks SpatialFeatureExperiment::transpose()
+✖ ggplot2::unit()       masks SpatialFeatureExperiment::unit()
+✖ tidyr::unpack()       masks Matrix::unpack()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+Loading required package: SingleCellExperiment
+Loading required package: SummarizedExperiment
+Loading required package: GenomicRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:SparseArray’:
+
+    rowMedians
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+Loaded cell-level SFE: 18132 genes x 455680 cells across 8 samples
+class: SpatialFeatureExperiment 
+dim: 18132 455680 
+metadata(0):
+assays(1): counts
+rownames(18132): ENSG00000187634 ENSG00000188976 ... ENSG00000198695
+  ENSG00000198727
+rowData names(3): ID Symbol Type
+colnames(455680): H1-XKYDCP3_A1_cellid_000000009-1
+  H1-XKYDCP3_A1_cellid_000000011-1 ... H1-XNQ4F2B_D1_cellid_000077045-1
+  H1-XNQ4F2B_D1_cellid_000077046-1
+colData names(3): Sample Barcode sample_id
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : X Y
+imgData names(1): sample_id
+
+unit:
+Geometries:
+colGeometries: cellseg (POLYGON) 
+
+Graphs:
+H1-XKYDCP3_A1: 
+H1-XKYDCP3_D1: 
+H1-M3TCP9V_A1: 
+H1-M3TCP9V_D1: 
+H1-8MTH2TQ_A1: 
+H1-8MTH2TQ_D1: 
+H1-XNQ4F2B_A1: 
+H1-XNQ4F2B_D1: 2026-06-06 21:25:56.409808 | Setting rownames to gene symbols via uniquifyFeatureNames
+class: SpatialFeatureExperiment 
+dim: 18132 455680 
+metadata(0):
+assays(1): counts
+rownames(18132): SAMD11 NOC2L ... MT-ND6 MT-CYB
+rowData names(3): ID Symbol Type
+colnames(455680): H1-XKYDCP3_A1_cellid_000000009-1
+  H1-XKYDCP3_A1_cellid_000000011-1 ... H1-XNQ4F2B_D1_cellid_000077045-1
+  H1-XNQ4F2B_D1_cellid_000077046-1
+colData names(3): Sample Barcode sample_id
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : X Y
+imgData names(1): sample_id
+
+unit:
+Geometries:
+colGeometries: cellseg (POLYGON) 
+
+Graphs:
+H1-XKYDCP3_A1: 
+H1-XKYDCP3_D1: 
+H1-M3TCP9V_A1: 
+H1-M3TCP9V_D1: 
+H1-8MTH2TQ_A1: 
+H1-8MTH2TQ_D1: 
+H1-XNQ4F2B_A1: 
+H1-XNQ4F2B_D1: 2026-06-06 21:26:10.479556 | Generating per-sample distribution plots
+Per-sample MAD thresholds:
+# A tibble: 8 × 4
+  sample_id     sum_cutoff detected_cutoff mito_cutoff
+  <chr>              <dbl>           <dbl>       <dbl>
+1 H1-8MTH2TQ_A1       62.0            58.3        29.2
+2 H1-8MTH2TQ_D1       82.0            76.9        34.0
+3 H1-M3TCP9V_A1       57.7            55.4        19.6
+4 H1-M3TCP9V_D1       77.7            76.8        14.8
+5 H1-XKYDCP3_A1       65.9            63.1        23.1
+6 H1-XKYDCP3_D1       70.0            73.4        16.9
+7 H1-XNQ4F2B_A1       25.6            26.5        19.2
+8 H1-XNQ4F2B_D1       73.0            69.6        25.2
+Per-sample QC summary:
+      sample_id n_cells median_umi median_genes median_mito_pct pct_below_5_umi
+1 H1-8MTH2TQ_A1   62755      562.0          464        8.112094     0.007967493
+2 H1-8MTH2TQ_D1   58388      780.5          630        8.571429     0.020552168
+3 H1-M3TCP9V_A1   61690      600.0          497        4.918033     0.106986546
+4 H1-M3TCP9V_D1   48769      617.0          526        3.760684     0.174291046
+5 H1-XKYDCP3_A1   63204      657.0          538        5.909265     0.011075248
+6 H1-XKYDCP3_D1   35709      895.0          738        4.029899     3.662942115
+7 H1-XNQ4F2B_A1   67505      590.0          505        3.818616     1.453225687
+8 H1-XNQ4F2B_D1   57660      688.5          578        6.370812     0.019077350
+  pct_mito_above_20 sum_cutoff detected_cutoff mito_cutoff
+1        1.65086447   61.95420        58.30388    29.15844
+2        2.94067274   82.01939        76.94088    34.02216
+3        0.43929324   57.70771        55.42403    19.57247
+4        0.06971642   77.72901        76.80459    14.75754
+5        0.90817037   65.86307        63.14168    23.10388
+6        1.31059397   69.99602        73.44507    16.87524
+7        1.11399156   25.57733        26.54553    19.19636
+8        1.62157475   72.97194        69.64811    25.20270
+2026-06-06 21:26:17.586554 | Generating spatial QC plots with escheR
+  Plotting sample: H1-XKYDCP3_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-XKYDCP3_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-M3TCP9V_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-M3TCP9V_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-8MTH2TQ_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-8MTH2TQ_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-XNQ4F2B_A1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+  Plotting sample: H1-XNQ4F2B_D1
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-06-06 21:26:52.355469 | Flagging outlier cells (per sample, MAD-based)
+  H1-XKYDCP3_A1: 1855/63204 cells flagged (2.9%) — low_umi: 1557, low_gene: 1702, high_mito: 203
+  H1-XKYDCP3_D1: 2845/35709 cells flagged (8.0%) — low_umi: 2496, low_gene: 2600, high_mito: 764
+  H1-M3TCP9V_A1: 1942/61690 cells flagged (3.1%) — low_umi: 1678, low_gene: 1765, high_mito: 327
+  H1-M3TCP9V_D1: 1785/48769 cells flagged (3.7%) — low_umi: 1593, low_gene: 1633, high_mito: 205
+  H1-8MTH2TQ_A1: 1030/62755 cells flagged (1.6%) — low_umi: 975, low_gene: 981, high_mito: 22
+  H1-8MTH2TQ_D1: 1228/58388 cells flagged (2.1%) — low_umi: 1172, low_gene: 1183, high_mito: 18
+  H1-XNQ4F2B_A1: 3796/67505 cells flagged (5.6%) — low_umi: 2989, low_gene: 3067, high_mito: 952
+  H1-XNQ4F2B_D1: 1086/57660 cells flagged (1.9%) — low_umi: 767, low_gene: 810, high_mito: 295
+2026-06-06 21:27:14.851178 | Plotting QC-flagged cells spatially
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+2026-06-06 21:27:32.583822 | Saving sfe with QC annotations
+Saved to: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_cell_norm_with_QC
+Total cells flagged: 15567 / 455680 (3.4%)
+2026-06-06 21:51:01.961284 | Filtering out QC-flagged cells
+  Removed 15567 cells: 455680 -> 440113 (96.6% retained)
+  H1-XKYDCP3_A1: 63204 -> 61349 cells (97.1% retained)
+  H1-XKYDCP3_D1: 35709 -> 32864 cells (92.0% retained)
+  H1-M3TCP9V_A1: 61690 -> 59748 cells (96.9% retained)
+  H1-M3TCP9V_D1: 48769 -> 46984 cells (96.3% retained)
+  H1-8MTH2TQ_A1: 62755 -> 61725 cells (98.4% retained)
+  H1-8MTH2TQ_D1: 58388 -> 57160 cells (97.9% retained)
+  H1-XNQ4F2B_A1: 67505 -> 63709 cells (94.4% retained)
+  H1-XNQ4F2B_D1: 57660 -> 56574 cells (98.1% retained)
+Saved filtered sfe to: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_cell_norm_QC_filtered
+
+Reproducibility information:
+[1] "2026-06-06 22:21:05 EDT"
+    user   system  elapsed 
+3274.744   65.688 3369.225 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
+ os       Rocky Linux 9.4 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       US/Eastern
+ date     2026-06-06
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
+ quarto   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package                  * version   date (UTC) lib source
+ abind                    * 1.4-8     2024-09-12 [2] CRAN (R 4.5.0)
+ beachmat                   2.24.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Biobase                  * 2.68.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocGenerics             * 0.54.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocNeighbors              2.2.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocParallel               1.42.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ bitops                     1.0-9     2024-10-03 [2] CRAN (R 4.5.0)
+ boot                       1.3-31    2024-08-28 [3] CRAN (R 4.5.0)
+ class                      7.3-23    2025-01-01 [3] CRAN (R 4.5.0)
+ classInt                   0.4-11    2025-01-08 [2] CRAN (R 4.5.0)
+ cli                        3.6.5     2025-04-23 [2] CRAN (R 4.5.0)
+ coda                       0.19-4.1  2024-01-31 [2] CRAN (R 4.5.0)
+ codetools                  0.2-20    2024-03-31 [3] CRAN (R 4.5.0)
+ crayon                     1.5.3     2024-06-20 [2] CRAN (R 4.5.0)
+ data.table                 1.17.2    2025-05-12 [2] CRAN (R 4.5.0)
+ DBI                        1.2.3     2024-06-02 [2] CRAN (R 4.5.0)
+ DelayedArray             * 0.34.1    2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
+ DelayedMatrixStats         1.30.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ deldir                     2.0-4     2024-02-28 [2] CRAN (R 4.5.0)
+ dichromat                  2.0-0.1   2022-05-02 [2] CRAN (R 4.5.0)
+ digest                     0.6.37    2024-08-19 [2] CRAN (R 4.5.0)
+ dplyr                    * 1.1.4     2023-11-17 [2] CRAN (R 4.5.0)
+ dqrng                      0.4.1     2024-05-28 [2] CRAN (R 4.5.0)
+ DropletUtils               1.28.0    2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
+ e1071                      1.7-16    2024-09-16 [2] CRAN (R 4.5.0)
+ EBImage                    4.50.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ edgeR                      4.6.2     2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
+ escheR                   * 1.8.0     2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
+ farver                     2.1.2     2024-05-13 [2] CRAN (R 4.5.0)
+ fastmap                    1.2.0     2024-05-15 [2] CRAN (R 4.5.0)
+ fftwtools                  0.9-11    2021-03-01 [2] CRAN (R 4.5.0)
+ forcats                  * 1.0.0     2023-01-29 [2] CRAN (R 4.5.0)
+ generics                 * 0.1.4     2025-05-09 [2] CRAN (R 4.5.0)
+ GenomeInfoDb             * 1.44.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ GenomeInfoDbData           1.2.14    2025-05-21 [2] Bioconductor
+ GenomicRanges            * 1.60.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ ggplot2                  * 3.5.2     2025-04-09 [2] CRAN (R 4.5.0)
+ glue                       1.8.0     2024-09-30 [2] CRAN (R 4.5.0)
+ gtable                     0.3.6     2024-10-25 [2] CRAN (R 4.5.0)
+ h5mread                  * 1.0.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ HDF5Array                * 1.36.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ here                     * 1.0.1     2020-12-13 [2] CRAN (R 4.5.0)
+ hms                        1.1.3     2023-03-21 [2] CRAN (R 4.5.0)
+ htmltools                  0.5.8.1   2024-04-04 [2] CRAN (R 4.5.0)
+ htmlwidgets                1.6.4     2023-12-06 [2] CRAN (R 4.5.0)
+ httr                       1.4.7     2023-08-15 [2] CRAN (R 4.5.0)
+ IRanges                  * 2.42.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ jpeg                       0.1-11    2025-03-21 [2] CRAN (R 4.5.0)
+ jsonlite                   2.0.0     2025-03-27 [2] CRAN (R 4.5.0)
+ KernSmooth                 2.23-26   2025-01-01 [3] CRAN (R 4.5.0)
+ labeling                   0.4.3     2023-08-29 [2] CRAN (R 4.5.0)
+ lattice                    0.22-7    2025-04-02 [3] CRAN (R 4.5.0)
+ LearnBayes                 2.15.1    2018-03-18 [2] CRAN (R 4.5.0)
+ lifecycle                  1.0.4     2023-11-07 [2] CRAN (R 4.5.0)
+ limma                      3.64.3    2025-08-03 [1] Bioconductor 3.21 (R 4.5.0)
+ locfit                     1.5-9.12  2025-03-05 [2] CRAN (R 4.5.0)
+ lubridate                * 1.9.4     2024-12-08 [2] CRAN (R 4.5.0)
+ magick                     2.8.6     2025-03-23 [2] CRAN (R 4.5.0)
+ magrittr                   2.0.3     2022-03-30 [2] CRAN (R 4.5.0)
+ MASS                       7.3-65    2025-02-28 [3] CRAN (R 4.5.0)
+ Matrix                   * 1.7-3     2025-03-11 [3] CRAN (R 4.5.0)
+ MatrixGenerics           * 1.20.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ matrixStats              * 1.5.0     2025-01-07 [2] CRAN (R 4.5.0)
+ multcomp                   1.4-28    2025-01-29 [2] CRAN (R 4.5.0)
+ mvtnorm                    1.3-3     2025-01-10 [2] CRAN (R 4.5.0)
+ nlme                       3.1-168   2025-03-31 [3] CRAN (R 4.5.0)
+ pillar                     1.10.2    2025-04-05 [2] CRAN (R 4.5.0)
+ pkgconfig                  2.0.3     2019-09-22 [2] CRAN (R 4.5.0)
+ png                        0.1-8     2022-11-29 [2] CRAN (R 4.5.0)
+ proxy                      0.4-27    2022-06-09 [2] CRAN (R 4.5.0)
+ purrr                    * 1.0.4     2025-02-05 [2] CRAN (R 4.5.0)
+ R.methodsS3                1.8.2     2022-06-13 [2] CRAN (R 4.5.0)
+ R.oo                       1.27.1    2025-05-02 [2] CRAN (R 4.5.0)
+ R.utils                    2.13.0    2025-02-24 [2] CRAN (R 4.5.0)
+ R6                         2.6.1     2025-02-15 [2] CRAN (R 4.5.0)
+ ragg                       1.4.0     2025-04-10 [2] CRAN (R 4.5.0)
+ RColorBrewer               1.1-3     2022-04-03 [2] CRAN (R 4.5.0)
+ Rcpp                       1.0.14    2025-01-12 [2] CRAN (R 4.5.0)
+ RCurl                      1.98-1.17 2025-03-22 [2] CRAN (R 4.5.0)
+ readr                    * 2.1.5     2024-01-10 [2] CRAN (R 4.5.0)
+ rhdf5                    * 2.52.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rhdf5filters               1.20.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Rhdf5lib                   1.30.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rjson                      0.2.23    2024-09-16 [2] CRAN (R 4.5.0)
+ rlang                      1.1.6     2025-04-11 [2] CRAN (R 4.5.0)
+ rprojroot                  2.0.4     2023-11-05 [2] CRAN (R 4.5.0)
+ s2                         1.1.8     2025-05-12 [2] CRAN (R 4.5.0)
+ S4Arrays                 * 1.8.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ S4Vectors                * 0.46.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ sandwich                   3.1-1     2024-09-15 [2] CRAN (R 4.5.0)
+ scales                     1.4.0     2025-04-24 [2] CRAN (R 4.5.0)
+ scuttle                  * 1.18.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ sessioninfo              * 1.2.3     2025-02-05 [2] CRAN (R 4.5.0)
+ sf                         1.0-21    2025-05-15 [2] CRAN (R 4.5.0)
+ sfheaders                  0.4.4     2024-01-17 [2] CRAN (R 4.5.0)
+ SingleCellExperiment     * 1.30.1    2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
+ sp                         2.2-0     2025-02-01 [2] CRAN (R 4.5.0)
+ SparseArray              * 1.8.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ sparseMatrixStats          1.20.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ SpatialExperiment          1.18.1    2025-05-11 [2] Bioconductor 3.21 (R 4.5.0)
+ SpatialFeatureExperiment * 1.10.1    2025-05-11 [2] Bioconductor 3.21 (R 4.5.0)
+ spatialreg                 1.3-6     2024-12-02 [2] CRAN (R 4.5.0)
+ spData                     2.3.4     2025-01-08 [2] CRAN (R 4.5.0)
+ spdep                      1.3-11    2025-04-24 [2] CRAN (R 4.5.0)
+ statmod                    1.5.0     2023-01-06 [2] CRAN (R 4.5.0)
+ stringi                    1.8.7     2025-03-27 [2] CRAN (R 4.5.0)
+ stringr                  * 1.5.1     2023-11-14 [2] CRAN (R 4.5.0)
+ SummarizedExperiment     * 1.38.1    2025-04-30 [2] Bioconductor 3.21 (R 4.5.0)
+ survival                   3.8-3     2024-12-17 [3] CRAN (R 4.5.0)
+ systemfonts                1.2.3     2025-04-30 [2] CRAN (R 4.5.0)
+ terra                      1.8-50    2025-05-09 [2] CRAN (R 4.5.0)
+ textshaping                1.0.1     2025-05-01 [2] CRAN (R 4.5.0)
+ TH.data                    1.1-3     2025-01-17 [2] CRAN (R 4.5.0)
+ tibble                   * 3.2.1     2023-03-20 [2] CRAN (R 4.5.0)
+ tidyr                    * 1.3.1     2024-01-24 [2] CRAN (R 4.5.0)
+ tidyselect                 1.2.1     2024-03-11 [2] CRAN (R 4.5.0)
+ tidyverse                * 2.0.0     2023-02-22 [2] CRAN (R 4.5.0)
+ tiff                       0.1-12    2023-11-28 [2] CRAN (R 4.5.0)
+ timechange                 0.3.0     2024-01-18 [2] CRAN (R 4.5.0)
+ tzdb                       0.5.0     2025-03-15 [2] CRAN (R 4.5.0)
+ UCSC.utils                 1.4.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ units                      0.8-7     2025-03-11 [2] CRAN (R 4.5.0)
+ utf8                       1.2.5     2025-05-01 [2] CRAN (R 4.5.0)
+ vctrs                      0.6.5     2023-12-01 [2] CRAN (R 4.5.0)
+ viridisLite                0.4.2     2023-05-02 [2] CRAN (R 4.5.0)
+ withr                      3.0.2     2024-10-28 [2] CRAN (R 4.5.0)
+ wk                         0.9.4     2024-10-11 [2] CRAN (R 4.5.0)
+ XVector                    0.48.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ zeallot                    0.1.0     2018-01-28 [2] CRAN (R 4.5.0)
+ zoo                        1.8-14    2025-04-10 [2] CRAN (R 4.5.0)
+
+ [1] /users/rphillip/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
+ * ── Packages attached to the search path.
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+**** Job ends ****
+Sat Jun  6 10:21:06 PM EDT 2026

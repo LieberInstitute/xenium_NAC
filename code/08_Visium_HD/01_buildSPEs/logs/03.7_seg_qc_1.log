@@ -1,0 +1,57 @@
+**** Job starts ****
+Fri Jun  5 09:45:13 PM EDT 2026
+**** JHPCE info ****
+User: rphillip
+Job id: 32443745
+Job name: 03.7_seg_qc
+Node name: compute-120
+Task id: 1
+Loading LIBD SLURM module for visium_hd/1.0
+Loading LIBD SLURM module for htslib/1.18
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-24.3.0   5) visium_hd/1.0
+  2) JHPCE_tools/3.0            4) htslib/1.18
+
+ 
+
+2026-06-05 21:45:22.783618 | SR cell matrix:      /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-XKYDCP3_A1/outs/segmented_outputs/filtered_feature_cell_matrix.h5
+2026-06-05 21:45:22.783653 | SR barcode_mappings: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-XKYDCP3_A1/outs/barcode_mappings.parquet
+2026-06-05 21:45:22.787442 | Loading 2 um bins: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/01_spaceranger/H1-XKYDCP3_A1/outs/binned_outputs/square_002um/filtered_feature_bc_matrix.h5
+2026-06-05 21:45:45.269764 | 10592911 in-tissue 2um bins, 42.37 mm^2
+2026-06-05 21:45:45.269826 | bin2cell metrics
+2026-06-05 21:47:48.622301 | Space Ranger metrics
+2026-06-05 21:47:52.937631 | barcode_mappings columns: ['square_002um', 'square_008um', 'square_016um', 'cell_id', 'in_nucleus', 'in_cell']
+2026-06-05 21:48:20.378247 | barcode overlap with 2um matrix: 10592911 / 10592911
+
+2026-06-05 21:48:38.480476 | Segmentation QC comparison for H1-XKYDCP3_A1
+                         bin2cell  spaceranger
+metric                                        
+n_cells                216075.000    63204.000
+tissue_area_mm2            42.372       42.372
+cell_density_per_mm2     5099.500     1491.700
+frac_bins_assigned          0.271        0.313
+frac_umi_assigned           0.518        0.559
+median_umi_per_cell       110.000      657.000
+median_genes_per_cell     101.000      538.000
+median_bins_per_cell        9.000       52.000
+median_equiv_diam_um        6.770       16.270
+2026-06-05 21:48:38.502938 | Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_qc_comparison/H1-XKYDCP3_A1/H1-XKYDCP3_A1_qc_comparison.csv
+2026-06-05 21:48:39.455765 | Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_qc_comparison/H1-XKYDCP3_A1/H1-XKYDCP3_A1_qc_comparison.png
+2026-06-05 21:48:39.455789 | Done.
+-----
+anndata             0.10.8
+matplotlib          3.9.2
+numpy               1.26.4
+pandas              2.2.3
+pyarrow             18.0.0
+pyhere              1.0.3
+scanpy              1.10.2
+session_info        1.0.0
+-----
+Python 3.9.20 | packaged by conda-forge | (main, Sep 30 2024, 17:49:10) [GCC 13.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-06-05 21:48
+**** Job ends ****
+Fri Jun  5 09:48:42 PM EDT 2026
