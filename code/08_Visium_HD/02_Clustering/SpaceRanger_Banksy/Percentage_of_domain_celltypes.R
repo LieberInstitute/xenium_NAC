@@ -44,15 +44,12 @@ doms <- colnames(dc)
 #Plot the max type
 load("/dcs04/lieber/marmaypag/spatialNac_LIBD4125/spatial_NAc/processed-data/12_snRNA/070924_21colors_celltypeFinal.rda",
      verbose = TRUE) 
-# Loading objects:
-#   cluster_cols
 
 ct_cols  <- cluster_cols[-14]
 dom_cols <- readRDS(here("processed-data", "HD_Full_Analysis", "Cluster_colors",
                          "clust_M1_lam0.8_k50_res0.4_cell_level_spatial_colors_sr.Rds"))
 anno_df$spatial_0.4 <- as.character(anno_df$spatial_0.4)
-names(dom_cols) <- anno_df$Annotation
-
+names(dom_cols) <- anno_df[match(names(dom_cols),anno_df$spatial_0.4),"Annotation"]
 
 # continuous fill for the percentages
 col_fun <- colorRamp2(
@@ -176,4 +173,4 @@ sessionInfo()
 # [83] htmlwidgets_1.6.4         htmltools_0.5.8.1        
 # [85] R.oo_1.27.1               lifecycle_1.0.4          
 # [87] httr_1.4.7                GlobalOptions_0.1.2      
-# [89] statmod_1.5.0             MASS_7.3-65              
+# [89] statmod_1.5.0             MASS_7.3-65   
