@@ -1,0 +1,224 @@
+Loading conda_R/4.5
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Registered S3 method overwritten by 'zellkonverter':
+  method                                             from      
+  py_to_r.pandas.core.arrays.categorical.Categorical reticulate
+Loading required package: SparseArray
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:S4Vectors’:
+
+    expand
+
+Loading required package: S4Arrays
+Loading required package: abind
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+Processing sample: H1-8MTH2TQ_D1 (6 of 8)
+Number of spots for this sample: 221960
+Creating Rctd object - 2026-05-29 17:45:06.59374
+Number of cells in reference: 70198
+Number of genes in reference: 34977
+
+Astrocyte_A Astrocyte_B  DRD1_MSN_A  DRD1_MSN_B  DRD1_MSN_C  DRD1_MSN_D 
+       8682        1250       10000        6544        2653        1370 
+ DRD2_MSN_A  DRD2_MSN_B Endothelial   Ependymal  Excitatory       Inh_A 
+      10000        1841         879         957        1583        1988 
+      Inh_B       Inh_C       Inh_D       Inh_E       Inh_F   Microglia 
+        698        1456         226         554        1316        4438 
+      Oligo         OPC 
+      10000        3763 
+Getting regression differentially expressed genes: 
+Astrocyte_A found DE genes: 293
+Astrocyte_B found DE genes: 286
+DRD1_MSN_A found DE genes: 122
+DRD1_MSN_B found DE genes: 115
+DRD1_MSN_C found DE genes: 106
+DRD1_MSN_D found DE genes: 101
+DRD2_MSN_A found DE genes: 135
+DRD2_MSN_B found DE genes: 146
+Endothelial found DE genes: 396
+Ependymal found DE genes: 387
+Excitatory found DE genes: 120
+Inh_A found DE genes: 125
+Inh_B found DE genes: 123
+Inh_C found DE genes: 109
+Inh_D found DE genes: 148
+Inh_E found DE genes: 119
+Inh_F found DE genes: 65
+Microglia found DE genes: 517
+Oligo found DE genes: 407
+OPC found DE genes: 230
+Total DE genes: 2359
+Getting bulk differentially expressed genes: 
+Astrocyte_A found DE genes: 538
+Astrocyte_B found DE genes: 559
+DRD1_MSN_A found DE genes: 307
+DRD1_MSN_B found DE genes: 271
+DRD1_MSN_C found DE genes: 284
+DRD1_MSN_D found DE genes: 252
+DRD2_MSN_A found DE genes: 320
+DRD2_MSN_B found DE genes: 306
+Endothelial found DE genes: 774
+Ependymal found DE genes: 687
+Excitatory found DE genes: 280
+Inh_A found DE genes: 286
+Inh_B found DE genes: 300
+Inh_C found DE genes: 282
+Inh_D found DE genes: 277
+Inh_E found DE genes: 262
+Inh_F found DE genes: 183
+Microglia found DE genes: 997
+Oligo found DE genes: 670
+OPC found DE genes: 420
+Total DE genes: 3808
+Warning messages:
+1: In maybeDownsample(reference, n_max_cells) :
+  Reference: number of cells per cell type is 22801, larger than maximum allowable of 10000. Downsampling number of cells to: 10000
+2: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.3 GiB
+3: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.6 GiB
+4: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 1.7 GiB
+5: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.6 GiB
+6: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 1.2 GiB
+7: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.6 GiB
+Running Rctd - 2026-05-29 17:50:36.112375
+fitBulk: decomposing bulk
+chooseSigma: using initial Q_mat with sigma = 1
+Likelihood value: 536000.387036036
+Sigma value: 0.84
+Likelihood value: 531707.25254106
+Sigma value: 0.69
+Likelihood value: 528810.344656514
+Sigma value: 0.61
+Likelihood value: 527750.362622928
+Sigma value: 0.53
+Likelihood value: 527037.679794404
+Sigma value: 0.46
+Likelihood value: 526695.445118251
+Sigma value: 0.43
+Likelihood value: 526626.284546387
+Sigma value: 0.41
+Likelihood value: 526604.870267975
+Sigma value: 0.4
+Warning message:
+In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 3.9 GiB
+Done with sample: H1-8MTH2TQ_D1 - 2026-05-30 12:49:42.786674

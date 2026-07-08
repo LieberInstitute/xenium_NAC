@@ -1,11 +1,3 @@
-********* Job Starts *********
-Mon Apr  6 09:59:39 AM EDT 2026
-**** SLURM info ****
-User: rphillip
-Job id: 30609439
-Job name: spatial
-Hostname: compute-176
-Task id: 
 Loading conda_R/4.5
 Loading required package: SummarizedExperiment
 Loading required package: MatrixGenerics
@@ -134,133 +126,99 @@ The following object is masked from ‘package:rhdf5’:
     h5ls
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-class: SingleCellExperiment 
-dim: 36601 103785 
-metadata(1): Samples
-assays(2): counts logcounts
-rownames(36601): ENSG00000243485 ENSG00000237613 ... ENSG00000278817
-  ENSG00000277196
-rowData names(7): source type ... gene_type binomial_deviance
-colnames(103785): 1_AAACCCAAGACCAACG-1 1_AAACCCACAGTCAGCC-1 ...
-  20_TTTGTTGCAAGATGTA-1 20_TTTGTTGGTACGAAAT-1
-colData names(41): Sample Barcode ... sizeFactor CellType.Final
-reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
-mainExpName: NULL
-altExpNames(0):
-class: SummarizedExperiment 
-dim: 36601 103785 
-metadata(0):
-assays(1): counts
-rownames(36601): MIR1302-2HG FAM138A ... AC007325.4 AC007325.2
-rowData names(0):
-colnames(103785): 1_AAACCCAAGACCAACG-1 1_AAACCCACAGTCAGCC-1 ...
-  20_TTTGTTGCAAGATGTA-1 20_TTTGTTGGTACGAAAT-1
-colData names(1): X
-class: SpatialExperiment 
-dim: 18140 1925144 
-metadata(0):
-assays(1): counts
-rownames(18140): OR4F5 SAMD11 ... MT-ND6 MT-CYB
-rowData names(0):
-colnames(1925144): 1_H1-XKYDCP3_A1 2_H1-XKYDCP3_A1 ...
-  343034_H1-XNQ4F2B_D1 343035_H1-XNQ4F2B_D1
-colData names(1): sample_id
-reducedDimNames(0):
-mainExpName: NULL
-altExpNames(0):
-spatialCoords names(0) :
-imgData names(0):
-Creating Rctd object - 2026-04-06 10:01:16.424097
-Number of cells in reference: 70644
-Number of genes in reference: 36601
+Processing sample: H1-M3TCP9V_D1 (4 of 8)
+Number of spots for this sample: 292558
+Creating Rctd object - 2026-05-29 17:41:14.451823
+Number of cells in reference: 70198
+Number of genes in reference: 34977
 
- Astrocyte_A  Astrocyte_B   DRD1_MSN_A   DRD1_MSN_B   DRD1_MSN_C   DRD1_MSN_D 
-        8682         1250        10000         6544         2653         1370 
-  DRD2_MSN_A   DRD2_MSN_B  Endothelial    Ependymal   Excitatory        Inh_A 
-       10000         1841          879          957         1583         1988 
-       Inh_B        Inh_C        Inh_D        Inh_E        Inh_F    Microglia 
-         698         1456          226          554         1316         4438 
-Neuron_Ambig        Oligo          OPC 
-         446        10000         3763 
+Astrocyte_A Astrocyte_B  DRD1_MSN_A  DRD1_MSN_B  DRD1_MSN_C  DRD1_MSN_D 
+       8682        1250       10000        6544        2653        1370 
+ DRD2_MSN_A  DRD2_MSN_B Endothelial   Ependymal  Excitatory       Inh_A 
+      10000        1841         879         957        1583        1988 
+      Inh_B       Inh_C       Inh_D       Inh_E       Inh_F   Microglia 
+        698        1456         226         554        1316        4438 
+      Oligo         OPC 
+      10000        3763 
 Getting regression differentially expressed genes: 
-Astrocyte_A found DE genes: 295
-Astrocyte_B found DE genes: 290
-DRD1_MSN_A found DE genes: 117
-DRD1_MSN_B found DE genes: 114
-DRD1_MSN_C found DE genes: 106
-DRD1_MSN_D found DE genes: 100
-DRD2_MSN_A found DE genes: 132
-DRD2_MSN_B found DE genes: 148
-Endothelial found DE genes: 393
-Ependymal found DE genes: 390
+Astrocyte_A found DE genes: 292
+Astrocyte_B found DE genes: 286
+DRD1_MSN_A found DE genes: 120
+DRD1_MSN_B found DE genes: 115
+DRD1_MSN_C found DE genes: 105
+DRD1_MSN_D found DE genes: 101
+DRD2_MSN_A found DE genes: 134
+DRD2_MSN_B found DE genes: 146
+Endothelial found DE genes: 396
+Ependymal found DE genes: 384
 Excitatory found DE genes: 121
-Inh_A found DE genes: 128
-Inh_B found DE genes: 124
-Inh_C found DE genes: 108
-Inh_D found DE genes: 151
-Inh_E found DE genes: 117
-Inh_F found DE genes: 62
-Microglia found DE genes: 509
-Neuron_Ambig found DE genes: 134
-Oligo found DE genes: 408
-OPC found DE genes: 235
-Total DE genes: 2391
+Inh_A found DE genes: 125
+Inh_B found DE genes: 123
+Inh_C found DE genes: 109
+Inh_D found DE genes: 148
+Inh_E found DE genes: 119
+Inh_F found DE genes: 65
+Microglia found DE genes: 517
+Oligo found DE genes: 413
+OPC found DE genes: 230
+Total DE genes: 2359
 Getting bulk differentially expressed genes: 
-Astrocyte_A found DE genes: 541
+Astrocyte_A found DE genes: 540
 Astrocyte_B found DE genes: 559
-DRD1_MSN_A found DE genes: 319
-DRD1_MSN_B found DE genes: 269
-DRD1_MSN_C found DE genes: 284
-DRD1_MSN_D found DE genes: 244
-DRD2_MSN_A found DE genes: 323
-DRD2_MSN_B found DE genes: 308
-Endothelial found DE genes: 759
-Ependymal found DE genes: 691
-Excitatory found DE genes: 277
-Inh_A found DE genes: 289
+DRD1_MSN_A found DE genes: 307
+DRD1_MSN_B found DE genes: 270
+DRD1_MSN_C found DE genes: 283
+DRD1_MSN_D found DE genes: 253
+DRD2_MSN_A found DE genes: 321
+DRD2_MSN_B found DE genes: 307
+Endothelial found DE genes: 773
+Ependymal found DE genes: 680
+Excitatory found DE genes: 280
+Inh_A found DE genes: 285
 Inh_B found DE genes: 300
-Inh_C found DE genes: 292
-Inh_D found DE genes: 274
-Inh_E found DE genes: 264
-Inh_F found DE genes: 191
-Microglia found DE genes: 985
-Neuron_Ambig found DE genes: 356
-Oligo found DE genes: 658
-OPC found DE genes: 430
-Total DE genes: 3872
+Inh_C found DE genes: 283
+Inh_D found DE genes: 277
+Inh_E found DE genes: 262
+Inh_F found DE genes: 184
+Microglia found DE genes: 996
+Oligo found DE genes: 666
+OPC found DE genes: 420
+Total DE genes: 3803
 Warning messages:
 1: In maybeDownsample(reference, n_max_cells) :
   Reference: number of cells per cell type is 22801, larger than maximum allowable of 10000. Downsampling number of cells to: 10000
 2: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.4 GiB
+  sparse->dense coercion: allocating vector of size 2.3 GiB
 3: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.7 GiB
+  sparse->dense coercion: allocating vector of size 2.6 GiB
 4: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 1.8 GiB
+  sparse->dense coercion: allocating vector of size 1.7 GiB
 5: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.7 GiB
+  sparse->dense coercion: allocating vector of size 2.6 GiB
 6: In asMethod(object) :
   sparse->dense coercion: allocating vector of size 1.2 GiB
 7: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.7 GiB
-8: In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 1.0 GiB
-Running Rctd - 2026-04-06 10:15:05.655357
+  sparse->dense coercion: allocating vector of size 2.6 GiB
+Running Rctd - 2026-05-29 17:43:06.978654
 fitBulk: decomposing bulk
 chooseSigma: using initial Q_mat with sigma = 1
-Likelihood value: 538385.586798443
+Likelihood value: 532809.357973538
 Sigma value: 0.84
-Likelihood value: 534514.807212625
+Likelihood value: 528889.703870001
 Sigma value: 0.69
-Likelihood value: 532021.532515035
+Likelihood value: 526338.428178247
 Sigma value: 0.61
-Likelihood value: 531172.072617892
+Likelihood value: 525451.973715079
 Sigma value: 0.53
-Likelihood value: 530660.312704233
+Likelihood value: 524898.884093079
 Sigma value: 0.48
-Likelihood value: 530507.658062842
+Likelihood value: 524717.862510031
 Sigma value: 0.46
-Likelihood value: 530481.164807955
-Sigma value: 0.45
-Likelihood value: 530475.058781254
-Sigma value: 0.45
+Likelihood value: 524679.479361
+Sigma value: 0.44
+Likelihood value: 524659.786122678
+Sigma value: 0.44
+Warning message:
+In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.0 GiB
+Done with sample: H1-M3TCP9V_D1 - 2026-05-30 00:35:58.751904

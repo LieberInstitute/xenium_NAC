@@ -127,8 +127,8 @@ The following object is masked from ‘package:rhdf5’:
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 Processing sample: H1-XNQ4F2B_A1 (7 of 8)
-Number of spots for this sample: 318494
-Creating Rctd object - 2026-04-09 15:19:48.382085
+Number of spots for this sample: 317302
+Creating Rctd object - 2026-05-12 19:33:28.381578
 Number of cells in reference: 70198
 Number of genes in reference: 34977
 
@@ -141,15 +141,15 @@ Astrocyte_A Astrocyte_B  DRD1_MSN_A  DRD1_MSN_B  DRD1_MSN_C  DRD1_MSN_D
       Oligo         OPC 
       10000        3763 
 Getting regression differentially expressed genes: 
-Astrocyte_A found DE genes: 293
+Astrocyte_A found DE genes: 292
 Astrocyte_B found DE genes: 286
-DRD1_MSN_A found DE genes: 122
+DRD1_MSN_A found DE genes: 121
 DRD1_MSN_B found DE genes: 115
 DRD1_MSN_C found DE genes: 106
 DRD1_MSN_D found DE genes: 101
-DRD2_MSN_A found DE genes: 136
+DRD2_MSN_A found DE genes: 135
 DRD2_MSN_B found DE genes: 146
-Endothelial found DE genes: 397
+Endothelial found DE genes: 396
 Ependymal found DE genes: 388
 Excitatory found DE genes: 121
 Inh_A found DE genes: 125
@@ -159,30 +159,30 @@ Inh_D found DE genes: 148
 Inh_E found DE genes: 119
 Inh_F found DE genes: 65
 Microglia found DE genes: 517
-Oligo found DE genes: 410
+Oligo found DE genes: 408
 OPC found DE genes: 231
-Total DE genes: 2364
+Total DE genes: 2362
 Getting bulk differentially expressed genes: 
 Astrocyte_A found DE genes: 538
 Astrocyte_B found DE genes: 558
-DRD1_MSN_A found DE genes: 305
-DRD1_MSN_B found DE genes: 272
+DRD1_MSN_A found DE genes: 310
+DRD1_MSN_B found DE genes: 270
 DRD1_MSN_C found DE genes: 284
 DRD1_MSN_D found DE genes: 252
-DRD2_MSN_A found DE genes: 322
-DRD2_MSN_B found DE genes: 305
+DRD2_MSN_A found DE genes: 323
+DRD2_MSN_B found DE genes: 306
 Endothelial found DE genes: 773
-Ependymal found DE genes: 687
-Excitatory found DE genes: 280
-Inh_A found DE genes: 285
+Ependymal found DE genes: 688
+Excitatory found DE genes: 281
+Inh_A found DE genes: 287
 Inh_B found DE genes: 300
-Inh_C found DE genes: 285
-Inh_D found DE genes: 276
+Inh_C found DE genes: 284
+Inh_D found DE genes: 277
 Inh_E found DE genes: 262
 Inh_F found DE genes: 183
 Microglia found DE genes: 997
-Oligo found DE genes: 664
-OPC found DE genes: 421
+Oligo found DE genes: 667
+OPC found DE genes: 420
 Total DE genes: 3811
 Warning messages:
 1: In maybeDownsample(reference, n_max_cells) :
@@ -199,26 +199,24 @@ Warning messages:
   sparse->dense coercion: allocating vector of size 1.2 GiB
 7: In asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.6 GiB
-Running Rctd - 2026-04-09 15:39:27.361643
+Running Rctd - 2026-05-12 19:37:07.337334
 fitBulk: decomposing bulk
 chooseSigma: using initial Q_mat with sigma = 1
-Likelihood value: 220143.445647641
+Likelihood value: 215062.247035462
 Sigma value: 0.84
-Likelihood value: 218872.124749592
+Likelihood value: 213872.505818679
 Sigma value: 0.69
-Likelihood value: 218031.620757418
+Likelihood value: 213111.027514613
 Sigma value: 0.61
-Likelihood value: 217725.286773714
+Likelihood value: 212848.304149721
 Sigma value: 0.53
-Likelihood value: 217515.073289133
-Sigma value: 0.46
-Likelihood value: 217405.306585745
-Sigma value: 0.42
-Likelihood value: 217371.101458971
-Sigma value: 0.41
-Likelihood value: 217365.533743022
-Sigma value: 0.38
+Likelihood value: 212682.424374558
+Sigma value: 0.48
+Likelihood value: 212625.284317616
+Sigma value: 0.44
+Likelihood value: 212603.435844551
+Sigma value: 0.44
 Warning message:
 In asMethod(object) :
   sparse->dense coercion: allocating vector of size 5.6 GiB
-Done with sample: H1-XNQ4F2B_A1 - 2026-04-09 18:17:50.292037
+Done with sample: H1-XNQ4F2B_A1 - 2026-05-12 20:01:51.599782

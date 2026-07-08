@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Fri Apr 10 10:43:08 AM EDT 2026
+Thu May 28 05:06:37 PM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 30744312
+Job id: 32255194
 Job name: addRCTD
-Hostname: compute-178
+Hostname: compute-168
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -132,7 +132,21 @@ The following object is masked from ‘package:rhdf5’:
     h5ls
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Loading SPE object - 2026-04-10 10:43:14.164037
+Loading SPE object - 2026-05-28 17:06:43.502095
+class: SpatialExperiment 
+dim: 18140 1923952 
+metadata(0):
+assays(2): counts logcounts
+rownames(18140): OR4F5 SAMD11 ... MT-ND6 MT-CYB
+rowData names(8): source type ... gene_search subsets_mito
+colnames(1923952): 1_H1-XKYDCP3_A1 2_H1-XKYDCP3_A1 ...
+  343034_H1-XNQ4F2B_D1 343035_H1-XNQ4F2B_D1
+colData names(23): object_id bin_count ... qc_low_bin_count qc_discard
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
+imgData names(4): sample_id image_id data scaleFactor
 [1] "Astrocyte_A"
 [1] "Astrocyte_B"
 [1] "DRD1_MSN_A"
@@ -153,24 +167,24 @@ Loading SPE object - 2026-04-10 10:43:14.164037
 [1] "Microglia"
 [1] "Oligo"
 [1] "OPC"
-H1-XKYDCP3_A1 - 2026-04-10 10:43:47.407109
+H1-XKYDCP3_A1 - 2026-05-28 17:07:08.367376
 Loading RCTD results for sample: H1-XKYDCP3_A1
-H1-XKYDCP3_D1 - 2026-04-10 10:43:53.093568
+H1-XKYDCP3_D1 - 2026-05-28 17:07:14.759133
 Loading RCTD results for sample: H1-XKYDCP3_D1
-H1-M3TCP9V_A1 - 2026-04-10 10:43:59.820587
+H1-M3TCP9V_A1 - 2026-05-28 17:07:19.737793
 Loading RCTD results for sample: H1-M3TCP9V_A1
-H1-M3TCP9V_D1 - 2026-04-10 10:44:05.109242
+H1-M3TCP9V_D1 - 2026-05-28 17:07:25.148572
 Loading RCTD results for sample: H1-M3TCP9V_D1
-H1-8MTH2TQ_A1 - 2026-04-10 10:44:10.727566
+H1-8MTH2TQ_A1 - 2026-05-28 17:07:30.38741
 Loading RCTD results for sample: H1-8MTH2TQ_A1
-H1-8MTH2TQ_D1 - 2026-04-10 10:44:16.123939
+H1-8MTH2TQ_D1 - 2026-05-28 17:07:36.198373
 Loading RCTD results for sample: H1-8MTH2TQ_D1
-H1-XNQ4F2B_A1 - 2026-04-10 10:44:22.009761
+H1-XNQ4F2B_A1 - 2026-05-28 17:07:42.090533
 Loading RCTD results for sample: H1-XNQ4F2B_A1
-H1-XNQ4F2B_D1 - 2026-04-10 10:44:29.058882
+H1-XNQ4F2B_D1 - 2026-05-28 17:07:48.557729
 Loading RCTD results for sample: H1-XNQ4F2B_D1
-Saving colData - 2026-04-10 10:44:34.891622
-Saving SPE object - 2026-04-10 10:45:04.311998
+Saving colData - 2026-05-28 17:07:54.348087
+Saving SPE object - 2026-05-28 17:08:11.748894
 R version 4.5.0 Patched (2025-05-21 r88220)
 Platform: x86_64-conda-linux-gnu
 Running under: Rocky Linux 9.4 (Blue Onyx)
@@ -215,4 +229,4 @@ loaded via a namespace (and not attached):
 [13] XVector_0.48.0          lattice_0.22-7          R6_2.6.1               
 [16] GenomeInfoDbData_1.2.14 magrittr_2.0.3          tools_4.5.0            
 ********* Job Ends *********
-Fri Apr 10 11:55:25 AM EDT 2026
+Thu May 28 06:25:17 PM EDT 2026

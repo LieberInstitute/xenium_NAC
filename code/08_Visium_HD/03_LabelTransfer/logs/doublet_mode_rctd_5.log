@@ -1,0 +1,378 @@
+********* Job Starts *********
+Tue May 26 03:50:03 PM EDT 2026
+**** SLURM info ****
+User: rphillip
+Job id: 32186789
+Job name: rctd_array
+Hostname: compute-093
+Task id: 5
+Loading conda_R/4.5
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Registered S3 method overwritten by 'zellkonverter':
+  method                                             from      
+  py_to_r.pandas.core.arrays.categorical.Categorical reticulate
+Loading required package: SparseArray
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:S4Vectors’:
+
+    expand
+
+Loading required package: S4Arrays
+Loading required package: abind
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+class: SingleCellExperiment 
+dim: 34977 103339 
+metadata(1): Samples
+assays(2): counts logcounts
+rownames(34977): ENSG00000243485 ENSG00000186092 ... ENSG00000278817
+  ENSG00000277196
+rowData names(7): source type ... gene_type binomial_deviance
+colnames(103339): 1_AAACCCAAGACCAACG-1 1_AAACCCACAGTCAGCC-1 ...
+  20_TTTGTTGCAAGATGTA-1 20_TTTGTTGGTACGAAAT-1
+colData names(41): Sample Barcode ... sizeFactor CellType.Final
+reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
+mainExpName: NULL
+altExpNames(0):
+class: SpatialExperiment 
+dim: 18140 1923952 
+metadata(0):
+assays(2): counts logcounts
+rownames(18140): OR4F5 SAMD11 ... MT-ND6 MT-CYB
+rowData names(8): source type ... gene_search subsets_mito
+colnames(1923952): 1_H1-XKYDCP3_A1 2_H1-XKYDCP3_A1 ...
+  343034_H1-XNQ4F2B_D1 343035_H1-XNQ4F2B_D1
+colData names(23): object_id bin_count ... qc_low_bin_count qc_discard
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
+imgData names(4): sample_id image_id data scaleFactor
+Processing sample: H1-8MTH2TQ_A1 (5 of 8)
+Number of spots for this sample: 161226
+Creating Rctd object - 2026-05-26 15:54:33.399343
+Number of cells in reference: 70198
+Number of genes in reference: 34977
+
+Astrocyte_A Astrocyte_B  DRD1_MSN_A  DRD1_MSN_B  DRD1_MSN_C  DRD1_MSN_D 
+       8682        1250       10000        6544        2653        1370 
+ DRD2_MSN_A  DRD2_MSN_B Endothelial   Ependymal  Excitatory       Inh_A 
+      10000        1841         879         957        1583        1988 
+      Inh_B       Inh_C       Inh_D       Inh_E       Inh_F   Microglia 
+        698        1456         226         554        1316        4438 
+      Oligo         OPC 
+      10000        3763 
+Getting regression differentially expressed genes: 
+Astrocyte_A found DE genes: 293
+Astrocyte_B found DE genes: 286
+DRD1_MSN_A found DE genes: 120
+DRD1_MSN_B found DE genes: 115
+DRD1_MSN_C found DE genes: 106
+DRD1_MSN_D found DE genes: 101
+DRD2_MSN_A found DE genes: 134
+DRD2_MSN_B found DE genes: 146
+Endothelial found DE genes: 397
+Ependymal found DE genes: 386
+Excitatory found DE genes: 121
+Inh_A found DE genes: 125
+Inh_B found DE genes: 123
+Inh_C found DE genes: 109
+Inh_D found DE genes: 148
+Inh_E found DE genes: 119
+Inh_F found DE genes: 65
+Microglia found DE genes: 516
+Oligo found DE genes: 410
+OPC found DE genes: 230
+Total DE genes: 2361
+Getting bulk differentially expressed genes: 
+Astrocyte_A found DE genes: 539
+Astrocyte_B found DE genes: 559
+DRD1_MSN_A found DE genes: 308
+DRD1_MSN_B found DE genes: 271
+DRD1_MSN_C found DE genes: 284
+DRD1_MSN_D found DE genes: 253
+DRD2_MSN_A found DE genes: 320
+DRD2_MSN_B found DE genes: 306
+Endothelial found DE genes: 773
+Ependymal found DE genes: 683
+Excitatory found DE genes: 281
+Inh_A found DE genes: 285
+Inh_B found DE genes: 300
+Inh_C found DE genes: 283
+Inh_D found DE genes: 277
+Inh_E found DE genes: 262
+Inh_F found DE genes: 183
+Microglia found DE genes: 996
+Oligo found DE genes: 669
+OPC found DE genes: 419
+Total DE genes: 3810
+Warning messages:
+1: In maybeDownsample(reference, n_max_cells) :
+  Reference: number of cells per cell type is 22801, larger than maximum allowable of 10000. Downsampling number of cells to: 10000
+2: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.3 GiB
+3: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.6 GiB
+4: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 1.7 GiB
+5: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.6 GiB
+6: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 1.2 GiB
+7: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.6 GiB
+Running Rctd - 2026-05-26 15:58:30.130897
+fitBulk: decomposing bulk
+chooseSigma: using initial Q_mat with sigma = 1
+Likelihood value: 524581.214712004
+Sigma value: 0.84
+Likelihood value: 520386.984003799
+Sigma value: 0.69
+Likelihood value: 517539.762754924
+Sigma value: 0.61
+Likelihood value: 516487.145284963
+Sigma value: 0.53
+Likelihood value: 515767.738612803
+Sigma value: 0.45
+Likelihood value: 515376.868728769
+Sigma value: 0.41
+Likelihood value: 515299.306735022
+Sigma value: 0.4
+Likelihood value: 515291.598350134
+Sigma value: 0.39
+Warning message:
+In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.2 GiB
+Done with sample: H1-8MTH2TQ_A1 - 2026-05-27 01:14:31.955023
+[1] "Reproducibility information:"
+[1] "2026-05-27 01:14:31 EDT"
+      user     system    elapsed 
+119981.660    678.561  33866.927 
+─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
+ os       Rocky Linux 9.4 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       US/Eastern
+ date     2026-05-27
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
+ quarto   NA
+
+─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+ package              * version date (UTC) lib source
+ abind                * 1.4-8   2024-09-12 [2] CRAN (R 4.5.0)
+ basilisk               1.20.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ basilisk.utils         1.20.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ beachmat               2.24.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Biobase              * 2.68.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocFileCache          2.16.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocGenerics         * 0.54.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ BiocParallel           1.42.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ bit                    4.6.0   2025-03-06 [2] CRAN (R 4.5.0)
+ bit64                  4.6.0-1 2025-01-16 [2] CRAN (R 4.5.0)
+ blob                   1.2.4   2023-03-17 [2] CRAN (R 4.5.0)
+ cachem                 1.1.0   2024-05-16 [2] CRAN (R 4.5.0)
+ cli                    3.6.5   2025-04-23 [2] CRAN (R 4.5.0)
+ codetools              0.2-20  2024-03-31 [3] CRAN (R 4.5.0)
+ crayon                 1.5.3   2024-06-20 [2] CRAN (R 4.5.0)
+ curl                   6.2.2   2025-03-24 [2] CRAN (R 4.5.0)
+ DBI                    1.2.3   2024-06-02 [2] CRAN (R 4.5.0)
+ dbplyr                 2.5.0   2024-03-19 [2] CRAN (R 4.5.0)
+ DelayedArray         * 0.34.1  2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
+ dichromat              2.0-0.1 2022-05-02 [2] CRAN (R 4.5.0)
+ digest                 0.6.37  2024-08-19 [2] CRAN (R 4.5.0)
+ dir.expiry             1.16.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ dplyr                  1.1.4   2023-11-17 [2] CRAN (R 4.5.0)
+ farver                 2.1.2   2024-05-13 [2] CRAN (R 4.5.0)
+ fastmap                1.2.0   2024-05-15 [2] CRAN (R 4.5.0)
+ filelock               1.0.3   2023-12-11 [2] CRAN (R 4.5.0)
+ fs                     1.6.6   2025-04-12 [2] CRAN (R 4.5.0)
+ generics             * 0.1.4   2025-05-09 [2] CRAN (R 4.5.0)
+ GenomeInfoDb         * 1.44.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ GenomeInfoDbData       1.2.14  2025-05-21 [2] Bioconductor
+ GenomicRanges        * 1.60.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ ggforce                0.4.2   2024-02-19 [2] CRAN (R 4.5.0)
+ ggfun                  0.1.8   2024-12-03 [2] CRAN (R 4.5.0)
+ ggplot2                3.5.2   2025-04-09 [2] CRAN (R 4.5.0)
+ glue                   1.8.0   2024-09-30 [2] CRAN (R 4.5.0)
+ gtable                 0.3.6   2024-10-25 [2] CRAN (R 4.5.0)
+ h5mread              * 1.0.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ HDF5Array            * 1.36.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ here                 * 1.0.1   2020-12-13 [2] CRAN (R 4.5.0)
+ httr                   1.4.7   2023-08-15 [2] CRAN (R 4.5.0)
+ IRanges              * 2.42.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ jsonlite               2.0.0   2025-03-27 [2] CRAN (R 4.5.0)
+ lattice                0.22-7  2025-04-02 [3] CRAN (R 4.5.0)
+ lifecycle              1.0.4   2023-11-07 [2] CRAN (R 4.5.0)
+ magick                 2.8.6   2025-03-23 [2] CRAN (R 4.5.0)
+ magrittr               2.0.3   2022-03-30 [2] CRAN (R 4.5.0)
+ MASS                   7.3-65  2025-02-28 [3] CRAN (R 4.5.0)
+ Matrix               * 1.7-3   2025-03-11 [3] CRAN (R 4.5.0)
+ MatrixGenerics       * 1.20.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ matrixStats          * 1.5.0   2025-01-07 [2] CRAN (R 4.5.0)
+ memoise                2.0.1   2021-11-26 [2] CRAN (R 4.5.0)
+ pillar                 1.10.2  2025-04-05 [2] CRAN (R 4.5.0)
+ pkgconfig              2.0.3   2019-09-22 [2] CRAN (R 4.5.0)
+ png                    0.1-8   2022-11-29 [2] CRAN (R 4.5.0)
+ polyclip               1.10-7  2024-07-23 [2] CRAN (R 4.5.0)
+ purrr                  1.0.4   2025-02-05 [2] CRAN (R 4.5.0)
+ quadprog               1.5-8   2019-11-20 [2] CRAN (R 4.5.0)
+ R6                     2.6.1   2025-02-15 [2] CRAN (R 4.5.0)
+ rappdirs               0.3.3   2021-01-31 [2] CRAN (R 4.5.0)
+ RColorBrewer           1.1-3   2022-04-03 [2] CRAN (R 4.5.0)
+ Rcpp                   1.0.14  2025-01-12 [2] CRAN (R 4.5.0)
+ reticulate             1.42.0  2025-03-25 [2] CRAN (R 4.5.0)
+ rhdf5                * 2.52.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rhdf5filters           1.20.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Rhdf5lib               1.30.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rjson                  0.2.23  2024-09-16 [2] CRAN (R 4.5.0)
+ rlang                  1.1.6   2025-04-11 [2] CRAN (R 4.5.0)
+ rprojroot              2.0.4   2023-11-05 [2] CRAN (R 4.5.0)
+ RSQLite                2.3.11  2025-05-04 [2] CRAN (R 4.5.0)
+ S4Arrays             * 1.8.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ S4Vectors            * 0.46.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ scales                 1.4.0   2025-04-24 [2] CRAN (R 4.5.0)
+ scatterpie             0.2.4   2024-08-28 [2] CRAN (R 4.5.0)
+ scuttle                1.18.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ sessioninfo            1.2.3   2025-02-05 [2] CRAN (R 4.5.0)
+ SingleCellExperiment * 1.30.1  2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
+ spacexr              * 1.0.0   2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
+ SparseArray          * 1.8.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ SpatialExperiment    * 1.18.1  2025-05-11 [2] Bioconductor 3.21 (R 4.5.0)
+ SummarizedExperiment * 1.38.1  2025-04-30 [2] Bioconductor 3.21 (R 4.5.0)
+ tibble                 3.2.1   2023-03-20 [2] CRAN (R 4.5.0)
+ tidyr                  1.3.1   2024-01-24 [2] CRAN (R 4.5.0)
+ tidyselect             1.2.1   2024-03-11 [2] CRAN (R 4.5.0)
+ tweenr                 2.0.3   2024-02-26 [2] CRAN (R 4.5.0)
+ UCSC.utils             1.4.0   2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ vctrs                  0.6.5   2023-12-01 [2] CRAN (R 4.5.0)
+ withr                  3.0.2   2024-10-28 [2] CRAN (R 4.5.0)
+ XVector                0.48.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ yulab.utils            0.2.4   2026-02-02 [1] CRAN (R 4.5.0)
+ zellkonverter        * 1.18.0  2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
+
+ [1] /users/rphillip/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
+ * ── Packages attached to the search path.
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+********* Job Ends *********
+Wed May 27 01:14:32 AM EDT 2026

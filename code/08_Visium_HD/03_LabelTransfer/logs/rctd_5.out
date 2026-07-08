@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Thu Apr  9 03:16:28 PM EDT 2026
+Tue May 12 07:32:14 PM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 30739499
+Job id: 31881159
 Job name: rctd_array
-Hostname: compute-091
+Hostname: compute-092
 Task id: 5
 class: SingleCellExperiment 
 dim: 34977 103339 
@@ -19,10 +19,24 @@ colData names(41): Sample Barcode ... sizeFactor CellType.Final
 reducedDimNames(4): GLMPCA_approx tSNE HARMONY tSNE_HARMONY
 mainExpName: NULL
 altExpNames(0):
+class: SpatialExperiment 
+dim: 18140 1923952 
+metadata(0):
+assays(2): counts logcounts
+rownames(18140): OR4F5 SAMD11 ... MT-ND6 MT-CYB
+rowData names(8): source type ... gene_search subsets_mito
+colnames(1923952): 1_H1-XKYDCP3_A1 2_H1-XKYDCP3_A1 ...
+  343034_H1-XNQ4F2B_D1 343035_H1-XNQ4F2B_D1
+colData names(23): object_id bin_count ... qc_low_bin_count qc_discard
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : pxl_col_in_fullres pxl_row_in_fullres
+imgData names(4): sample_id image_id data scaleFactor
 [1] "Reproducibility information:"
-[1] "2026-04-09 15:56:20 EDT"
+[1] "2026-05-12 20:16:52 EDT"
      user    system   elapsed 
-19938.312   612.942  2390.842 
+22406.334   718.897  2676.426 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -33,7 +47,7 @@ altExpNames(0):
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-04-09
+ date     2026-05-12
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -137,4 +151,4 @@ altExpNames(0):
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Thu Apr  9 03:56:21 PM EDT 2026
+Tue May 12 08:16:53 PM EDT 2026
