@@ -7,30 +7,8 @@ library(SpatialExperiment)
 library(spatialLIBD)
 library(here)
 
-#Load the xenium object 
-spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_NormCounts.Rds"))
+xen_modeling_results <- readRDS(here("processed-data","spatial_registration","xen_modeling_results_CellTypes_v2.Rds"))
 
-spe
-
-#Add the Banksy cell types to the domain. 
-#Load the annotated banksy cell types
-Banksy_celltypes <- readRDS(here("processed-data","06_label_transfer","Objects","Banksy_CellTypes_transfer.Rds"))
-
-stopifnot(identical(Banksy_celltypes$cell_id,colnames(spe)))
-
-spe$Banksy_celltypes <- Banksy_celltypes$CellType
-
-## Perform the spatial registration
-xen_modeling_results <- registration_wrapper(
-  sce = spe,
-  var_registration = "Banksy_celltypes",
-  var_sample_id = "Sample",
-  gene_ensembl = "ID",
-  gene_name = "Symbol"
-)
-
-saveRDS(object = xen_modeling_results,
-        file   = here("processed-data","spatial_registration","xen_modeling_results.Rds"))
 
 #Load spe object containing normalized coutns
 sce <- readRDS("/dcs04/lieber/marmaypag/spatialNac_LIBD4125/spatial_NAc/processed-data/12_snRNA/sce_CellType_noresiduals.Rds")

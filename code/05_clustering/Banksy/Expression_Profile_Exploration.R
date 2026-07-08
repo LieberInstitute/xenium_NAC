@@ -46,7 +46,7 @@ spe$Banksy_celltypes <- Banksy_celltypes$CellType
 
 #Co-expression matrices. Are D1_Island_B in fact D1_Islands? 
 # ---- user inputs ----
-genes <- c("DRD1","RXFP1","TSHZ1","OPRM1","FOXP2",#D1/D1 islands
+genes <- c("DRD1","RXFP1","CPNE4","TSHZ1","OPRM1","FOXP2",#D1/D1 islands
            "SEMA5B","TRHDE","GABRQ","VWC2L",#D1_Island_A
            "SEMA3E","PROK2","NPY1R","RXFP2","KCNH5","VIP",#D1_IslandB
            "RELN","TAC1","PDYN")  

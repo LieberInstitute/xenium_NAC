@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Mon Dec 15 05:34:42 PM EST 2025
+Thu Jun 25 09:15:57 AM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 25740109
+Job id: 33578584
 Job name: Expression_Profile
-Hostname: compute-175
+Hostname: compute-168
 Task id: 
 Loading conda_R/4.5
 Loading required package: SingleCellExperiment
@@ -137,9 +137,9 @@ imgData names(1): sample_id
 5 Br6660_NAc1_580_5  Excitatory
 6 Br6660_NAc1_580_6        WM_A
 [1] TRUE
- [1] "DRD1"   "RXFP1"  "TSHZ1"  "OPRM1"  "FOXP2"  "SEMA5B" "TRHDE"  "GABRQ" 
- [9] "VWC2L"  "SEMA3E" "PROK2"  "NPY1R"  "RXFP2"  "KCNH5"  "VIP"    "RELN"  
-[17] "TAC1"   "PDYN"  
+ [1] "DRD1"   "RXFP1"  "CPNE4"  "TSHZ1"  "OPRM1"  "FOXP2"  "SEMA5B" "TRHDE" 
+ [9] "GABRQ"  "VWC2L"  "SEMA3E" "PROK2"  "NPY1R"  "RXFP2"  "KCNH5"  "VIP"   
+[17] "RELN"   "TAC1"   "PDYN"  
 [1] "Astro_A"
 [1] "Astro_B"
 [1] "CHAT"
@@ -200,7 +200,7 @@ other attached packages:
  [5] SpatialExperiment_1.18.1    SingleCellExperiment_1.30.1
  [7] SummarizedExperiment_1.38.1 Biobase_2.68.0             
  [9] GenomicRanges_1.60.0        GenomeInfoDb_1.44.0        
-[11] IRanges_2.42.0              S4Vectors_0.46.0           
+[11] IRanges_2.42.0              S4Vectors_0.48.1           
 [13] BiocGenerics_0.54.0         generics_0.1.4             
 [15] MatrixGenerics_1.20.0       matrixStats_1.5.0          
 
@@ -219,9 +219,9 @@ loaded via a namespace (and not attached):
 [34] R6_2.6.1                png_0.1-8               lifecycle_1.0.4        
 [37] magick_2.8.6            clue_0.3-66             cluster_2.1.8.1        
 [40] pkgconfig_2.0.3         pillar_1.10.2           gtable_0.3.6           
-[43] glue_1.8.0              Rcpp_1.0.14             tidyselect_1.2.1       
+[43] glue_1.8.0              Rcpp_1.1.1-1.1          tidyselect_1.2.1       
 [46] tibble_3.2.1            dichromat_2.0-0.1       farver_2.1.2           
 [49] rjson_0.2.23            Cairo_1.6-2             pheatmap_1.0.12        
 [52] compiler_4.5.0         
 ********* Job Ends *********
-Mon Dec 15 05:36:36 PM EST 2025
+Thu Jun 25 09:18:21 AM EDT 2026
