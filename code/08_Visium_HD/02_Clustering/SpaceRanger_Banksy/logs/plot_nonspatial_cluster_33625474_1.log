@@ -1,14 +1,13 @@
 ********* Job Starts *********
-Fri Jun 26 10:04:33 AM EDT 2026
+Sun Jun 28 06:48:12 PM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 33598693
-Job name: non-spatial
-Hostname: compute-175
-Task id: 
+Job id: 33625476
+Job name: plot_nonspatial_cluster
+Hostname: compute-177
+Task id: 1
 Loading conda_R/4.5
-Loading required package: SingleCellExperiment
-Loading required package: SummarizedExperiment
+>>> Sun Jun 28 06:48:12 PM EDT 2026 : Plotting non-spatial clusters with resolution=0.6
 Loading required package: MatrixGenerics
 Loading required package: matrixStats
 
@@ -92,6 +91,27 @@ The following objects are masked from ‘package:matrixStats’:
 
     anyMissing, rowMedians
 
+Loading required package: SingleCellExperiment
+Loading required package: grid
+========================================
+ComplexHeatmap version 2.24.0
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================
+
 Loading required package: SparseArray
 Loading required package: Matrix
 
@@ -131,145 +151,49 @@ The following object is masked from ‘package:rhdf5’:
 
     h5ls
 
+========================================
+circlize version 0.4.16
+CRAN page: https://cran.r-project.org/package=circlize
+Github page: https://github.com/jokergoo/circlize
+Documentation: https://jokergoo.github.io/circlize_book/book/
+
+If you use it in published research, please cite:
+Gu, Z. circlize implements and enhances circular visualization
+  in R. Bioinformatics 2014.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(circlize))
+========================================
+
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Loading required package: scuttle
+Plotting non-spatial BANKSY result for resolution = 0.60
+Loading SFE - 2026-06-28 18:48:21.101063
 Loading required namespace: SpatialFeatureExperiment
-
-  TRUE 
-439451 
-class: SpatialFeatureExperiment 
-dim: 18132 439451 
-metadata(0):
-assays(1): counts
-rownames(18132): SAMD11 NOC2L ... MT-ND6 MT-CYB
-rowData names(4): ID Symbol Type subsets_mt
-colnames(439451): H1-XKYDCP3_A1_cellid_000000009-1
-  H1-XKYDCP3_A1_cellid_000000011-1 ... H1-XNQ4F2B_D1_cellid_000077034-1
-  H1-XNQ4F2B_D1_cellid_000077035-1
-colData names(17): Sample Barcode ... X_coords Y_coords
-reducedDimNames(0):
-mainExpName: NULL
-altExpNames(0):
-spatialCoords names(2) : X Y
-imgData names(1): sample_id
-
-unit:
-Geometries:
-colGeometries: cellseg (POLYGON) 
-
-Graphs:
-H1-XKYDCP3_A1: 
-H1-XKYDCP3_D1: 
-H1-M3TCP9V_A1: 
-H1-M3TCP9V_D1: 
-H1-8MTH2TQ_A1: 
-H1-8MTH2TQ_D1: 
-H1-XNQ4F2B_A1: 
-H1-XNQ4F2B_D1: 2026-06-26 10:12:27.876677 | Selecting top HVGs
-  Selected 4000 HVGs
-2026-06-26 10:36:13.260949 | Subsetting sfe for the top 2000 HVGs
-class: SpatialFeatureExperiment 
-dim: 4000 439451 
-metadata(0):
-assays(2): counts logcounts
-rownames(4000): MBP GFAP ... PRDM8 MSI1
-rowData names(4): ID Symbol Type subsets_mt
-colnames(439451): H1-XKYDCP3_A1_cellid_000000009-1
-  H1-XKYDCP3_A1_cellid_000000011-1 ... H1-XNQ4F2B_D1_cellid_000077034-1
-  H1-XNQ4F2B_D1_cellid_000077035-1
-colData names(18): Sample Barcode ... Y_coords sizeFactor
-reducedDimNames(0):
-mainExpName: NULL
-altExpNames(0):
-spatialCoords names(2) : X Y
-imgData names(1): sample_id
-
-unit:
-Geometries:
-colGeometries: cellseg (POLYGON) 
-
-Graphs:
-H1-XKYDCP3_A1: 
-H1-XKYDCP3_D1: 
-H1-M3TCP9V_A1: 
-H1-M3TCP9V_D1: 
-H1-8MTH2TQ_A1: 
-H1-8MTH2TQ_D1: 
-H1-XNQ4F2B_A1: 
-H1-XNQ4F2B_D1: Running computeBanksy - 2026-06-26 10:36:15.838671
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Computing neighbors...
-Spatial mode is kNN_median
-Parameters: k_geom=30
-Done
-Done
-Finished computeBanksy - 2026-06-26 10:46:23.31098
-Assays after computeBanksy: counts, logcounts, H0
-             used    (Mb) gc trigger    (Mb)   max used    (Mb)
-Ncells   13560542   724.3   24617661  1314.8   24617661  1314.8
-Vcells 1826240604 13933.2 5348867648 40808.7 5348867648 40808.7
-Running PCA - 2026-06-26 10:46:38.448481
-Scaling logcounts
-Group: H1-XKYDCP3_A1
-Group: H1-XKYDCP3_D1
-Group: H1-M3TCP9V_A1
-Group: H1-M3TCP9V_D1
-Group: H1-8MTH2TQ_A1
-Group: H1-8MTH2TQ_D1
-Group: H1-XNQ4F2B_A1
-Group: H1-XNQ4F2B_D1
-Scaling harmonic m = 0
-Group: H1-XKYDCP3_A1
-Group: H1-XKYDCP3_D1
-Group: H1-M3TCP9V_A1
-Group: H1-M3TCP9V_D1
-Group: H1-8MTH2TQ_A1
-Group: H1-8MTH2TQ_D1
-Group: H1-XNQ4F2B_A1
-Group: H1-XNQ4F2B_D1
-Using seed=1000
-Finished PCA - 2026-06-26 10:59:41.958098
-Running UMAP - 2026-06-26 10:59:41.961963
-Using seed=1000
-Finished UMAP - 2026-06-26 11:08:57.099513
-[1] "Reproducibility information:"
-[1] "2026-06-26 12:08:12 EDT"
-    user   system  elapsed 
-7295.669  190.297 7417.977 
+Using cluster column: clust_M0_lam0_k50_res0.6
+Resolution 0.60 -> 17 clusters
+Building spatial plots - 2026-06-28 18:51:25.346618
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Wrote spatial plot(s) to: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/Banksy_sr/Cell_Level/NonSpatial_Resolution_Sweep/spatial
+Building marker heatmap - 2026-06-28 18:51:32.803119
+null device 
+          1 
+Wrote heatmap to: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/Banksy_sr/Cell_Level/NonSpatial_Resolution_Sweep/heatmaps/marker_heatmap_res_0.6.pdf
+Done - 2026-06-28 18:52:25.279673
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -280,15 +204,13 @@ Finished UMAP - 2026-06-26 11:08:57.099513
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-06-26
+ date     2026-06-28
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
 ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
  package                  * version   date (UTC) lib source
  abind                    * 1.4-8     2024-09-12 [2] CRAN (R 4.5.0)
- aricode                    1.0.3     2023-10-20 [1] CRAN (R 4.5.0)
- Banksy                   * 1.4.0     2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
  beachmat                   2.24.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  Biobase                  * 2.68.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  BiocGenerics             * 0.54.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
@@ -298,35 +220,45 @@ Finished UMAP - 2026-06-26 11:08:57.099513
  bitops                     1.0-9     2024-10-03 [2] CRAN (R 4.5.0)
  bluster                    1.18.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  boot                       1.3-31    2024-08-28 [3] CRAN (R 4.5.0)
+ Cairo                      1.6-2     2023-11-28 [2] CRAN (R 4.5.0)
+ circlize                 * 0.4.16    2024-02-20 [2] CRAN (R 4.5.0)
  class                      7.3-23    2025-01-01 [3] CRAN (R 4.5.0)
  classInt                   0.4-11    2025-01-08 [2] CRAN (R 4.5.0)
  cli                        3.6.5     2025-04-23 [2] CRAN (R 4.5.0)
+ clue                       0.3-66    2024-11-13 [2] CRAN (R 4.5.0)
  cluster                    2.1.8.1   2025-03-12 [3] CRAN (R 4.5.0)
  coda                       0.19-4.1  2024-01-31 [2] CRAN (R 4.5.0)
  codetools                  0.2-20    2024-03-31 [3] CRAN (R 4.5.0)
+ colorspace                 2.1-1     2024-07-26 [2] CRAN (R 4.5.0)
+ ComplexHeatmap           * 2.24.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  crayon                     1.5.3     2024-06-20 [2] CRAN (R 4.5.0)
  data.table                 1.17.2    2025-05-12 [2] CRAN (R 4.5.0)
  DBI                        1.2.3     2024-06-02 [2] CRAN (R 4.5.0)
- dbscan                     1.2.2     2025-01-26 [1] CRAN (R 4.5.0)
  DelayedArray             * 0.34.1    2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
  DelayedMatrixStats         1.30.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  deldir                     2.0-4     2024-02-28 [2] CRAN (R 4.5.0)
  dichromat                  2.0-0.1   2022-05-02 [2] CRAN (R 4.5.0)
  digest                     0.6.37    2024-08-19 [2] CRAN (R 4.5.0)
+ doParallel                 1.0.17    2022-02-07 [2] CRAN (R 4.5.0)
  dplyr                      1.1.4     2023-11-17 [2] CRAN (R 4.5.0)
  dqrng                      0.4.1     2024-05-28 [2] CRAN (R 4.5.0)
  DropletUtils               1.28.0    2025-04-17 [2] Bioconductor 3.21 (R 4.5.0)
  e1071                      1.7-16    2024-09-16 [2] CRAN (R 4.5.0)
  EBImage                    4.50.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  edgeR                      4.6.2     2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
+ escheR                   * 1.8.0     2025-04-15 [1] Bioconductor 3.21 (R 4.5.0)
  farver                     2.1.2     2024-05-13 [2] CRAN (R 4.5.0)
  fastmap                    1.2.0     2024-05-15 [2] CRAN (R 4.5.0)
  fftwtools                  0.9-11    2021-03-01 [2] CRAN (R 4.5.0)
+ foreach                    1.5.2     2022-02-02 [2] CRAN (R 4.5.0)
  generics                 * 0.1.4     2025-05-09 [2] CRAN (R 4.5.0)
  GenomeInfoDb             * 1.44.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  GenomeInfoDbData           1.2.14    2025-05-21 [2] Bioconductor
  GenomicRanges            * 1.60.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
- ggplot2                    3.5.2     2025-04-09 [2] CRAN (R 4.5.0)
+ getopt                     1.20.4    2023-10-01 [1] CRAN (R 4.5.0)
+ GetoptLong                 1.0.5     2020-12-15 [2] CRAN (R 4.5.0)
+ ggplot2                  * 3.5.2     2025-04-09 [2] CRAN (R 4.5.0)
+ GlobalOptions              0.1.2     2020-06-10 [2] CRAN (R 4.5.0)
  glue                       1.8.0     2024-09-30 [2] CRAN (R 4.5.0)
  gtable                     0.3.6     2024-10-25 [2] CRAN (R 4.5.0)
  h5mread                  * 1.0.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
@@ -338,12 +270,13 @@ Finished UMAP - 2026-06-26 11:08:57.099513
  igraph                     2.1.4     2025-01-23 [2] CRAN (R 4.5.0)
  IRanges                  * 2.42.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  irlba                      2.3.5.1   2022-10-03 [2] CRAN (R 4.5.0)
+ iterators                  1.0.14    2022-02-05 [2] CRAN (R 4.5.0)
  jpeg                       0.1-11    2025-03-21 [2] CRAN (R 4.5.0)
  jsonlite                   2.0.0     2025-03-27 [2] CRAN (R 4.5.0)
  KernSmooth                 2.23-26   2025-01-01 [3] CRAN (R 4.5.0)
+ labeling                   0.4.3     2023-08-29 [2] CRAN (R 4.5.0)
  lattice                    0.22-7    2025-04-02 [3] CRAN (R 4.5.0)
  LearnBayes                 2.15.1    2018-03-18 [2] CRAN (R 4.5.0)
- leidenAlg                  1.1.5     2025-04-19 [1] CRAN (R 4.5.0)
  lifecycle                  1.0.4     2023-11-07 [2] CRAN (R 4.5.0)
  limma                      3.64.3    2025-08-03 [1] Bioconductor 3.21 (R 4.5.0)
  locfit                     1.5-9.12  2025-03-05 [2] CRAN (R 4.5.0)
@@ -353,23 +286,24 @@ Finished UMAP - 2026-06-26 11:08:57.099513
  Matrix                   * 1.7-3     2025-03-11 [3] CRAN (R 4.5.0)
  MatrixGenerics           * 1.20.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  matrixStats              * 1.5.0     2025-01-07 [2] CRAN (R 4.5.0)
- mclust                     6.1.1     2024-04-29 [2] CRAN (R 4.5.0)
  metapod                    1.16.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  multcomp                   1.4-28    2025-01-29 [2] CRAN (R 4.5.0)
  mvtnorm                    1.3-3     2025-01-10 [2] CRAN (R 4.5.0)
  nlme                       3.1-168   2025-03-31 [3] CRAN (R 4.5.0)
+ optparse                 * 1.7.5     2024-04-16 [1] CRAN (R 4.5.0)
+ patchwork                  1.3.0     2024-09-16 [2] CRAN (R 4.5.0)
  pillar                     1.10.2    2025-04-05 [2] CRAN (R 4.5.0)
  pkgconfig                  2.0.3     2019-09-22 [2] CRAN (R 4.5.0)
  png                        0.1-8     2022-11-29 [2] CRAN (R 4.5.0)
+ Polychrome                 1.5.4     2025-04-06 [1] CRAN (R 4.5.0)
  proxy                      0.4-27    2022-06-09 [2] CRAN (R 4.5.0)
  R.methodsS3                1.8.2     2022-06-13 [2] CRAN (R 4.5.0)
  R.oo                       1.27.1    2025-05-02 [2] CRAN (R 4.5.0)
  R.utils                    2.13.0    2025-02-24 [2] CRAN (R 4.5.0)
  R6                         2.6.1     2025-02-15 [2] CRAN (R 4.5.0)
+ ragg                       1.4.0     2025-04-10 [2] CRAN (R 4.5.0)
  RColorBrewer               1.1-3     2022-04-03 [2] CRAN (R 4.5.0)
  Rcpp                       1.1.1-1.1 2026-04-24 [1] CRAN (R 4.5.0)
- RcppAnnoy                  0.0.22    2024-01-23 [2] CRAN (R 4.5.0)
- RcppHungarian              0.3       2023-09-05 [1] CRAN (R 4.5.0)
  RCurl                      1.98-1.17 2025-03-22 [2] CRAN (R 4.5.0)
  rhdf5                    * 2.52.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  rhdf5filters               1.20.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
@@ -384,12 +318,13 @@ Finished UMAP - 2026-06-26 11:08:57.099513
  sandwich                   3.1-1     2024-09-15 [2] CRAN (R 4.5.0)
  ScaledMatrix               1.16.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  scales                     1.4.0     2025-04-24 [2] CRAN (R 4.5.0)
- sccore                     1.0.6     2025-04-13 [1] CRAN (R 4.5.0)
+ scatterplot3d              0.3-44    2023-05-05 [1] CRAN (R 4.5.0)
  scran                    * 1.36.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  scuttle                  * 1.18.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
- sessioninfo              * 1.2.3     2025-02-05 [2] CRAN (R 4.5.0)
+ sessioninfo                1.2.3     2025-02-05 [2] CRAN (R 4.5.0)
  sf                         1.0-21    2025-05-15 [2] CRAN (R 4.5.0)
  sfheaders                  0.4.4     2024-01-17 [2] CRAN (R 4.5.0)
+ shape                      1.4.6.1   2024-02-23 [2] CRAN (R 4.5.0)
  SingleCellExperiment     * 1.30.1    2025-05-07 [2] Bioconductor 3.21 (R 4.5.0)
  sp                         2.2-0     2025-02-01 [2] CRAN (R 4.5.0)
  SparseArray              * 1.8.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
@@ -402,15 +337,17 @@ Finished UMAP - 2026-06-26 11:08:57.099513
  statmod                    1.5.0     2023-01-06 [2] CRAN (R 4.5.0)
  SummarizedExperiment     * 1.38.1    2025-04-30 [2] Bioconductor 3.21 (R 4.5.0)
  survival                   3.8-3     2024-12-17 [3] CRAN (R 4.5.0)
+ systemfonts                1.2.3     2025-04-30 [2] CRAN (R 4.5.0)
  terra                      1.8-50    2025-05-09 [2] CRAN (R 4.5.0)
+ textshaping                1.0.1     2025-05-01 [2] CRAN (R 4.5.0)
  TH.data                    1.1-3     2025-01-17 [2] CRAN (R 4.5.0)
  tibble                     3.2.1     2023-03-20 [2] CRAN (R 4.5.0)
  tidyselect                 1.2.1     2024-03-11 [2] CRAN (R 4.5.0)
  tiff                       0.1-12    2023-11-28 [2] CRAN (R 4.5.0)
  UCSC.utils                 1.4.0     2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  units                      0.8-7     2025-03-11 [2] CRAN (R 4.5.0)
- uwot                       0.2.3     2025-02-24 [2] CRAN (R 4.5.0)
  vctrs                      0.6.5     2023-12-01 [2] CRAN (R 4.5.0)
+ withr                      3.0.2     2024-10-28 [2] CRAN (R 4.5.0)
  wk                         0.9.4     2024-10-11 [2] CRAN (R 4.5.0)
  XVector                    0.48.0    2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
  zeallot                    0.1.0     2018-01-28 [2] CRAN (R 4.5.0)
@@ -422,5 +359,3 @@ Finished UMAP - 2026-06-26 11:08:57.099513
  * ── Packages attached to the search path.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-********* Job Ends *********
-Fri Jun 26 12:08:13 PM EDT 2026

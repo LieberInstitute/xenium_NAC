@@ -1,0 +1,3161 @@
+********* Job Starts *********
+Sun Jun 28 07:28:26 PM EDT 2026
+Loading conda_R/4.5
+
+Attaching package: ‘SpatialFeatureExperiment’
+
+The following object is masked from ‘package:base’:
+
+    scale
+
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Loading required package: grid
+
+Attaching package: ‘grid’
+
+The following object is masked from ‘package:SpatialFeatureExperiment’:
+
+    unit
+
+========================================
+ComplexHeatmap version 2.24.0
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================
+
+Loading required package: SparseArray
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:S4Vectors’:
+
+    expand
+
+Loading required package: S4Arrays
+Loading required package: abind
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following object is masked from ‘package:SpatialFeatureExperiment’:
+
+    scale
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+Loading required package: ggplot2
+
+Attaching package: ‘ggplot2’
+
+The following object is masked from ‘package:SpatialFeatureExperiment’:
+
+    unit
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+[1]  18132 109867
+[1]     58 109867
+null device 
+          1 
+Start writing assay 1/2 to HDF5 file:
+  /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_spatial_annotated/assays.h5
+/ reading and realizing sparse block 1/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 2/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 3/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 4/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 5/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 6/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 7/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 8/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 9/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 10/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 11/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 12/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 13/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 14/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 15/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 16/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 17/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 18/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 19/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 20/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 21/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 22/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 23/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 24/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 25/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 26/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 27/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 28/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 29/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 30/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 31/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 32/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 33/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 34/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 35/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 36/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 37/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 38/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 39/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 40/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 41/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 42/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 43/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 44/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 45/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 46/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 47/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 48/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 49/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 50/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 51/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 52/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 53/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 54/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 55/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 56/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 57/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 58/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 59/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 60/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 61/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 62/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 63/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 64/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 65/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 66/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 67/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 68/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 69/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 70/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 71/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 72/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 73/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 74/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 75/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 76/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 77/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 78/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 79/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 80/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 81/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 82/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 83/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 84/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 85/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 86/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 87/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 88/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 89/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 90/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 91/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 92/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 93/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 94/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 95/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 96/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 97/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 98/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 99/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 100/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 101/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 102/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 103/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 104/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 105/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 106/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 107/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 108/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 109/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 110/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 111/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 112/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 113/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 114/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 115/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 116/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 117/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 118/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 119/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 120/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 121/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 122/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 123/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 124/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 125/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 126/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 127/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 128/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 129/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 130/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 131/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 132/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 133/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 134/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 135/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 136/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 137/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 138/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 139/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 140/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 141/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 142/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 143/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 144/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 145/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 146/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 147/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 148/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 149/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 150/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 151/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 152/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 153/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 154/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 155/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 156/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 157/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 158/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 159/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 160/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 161/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 162/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 163/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 164/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 165/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 166/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 167/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 168/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 169/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 170/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 171/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 172/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 173/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 174/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 175/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 176/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 177/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 178/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 179/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 180/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 181/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 182/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 183/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 184/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 185/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 186/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 187/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 188/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 189/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 190/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 191/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 192/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 193/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 194/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 195/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 196/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 197/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 198/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 199/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 200/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 201/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 202/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 203/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 204/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 205/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 206/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 207/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 208/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 209/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 210/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 211/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 212/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 213/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 214/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 215/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 216/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 217/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 218/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 219/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 220/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 221/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 222/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 223/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 224/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 225/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 226/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 227/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 228/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 229/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 230/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 231/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 232/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 233/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 234/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 235/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 236/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 237/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 238/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 239/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 240/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 241/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 242/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 243/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 244/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 245/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 246/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 247/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 248/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 249/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 250/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 251/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 252/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 253/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 254/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 255/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 256/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 257/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 258/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 259/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 260/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 261/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 262/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 263/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 264/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 265/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 266/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 267/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 268/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 269/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 270/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 271/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 272/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 273/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 274/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 275/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 276/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 277/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 278/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 279/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 280/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 281/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 282/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 283/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 284/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 285/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 286/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 287/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 288/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 289/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 290/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 291/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 292/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 293/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 294/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 295/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 296/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 297/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 298/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 299/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 300/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 301/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 302/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 303/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 304/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 305/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 306/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 307/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 308/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 309/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 310/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 311/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 312/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 313/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 314/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 315/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 316/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 317/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 318/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 319/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 320/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 321/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 322/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 323/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 324/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 325/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 326/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 327/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 328/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 329/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 330/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 331/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 332/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 333/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 334/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 335/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 336/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 337/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 338/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 339/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 340/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 341/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 342/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 343/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 344/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 345/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 346/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 347/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 348/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 349/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 350/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 351/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 352/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 353/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 354/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 355/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 356/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 357/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 358/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 359/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 360/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 361/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 362/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 363/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 364/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 365/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 366/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 367/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 368/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 369/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 370/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 371/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 372/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 373/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 374/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 375/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 376/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 377/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 378/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 379/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 380/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 381/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 382/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 383/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 384/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 385/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 386/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 387/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 388/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 389/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 390/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 391/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 392/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 393/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 394/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 395/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 396/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 397/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 398/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 399/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 400/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 401/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 402/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 403/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 404/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 405/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 406/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 407/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 408/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 409/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 410/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 411/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 412/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 413/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 414/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 415/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 416/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 417/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 418/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 419/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 420/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 421/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 422/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 423/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 424/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 425/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 426/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 427/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 428/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 429/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 430/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 431/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 432/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 433/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 434/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 435/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 436/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 437/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 438/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 439/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 440/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 441/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 442/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 443/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 444/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 445/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 446/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 447/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 448/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 449/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 450/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 451/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 452/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 453/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 454/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 455/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 456/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 457/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 458/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 459/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 460/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 461/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 462/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 463/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 464/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 465/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 466/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 467/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 468/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 469/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 470/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 471/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 472/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 473/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 474/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 475/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 476/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 477/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 478/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 479/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 480/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 481/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 482/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 483/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 484/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 485/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 486/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 487/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 488/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 489/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 490/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 491/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 492/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 493/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 494/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 495/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 496/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 497/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 498/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 499/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 500/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 501/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 502/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 503/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 504/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 505/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 506/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 507/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 508/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 509/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 510/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 511/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 512/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 513/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 514/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 515/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 516/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 517/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 518/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 519/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 520/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 521/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 522/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 523/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 524/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 525/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 526/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 527/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 528/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 529/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 530/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 531/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 532/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 533/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 534/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 535/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 536/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 537/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 538/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 539/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 540/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 541/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 542/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 543/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 544/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 545/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 546/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 547/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 548/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 549/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 550/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 551/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 552/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 553/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 554/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 555/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 556/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 557/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 558/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 559/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 560/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 561/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 562/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 563/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 564/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 565/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 566/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 567/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 568/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 569/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 570/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 571/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 572/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 573/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 574/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 575/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 576/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 577/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 578/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 579/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 580/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 581/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 582/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 583/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 584/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 585/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 586/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 587/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 588/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 589/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 590/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 591/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 592/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 593/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 594/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 595/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 596/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 597/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 598/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 599/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 600/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 601/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 602/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 603/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 604/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 605/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 606/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 607/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 608/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 609/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 610/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 611/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 612/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 613/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 614/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 615/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 616/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 617/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 618/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 619/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 620/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 621/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 622/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 623/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 624/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 625/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 626/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 627/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 628/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 629/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 630/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 631/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 632/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 633/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 634/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 635/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 636/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 637/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 638/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 639/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 640/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 641/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 642/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 643/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 644/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 645/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 646/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 647/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 648/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 649/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 650/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 651/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 652/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 653/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 654/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 655/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 656/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 657/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 658/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 659/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 660/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 661/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 662/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 663/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 664/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 665/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 666/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 667/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 668/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 669/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 670/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 671/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 672/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 673/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 674/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 675/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 676/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 677/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 678/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 679/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 680/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 681/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 682/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 683/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 684/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 685/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 686/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 687/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 688/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 689/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 690/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 691/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 692/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 693/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 694/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 695/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 696/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 697/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 698/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 699/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 700/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 701/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 702/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 703/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 704/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 705/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 706/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 707/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 708/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 709/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 710/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 711/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 712/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 713/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 714/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 715/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 716/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 717/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 718/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 719/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 720/720 ... ok
+\ Writing it ... OK
+Finished writing assay 1/2 to HDF5 file:
+  /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_spatial_annotated/assays.h5
+
+Start writing assay 2/2 to HDF5 file:
+  /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_spatial_annotated/assays.h5
+/ reading and realizing sparse block 1/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 2/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 3/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 4/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 5/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 6/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 7/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 8/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 9/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 10/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 11/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 12/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 13/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 14/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 15/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 16/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 17/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 18/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 19/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 20/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 21/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 22/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 23/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 24/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 25/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 26/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 27/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 28/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 29/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 30/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 31/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 32/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 33/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 34/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 35/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 36/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 37/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 38/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 39/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 40/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 41/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 42/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 43/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 44/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 45/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 46/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 47/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 48/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 49/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 50/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 51/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 52/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 53/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 54/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 55/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 56/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 57/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 58/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 59/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 60/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 61/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 62/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 63/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 64/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 65/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 66/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 67/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 68/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 69/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 70/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 71/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 72/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 73/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 74/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 75/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 76/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 77/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 78/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 79/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 80/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 81/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 82/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 83/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 84/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 85/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 86/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 87/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 88/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 89/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 90/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 91/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 92/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 93/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 94/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 95/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 96/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 97/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 98/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 99/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 100/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 101/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 102/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 103/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 104/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 105/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 106/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 107/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 108/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 109/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 110/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 111/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 112/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 113/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 114/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 115/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 116/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 117/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 118/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 119/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 120/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 121/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 122/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 123/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 124/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 125/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 126/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 127/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 128/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 129/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 130/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 131/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 132/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 133/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 134/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 135/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 136/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 137/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 138/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 139/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 140/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 141/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 142/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 143/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 144/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 145/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 146/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 147/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 148/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 149/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 150/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 151/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 152/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 153/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 154/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 155/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 156/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 157/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 158/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 159/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 160/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 161/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 162/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 163/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 164/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 165/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 166/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 167/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 168/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 169/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 170/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 171/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 172/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 173/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 174/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 175/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 176/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 177/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 178/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 179/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 180/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 181/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 182/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 183/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 184/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 185/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 186/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 187/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 188/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 189/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 190/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 191/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 192/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 193/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 194/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 195/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 196/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 197/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 198/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 199/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 200/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 201/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 202/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 203/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 204/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 205/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 206/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 207/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 208/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 209/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 210/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 211/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 212/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 213/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 214/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 215/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 216/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 217/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 218/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 219/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 220/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 221/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 222/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 223/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 224/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 225/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 226/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 227/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 228/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 229/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 230/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 231/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 232/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 233/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 234/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 235/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 236/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 237/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 238/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 239/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 240/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 241/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 242/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 243/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 244/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 245/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 246/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 247/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 248/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 249/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 250/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 251/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 252/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 253/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 254/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 255/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 256/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 257/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 258/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 259/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 260/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 261/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 262/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 263/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 264/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 265/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 266/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 267/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 268/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 269/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 270/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 271/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 272/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 273/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 274/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 275/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 276/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 277/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 278/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 279/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 280/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 281/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 282/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 283/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 284/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 285/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 286/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 287/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 288/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 289/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 290/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 291/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 292/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 293/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 294/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 295/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 296/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 297/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 298/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 299/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 300/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 301/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 302/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 303/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 304/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 305/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 306/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 307/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 308/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 309/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 310/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 311/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 312/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 313/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 314/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 315/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 316/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 317/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 318/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 319/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 320/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 321/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 322/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 323/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 324/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 325/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 326/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 327/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 328/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 329/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 330/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 331/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 332/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 333/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 334/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 335/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 336/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 337/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 338/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 339/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 340/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 341/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 342/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 343/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 344/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 345/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 346/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 347/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 348/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 349/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 350/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 351/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 352/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 353/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 354/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 355/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 356/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 357/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 358/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 359/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 360/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 361/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 362/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 363/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 364/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 365/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 366/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 367/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 368/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 369/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 370/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 371/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 372/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 373/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 374/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 375/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 376/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 377/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 378/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 379/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 380/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 381/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 382/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 383/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 384/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 385/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 386/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 387/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 388/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 389/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 390/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 391/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 392/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 393/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 394/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 395/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 396/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 397/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 398/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 399/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 400/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 401/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 402/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 403/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 404/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 405/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 406/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 407/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 408/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 409/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 410/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 411/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 412/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 413/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 414/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 415/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 416/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 417/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 418/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 419/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 420/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 421/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 422/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 423/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 424/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 425/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 426/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 427/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 428/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 429/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 430/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 431/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 432/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 433/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 434/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 435/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 436/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 437/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 438/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 439/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 440/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 441/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 442/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 443/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 444/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 445/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 446/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 447/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 448/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 449/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 450/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 451/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 452/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 453/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 454/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 455/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 456/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 457/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 458/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 459/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 460/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 461/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 462/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 463/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 464/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 465/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 466/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 467/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 468/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 469/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 470/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 471/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 472/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 473/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 474/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 475/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 476/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 477/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 478/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 479/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 480/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 481/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 482/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 483/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 484/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 485/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 486/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 487/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 488/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 489/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 490/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 491/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 492/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 493/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 494/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 495/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 496/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 497/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 498/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 499/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 500/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 501/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 502/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 503/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 504/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 505/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 506/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 507/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 508/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 509/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 510/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 511/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 512/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 513/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 514/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 515/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 516/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 517/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 518/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 519/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 520/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 521/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 522/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 523/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 524/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 525/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 526/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 527/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 528/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 529/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 530/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 531/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 532/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 533/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 534/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 535/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 536/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 537/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 538/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 539/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 540/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 541/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 542/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 543/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 544/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 545/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 546/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 547/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 548/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 549/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 550/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 551/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 552/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 553/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 554/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 555/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 556/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 557/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 558/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 559/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 560/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 561/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 562/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 563/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 564/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 565/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 566/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 567/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 568/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 569/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 570/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 571/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 572/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 573/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 574/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 575/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 576/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 577/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 578/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 579/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 580/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 581/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 582/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 583/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 584/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 585/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 586/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 587/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 588/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 589/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 590/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 591/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 592/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 593/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 594/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 595/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 596/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 597/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 598/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 599/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 600/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 601/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 602/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 603/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 604/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 605/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 606/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 607/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 608/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 609/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 610/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 611/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 612/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 613/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 614/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 615/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 616/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 617/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 618/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 619/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 620/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 621/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 622/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 623/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 624/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 625/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 626/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 627/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 628/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 629/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 630/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 631/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 632/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 633/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 634/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 635/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 636/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 637/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 638/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 639/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 640/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 641/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 642/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 643/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 644/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 645/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 646/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 647/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 648/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 649/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 650/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 651/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 652/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 653/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 654/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 655/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 656/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 657/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 658/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 659/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 660/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 661/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 662/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 663/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 664/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 665/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 666/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 667/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 668/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 669/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 670/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 671/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 672/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 673/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 674/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 675/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 676/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 677/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 678/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 679/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 680/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 681/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 682/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 683/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 684/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 685/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 686/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 687/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 688/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 689/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 690/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 691/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 692/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 693/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 694/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 695/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 696/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 697/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 698/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 699/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 700/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 701/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 702/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 703/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 704/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 705/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 706/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 707/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 708/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 709/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 710/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 711/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 712/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 713/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 714/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 715/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 716/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 717/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 718/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 719/720 ... ok
+\ Writing it ... OK
+/ reading and realizing sparse block 720/720 ... ok
+\ Writing it ... OK
+Finished writing assay 2/2 to HDF5 file:
+  /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_spatial_annotated/assays.h5
+
+Serialize SpatialFeatureExperiment object to RDS file:
+  /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_spatial_annotated/se.rds
+R version 4.5.0 Patched (2025-05-21 r88220)
+Platform: x86_64-conda-linux-gnu
+Running under: Rocky Linux 9.4 (Blue Onyx)
+
+Matrix products: default
+BLAS:   /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRblas.so 
+LAPACK: /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRlapack.so;  LAPACK version 3.12.1
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Eastern
+tzcode source: system (glibc)
+
+attached base packages:
+[1] grid      stats4    stats     graphics  grDevices utils     datasets 
+[8] methods   base     
+
+other attached packages:
+ [1] here_1.0.1                      escheR_1.8.0                   
+ [3] ggplot2_3.5.2                   HDF5Array_1.36.0               
+ [5] h5mread_1.0.0                   rhdf5_2.52.0                   
+ [7] DelayedArray_0.34.1             SparseArray_1.8.0              
+ [9] S4Arrays_1.8.0                  abind_1.4-8                    
+[11] Matrix_1.7-3                    ComplexHeatmap_2.24.0          
+[13] SingleCellExperiment_1.30.1     SummarizedExperiment_1.38.1    
+[15] Biobase_2.68.0                  GenomicRanges_1.60.0           
+[17] GenomeInfoDb_1.44.0             IRanges_2.42.0                 
+[19] S4Vectors_0.48.1                BiocGenerics_0.54.0            
+[21] generics_0.1.4                  MatrixGenerics_1.20.0          
+[23] matrixStats_1.5.0               SpatialFeatureExperiment_1.10.1
+
+loaded via a namespace (and not attached):
+  [1] DBI_1.2.3                 bitops_1.0-9             
+  [3] deldir_2.0-4              s2_1.1.8                 
+  [5] sandwich_3.1-1            rlang_1.1.6              
+  [7] magrittr_2.0.3            clue_0.3-66              
+  [9] GetoptLong_1.0.5          multcomp_1.4-28          
+ [11] e1071_1.7-16              compiler_4.5.0           
+ [13] DelayedMatrixStats_1.30.0 vctrs_0.6.5              
+ [15] png_0.1-8                 sfheaders_0.4.4          
+ [17] fftwtools_0.9-11          pkgconfig_2.0.3          
+ [19] SpatialExperiment_1.18.1  wk_0.9.4                 
+ [21] shape_1.4.6.1             crayon_1.5.3             
+ [23] fastmap_1.2.0             magick_2.8.6             
+ [25] XVector_0.48.0            scuttle_1.18.0           
+ [27] UCSC.utils_1.4.0          beachmat_2.24.0          
+ [29] jsonlite_2.0.0            rhdf5filters_1.20.0      
+ [31] Rhdf5lib_1.30.0           BiocParallel_1.42.0      
+ [33] jpeg_0.1-11               tiff_0.1-12              
+ [35] terra_1.8-50              cluster_2.1.8.1          
+ [37] parallel_4.5.0            LearnBayes_2.15.1        
+ [39] R6_2.6.1                  RColorBrewer_1.1-3       
+ [41] limma_3.64.3              boot_1.3-31              
+ [43] Rcpp_1.1.1-1.1            iterators_1.0.14         
+ [45] zoo_1.8-14                R.utils_2.13.0           
+ [47] tidyselect_1.2.1          splines_4.5.0            
+ [49] dichromat_2.0-0.1         EBImage_4.50.0           
+ [51] doParallel_1.0.17         codetools_0.2-20         
+ [53] tibble_3.2.1              lattice_0.22-7           
+ [55] withr_3.0.2               coda_0.19-4.1            
+ [57] survival_3.8-3            sf_1.0-21                
+ [59] units_0.8-7               spData_2.3.4             
+ [61] proxy_0.4-27              circlize_0.4.16          
+ [63] pillar_1.10.2             KernSmooth_2.23-26       
+ [65] foreach_1.5.2             rprojroot_2.0.4          
+ [67] sp_2.2-0                  RCurl_1.98-1.17          
+ [69] scales_1.4.0              sparseMatrixStats_1.20.0 
+ [71] glue_1.8.0                class_7.3-23             
+ [73] spatialreg_1.3-6          tools_4.5.0              
+ [75] BiocNeighbors_2.2.0       data.table_1.17.2        
+ [77] locfit_1.5-9.12           mvtnorm_1.3-3            
+ [79] Cairo_1.6-2               spdep_1.3-11             
+ [81] DropletUtils_1.28.0       edgeR_4.6.2              
+ [83] colorspace_2.1-1          nlme_3.1-168             
+ [85] GenomeInfoDbData_1.2.14   cli_3.6.5                
+ [87] dplyr_1.1.4               gtable_0.3.6             
+ [89] R.methodsS3_1.8.2         zeallot_0.1.0            
+ [91] digest_0.6.37             classInt_0.4-11          
+ [93] dqrng_0.4.1               TH.data_1.1-3            
+ [95] farver_2.1.2              rjson_0.2.23             
+ [97] htmlwidgets_1.6.4         htmltools_0.5.8.1        
+ [99] R.oo_1.27.1               lifecycle_1.0.4          
+[101] httr_1.4.7                GlobalOptions_0.1.2      
+[103] statmod_1.5.0             MASS_7.3-65              
+********* Job Ends *********
+Sun Jun 28 08:01:29 PM EDT 2026
