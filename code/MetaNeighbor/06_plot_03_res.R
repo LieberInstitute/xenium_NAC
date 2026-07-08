@@ -80,7 +80,7 @@ hm <- Heatmap(
   cluster_rows = hm_dend$rowDendrogram,
   cluster_columns = hm_dend$colDendrogram,
   row_names_side = "right",
-  column_names_rot = 45,
+  column_names_rot = 90,
   column_names_gp = gpar(fontsize = 7),
   row_names_gp = gpar(fontsize = 7),
   rect_gp = gpar(col = "black", lwd = 0.5),
