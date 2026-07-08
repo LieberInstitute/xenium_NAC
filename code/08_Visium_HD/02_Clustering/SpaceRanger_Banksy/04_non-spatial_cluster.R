@@ -37,7 +37,7 @@ samples <- unique(sfe$sample_id)
 # Cluster
 message(paste0("Running Banksy clustering - ", Sys.time()))
 sfe <- clusterBanksy(sfe, use_agf = FALSE, lambda = 0,
-                     algo = "leiden", resolution = res, seed = 1313)
+                     algo = "louvain", resolution = res, seed = 1313)
 message(paste0("Finished Banksy clustering - ", Sys.time()))
 
 #Save cluster assignments

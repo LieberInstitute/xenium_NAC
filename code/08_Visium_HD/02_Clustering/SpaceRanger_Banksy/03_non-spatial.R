@@ -37,7 +37,7 @@ sfe <- logNormCounts(sfe)
 ####HVGs 
 message(Sys.time(), " | Selecting top HVGs")
 
-n_hvgs <- 2000
+n_hvgs <- 4000
 gene_var <- modelGeneVar(sfe)
 top_hvgs <- getTopHVGs(gene_var, n = n_hvgs)
 message(sprintf("  Selected %d HVGs", length(top_hvgs)))

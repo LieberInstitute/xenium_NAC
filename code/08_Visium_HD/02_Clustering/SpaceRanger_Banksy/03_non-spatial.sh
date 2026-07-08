@@ -4,7 +4,7 @@
 #SBATCH --job-name=non-spatial
 #SBATCH --output=logs/03_banksy_step1.log
 #SBATCH --error=logs/03_banksy_step1.log 
-#SBATCH --mem=88G
+#SBATCH --mem=120G
 #SBATCH --cpus-per-task=1
 #SBATCH --time=7-00:00:00
 #SBATCH --mail-type=END
