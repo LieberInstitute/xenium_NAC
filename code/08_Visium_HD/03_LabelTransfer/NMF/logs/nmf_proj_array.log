@@ -1,0 +1,8 @@
+Loading conda_R/4.5
+presplit submitted:  32442165
+project array submitted: 32442166  (--array=1-8)
+recombine submitted: 32442167
+
+If a single array task fails (e.g. OOM), rerun just that index, then resubmit recombine:
+  sbatch --array=<i> --mem=48G --wrap="Rscript project_nmf_array.R project \$SLURM_ARRAY_TASK_ID"
+  sbatch --wrap="Rscript project_nmf_array.R recombine"

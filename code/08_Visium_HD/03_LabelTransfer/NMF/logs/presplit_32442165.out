@@ -1,0 +1,6 @@
+Found 8 samples. Manifest -> /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/LabelTransfer/NMF/projectr_work/sample_manifest.txt
+Error in replace_dir(dir, replace) : Directory
+  "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/LabelTransfer/NMF/projectr_work/per_sample/sample_001"
+  already exists. Use 'replace=TRUE' to replace it. Its content will be lost!
+Calls: saveHDF5SummarizedExperiment -> replace_dir
+Execution halted

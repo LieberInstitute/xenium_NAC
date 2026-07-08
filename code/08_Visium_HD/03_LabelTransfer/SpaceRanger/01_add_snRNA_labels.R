@@ -53,9 +53,9 @@ stopifnot(identical(rownames(singler_res),colnames(sfe)))
 colData(sfe) <- cbind(colData(sfe),singler_res)
 
 
-sfe$snRNA_label <- ifelse(sfe$rctd_spot_class == "singlet",
-                          sfe$rctd_first_type,
-                          sfe$pruned.labels)
+sfe$snRNA_label <- ifelse(sfe$rctd_spot_class == "reject",
+                          sfe$pruned.labels,
+                          sfe$rctd_first_type)
 
 #11 cells don't have labels. Move on without them. 
 sfe <- sfe[,!is.na(sfe$snRNA_label)]

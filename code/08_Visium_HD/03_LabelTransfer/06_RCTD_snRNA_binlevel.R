@@ -19,17 +19,31 @@ sce
 
 rowData(sce)$Symbol.uniq <- scuttle::uniquifyFeatureNames(rowData(sce)$gene_id, rowData(sce)$gene_name)
 rownames(sce) <- rowData(sce)$Symbol.uniq
+ref_counts <- as(assay(sce, "counts"), "dgCMatrix")
+
 
 reference_se <- SummarizedExperiment(
-    assays = list(counts = assay(sce, "counts")),
+    assays = list(counts = ref_counts),
     colData = colData(sce)$CellType.Final
 )
 
 ###### Prep spatial data
+#Read in the filtered spe object
 spe_filtered_path <- here(
-    "processed-data", "HD_Full_Analysis", "SPEs", "spe_cell_norm_QC_filtered"
+  "processed-data", "HD_Full_Analysis", "SPEs", "spe_norm_binQC_filtered.Rds"
 )
-spe <- loadHDF5SummarizedExperiment(spe_filtered_path)
+
+spe <- readRDS(spe_filtered_path)
+
+#Remove any cells with 0 counts for all genes 
+#Remove cells with 0 counts
+spe <- spe[, colSums(counts(spe)) > 0]
+
+#Sanity check 
+table(colSums(counts(spe)) > 0)
+
+spe
+
 
 ###### Get sample from SLURM array task ID
 samples <- unique(spe$sample_id)
@@ -40,9 +54,11 @@ message("Processing sample: ", current_sample, " (", task_id, " of ", length(sam
 ###### Subset to current sample
 spe_sub <- spe[, spe$sample_id == current_sample]
 message("Number of spots for this sample: ", ncol(spe_sub))
+# to avoid the sparse->dense coercion
+counts_mat <- as(assay(spe_sub, "counts"), "dgCMatrix")
 
 spatial_spe <- SpatialExperiment(
-    assays = list(counts = assay(spe_sub, "counts")),
+    assays = list(counts = counts_mat),
     spatialCoords = cbind(
         x = spe_sub$pxl_col_in_fullres,
         y = spe_sub$pxl_row_in_fullres
@@ -51,13 +67,13 @@ spatial_spe <- SpatialExperiment(
 
 ############# Run RCTD
 message("Creating Rctd object - ", Sys.time())
-rctd_data <- createRctd(spatial_spe, reference_se, cell_type_col = "X",UMI_min = 1,pixel_count_min = 1, UMI_min_sigma = 1) #Turn off any filtering RCTD does
+rctd_data <- createRctd(spatial_spe, reference_se, cell_type_col = "X",UMI_min = 20)
 
 message("Running Rctd - ", Sys.time())
-results <- runRctd(rctd_data,rctd_mode = "full",max_cores=15)
+results <- runRctd(rctd_data,rctd_mode = "doublet",max_cores=4)
 
 outdir <- here("processed-data", "HD_Full_Analysis", "LabelTransfer","RCTD")
-saveRDS(results, file.path(outdir, paste0("snRNA_VisiumHD_RCTD_", current_sample, ".Rds")))
+saveRDS(results, file.path(outdir, paste0("bin_level_doublet_snRNA_VisiumHD_RCTD_", current_sample, ".Rds")))
 
 message("Done with sample: ", current_sample, " - ", Sys.time())
 

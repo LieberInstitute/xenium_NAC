@@ -1,0 +1,8 @@
+Found 8 samples. Manifest -> /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/LabelTransfer/NMF/projectr_work/sample_manifest.txt
+  [001] H1-8MTH2TQ_A1        161226 cells
+  [002] H1-8MTH2TQ_D1        221960 cells
+  [003] H1-M3TCP9V_A1        188367 cells
+  [004] H1-M3TCP9V_D1        292558 cells
+  [005] H1-XKYDCP3_A1        205662 cells
+  [006] H1-XKYDCP3_D1        309698 cells
+slurmstepd: error: *** JOB 32400052 ON compute-107 CANCELLED AT 2026-06-03T15:50:22 DUE TO TIME LIMIT ***

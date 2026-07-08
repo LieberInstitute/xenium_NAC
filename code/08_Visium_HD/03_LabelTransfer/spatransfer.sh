@@ -1,15 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=rctd_array
-#SBATCH --array=1-8
-#SBATCH --mem=100G
-#SBATCH --cpus-per-task=15
-#SBATCH --output=logs/rctd_%a.out
-#SBATCH --error=logs/rctd_%a.err
-#SBATCH --time=7-00:00:00
+#SBATCH --job-name=spatransfer
+#SBATCH --mem=700G
+#SBATCH --output=logs/spatransfer.log
+#SBATCH --error=logs/spatransfer.log
 #SBATCH --mail-type=END
 #SBATCH --mail-user=robert.phillips@libd.org
-
-
 
 echo "********* Job Starts *********"
 date
@@ -21,7 +16,7 @@ echo "Hostname: ${HOSTNAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
 module load conda_R/4.5
-Rscript 01_RCTD_snRNA_visiumHD.R
+Rscript spatransfer.R
 
 echo "********* Job Ends *********"
 date
