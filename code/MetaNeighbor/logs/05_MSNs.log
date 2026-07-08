@@ -2,8 +2,8 @@
 Wed Jul  8 10:53:13 AM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 33976525
-Job name: 03_MSNs
+Job id: 33976527
+Job name: 05_MSNs
 Hostname: compute-120
 Task id: 
 Loading conda_R/4.5
@@ -237,8 +237,8 @@ The following object is masked from ‘package:SummarizedExperiment’:
     Assays
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Loading human objects |2026-07-08 10:53:44.957004
-Loading Rat object |2026-07-08 10:58:29.455693
+Loading human objects |2026-07-08 10:53:44.963053
+Loading Rat object |2026-07-08 10:55:55.434691
 Warning messages:
 1: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
 ℹ Please use `rlang::check_installed()` instead.
@@ -296,7 +296,7 @@ Total genes remaining after convert_orthologs :
    Lrp11    Pcmt1    Nup43    Lats1   Katna1    Ginm1 
  "LRP11"  "PCMT1"  "NUP43"  "LATS1" "KATNA1"  "GINM1" 
 [1] TRUE
-Loading NHP object |2026-07-08 10:59:01.789476
+Loading NHP object |2026-07-08 10:56:36.362246
 Warning messages:
 1: In S4Vectors:::anyMissing(runValue(x_seqnames)) :
   'S4Vectors:::anyMissing()' is deprecated.
@@ -354,14 +354,14 @@ Total genes remaining after convert_orthologs :
    SAMD11     NOC2L    KLHL17   PLEKHN1     PERM1      HES4 
  "SAMD11"   "NOC2L"  "KLHL17" "PLEKHN1"   "PERM1"    "HES4" 
 [1] TRUE
-Set up combo object |2026-07-08 10:59:16.593171
-[1] 295
-############### Rat object |2026-07-08 10:59:16.60648
+Set up combo object |2026-07-08 10:57:02.148923
+[1] 12012
+############### Rat object |2026-07-08 10:57:02.165995
 class: SingleCellExperiment 
-dim: 295 20353 
+dim: 12012 20353 
 metadata(0):
 assays(2): counts logcounts
-rownames(295): SAMD5 UTRN ... DRD5 CD2
+rownames(12012): PCMT1 NUP43 ... KRT78 CYP1A1
 rowData names(0):
 colnames(20353): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
   S6M_TGTGGTCAGCAATCCA-1 S6M_TGTGTTGAGGGTACTC-1
@@ -369,12 +369,12 @@ colData names(29): orig.ident nCount_RNA ... RNA_snn_res.0.5 ident
 reducedDimNames(3): PCA HARMONY_RNA RNAHARMONY.UMAP
 mainExpName: RNA
 altExpNames(0):
-############### NHP object |2026-07-08 10:59:17.244952
+############### NHP object |2026-07-08 10:57:02.96452
 class: SingleCellExperiment 
-dim: 295 7387 
+dim: 12012 7387 
 metadata(0):
 assays(2): counts logcounts
-rownames(295): SAMD5 UTRN ... DRD5 CD2
+rownames(12012): PCMT1 NUP43 ... KRT78 CYP1A1
 rowData names(0):
 colnames(7387): AGGAATACATGGATCT-7 CAGCCAGGTGCCGAAA-7 ...
   nacc_TTTGACTCAGATACTC nacc_TTTGACTTCCCTGGTT
@@ -382,9 +382,9 @@ colData names(6): nFeature_RNA integrated_snn_res.0.3 ... monkey ident
 reducedDimNames(0):
 mainExpName: RNA
 altExpNames(1): integrated
-############### Subsetting human objects |2026-07-08 10:59:17.60911
+############### Subsetting human objects |2026-07-08 10:57:04.871899
 class: SummarizedExperiment 
-dim: 295 20353 
+dim: 12012 20353 
 metadata(0):
 assays(2): counts logcounts
 rownames: NULL
@@ -393,7 +393,7 @@ colnames(20353): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
   S6M_TGTGGTCAGCAATCCA-1 S6M_TGTGTTGAGGGTACTC-1
 colData names(3): Sample CellType dataset
 class: SummarizedExperiment 
-dim: 295 7387 
+dim: 12012 7387 
 metadata(0):
 assays(2): counts logcounts
 rownames: NULL
@@ -402,7 +402,7 @@ colnames(7387): AGGAATACATGGATCT-7 CAGCCAGGTGCCGAAA-7 ...
   nacc_TTTGACTCAGATACTC nacc_TTTGACTTCCCTGGTT
 colData names(3): Sample CellType dataset
 class: SummarizedExperiment 
-dim: 295 57913 
+dim: 12012 57913 
 metadata(1): Samples
 assays(2): counts logcounts
 rownames: NULL
@@ -410,34 +410,22 @@ rowData names(0):
 colnames(57913): 1_AAACCCATCACCCTCA-1 1_AAACGAACATAGACTC-1 ...
   20_TTTGTTGAGAACGTGC-1 20_TTTGTTGCAAGATGTA-1
 colData names(3): Sample CellType dataset
-Warning messages:
-1: In S4Vectors:::anyMissing(runValue(x_seqnames)) :
-  'S4Vectors:::anyMissing()' is deprecated.
-Use 'anyNA()' instead.
-See help("Deprecated")
-2: In S4Vectors:::anyMissing(runValue(strand(x))) :
-  'S4Vectors:::anyMissing()' is deprecated.
-Use 'anyNA()' instead.
-See help("Deprecated")
-Warning message:
-In methods:::.selectDotsMethod(classes, .MTable, .AllMTable) :
-  multiple direct matches: "SummarizedExperiment", "SingleCellExperiment"; using the first of these
 class: SummarizedExperiment 
-dim: 295 1015378 
+dim: 12012 125189 
 metadata(1): Samples
 assays(2): counts logcounts
-rownames(295): SAMD5 UTRN ... DRD5 CD2
+rownames(12012): PCMT1 NUP43 ... KRT78 CYP1A1
 rowData names(0):
-colnames(1015378): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
+colnames(125189): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
   H1-XNQ4F2B_D1_cellid_000071170-1 H1-XNQ4F2B_D1_cellid_000071236-1
 colData names(3): Sample CellType dataset
-Combo object finished |2026-07-08 11:05:43.83969
-Saving combo object |2026-07-08 11:05:43.840247
-Running MetaNeighbor |2026-07-08 11:06:56.099762
+Combo object finished |2026-07-08 11:04:41.079506
+Saving combo object |2026-07-08 11:04:41.080055
+Running MetaNeighbor |2026-07-08 11:11:24.474059
 Warning message:
 In asMethod(object) :
-  sparse->dense coercion: allocating vector of size 2.2 GiB
-Finished MetaNeighbor |2026-07-08 11:07:48.929813
+  sparse->dense coercion: allocating vector of size 11.2 GiB
+Finished MetaNeighbor |2026-07-08 11:14:41.43021
 R version 4.5.0 Patched (2025-05-21 r88220)
 Platform: x86_64-conda-linux-gnu
 Running under: Rocky Linux 9.4 (Blue Onyx)
@@ -570,4 +558,4 @@ loaded via a namespace (and not attached):
 [177] tibble_3.2.1              aplot_0.2.7              
 [179] cluster_2.1.8.1           globals_0.18.0           
 ********* Job Ends *********
-Wed Jul  8 11:07:50 AM EDT 2026
+Wed Jul  8 11:14:42 AM EDT 2026
