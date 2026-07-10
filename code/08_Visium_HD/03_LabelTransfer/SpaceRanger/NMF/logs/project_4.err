@@ -1,4 +1,5 @@
 Loading conda_R/4.5
+RcppML v0.5.5 using 'options(RcppML.threads = 0)' (all available threads), 'options(RcppML.verbose = FALSE)'
 
 Attaching package: ‘SpatialFeatureExperiment’
 
@@ -36,6 +37,10 @@ Loading required package: BiocGenerics
 Loading required package: generics
 
 Attaching package: ‘generics’
+
+The following object is masked from ‘package:RcppML’:
+
+    evaluate
 
 The following objects are masked from ‘package:base’:
 
@@ -112,6 +117,13 @@ The following object is masked from ‘package:base’:
 
     rowsum
 
+
+Attaching package: ‘SparseArray’
+
+The following object is masked from ‘package:RcppML’:
+
+    sparsity
+
 Loading required package: DelayedArray
 
 Attaching package: ‘DelayedArray’
@@ -133,16 +145,13 @@ The following object is masked from ‘package:rhdf5’:
 
     h5ls
 
-Registered S3 methods overwritten by 'registry':
-  method               from 
-  print.registry_field proxy
-  print.registry_entry proxy
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
 Projecting sample: H1-M3TCP9V_D1 (4 of 8)
-Loading NMF results from snRNA-seq - 2026-06-09 09:54:32.298134
-Subsetting the sfe object - 2026-06-09 09:54:32.779298
-Extracting logcounts - 2026-06-09 09:54:34.376844
-Projecting - 2026-06-09 09:54:52.35348
+Loading NMF results from snRNA-seq - 2026-07-10 10:32:22.651451
+Subsetting the sfe object - 2026-07-10 10:32:24.064214
+Extracting logcounts - 2026-07-10 10:32:25.050303
+Aligning genes between loadings and expression - 2026-07-10 10:32:45.77845
+Projecting with RcppML::project (NNLS, non-negative) - 2026-07-10 10:32:49.620579
 [4] done: 66 patterns x 46984 cells
 
 Reproducibility information:
