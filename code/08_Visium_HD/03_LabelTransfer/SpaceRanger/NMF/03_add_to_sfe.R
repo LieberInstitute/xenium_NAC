@@ -58,7 +58,7 @@ for (i in seq_len(n_factors)) {
 
 
 # ---- Side-by-side raw vs normalized escheR plots ----------------------------
-fill_cols <- c("white","lightgrey","red","black")
+fill_cols <- c("lightgrey","red","black")
 
 for (i in seq_len(n_factors)) {
   print(i)
