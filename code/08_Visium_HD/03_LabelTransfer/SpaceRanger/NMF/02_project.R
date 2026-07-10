@@ -1,9 +1,10 @@
+library("RcppML",lib.loc = "/users/rphillip/R/4.3.x")
 library(SpatialFeatureExperiment)
 library(SingleCellExperiment)
 library(SpatialExperiment)
 library(sessioninfo)
 library(HDF5Array)
-library(projectR)
+library(Matrix)
 library(here)
 
 # ---- CONFIG --------------------------------------------------
@@ -38,15 +39,35 @@ rownames(sub) <- rowData(sub)$ID
 message("Extracting logcounts - ", Sys.time())
 expr <- as.matrix(assay(sub, assay_name))         
 
+message("Aligning genes between loadings and expression - ", Sys.time())
+common_genes <- intersect(rownames(W), rownames(expr))
+length(common_genes)
+
+W    <- W[common_genes, , drop = FALSE]
+expr <- expr[common_genes, , drop = FALSE]
+stopifnot(identical(rownames(W), rownames(expr)))
 
 # patterns x cells
-message("Projecting - ", Sys.time())
-proj <- projectR(data     = expr,
-                 loadings = W)
+message("Projecting with RcppML::project (NNLS, non-negative) - ", Sys.time())
+proj <- project(expr, w = W, L1 = 0)
 
+# remove rowSums == 0
+proj1 <- proj[rowSums(proj) == 0, ,drop = FALSE]
+# keep the rowsums==0 in separate object
+proj2 <- proj[rowSums(proj) != 0, ,drop = FALSE]
+
+#normalize
+proj2 <- apply(proj2,1,function(x){x/sum(x)})
+proj1 <- t(proj1)
+
+#combine and force into same order
+proj_final <- cbind(proj2, proj1)
+proj_final <- proj_final[ ,match(rownames(proj), colnames(proj_final))]
+
+#Save raw and normalized 
 saveRDS(proj, file.path(proj_dir, paste0("proj_", task_id, ".rds")))
+saveRDS(proj_final, file.path(proj_dir, paste0("proj_final_", task_id, ".rds")))
 message(sprintf("[%s] done: %d patterns x %d cells", task_id, nrow(proj), ncol(proj)))
-
 
 #-------------------------- Reproducibility information -----------------------#
 message("\nReproducibility information:")
@@ -54,4 +75,3 @@ Sys.time()
 proc.time()
 options(width = 120)
 sessioninfo::session_info()
-
