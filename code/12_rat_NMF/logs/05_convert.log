@@ -1,0 +1,284 @@
+********* Job Starts *********
+Sun Jul 12 07:14:19 PM EDT 2026
+Loading conda_R/4.5
+
+Attaching package: ‘SpatialFeatureExperiment’
+
+The following object is masked from ‘package:base’:
+
+    scale
+
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘sp’
+
+The following object is masked from ‘package:SpatialFeatureExperiment’:
+
+    bbox
+
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+An object of class Seurat 
+887 features across 1544589 samples within 5 assays 
+Active assay: AreaNorm (347 features, 347 variable features)
+ 2 layers present: counts, data
+ 4 other assays present: Xenium, BlankCodeword, ControlCodeword, ControlProbe
+ 6 dimensional reductions calculated: BSKY_BANKSYharmony_l0.0.k30.d30, BSKY_BANKSYpca_l0.0.k30.d30, BSKY_UMAPBANKSYharmony_l0.0.k30.d30, BSKY_BANKSYharmony_l0.9.k30.d30, BSKY_BANKSYpca_l0.9.k30.d30, BSKY_UMAPBANKSYharmony_l0.9.k30.d30
+ 16 spatial fields of view present: fov fov.F2a fov.F1b fov.F2d fov.M1c fov.M1a fov.M1d fov.F1d fov.F2c fov.M2c fov.M2b fov.M2d fov.F2b fov.M1b fov.F1c fov.F1a
+>>> 16 spatial FOVs are found, each will be used as `sample_id`: 
+fov
+fov.F2a
+fov.F1b
+fov.F2d
+fov.M1c
+fov.M1a
+fov.M1d
+fov.F1d
+fov.F2c
+fov.M2c
+fov.M2b
+fov.M2d
+fov.F2b
+fov.M1b
+fov.F1c
+fov.F1a
+
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F2a
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F1b
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F2d
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.M1c
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.M1a
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.M1d
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F1d
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F2c
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.M2c
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.M2b
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.M2d
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F2b
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.M1b
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F1c
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Seurat Assays found: Xenium, BlankCodeword, ControlCodeword, ControlProbe, AreaNorm
+>>> Xenium -> will be used as 'Main Experiment'
+>>> Seurat spatial FOVs found: 
+centroids
+molecules
+>>> Generating `sf` geometries
+
+>>> Creating `SFE` object -> fov.F1a
+>>> Storing molecule coordinates in `rowGeometries`
+>>> Adding Seurat Assay(s) as Alternative Experiment(s): 
+BlankCodeword
+ControlCodeword
+ControlProbe
+AreaNorm
+>>> Combining 16 SFE object(s) with unique `sample_id`
+Error in (function (x, y)  : 
+  unused arguments ("counts", "counts", "counts", "counts", "counts", "counts", "counts", "counts", "counts", "counts", "counts", "counts", "counts", "counts")
+Calls: toSpatialFeatureExperiment ... toSpatialFeatureExperiment -> .local -> .seu_to_sfe -> do.call
+In addition: There were 50 or more warnings (use warnings() to see the first 50)
+Execution halted
+********* Job Ends *********
+Sun Jul 12 09:17:58 PM EDT 2026
