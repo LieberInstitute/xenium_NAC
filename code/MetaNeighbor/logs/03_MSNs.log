@@ -1,10 +1,10 @@
 ********* Job Starts *********
-Wed Jul  8 10:53:13 AM EDT 2026
+Wed Jul  8 02:32:57 PM EDT 2026
 **** SLURM info ****
 User: rphillip
-Job id: 33976525
+Job id: 33982151
 Job name: 03_MSNs
-Hostname: compute-120
+Hostname: compute-124
 Task id: 
 Loading conda_R/4.5
 
@@ -237,8 +237,8 @@ The following object is masked from ‘package:SummarizedExperiment’:
     Assays
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Loading human objects |2026-07-08 10:53:44.957004
-Loading Rat object |2026-07-08 10:58:29.455693
+Loading human objects |2026-07-08 14:33:16.230519
+Loading Rat object |2026-07-08 14:48:47.262785
 Warning messages:
 1: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
 ℹ Please use `rlang::check_installed()` instead.
@@ -296,7 +296,7 @@ Total genes remaining after convert_orthologs :
    Lrp11    Pcmt1    Nup43    Lats1   Katna1    Ginm1 
  "LRP11"  "PCMT1"  "NUP43"  "LATS1" "KATNA1"  "GINM1" 
 [1] TRUE
-Loading NHP object |2026-07-08 10:59:01.789476
+Loading NHP object |2026-07-08 14:49:12.129486
 Warning messages:
 1: In S4Vectors:::anyMissing(runValue(x_seqnames)) :
   'S4Vectors:::anyMissing()' is deprecated.
@@ -354,9 +354,9 @@ Total genes remaining after convert_orthologs :
    SAMD11     NOC2L    KLHL17   PLEKHN1     PERM1      HES4 
  "SAMD11"   "NOC2L"  "KLHL17" "PLEKHN1"   "PERM1"    "HES4" 
 [1] TRUE
-Set up combo object |2026-07-08 10:59:16.593171
+Set up combo object |2026-07-08 14:49:24.687831
 [1] 295
-############### Rat object |2026-07-08 10:59:16.60648
+############### Rat object |2026-07-08 14:49:24.69809
 class: SingleCellExperiment 
 dim: 295 20353 
 metadata(0):
@@ -369,7 +369,7 @@ colData names(29): orig.ident nCount_RNA ... RNA_snn_res.0.5 ident
 reducedDimNames(3): PCA HARMONY_RNA RNAHARMONY.UMAP
 mainExpName: RNA
 altExpNames(0):
-############### NHP object |2026-07-08 10:59:17.244952
+############### NHP object |2026-07-08 14:49:25.167712
 class: SingleCellExperiment 
 dim: 295 7387 
 metadata(0):
@@ -382,7 +382,7 @@ colData names(6): nFeature_RNA integrated_snn_res.0.3 ... monkey ident
 reducedDimNames(0):
 mainExpName: RNA
 altExpNames(1): integrated
-############### Subsetting human objects |2026-07-08 10:59:17.60911
+############### Subsetting human objects |2026-07-08 14:49:25.437123
 class: SummarizedExperiment 
 dim: 295 20353 
 metadata(0):
@@ -431,13 +431,13 @@ rowData names(0):
 colnames(1015378): S1M_AAACCAAAGGCGATTC-1 S1M_AAACCCGCAAGTGGAA-1 ...
   H1-XNQ4F2B_D1_cellid_000071170-1 H1-XNQ4F2B_D1_cellid_000071236-1
 colData names(3): Sample CellType dataset
-Combo object finished |2026-07-08 11:05:43.83969
-Saving combo object |2026-07-08 11:05:43.840247
-Running MetaNeighbor |2026-07-08 11:06:56.099762
+Combo object finished |2026-07-08 14:54:31.665478
+Saving combo object |2026-07-08 14:54:31.665915
+Running MetaNeighbor |2026-07-08 14:55:37.809536
 Warning message:
 In asMethod(object) :
   sparse->dense coercion: allocating vector of size 2.2 GiB
-Finished MetaNeighbor |2026-07-08 11:07:48.929813
+Finished MetaNeighbor |2026-07-08 14:56:14.59602
 R version 4.5.0 Patched (2025-05-21 r88220)
 Platform: x86_64-conda-linux-gnu
 Running under: Rocky Linux 9.4 (Blue Onyx)
@@ -570,4 +570,4 @@ loaded via a namespace (and not attached):
 [177] tibble_3.2.1              aplot_0.2.7              
 [179] cluster_2.1.8.1           globals_0.18.0           
 ********* Job Ends *********
-Wed Jul  8 11:07:50 AM EDT 2026
+Wed Jul  8 02:56:15 PM EDT 2026

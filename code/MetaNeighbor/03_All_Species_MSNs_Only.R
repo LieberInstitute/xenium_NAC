@@ -252,7 +252,7 @@ message("Combo object finished |", Sys.time())
 
 
 message("Saving combo object |", Sys.time())
-saveRDS(combo,here("processed-data","02_build_spe","SPEs","all_species_MSNs_only.Rds"))
+saveRDS(combo,here("processed-data","02_build_spe","SPEs","all_species_MSNs_only_all_modalities.Rds"))
 
 message("Running MetaNeighbor |", Sys.time())
 #   Run unsupervised MetaNeighbor
