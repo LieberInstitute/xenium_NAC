@@ -1,3 +1,6 @@
+# cd /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+# conda activate /dcs04/hicks/data/multi-sample-alignment-benchmark/envs/Spateo/
+
 import os
 os.environ["PYVISTA_OFF_SCREEN"] = "true"   # no GUI needed
 os.environ.setdefault("PYVISTA_EGL", "true")  # if VTK was built with EGL
@@ -45,6 +48,12 @@ git_root = Path(subprocess.check_output(
     ["git", "rev-parse", "--show-toplevel"], text=True).strip()
 )
 
+MODULE_NAME = "cell_type_grid_analysis"
+OUTPUT_DIR = git_root / "processed-data" / "09_spatial_gradient" / MODULE_NAME
+PLOT_DIR = git_root / "plots" / "09_spatial_gradient" / MODULE_NAME
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
 # Load gene expression data
 adata_all = ad.read_h5ad(git_root / "processed-data" / "02_build_spe" / "h5ad" / "spe_NormCounts_nucleus_normcounts.h5ad")
 # Load cell type annotations
@@ -82,19 +91,44 @@ adata_Br6660 = adata_all[adata_all.obs["Donor"] == DONOR].copy()
 adata_Br6660.obs = adata_Br6660.obs.reset_index(drop=True)
 adata_Br6660.obsm['spatial'] = np.asarray(getattr(adata_Br6660.obsm['spatial'], "values", adata_Br6660.obsm['spatial']))
 
-# Load aligned coordinates for Br6660
-csv_path = git_root / "processed-data" / "05_Clustering" / "Spateo" / "Br6660_aligned_coordinates.csv"
+# Load the final (second-pass) Spateo coordinates for Br6660
+csv_path = (
+    git_root
+    / "processed-data"
+    / "05_Xenium_alignment"
+    / "module02_Spateo_second_pass_Br6660"
+    / "Br6660_second_pass_coordinates.csv"
+)
 aligned_coord_df = pd.read_csv(csv_path)
+required_coordinate_columns = {
+    "donor", "sample", "cell_id", "x_second_pass", "y_second_pass", "z_height"
+}
+missing_coordinate_columns = required_coordinate_columns - set(aligned_coord_df.columns)
+if missing_coordinate_columns:
+    raise ValueError(
+        f"Second-pass coordinate CSV is missing columns: "
+        f"{sorted(missing_coordinate_columns)}"
+    )
+if set(aligned_coord_df["donor"].dropna().astype(str)) != {DONOR}:
+    raise ValueError("Second-pass coordinate CSV contains an unexpected donor")
+
 adata_Br6660.obs["cell_id"] = adata_Br6660.obs["cell_id"].astype(str)
 aligned_coord_df["cell_id"] = aligned_coord_df["cell_id"].astype(str)
+if aligned_coord_df["cell_id"].duplicated().any():
+    raise ValueError("Second-pass coordinate CSV contains duplicate cell IDs")
 coord_map = aligned_coord_df.set_index("cell_id")
-# # Optional safety check
-# missing = set(adata_Br6660.obs["cell_id"]) - set(coord_map.index)
-# if missing:
-#     print(f"Warning: {len(missing)} cells in adata_Br6660 were not found in aligned_coord_df")
+
+missing = set(adata_Br6660.obs["cell_id"]) - set(coord_map.index)
+if missing:
+    raise ValueError(
+        f"{len(missing)} Br6660 cells were not found in the second-pass "
+        "coordinate CSV"
+    )
 # Reorder aligned coordinates to match adata_Br6660.obs cell order
 matched = coord_map.loc[adata_Br6660.obs["cell_id"]]
-adata_Br6660.obsm["align_spatial"] = matched[["x_aligned", "y_aligned"]].to_numpy()
+adata_Br6660.obsm["align_spatial"] = matched[
+    ["x_second_pass", "y_second_pass"]
+].to_numpy()
 adata_Br6660.obs["z_height"] = matched["z_height"].to_numpy()
 
 Br6660_NAc1_580 = adata_Br6660[adata_Br6660.obs['Sample'] == 'Br6660_NAc1_580'].copy()
@@ -116,23 +150,96 @@ aligned_slices = [Br6660_NAc1_580, Br6660_NAc2_1090, Br6660_NAc3_1580, Br6660_NA
 aligned_adata = ad.concat(aligned_slices)
 aligned_adata.obsm['spatial_3D'] = np.concatenate([aligned_adata.obsm['align_spatial'], np.array(aligned_adata.obs['z_height'].values)[:,None]], axis=1)
 
-# Overlaid plot of aligned slices (sanity check)
+# Overlaid plot of aligned consecutive slices (sanity check)
 key_added = "align_spatial"
-plot_outdir = git_root / "plots" / "05_clustering" / "Spateo" 
-plot_outdir.mkdir(parents=True, exist_ok=True)
+plot_outdir = PLOT_DIR
+
+
+def display_sample_name(adata):
+    """Return the single sample name without the exact donor prefix."""
+    sample_names = adata.obs["Sample"].dropna().astype(str).unique()
+    if len(sample_names) != 1:
+        raise ValueError("Each plotted slice must contain exactly one Sample")
+    sample_name = str(sample_names[0])
+    donor_prefix = f"{DONOR}_"
+    return (
+        sample_name[len(donor_prefix):]
+        if sample_name.startswith(donor_prefix)
+        else sample_name
+    )
+
+
+def plot_consecutive_overlays(plotted_slices, spatial_key, output_path):
+    """Plot final second-pass slice pairs in the established overlay format."""
+    n_pairs = len(plotted_slices) - 1
+    if n_pairs < 1:
+        raise ValueError("At least two slices are required for an overlay plot")
+    n_columns = min(3, n_pairs)
+    n_rows = int(np.ceil(n_pairs / n_columns))
+    figure, axes = plt.subplots(
+        n_rows,
+        n_columns,
+        figsize=(5.0 * n_columns, 4.5 * n_rows),
+        squeeze=False,
+    )
+    axes_flat = axes.ravel()
+    display_names = [display_sample_name(adata) for adata in plotted_slices]
+
+    for pair_index, axis in enumerate(axes_flat[:n_pairs]):
+        reference_coordinates = np.asarray(
+            plotted_slices[pair_index].obsm[spatial_key]
+        )[:, :2]
+        moving_coordinates = np.asarray(
+            plotted_slices[pair_index + 1].obsm[spatial_key]
+        )[:, :2]
+        reference_name = display_names[pair_index]
+        moving_name = display_names[pair_index + 1]
+        axis.scatter(
+            reference_coordinates[:, 0],
+            reference_coordinates[:, 1],
+            s=0.2,
+            alpha=0.45,
+            color="#4C78A8",
+            linewidths=0,
+            label=reference_name,
+        )
+        axis.scatter(
+            moving_coordinates[:, 0],
+            moving_coordinates[:, 1],
+            s=0.2,
+            alpha=0.45,
+            color="#F58518",
+            linewidths=0,
+            label=moving_name,
+        )
+        axis.set_aspect("equal")
+        axis.set_xlabel("x (um)")
+        axis.set_ylabel("y (um)")
+        axis.set_title(
+            f"Final Spateo aligned: {reference_name} → {moving_name}",
+            fontsize=9,
+        )
+        axis.legend(
+            loc="upper right", fontsize=6, markerscale=8, frameon=False
+        )
+
+    for axis in axes_flat[n_pairs:]:
+        axis.axis("off")
+
+    figure.suptitle(
+        "Final second-pass Spateo consecutive-slice overlays", y=1.002
+    )
+    figure.tight_layout()
+    figure.savefig(output_path, dpi=300, bbox_inches="tight")
+    plt.close(figure)
+
+
 plt.ioff()
-st.pl.overlay_slices_2d(
-    slices=aligned_slices,
-    spatial_key=key_added,
-    height=2,
-    overlay_type="backward",
-)
-plt.savefig(
+plot_consecutive_overlays(
+    aligned_slices,
+    key_added,
     plot_outdir / "Br6660_spateo_sanity_check.png",
-    dpi=300,
-    bbox_inches="tight",
 )
-plt.close("all")
 
 coords = aligned_adata.obsm[key_added]
 plt.ioff()
@@ -390,7 +497,7 @@ plot_grid_props_plane("yz") # along x
 ############## Grid plot for a specific slice and grid proportion plot of a specific grid
 ### Panel B part 1: show grid on one representative slice
 sample_key = "Sample"
-selected_sample = "Br6660_NAc7_3580"   # change this to the representative slice you want
+selected_sample = "Br6660_NAc7_3580"   # change this to the representative slice we want
 pt_size = 0.25
 pt_alpha = 0.7
 
@@ -424,21 +531,21 @@ for xv in xbins:
 for yv in ybins:
     ax.axhline(y=yv, color="black", lw=0.8, alpha=0.75)
 
-# Optional: label grid cells
-for i in range(grid_size):
-    for j in range(grid_size):
-        xc = 0.5 * (xbins[i] + xbins[i + 1])
-        yc = 0.5 * (ybins[j] + ybins[j + 1])
-        ax.text(
-            xc,
-            yc,
-            f"{i + 1},{j + 1}",
-            ha="center",
-            va="center",
-            fontsize=7,
-            color="black",
-            alpha=0.8,
-        )
+# # Optional: label grid cells
+# for i in range(grid_size):
+#     for j in range(grid_size):
+#         xc = 0.5 * (xbins[i] + xbins[i + 1])
+#         yc = 0.5 * (ybins[j] + ybins[j + 1])
+#         ax.text(
+#             xc,
+#             yc,
+#             f"{i + 1},{j + 1}",
+#             ha="center",
+#             va="center",
+#             fontsize=7,
+#             color="black",
+#             alpha=0.8,
+#         )
 
 ax.set_xlim(x.min(), x.max())
 ax.set_ylim(y.min(), y.max())
@@ -448,7 +555,7 @@ ax.set_yticks([])
 ax.set_title(f"5×5 spatial grid on representative slice\n{selected_sample}", fontsize=10)
 
 plt.savefig(
-    plot_outdir / f"{selected_sample}_grid_overlay_reference.png",
+    plot_outdir / f"{selected_sample}_grid_overlay.png",
     dpi=600,
     bbox_inches="tight",
 )
