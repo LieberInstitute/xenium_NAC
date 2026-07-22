@@ -54,6 +54,12 @@ git_root = Path(subprocess.check_output(
     ["git", "rev-parse", "--show-toplevel"], text=True).strip()
 )
 
+MODULE_NAME = "cell_type_pseudotime"
+OUTPUT_DIR = git_root / "processed-data" / "09_spatial_gradient" / MODULE_NAME
+PLOT_DIR = git_root / "plots" / "09_spatial_gradient" / MODULE_NAME
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
 # Load gene expression data
 adata_all = ad.read_h5ad(git_root / "processed-data" / "02_build_spe" / "h5ad" / "spe_NormCounts_nucleus_normcounts.h5ad")
 # Load cell type annotations
@@ -91,19 +97,44 @@ adata_Br6660 = adata_all[adata_all.obs["Donor"] == DONOR].copy()
 adata_Br6660.obs = adata_Br6660.obs.reset_index(drop=True)
 adata_Br6660.obsm['spatial'] = np.asarray(getattr(adata_Br6660.obsm['spatial'], "values", adata_Br6660.obsm['spatial']))
 
-# Load aligned coordinates for Br6660
-csv_path = git_root / "processed-data" / "05_Clustering" / "Spateo" / "Br6660_aligned_coordinates.csv"
+# Load the final (second-pass) Spateo coordinates for Br6660
+csv_path = (
+    git_root
+    / "processed-data"
+    / "05_Xenium_alignment"
+    / "module02_Spateo_second_pass_Br6660"
+    / "Br6660_second_pass_coordinates.csv"
+)
 aligned_coord_df = pd.read_csv(csv_path)
+required_coordinate_columns = {
+    "donor", "sample", "cell_id", "x_second_pass", "y_second_pass", "z_height"
+}
+missing_coordinate_columns = required_coordinate_columns - set(aligned_coord_df.columns)
+if missing_coordinate_columns:
+    raise ValueError(
+        f"Second-pass coordinate CSV is missing columns: "
+        f"{sorted(missing_coordinate_columns)}"
+    )
+if set(aligned_coord_df["donor"].dropna().astype(str)) != {DONOR}:
+    raise ValueError("Second-pass coordinate CSV contains an unexpected donor")
+
 adata_Br6660.obs["cell_id"] = adata_Br6660.obs["cell_id"].astype(str)
 aligned_coord_df["cell_id"] = aligned_coord_df["cell_id"].astype(str)
+if aligned_coord_df["cell_id"].duplicated().any():
+    raise ValueError("Second-pass coordinate CSV contains duplicate cell IDs")
 coord_map = aligned_coord_df.set_index("cell_id")
-# # Optional safety check
-# missing = set(adata_Br6660.obs["cell_id"]) - set(coord_map.index)
-# if missing:
-#     print(f"Warning: {len(missing)} cells in adata_Br6660 were not found in aligned_coord_df")
+
+missing = set(adata_Br6660.obs["cell_id"]) - set(coord_map.index)
+if missing:
+    raise ValueError(
+        f"{len(missing)} Br6660 cells were not found in the second-pass "
+        "coordinate CSV"
+    )
 # Reorder aligned coordinates to match adata_Br6660.obs cell order
 matched = coord_map.loc[adata_Br6660.obs["cell_id"]]
-adata_Br6660.obsm["align_spatial"] = matched[["x_aligned", "y_aligned"]].to_numpy()
+adata_Br6660.obsm["align_spatial"] = matched[
+    ["x_second_pass", "y_second_pass"]
+].to_numpy()
 adata_Br6660.obs["z_height"] = matched["z_height"].to_numpy()
 
 Br6660_NAc1_580 = adata_Br6660[adata_Br6660.obs['Sample'] == 'Br6660_NAc1_580'].copy()
@@ -134,23 +165,96 @@ aligned_adata.obsm['spatial_3D'] = np.concatenate([
     np.array(aligned_adata.obs['z_height'].values)[:, None]
 ], axis=1)
 
-# Overlaid plot of aligned slices (sanity check)
+# Overlaid plot of aligned consecutive slices (sanity check)
 key_added = "align_spatial"
-plot_outdir = git_root / "plots" / "09_spatial_gradient" / "cell_type_pseudotime" 
-plot_outdir.mkdir(parents=True, exist_ok=True)
+plot_outdir = PLOT_DIR
+
+
+def display_sample_name(adata):
+    """Return the single sample name without the exact donor prefix."""
+    sample_names = adata.obs["Sample"].dropna().astype(str).unique()
+    if len(sample_names) != 1:
+        raise ValueError("Each plotted slice must contain exactly one Sample")
+    sample_name = str(sample_names[0])
+    donor_prefix = f"{DONOR}_"
+    return (
+        sample_name[len(donor_prefix):]
+        if sample_name.startswith(donor_prefix)
+        else sample_name
+    )
+
+
+def plot_consecutive_overlays(plotted_slices, spatial_key, output_path):
+    """Plot final second-pass slice pairs in the established overlay format."""
+    n_pairs = len(plotted_slices) - 1
+    if n_pairs < 1:
+        raise ValueError("At least two slices are required for an overlay plot")
+    n_columns = min(3, n_pairs)
+    n_rows = int(np.ceil(n_pairs / n_columns))
+    figure, axes = plt.subplots(
+        n_rows,
+        n_columns,
+        figsize=(5.0 * n_columns, 4.5 * n_rows),
+        squeeze=False,
+    )
+    axes_flat = axes.ravel()
+    display_names = [display_sample_name(adata) for adata in plotted_slices]
+
+    for pair_index, axis in enumerate(axes_flat[:n_pairs]):
+        reference_coordinates = np.asarray(
+            plotted_slices[pair_index].obsm[spatial_key]
+        )[:, :2]
+        moving_coordinates = np.asarray(
+            plotted_slices[pair_index + 1].obsm[spatial_key]
+        )[:, :2]
+        reference_name = display_names[pair_index]
+        moving_name = display_names[pair_index + 1]
+        axis.scatter(
+            reference_coordinates[:, 0],
+            reference_coordinates[:, 1],
+            s=0.2,
+            alpha=0.45,
+            color="#4C78A8",
+            linewidths=0,
+            label=reference_name,
+        )
+        axis.scatter(
+            moving_coordinates[:, 0],
+            moving_coordinates[:, 1],
+            s=0.2,
+            alpha=0.45,
+            color="#F58518",
+            linewidths=0,
+            label=moving_name,
+        )
+        axis.set_aspect("equal")
+        axis.set_xlabel("x (um)")
+        axis.set_ylabel("y (um)")
+        axis.set_title(
+            f"Final Spateo aligned: {reference_name} → {moving_name}",
+            fontsize=9,
+        )
+        axis.legend(
+            loc="upper right", fontsize=6, markerscale=8, frameon=False
+        )
+
+    for axis in axes_flat[n_pairs:]:
+        axis.axis("off")
+
+    figure.suptitle(
+        "Final second-pass Spateo consecutive-slice overlays", y=1.002
+    )
+    figure.tight_layout()
+    figure.savefig(output_path, dpi=300, bbox_inches="tight")
+    plt.close(figure)
+
+
 plt.ioff()
-st.pl.overlay_slices_2d(
-    slices=aligned_slices,
-    spatial_key=key_added,
-    height=2,
-    overlay_type="backward",
-)
-plt.savefig(
+plot_consecutive_overlays(
+    aligned_slices,
+    key_added,
     plot_outdir / "Br6660_spateo_sanity_check.png",
-    dpi=300,
-    bbox_inches="tight",
 )
-plt.close("all")
 
 
 
@@ -307,6 +411,9 @@ def fit_3d_gam_per_celltype(
 
         gam = LogisticGAM(te(0, 1, 2, n_splines=list(n_splines)), lam=lam)
         gam.fit(X_fit, y_fit, weights=w_fit)
+        # Sanity checks
+        print(gam.terms)         # shows the term structure
+        print(gam.coef_.shape)   # should be 6*6*4 + 1 = 145 if list was respected
 
         out = d.copy()
         out["fit"] = gam.predict_proba(X)
@@ -579,7 +686,7 @@ for ct in sorted(fit_3d.keys()):
     plot_celltype_3d_heatmap(
         fit_3d, df_voxel, celltype=ct,
         nx=60, ny=60, nz=20,
-        isomin_quantile=0.7,
+        isomin_quantile=0.6,
         opacity=0.12,
         surface_count=30,
         save_path=volume_outdir / f"Br6660_3d_heatmap_{ct}.html",
@@ -588,10 +695,10 @@ for ct in sorted(fit_3d.keys()):
 
 
 ### Parameter selection for Figure 2 panel C: 3D heatmap for D1_Island_A and D1_Island_B
-sweep_outdir = plot_outdir / "3d_heatmap_sweep_d1_islands"
+sweep_outdir = plot_outdir / "3d_heatmap_sweep_d1_islands_Br6660"
 sweep_outdir.mkdir(parents=True, exist_ok=True)
 
-target_celltypes = ["D1_Island_A", "D1_Island_B"]
+target_celltypes = ["D1_Island_A", "D1_Island_B", "WM", "Excitatory"]
 
 # Quick nz check (1 config, 4 nz values, 1 cell type) 
 print("=== Quick nz comparison ===")
@@ -627,7 +734,7 @@ for ct in target_celltypes:
         tag = (f"q{int(p['isomin_quantile']*100)}"
                f"_op{int(p['opacity']*100):02d}"
                f"_sc{p['surface_count']:02d}")
-        out_path = sweep_outdir / f"{ct}__{tag}.html"
+        out_path = sweep_outdir / f"{ct}_{tag}.html"
         plot_celltype_3d_heatmap(
             fit_3d, df_voxel, celltype=ct,
             nx=60, ny=60, nz=20,           # pinned after nz check
@@ -646,7 +753,7 @@ def plot_celltype_3d_heatmap_clean(
     df_voxel,
     celltype,
     nx=60, ny=60, nz=20,
-    isomin_quantile=0.7,
+    isomin_quantile=0.6,
     isomax_quantile=1.0,
     opacity=0.12,
     surface_count=30,
@@ -750,11 +857,11 @@ def plot_celltype_3d_heatmap_clean(
 figure_outdir = plot_outdir / "3d_heatmap_figure"
 figure_outdir.mkdir(parents=True, exist_ok=True)
 
-for ct in ["D1_Island_A", "D1_Island_B"]:
+for ct in ["D1_Island_A", "D1_Island_B", "Excitatory", "WM"]:
     plot_celltype_3d_heatmap_clean(
         fit_3d, df_voxel, celltype=ct,
         nx=60, ny=60, nz=20,
-        isomin_quantile=0.7,
+        isomin_quantile=0.6,
         opacity=0.12,
         surface_count=30,
         save_path=figure_outdir / f"Br6660_3d_heatmap_figure_{ct}.html",
