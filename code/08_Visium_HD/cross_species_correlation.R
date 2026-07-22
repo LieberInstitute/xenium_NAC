@@ -39,7 +39,7 @@ nhp_sce
 nhp_stats <- findMarkers_1vAll(sce = nhp_sce,
                                assay_name = "logcounts",
                                cellType_col = "MSN_type",
-                               direction = "any")
+                               direction = "up",mod = "~monkey")
 
 
 
