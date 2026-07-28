@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Fixed reference: Br6660_NAc4_2080 (Xenium, 2080 um)
 # Moving slice:    VHD_H1_8MTH2TQ_A1 (VisiumHD, 2040 um)
-# Edit this array after inspecting the first-pass overlay.
+# Manual transform parameters derived from the first-pass overlay.
 REALIGN_CELLTYPES=(D1_Island_A D1_Island_B)
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
