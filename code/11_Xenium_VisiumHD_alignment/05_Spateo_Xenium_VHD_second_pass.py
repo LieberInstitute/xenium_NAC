@@ -223,7 +223,7 @@ def resolve_paths(args: argparse.Namespace, root: Path) -> None:
     if not np.isfinite(args.vhd_z_height) or args.vhd_z_height < 0:
         raise ValueError("--vhd-z-height must be finite and non-negative")
 
-    # Remove duplicates while preserving the user's requested order.
+    # Remove duplicates while preserving the specified order.
     args.realign_celltypes = list(
         dict.fromkeys(map(str, args.realign_celltypes))
     )
