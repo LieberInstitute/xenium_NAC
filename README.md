@@ -4,7 +4,7 @@ graphical abstract
 
 ## Study Design  
 
-study statement
+study statement / experimental design
 
 ## Interactive Websites
 
@@ -17,16 +17,14 @@ namely:
 We provide the following interactive websites, organized by dataset with
 software labeled by emojis:  
 
-- Samui 
-  - 🔍 [NAC AP Samui browser - Visium (N=7)](link)
 - Pseudobulk
   - 👀 [if needed](link)
 - spatialLIBD
   - 🔍 [NAC AP spatialLIBD]()
-- 3D links
-  - 🔍 [name](link)
-  - 🔍 [name](link)
-  - 🔍 [name](link)
+- 3D Reconstruction links
+  - 🔍 [D1 Island B reconstruction](https://data.libd.org/NAC_AP/D1_Island_B_reconstruction_3d.html)
+  - 🔍 [D1 Island A reconstruction](https://data.libd.org/NAC_AP/D1_Island_A_reconstruction_3d.html)
+  - 🔍 [WM reconstruction](https://data.libd.org/NAC_AP/WM_reconstruction_3d.html)
 
 
 ## Data Access
