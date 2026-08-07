@@ -45,11 +45,11 @@ Region selection (default: lateral, dorsomedial, ventromedial):
 Common options:
   --donor NAME                      Donor filter [Br6660]
   --samples all|SAMPLE [...]        Samples to analyze [all]
-  --scale-range MIN MAX             Shuffle-scale bounds [400 1400]
-  --scale-interval NUM              Shuffle-scale interval [200]
+  --scale-range MIN MAX             Shuffle-scale bounds [200 1000]
+  --scale-interval NUM              Shuffle-scale interval [100]
   --scales-um NUM [...]             Explicit scales (backward-compatible)
-  --neighborhood-distances-um NUM   One neighborhood radius per run [200]
-  --permutations INT                Permutations [5]
+  --neighborhood-distances-um NUM   One neighborhood radius per run [50]
+  --permutations INT                Permutations [3]
   --seed INT                        Requested CRAWDAD seed [1]
   --threshold-mode global_fixed_universe|local
                                     Bonferroni policy [global_fixed_universe]
@@ -89,9 +89,9 @@ Example: all six requested comparisons
     --donor Br6660 --samples all \\
     --regions lateral dorsomedial ventromedial outside_global_roi \\
     --combine-rois medial=dorsomedial,ventromedial --whole-tissue \\
-    --scale-range 400 1400 --scale-interval 200 \\
-    --neighborhood-distances-um 200 \\
-    --permutations 5 --seed 1 --total-cpus 10 --n-jobs 10 \\
+    --scale-range 200 1000 --scale-interval 100 \\
+    --neighborhood-distances-um 50 \\
+    --permutations 3 --seed 1 --total-cpus 10 --n-jobs 10 \\
     --output-dir ../processed-data/10_Xenium_CRAWDAD/module02_crawdad_within_depth \\
     --plot-dir ../plots/10_Xenium_CRAWDAD/module02_crawdad_within_depth \\
     --resume
@@ -106,11 +106,11 @@ default_options <- function() {
     regions = character(),
     combine_rois = character(),
     whole_tissue = FALSE,
-    scale_range = c(400, 1400),
-    scale_interval = 200,
+    scale_range = c(200, 1000),
+    scale_interval = 100,
     scales_um = NULL,
-    neighborhood_distances_um = 200,
-    permutations = 5L,
+    neighborhood_distances_um = 50,
+    permutations = 3L,
     seed = 1L,
     grid_shape = "square",
     threshold_mode = "global_fixed_universe",
