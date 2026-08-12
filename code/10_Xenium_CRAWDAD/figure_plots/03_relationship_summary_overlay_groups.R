@@ -41,6 +41,8 @@ Options:
   --output PATH                Output PNG path
   --scale-range-um MIN MAX     Included null scales [200 1000]
   --scale-interval-um NUM      Null-scale interval [100]
+  --title TEXT                 Optional centered plot title
+  --no-boxes                   Do not draw overlay-group boxes
   --overwrite                  Replace an existing output
   --help                       Show this message
 
@@ -54,6 +56,8 @@ parse_args <- function(argv) {
     output = default_output,
     scale_range_um = c(200, 1000),
     scale_interval_um = 100,
+    title = NULL,
+    boxes = TRUE,
     overwrite = FALSE
   )
   if ("--help" %in% argv || "-h" %in% argv) {
@@ -66,8 +70,11 @@ parse_args <- function(argv) {
     if (token == "--overwrite") {
       opts$overwrite <- TRUE
       i <- i + 1L
+    } else if (token == "--no-boxes") {
+      opts$boxes <- FALSE
+      i <- i + 1L
     } else if (token == "--task-dir" || token == "--output" ||
-               token == "--scale-interval-um") {
+               token == "--scale-interval-um" || token == "--title") {
       if (i == length(argv)) stop(token, " requires a value")
       key <- gsub("-", "_", substring(token, 3), fixed = TRUE)
       opts[[key]] <- argv[[i + 1L]]
@@ -168,18 +175,17 @@ main <- function() {
   if (!file.exists(identity_path)) stop("Missing input: ", identity_path)
 
   dat <- read_csv(input_path, show_col_types = FALSE)
-  expected <- list(
-    sample = "Br6660_Nac10_4080",
-    depth = 4080,
-    analysis_region = "dorsomedial",
-    neighborhood_distance_um = 50
+  unique_fields <- c(
+    "sample", "depth", "analysis_region", "neighborhood_distance_um"
   )
-  for (field in names(expected)) {
+  for (field in unique_fields) {
     observed <- unique(dat[[field]])
-    if (length(observed) != 1L || !identical(as.character(observed),
-                                             as.character(expected[[field]]))) {
-      stop("Unexpected ", field, " in ", input_path)
+    if (length(observed) != 1L) {
+      stop("Expected one ", field, " value in ", input_path)
     }
+  }
+  if (!isTRUE(all.equal(unique(dat$neighborhood_distance_um), 50))) {
+    stop("Expected neighborhood_distance_um = 50 in ", input_path)
   }
   dat <- select_scales(dat, opts$scale_range_um, opts$scale_interval_um)
 
@@ -205,24 +211,32 @@ main <- function() {
     onlySignificant = FALSE,
     dotSizes = c(2, 10)
   )
-  built <- ggplot_build(plot)
-  x_order <- built$layout$panel_params[[1]]$x$get_labels()
-  y_order <- built$layout$panel_params[[1]]$y$get_labels()
-  boxes <- bind_rows(lapply(OVERLAY_GROUPS, group_box,
-                            x_order = x_order, y_order = y_order))
-
-  plot <- plot +
-    geom_rect(
+  n_boxes <- 0L
+  if (opts$boxes) {
+    built <- ggplot_build(plot)
+    x_order <- built$layout$panel_params[[1]]$x$get_labels()
+    y_order <- built$layout$panel_params[[1]]$y$get_labels()
+    boxes <- bind_rows(lapply(OVERLAY_GROUPS, group_box,
+                              x_order = x_order, y_order = y_order))
+    plot <- plot + geom_rect(
       data = boxes,
       aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
       inherit.aes = FALSE,
       fill = NA,
       color = "black",
       linewidth = 1.15
-    ) +
-    labs(title = NULL, x = "Reference", y = "Neighbor") +
+    )
+    n_boxes <- nrow(boxes)
+  }
+
+  plot <- plot +
+    labs(title = opts$title, x = "Reference", y = "Neighbor") +
     theme(
-      plot.title = element_blank(),
+      plot.title = if (is.null(opts$title)) {
+        element_blank()
+      } else {
+        element_text(size = 14, face = "bold", hjust = 0.5)
+      },
       axis.text.x.top = element_text(
         angle = 90, hjust = 0, vjust = 0.5, size = 10,
         face = "bold",
@@ -237,7 +251,7 @@ main <- function() {
   save_png(plot, opts$output)
   cat("Saved:", opts$output, "\n")
   cat("Scales:", paste(sort(unique(primary_perm$scale)), collapse = ", "), "um\n")
-  cat("Black boxes:", nrow(boxes), "\n")
+  cat("Black boxes:", n_boxes, "\n")
 }
 
 main()

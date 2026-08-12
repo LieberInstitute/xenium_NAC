@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Redraw four Module 05 relationship heatmaps by region and slice number."""
+"""Redraw selected Module 05 relationship heatmaps by region and slice number."""
 
 from __future__ import annotations
 
@@ -46,6 +46,7 @@ REGION_LABELS = {
 }
 PAIRS = (
     ("D1_Island_A", "D1_Island_A"),
+    ("D1_Island_A", "D1_Island_B"),
     ("D1_Island_B", "D1_Island_B"),
     ("D1_Island_B", "D1_Island_A"),
     ("Inh_PVALB", "D1_Island_B"),
