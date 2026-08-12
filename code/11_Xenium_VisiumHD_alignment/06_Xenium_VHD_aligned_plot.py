@@ -197,6 +197,14 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Validate every input, pair, label, and depth without plotting.",
     )
+    parser.add_argument(
+        "--supp-pairwise",
+        action="store_true",
+        help=(
+            "Generate only the four supplementary pairwise 2D figures, omit "
+            "slice names from subplot titles, and save them under supp_fig."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -389,6 +397,7 @@ def plot_pairwise_grid(
     output_path: Path,
     overwrite: bool,
     cell_type: str | None,
+    depth_only_title: bool = False,
 ) -> None:
     require_output(output_path, overwrite)
     figure, axes = plt.subplots(
@@ -437,14 +446,20 @@ def plot_pairwise_grid(
         axis.set_aspect("equal")
         axis.set_xlabel("x (µm)")
         axis.set_ylabel("y (µm)")
-        axis.set_title(
-            f"{spec.donor}: "
-            f"{short_sample_name(spec.xenium_sample, spec.donor)} ↔ "
-            f"{spec.vhd_sample.removeprefix('VHD_')}\n"
+        depth_title = (
             f"Xenium depth: {spec.xenium_depth:g} µm | "
-            f"VHD depth: {spec.vhd_depth:g} µm",
-            fontsize=8,
+            f"VHD depth: {spec.vhd_depth:g} µm"
         )
+        if depth_only_title:
+            subplot_title = depth_title
+        else:
+            subplot_title = (
+                f"{spec.donor}: "
+                f"{short_sample_name(spec.xenium_sample, spec.donor)} ↔ "
+                f"{spec.vhd_sample.removeprefix('VHD_')}\n"
+                f"{depth_title}"
+            )
+        axis.set_title(subplot_title, fontsize=8)
         axis.legend(
             loc="upper right",
             fontsize=6,
@@ -787,9 +802,11 @@ def main() -> None:
         print("\nValidation completed; no plots were generated.")
         return
 
-    products = set(args.products)
+    products = {"pairwise"} if args.supp_pairwise else set(args.products)
     if "pairwise" in products:
-        pairwise_dir = output_dir / "pairwise_2d"
+        pairwise_dir = output_dir / (
+            "supp_fig" if args.supp_pairwise else "pairwise_2d"
+        )
         plot_pairwise_grid(
             xenium_by_donor,
             vhd_by_pair,
@@ -797,6 +814,7 @@ def main() -> None:
             / "Xenium_VHD_pairwise_all_observations.png",
             args.overwrite,
             cell_type=None,
+            depth_only_title=args.supp_pairwise,
         )
         for cell_type in HIGHLIGHT_PALETTE:
             plot_pairwise_grid(
@@ -806,6 +824,7 @@ def main() -> None:
                 / f"Xenium_VHD_pairwise_{cell_type}.png",
                 args.overwrite,
                 cell_type=cell_type,
+                depth_only_title=args.supp_pairwise,
             )
 
     if {"interactive", "static"} & products:
@@ -873,3 +892,6 @@ if __name__ == "__main__":
 #
 # Generate only the four 2-by-4 pairwise figures:
 # python 06_Xenium_VHD_aligned_plot.py --products pairwise --overwrite
+#
+# Generate only the supplementary pairwise figures (depth-only subplot titles):
+# python 06_Xenium_VHD_aligned_plot.py --supp-pairwise --overwrite
