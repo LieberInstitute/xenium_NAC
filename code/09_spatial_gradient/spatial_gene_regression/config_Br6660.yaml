@@ -1,0 +1,95 @@
+analysis_id: Br6660_unbalanced_repeated_absolute_tile_2000um_density
+donor: Br6660
+coordinate:
+  ML_column: x
+  DV_column: y
+  AP_column: z
+  units: um
+  coordinate_version: Br6660_Spateo_final_second_pass
+  orientation:
+    ML: negative_to_positive_is_lateral_to_medial
+    DV: negative_to_positive_is_ventral_to_dorsal
+    AP: increasing_580_to_5580_is_anterior_to_posterior
+grid:
+  width_um: 2000
+  height_um: 2000
+  origin_source: validated_500um_grid_origin
+  primary_shift_um: [0, 0]
+  shifted_sensitivity_um: [1000, 1000]
+  boundary_convention: half_open_left_closed_right_open
+support:
+  design: unbalanced_repeated_absolute_tiles
+  minimum_cells_per_slice_celltype_tile: 10
+  minimum_exposure_per_slice_celltype_tile: 0
+  minimum_slices_per_absolute_tile: 4
+  minimum_repeated_tiles: 1
+  minimum_repeated_tile_footprint_mm2: 1.0
+  minimum_retained_cell_fraction_per_slice: 0.01
+  minimum_retained_exposure_fraction_per_slice: 0.01
+  minimum_cells_per_slice_celltype: 100
+  minimum_exposure_per_slice_celltype: 100
+  minimum_contiguous_slices: 8
+  minimum_ap_span_fraction: 0.60
+  interval_tie_break: longest_then_greatest_total_exposure_then_greatest_total_cell_count_then_most_anterior_start
+tissue_area:
+  source: cell-coordinate-derived_analyzed-tissue_support_mask
+  description: not_DAPI-derived_and_not_a_histological_tissue_mask
+  use_all_qc_passed_cells_regardless_of_CellType: true
+  mask_method: rasterized_buffered_cell_union
+  raster_resolution_um: 25
+  primary_cell_buffer_um: 100
+  sensitivity_cell_buffer_um: [75, 125]
+  fill_holes_max_area_mm2: 0.25
+  remove_components_min_area_mm2: 0.25
+  connectivity: 8
+  primary_parameter_set: primary_100um_buffer
+  minimum_valid_tissue_area_mm2: 0.000001
+model:
+  M0_formula: raw_count ~ absolute_tile + AP_centered_mm + offset(log(exposure))
+  M1_formula: raw_count ~ absolute_tile + AP_centered_mm + density_within + density_between + offset(log(exposure))
+  family: quasipoisson_log
+  covariance: CR2_clustered_by_physical_slice
+  df_method: Satterthwaite
+  cluster_column: Sample
+  AP_density_interaction: false
+gene_eligibility:
+  minimum_positive_rows: 2
+  minimum_total_raw_counts: 10
+pilot:
+  celltypes: [D1_Island_A, D1_Island_B]
+  marker_panel_file: pilot_D1_marker_panel.csv
+  marker_order_rule: source_file_order
+  maximum_markers_per_label: 20
+  multiplicity_method: Holm
+  require_explicit_approval_before_production: true
+collinearity:
+  VIF_warning: 5
+  VIF_severe: 10
+  condition_warning: 30
+  beta_zero_tolerance: 0.00000001
+  similar_relative_change_max: 0.20
+  attenuated_relative_change_min: 0.20
+leave_one_slice_out:
+  minimum_direction_agreement: 0.80
+  maximum_relative_coefficient_change: 0.50
+seeds:
+  pilot: 20260811
+  shifted_grid: 20260812
+software:
+  R_executable: /jhpce/shared/community/core/conda_R/4.5/R/bin/Rscript
+  R_version_frozen_at_implementation: 4.5.0-patched
+  required_R_packages: [yaml, jsonlite, clubSandwich]
+  python_executable: /dcs04/hicks/data/multi-sample-alignment-benchmark/envs/Spateo/bin/python
+  required_python_packages: [h5py, numpy, pandas, scipy]
+samples:
+  Br6660_NAc1_580: 580
+  Br6660_NAc2_1090: 1090
+  Br6660_NAc3_1580: 1580
+  Br6660_NAc4_2080: 2080
+  Br6660_NAc5_2580: 2580
+  Br6660_NAc6_3080: 3080
+  Br6660_NAc7_3580: 3580
+  Br6660_NAc10_4080: 4080
+  Br6660_NAc8_4580: 4580
+  Br6660_NAc9_5080: 5080
+  Br6660_NAc11_5580: 5580
