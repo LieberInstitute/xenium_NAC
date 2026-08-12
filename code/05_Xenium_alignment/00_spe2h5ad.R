@@ -11,7 +11,7 @@ library(ggplot2)
 spe <- readRDS(here("processed-data","02_build_spe","SPEs","spe_NormCounts.Rds"))
 spe$cell_id <- colnames(spe)
 
-# Nucleus area normalization
+### Nucleus area normalization
 spe_nuc <- spe
 assays(spe_nuc) <- list(
   nucleus_normcounts = assay(spe_nuc, "nucleus_normcounts")
@@ -22,7 +22,7 @@ writeH5AD(
     X_name     = "nucleus_normcounts",
     colData = c("Sample","Barcode","cell_id","sample_id","Xenium_Run_ID","Slide_ID","Donor", "Age", "Sex", "Race")
 )
-# Cell area normalization
+### Cell area normalization
 spe_cell <- spe
 assays(spe_cell) <- list(
   cell_normcounts = assay(spe_cell, "cell_normcounts")
@@ -33,7 +33,7 @@ writeH5AD(
     X_name     = "cell_normcounts",
     colData = c("Sample","Barcode","cell_id","sample_id","Xenium_Run_ID","Slide_ID","Donor", "Age", "Sex", "Race")
 )
-# Raw counts
+### Raw counts
 spe_counts <- spe
 assays(spe_counts) <- list(
   counts = assay(spe_counts, "counts")
@@ -43,6 +43,14 @@ writeH5AD(
     file  = here("processed-data","02_build_spe","h5ad","spe_NormCounts_counts.h5ad"),
     X_name     = "counts",
     colData = c("Sample","Barcode","cell_id","sample_id","Xenium_Run_ID","Slide_ID","Donor", "Age", "Sex", "Race")
+)
+# Raw counts with nucleus and cell area and scale factors
+writeH5AD(
+    spe_counts,
+    file  = here("processed-data","02_build_spe","h5ad","spe_counts_nucleus_cell_area_sf.h5ad"),
+    X_name     = "counts",
+    colData = c("Sample","Barcode","cell_id","sample_id","Xenium_Run_ID","Slide_ID","Donor", "Age", "Sex", "Race", 
+    "nucleus_area", "cell_area", "nucleus_area.sf", "cell_area.sf")
 )
 # Full SPE with all assays and colData
 writeH5AD(
