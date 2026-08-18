@@ -46,3 +46,8 @@ processed-data/NHP_Data/*
 processed-data/MetaNeighbor/*
 plots/Triple_Positive/*
 code/Triple_Positive_Exploration.R
+code/08_Visium_HD/01_buildSPEs/11_add_area.R
+code/08_Visium_HD/01_buildSPEs/11_add_area.sh
+plots/rat_NMF/*
+plots/rat_nmf/*
+plots/rat_nmf_supp_figure/*
