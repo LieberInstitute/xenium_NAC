@@ -1,0 +1,30 @@
+**** Job starts ****
+Tue Aug 18 09:56:59 AM EDT 2026
+**** JHPCE info ****
+User: rmiller
+Job id: 34984057
+Job name: 01_create_samui
+Hostname: 
+Task id: 15
+Processing sample Br6436_Nac_4_2150
+Tue Aug 18 09:56:59 AM EDT 2026
+Loading LIBD SLURM module for samui/1.0.0-next.45
+/jhpce/shared/libd/core/samui/1.0.0-next.45/samui_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:261: UserWarning: Valid config keys have changed in V2:
+* 'allow_mutation' has been removed
+  warnings.warn(message, UserWarning)
+[09:57:46] INFO     'Br6436_Nac_4_2150' Executing queued functions  logger.py:27
+           INFO     Br6436_Nac_4_2150 Adding coords 'coords'        logger.py:27
+[09:57:48] INFO     Br6436_Nac_4_2150 Adding chunked feature        logger.py:27
+                    'Genes'                                                     
+[10:02:20] INFO     Br6436_Nac_4_2150 Concatenating and compressing logger.py:27
+                    chunks                                                      
+[10:05:22] INFO     Writing compressed chunks for Genes: 14014364   logger.py:27
+                    bytes                                                       
+           INFO     Br6436_Nac_4_2150 Adding csv feature 'Cell      logger.py:27
+                    Types'                                                      
+[10:05:23] INFO     'Br6436_Nac_4_2150' written to                  logger.py:27
+                    /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xen             
+                    ium_NAC/processed-data/14_samui/Br6436_Nac_4_21             
+                    50                                                          
+**** Job ends ****
+Tue Aug 18 10:05:24 AM EDT 2026
