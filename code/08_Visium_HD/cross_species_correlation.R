@@ -23,6 +23,9 @@ anno_df <- as.data.frame(unique(colData(sfe)[,c("spatial_0.4","Spatial_Domain")]
 vhd_stats <- readRDS("/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/spatial_0.4_1vALL.Rds")
 vhd_stats$Spatial_Domain <- anno_df[match(vhd_stats$cellType.target,anno_df$spatial_0.4),"Spatial_Domain"]
 
+write.csv(vhd_stats,file = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/VHD_Spatial_Domain_1vALL.csv")
+
+
 ###########################################
 ###########     NHP   #####################
 ###########################################
@@ -41,7 +44,7 @@ nhp_stats <- findMarkers_1vAll(sce = nhp_sce,
                                cellType_col = "MSN_type",
                                direction = "up",mod = "~monkey")
 
-
+write.csv(nhp_stats,file = "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/NHP_MSN_Type_1vALL.csv")
 
 #Convert to 121 orthologs
 nhp_orthologs <- convert_orthologs(gene_df = counts(nhp_sce),
@@ -131,7 +134,7 @@ Icj <- ggplot(data = isl_wide,aes(x = D1_Island_B,y = `D1-ICj`,color = quadrant)
   geom_label_repel(data = subset(isl_wide,
                                  subset=(gene %in% c("DRD3","NTN1","CPNE4","KCNT2",
                                                      "ISL1","PROK2","MYO16","CXCL14",
-                                                     "TCERG1L","MC4R"))),
+                                                     "TCERG1L","MC4R","VIP"))),
                    aes(label = gene),color = "black") +
   ylim(c(-3,4.5)) +
   geom_hline(yintercept = 0,lty = 2) +

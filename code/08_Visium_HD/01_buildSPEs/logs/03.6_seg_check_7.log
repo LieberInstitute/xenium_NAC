@@ -1,10 +1,10 @@
 **** Job starts ****
-Fri Jun  5 09:02:35 PM EDT 2026
+Tue Aug 18 03:03:10 PM EDT 2026
 **** JHPCE info ****
 User: rphillip
-Job id: 32443631
+Job id: 34987095
 Job name: 03.6_seg_check
-Node name: compute-127
+Node name: compute-177
 Task id: 7
 Loading LIBD SLURM module for visium_hd/1.0
 Loading LIBD SLURM module for htslib/1.18
@@ -15,7 +15,25 @@ Currently Loaded Modules:
 
  
 
-/var/spool/slurm/d/job32443631/slurm_script: line 22: 125643 Killed                  python 03.6_check_spaceranger_segmentation.py
+2026-08-18 15:03:11.772445 | Reading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/Br6436_4um_40x.tif
+2026-08-18 15:08:52.040262 | Image shape (after downscale 1): (81673, 131400, 3)
+2026-08-18 15:08:52.040306 | Loading GeoJSON polygons
+2026-08-18 15:08:58.612310 | 67634 nucleus, 67634 cell polygons
+2026-08-18 15:08:59.484561 | Drawing grid overview
+2026-08-18 15:12:57.808084 | Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-XNQ4F2B_A1/H1-XNQ4F2B_A1_grid_overview.png
+2026-08-18 15:12:57.808364 | Rendering 12x15 grid
+2026-08-18 15:14:17.274921 | Done. Wrote 1 overview + 180 tiles to /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-XNQ4F2B_A1
+-----
+matplotlib          3.9.2
+numpy               1.26.4
+pandas              2.2.3
+pyhere              1.0.3
+session_info        1.0.0
+tifffile            2024.7.24
+-----
+Python 3.9.20 | packaged by conda-forge | (main, Sep 30 2024, 17:49:10) [GCC 13.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-08-18 15:14
 **** Job ends ****
-Fri Jun  5 09:08:52 PM EDT 2026
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=32443631.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
+Tue Aug 18 03:14:19 PM EDT 2026

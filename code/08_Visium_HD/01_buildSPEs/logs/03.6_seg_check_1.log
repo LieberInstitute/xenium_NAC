@@ -1,10 +1,10 @@
 **** Job starts ****
-Fri Jun  5 09:02:35 PM EDT 2026
+Tue Aug 18 03:01:35 PM EDT 2026
 **** JHPCE info ****
 User: rphillip
-Job id: 32443625
+Job id: 34987072
 Job name: 03.6_seg_check
-Node name: compute-127
+Node name: compute-175
 Task id: 1
 Loading LIBD SLURM module for visium_hd/1.0
 Loading LIBD SLURM module for htslib/1.18
@@ -15,14 +15,14 @@ Currently Loaded Modules:
 
  
 
-2026-06-05 21:02:37.152405 | Reading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6660_NAc_3540_ventral_medial_islands_crop_40x_scan3_good.tif
-2026-06-05 21:03:52.918346 | Image shape (after downscale 1): (35684, 46277, 3)
-2026-06-05 21:03:52.918389 | Loading GeoJSON polygons
-2026-06-05 21:03:59.376924 | 63206 nucleus, 63206 cell polygons
-2026-06-05 21:04:00.248185 | Drawing grid overview
-2026-06-05 21:05:02.807171 | Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-XKYDCP3_A1/H1-XKYDCP3_A1_grid_overview.png
-2026-06-05 21:05:02.807196 | Rendering 12x15 grid
-2026-06-05 21:06:36.258987 | Done. Wrote 1 overview + 180 tiles to /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-XKYDCP3_A1
+2026-08-18 15:01:37.071748 | Reading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6660_NAc_3540_ventral_medial_islands_crop_40x_scan3_good.tif
+2026-08-18 15:02:30.762416 | Image shape (after downscale 1): (35684, 46277, 3)
+2026-08-18 15:02:30.762447 | Loading GeoJSON polygons
+2026-08-18 15:02:37.041739 | 63206 nucleus, 63206 cell polygons
+2026-08-18 15:02:37.846346 | Drawing grid overview
+2026-08-18 15:03:18.390204 | Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-XKYDCP3_A1/H1-XKYDCP3_A1_grid_overview.png
+2026-08-18 15:03:18.390223 | Rendering 12x15 grid
+2026-08-18 15:04:56.935176 | Done. Wrote 1 overview + 180 tiles to /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-XKYDCP3_A1
 -----
 matplotlib          3.9.2
 numpy               1.26.4
@@ -34,6 +34,6 @@ tifffile            2024.7.24
 Python 3.9.20 | packaged by conda-forge | (main, Sep 30 2024, 17:49:10) [GCC 13.3.0]
 Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
 -----
-Session information updated at 2026-06-05 21:06
+Session information updated at 2026-08-18 15:04
 **** Job ends ****
-Fri Jun  5 09:06:36 PM EDT 2026
+Tue Aug 18 03:04:57 PM EDT 2026

@@ -1,0 +1,268 @@
+**** Job starts ****
+Thu Jun 25 03:38:58 PM EDT 2026
+**** JHPCE info ****
+User: rphillip
+Job id: 33585556
+Job name: 11_area
+Node name: compute-124
+Task id: 
+Loading conda_R/4.5
+
+Attaching package: ‘SpatialFeatureExperiment’
+
+The following object is masked from ‘package:base’:
+
+    scale
+
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: generics
+
+Attaching package: ‘generics’
+
+The following objects are masked from ‘package:base’:
+
+    as.difftime, as.factor, as.ordered, intersect, is.element, setdiff,
+    setequal, union
+
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique,
+    unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+Loading required package: SparseArray
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following object is masked from ‘package:S4Vectors’:
+
+    expand
+
+Loading required package: S4Arrays
+Loading required package: abind
+
+Attaching package: ‘S4Arrays’
+
+The following object is masked from ‘package:abind’:
+
+    abind
+
+The following object is masked from ‘package:base’:
+
+    rowsum
+
+Loading required package: DelayedArray
+
+Attaching package: ‘DelayedArray’
+
+The following object is masked from ‘package:SpatialFeatureExperiment’:
+
+    scale
+
+The following objects are masked from ‘package:base’:
+
+    apply, scale, sweep
+
+Loading required package: h5mread
+Loading required package: rhdf5
+
+Attaching package: ‘h5mread’
+
+The following object is masked from ‘package:rhdf5’:
+
+    h5ls
+
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+Linking to GEOS 3.11.1, GDAL 3.6.2, PROJ 9.1.1; sf_use_s2() is TRUE
+2026-06-25 15:39:13 | loading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/sfe_cell_norm_QC_filtered_v2
+2026-06-25 15:39:21 | SFE: 18132 genes x 439451 cells
+  using colGeometry for cells: cellseg
+Simple feature collection with 439451 features and 1 field
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: 6602.6 ymin: 5205.5 xmax: 130042.4 ymax: 58865.4
+CRS:           NA
+First 10 features:
+                                 cell_id                       geometry
+H1-XKYDCP3_A1_cellid_000000009-1       9 POLYGON ((14759 7122.2, 147...
+H1-XKYDCP3_A1_cellid_000000011-1      11 POLYGON ((14924.4 5753.4, 1...
+H1-XKYDCP3_A1_cellid_000000018-1      18 POLYGON ((14072.3 6722.8, 1...
+H1-XKYDCP3_A1_cellid_000000025-1      25 POLYGON ((15067.8 5587.9, 1...
+H1-XKYDCP3_A1_cellid_000000045-1      45 POLYGON ((14124.7 5765.1, 1...
+H1-XKYDCP3_A1_cellid_000000052-1      52 POLYGON ((15107 5651.5, 151...
+H1-XKYDCP3_A1_cellid_000000055-1      55 POLYGON ((13905.7 6793.2, 1...
+H1-XKYDCP3_A1_cellid_000000056-1      56 POLYGON ((14807 7027.5, 148...
+H1-XKYDCP3_A1_cellid_000000057-1      57 POLYGON ((14572.6 6416.6, 1...
+H1-XKYDCP3_A1_cellid_000000058-1      58 POLYGON ((13733.8 6348.9, 1...
+[1] "H1-XKYDCP3_A1"
+2026-06-25 15:40:09 | H1-XKYDCP3_A1 | mpp=0.2526 | cells=61349 | nucleus matched=61349
+[1] "H1-XKYDCP3_D1"
+2026-06-25 15:40:12 | H1-XKYDCP3_D1 | mpp=0.2525 | cells=32864 | nucleus matched=32864
+[1] "H1-M3TCP9V_A1"
+2026-06-25 15:40:18 | H1-M3TCP9V_A1 | mpp=0.2526 | cells=59748 | nucleus matched=59748
+[1] "H1-M3TCP9V_D1"
+2026-06-25 15:40:22 | H1-M3TCP9V_D1 | mpp=0.2527 | cells=46984 | nucleus matched=46984
+[1] "H1-8MTH2TQ_A1"
+2026-06-25 15:40:27 | H1-8MTH2TQ_A1 | mpp=0.2526 | cells=61725 | nucleus matched=61725
+[1] "H1-8MTH2TQ_D1"
+2026-06-25 15:40:32 | H1-8MTH2TQ_D1 | mpp=0.2526 | cells=57160 | nucleus matched=57160
+[1] "H1-XNQ4F2B_A1"
+2026-06-25 15:40:38 | H1-XNQ4F2B_A1 | mpp=0.2526 | cells=63047 | nucleus matched=63047
+[1] "H1-XNQ4F2B_D1"
+2026-06-25 15:40:44 | H1-XNQ4F2B_D1 | mpp=0.2527 | cells=56574 | nucleus matched=56574
+  cell_area NA      : 0
+  nucleus_area NA   : 0  (cells with no matched nucleus polygon)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  3.981 152.035 219.931 222.015 288.257 795.471 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.98   15.92   23.99   25.88   32.09  275.86 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+0.02028 0.07717 0.11053 0.12452 0.15123 1.00000 
+R version 4.5.0 Patched (2025-05-21 r88220)
+Platform: x86_64-conda-linux-gnu
+Running under: Rocky Linux 9.4 (Blue Onyx)
+
+Matrix products: default
+BLAS:   /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRblas.so 
+LAPACK: /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/lib/libRlapack.so;  LAPACK version 3.12.1
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Eastern
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats4    stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] sf_1.0-21                       here_1.0.1                     
+ [3] jsonlite_2.0.0                  HDF5Array_1.36.0               
+ [5] h5mread_1.0.0                   rhdf5_2.52.0                   
+ [7] DelayedArray_0.34.1             SparseArray_1.8.0              
+ [9] S4Arrays_1.8.0                  abind_1.4-8                    
+[11] Matrix_1.7-3                    SpatialExperiment_1.18.1       
+[13] SingleCellExperiment_1.30.1     SummarizedExperiment_1.38.1    
+[15] Biobase_2.68.0                  GenomicRanges_1.60.0           
+[17] GenomeInfoDb_1.44.0             IRanges_2.42.0                 
+[19] S4Vectors_0.48.1                BiocGenerics_0.54.0            
+[21] generics_0.1.4                  MatrixGenerics_1.20.0          
+[23] matrixStats_1.5.0               SpatialFeatureExperiment_1.10.1
+
+loaded via a namespace (and not attached):
+ [1] EBImage_4.50.0            R.utils_2.13.0           
+ [3] bitops_1.0-9              fastmap_1.2.0            
+ [5] RCurl_1.98-1.17           TH.data_1.1-3            
+ [7] digest_0.6.37             lifecycle_1.0.4          
+ [9] LearnBayes_2.15.1         survival_3.8-3           
+[11] statmod_1.5.0             terra_1.8-50             
+[13] magrittr_2.0.3            compiler_4.5.0           
+[15] rlang_1.1.6               tools_4.5.0              
+[17] data.table_1.17.2         dqrng_0.4.1              
+[19] htmlwidgets_1.6.4         sp_2.2-0                 
+[21] classInt_0.4-11           multcomp_1.4-28          
+[23] BiocParallel_1.42.0       KernSmooth_2.23-26       
+[25] R.oo_1.27.1               grid_4.5.0               
+[27] beachmat_2.24.0           e1071_1.7-16             
+[29] Rhdf5lib_1.30.0           edgeR_4.6.2              
+[31] MASS_7.3-65               zeallot_0.1.0            
+[33] mvtnorm_1.3-3             cli_3.6.5                
+[35] crayon_1.5.3              httr_1.4.7               
+[37] rjson_0.2.23              DelayedMatrixStats_1.30.0
+[39] spdep_1.3-11              scuttle_1.18.0           
+[41] DBI_1.2.3                 proxy_0.4-27             
+[43] splines_4.5.0             spatialreg_1.3-6         
+[45] parallel_4.5.0            s2_1.1.8                 
+[47] XVector_0.48.0            tiff_0.1-12              
+[49] sandwich_3.1-1            boot_1.3-31              
+[51] spData_2.3.4              fftwtools_0.9-11         
+[53] BiocNeighbors_2.2.0       jpeg_0.1-11              
+[55] magick_2.8.6              locfit_1.5-9.12          
+[57] limma_3.64.3              units_0.8-7              
+[59] DropletUtils_1.28.0       codetools_0.2-20         
+[61] deldir_2.0-4              UCSC.utils_1.4.0         
+[63] htmltools_0.5.8.1         rhdf5filters_1.20.0      
+[65] GenomeInfoDbData_1.2.14   R6_2.6.1                 
+[67] wk_0.9.4                  sparseMatrixStats_1.20.0 
+[69] sfheaders_0.4.4           rprojroot_2.0.4          
+[71] lattice_0.22-7            R.methodsS3_1.8.2        
+[73] png_0.1-8                 class_7.3-23             
+[75] Rcpp_1.1.1-1.1            nlme_3.1-168             
+[77] coda_0.19-4.1             zoo_1.8-14               
+**** Job ends ****
+Thu Jun 25 03:59:02 PM EDT 2026

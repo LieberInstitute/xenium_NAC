@@ -14,6 +14,8 @@ import tifffile
 import datetime
 import session_info
 
+os.chdir("/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/")
+
 ################################################################################
 #   Pick the sample (same mechanism as the 03 script)
 ################################################################################

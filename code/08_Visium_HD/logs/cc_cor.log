@@ -1,10 +1,10 @@
 **** Job starts ****
-Fri Jul 17 11:54:18 AM EDT 2026
+Fri Aug  7 12:20:56 PM EDT 2026
 **** JHPCE info ****
 User: rphillip
-Job id: 34195452
+Job id: 34697995
 Job name: cc_cor
-Node name: compute-127
+Node name: compute-148
 Task id: 
 Loading conda_R/4.5
 Loading required package: SummarizedExperiment
@@ -226,7 +226,7 @@ Loading required namespace: SpatialFeatureExperiment
 Registered S3 method overwritten by 'spdep':
   method   from
   plot.mst ape 
-Loading NHP object |2026-07-17 11:55:26.019923
+Loading NHP object |2026-08-07 12:21:53.36557
 Warning messages:
 1: `PackageCheck()` was deprecated in SeuratObject 5.0.0.
 ℹ Please use `rlang::check_installed()` instead.
@@ -256,17 +256,17 @@ colData names(6): nFeature_RNA integrated_snn_res.0.3 ... monkey ident
 reducedDimNames(0):
 mainExpName: RNA
 altExpNames(1): integrated
-Running 1vALL Testing for any-regulated genes
-2026-07-17 11:55:33.750937 - Find markers for: D1-Matrix
-2026-07-17 11:55:34.529537 - Find markers for: D1-Striosome
-2026-07-17 11:55:35.136363 - Find markers for: D2-Matrix
-2026-07-17 11:55:35.795629 - Find markers for: D2-Striosome
-2026-07-17 11:55:36.537206 - Find markers for: D1/D2-Hybrid
-2026-07-17 11:55:37.162107 - Find markers for: D2-Shell/OT
-2026-07-17 11:55:37.771282 - Find markers for: D1-NUDAP
-2026-07-17 11:55:40.56632 - Find markers for: D1-Shell/OT
-2026-07-17 11:55:41.176074 - Find markers for: D1-ICj
-2026-07-17 11:55:41.778213 - Building Table
+Running 1vALL Testing for up-regulated genes
+2026-08-07 12:22:00.427899 - Find markers for: D1-Matrix
+2026-08-07 12:22:07.027191 - Find markers for: D1-Striosome
+2026-08-07 12:22:13.620831 - Find markers for: D2-Matrix
+2026-08-07 12:22:20.169284 - Find markers for: D2-Striosome
+2026-08-07 12:22:26.600498 - Find markers for: D1/D2-Hybrid
+2026-08-07 12:22:33.247118 - Find markers for: D2-Shell/OT
+2026-08-07 12:22:39.808555 - Find markers for: D1-NUDAP
+2026-08-07 12:22:46.360464 - Find markers for: D1-Shell/OT
+2026-08-07 12:22:54.896555 - Find markers for: D1-ICj
+2026-08-07 12:23:01.371381 - Building Table
 ** Done! **
 
 Preparing gene_df.
@@ -302,11 +302,17 @@ Total genes dropped after convert_orthologs :
    15,913 / 30,165 (53%)
 Total genes remaining after convert_orthologs :
    14,252 / 30,165 (47%)
+Warning message:
+Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`). 
+Warning message:
+Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`). 
 
 Reproducibility information:
-[1] "2026-07-17 11:55:54 EDT"
+[1] "2026-08-07 12:23:15 EDT"
    user  system elapsed 
- 73.505   4.271  94.770 
+118.862   3.323 139.136 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -317,7 +323,7 @@ Reproducibility information:
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-07-17
+ date     2026-08-07
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -590,4 +596,4 @@ Reproducibility information:
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 **** Job ends ****
-Fri Jul 17 11:55:55 AM EDT 2026
+Fri Aug  7 12:23:16 PM EDT 2026

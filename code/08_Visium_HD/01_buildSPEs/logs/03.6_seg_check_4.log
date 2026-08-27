@@ -1,10 +1,10 @@
 **** Job starts ****
-Fri Jun  5 09:02:35 PM EDT 2026
+Tue Aug 18 03:01:35 PM EDT 2026
 **** JHPCE info ****
 User: rphillip
-Job id: 32443628
+Job id: 34987075
 Job name: 03.6_seg_check
-Node name: compute-127
+Node name: compute-166
 Task id: 4
 Loading LIBD SLURM module for visium_hd/1.0
 Loading LIBD SLURM module for htslib/1.18
@@ -15,14 +15,14 @@ Currently Loaded Modules:
 
  
 
-2026-06-05 21:02:37.149708 | Reading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6660_84_40X_crop_2.tif
-2026-06-05 21:03:55.962017 | Image shape (after downscale 1): (39777, 43200, 3)
-2026-06-05 21:03:55.962072 | Loading GeoJSON polygons
-2026-06-05 21:04:01.124485 | 48773 nucleus, 48773 cell polygons
-2026-06-05 21:04:01.730842 | Drawing grid overview
-2026-06-05 21:05:02.283051 | Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-M3TCP9V_D1/H1-M3TCP9V_D1_grid_overview.png
-2026-06-05 21:05:02.283072 | Rendering 12x15 grid
-2026-06-05 21:06:34.754442 | Done. Wrote 1 overview + 180 tiles to /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-M3TCP9V_D1
+2026-08-18 15:01:37.643169 | Reading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/Br6660_84_40X_crop_2.tif
+2026-08-18 15:02:32.455016 | Image shape (after downscale 1): (39777, 43200, 3)
+2026-08-18 15:02:32.455051 | Loading GeoJSON polygons
+2026-08-18 15:02:36.482479 | 48773 nucleus, 48773 cell polygons
+2026-08-18 15:02:37.016565 | Drawing grid overview
+2026-08-18 15:03:13.630928 | Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-M3TCP9V_D1/H1-M3TCP9V_D1_grid_overview.png
+2026-08-18 15:03:13.630949 | Rendering 12x15 grid
+2026-08-18 15:04:34.394150 | Done. Wrote 1 overview + 180 tiles to /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/HD_Full_Analysis/segmentation_grid_spaceranger/H1-M3TCP9V_D1
 -----
 matplotlib          3.9.2
 numpy               1.26.4
@@ -34,6 +34,6 @@ tifffile            2024.7.24
 Python 3.9.20 | packaged by conda-forge | (main, Sep 30 2024, 17:49:10) [GCC 13.3.0]
 Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
 -----
-Session information updated at 2026-06-05 21:06
+Session information updated at 2026-08-18 15:04
 **** Job ends ****
-Fri Jun  5 09:06:35 PM EDT 2026
+Tue Aug 18 03:04:34 PM EDT 2026

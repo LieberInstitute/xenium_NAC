@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mem=44G
+#SBATCH --mem=100G
 #SBATCH --job-name=03.6_seg_check
 #SBATCH -t 1-0:00:00
 #SBATCH -o logs/03.6_seg_check_%a.log
