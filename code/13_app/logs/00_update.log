@@ -1,5 +1,5 @@
 ********* Job Starts *********
-Mon Aug 24 02:49:16 PM EDT 2026
+Thu Aug 27 03:03:15 PM EDT 2026
 Loading conda_R/4.5
 
 Attaching package: ‘SpatialFeatureExperiment’
@@ -138,22 +138,46 @@ The following object is masked from ‘package:rhdf5’:
 
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/code
 here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
-Loading SFE - 2026-08-24 14:49:41.104071
-Making object smaller - 2026-08-24 14:50:32.28269
-Adding Img Data - 2026-08-24 14:50:33.106468
-[1] "H1-XKYDCP3_A1"
-[1] "H1-XKYDCP3_D1"
-[1] "H1-M3TCP9V_A1"
-[1] "H1-M3TCP9V_D1"
-[1] "H1-8MTH2TQ_A1"
-[1] "H1-8MTH2TQ_D1"
-[1] "H1-XNQ4F2B_A1"
-[1] "H1-XNQ4F2B_D1"
+Loading SFE - 2026-08-27 15:03:29.672128
+Making object smaller - 2026-08-27 15:04:09.246656
+Converting SFE -> SPE - 2026-08-27 15:04:09.652248
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells 12786051 682.9   19430508 1037.8  14318900  764.8
+Vcells 57351993 437.6  190062605 1450.1 175348336 1337.9
+Adding image data - 2026-08-27 15:04:10.613882
+H1-XKYDCP3_A1
+H1-XKYDCP3_A1 centroid range: 13289, 39908, 5577, 32148
+H1-XKYDCP3_D1
+H1-XKYDCP3_D1 centroid range: 80255, 105137, 20881, 47653
+H1-M3TCP9V_A1
+H1-M3TCP9V_A1 centroid range: 33015, 59413, 20043, 46552
+H1-M3TCP9V_D1
+H1-M3TCP9V_D1 centroid range: 6615, 33201, 5211, 31793
+H1-8MTH2TQ_A1
+H1-8MTH2TQ_A1 centroid range: 87025, 113680, 32208, 58847
+H1-8MTH2TQ_D1
+H1-8MTH2TQ_D1 centroid range: 44883, 71491, 6911, 33524
+H1-XNQ4F2B_A1
+H1-XNQ4F2B_A1 centroid range: 106682, 129998, 22239, 48865
+H1-XNQ4F2B_D1
+H1-XNQ4F2B_D1 centroid range: 96685, 123303, 29652, 56374
+Saving SPE - 2026-08-27 15:04:11.634181
+Verifying reload - 2026-08-27 15:53:46.167366
+Reload OK. 8 images attached.
+spatialCoords OK. 439445 x 2 (X, Y)
+H1-XKYDCP3_A1 coord range: 13289, 39908, 5577, 32148
+H1-XKYDCP3_D1 coord range: 80255, 105137, 20881, 47653
+H1-M3TCP9V_A1 coord range: 33015, 59413, 20043, 46552
+H1-M3TCP9V_D1 coord range: 6615, 33201, 5211, 31793
+H1-8MTH2TQ_A1 coord range: 87025, 113680, 32208, 58847
+H1-8MTH2TQ_D1 coord range: 44883, 71491, 6911, 33524
+H1-XNQ4F2B_A1 coord range: 106682, 129998, 22239, 48865
+H1-XNQ4F2B_D1 coord range: 96685, 123303, 29652, 56374
 
 Reproducibility information:
-[1] "2026-08-24 15:36:31 EDT"
+[1] "2026-08-27 15:53:50 EDT"
     user   system  elapsed 
-2727.524   34.877 2833.518 
+2928.326   39.482 3034.962 
 ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
  version  R version 4.5.0 Patched (2025-05-21 r88220)
@@ -164,7 +188,7 @@ Reproducibility information:
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       US/Eastern
- date     2026-08-24
+ date     2026-08-27
  pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
  quarto   NA
 
@@ -276,4 +300,4 @@ Reproducibility information:
 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ********* Job Ends *********
-Mon Aug 24 03:36:31 PM EDT 2026
+Thu Aug 27 03:53:51 PM EDT 2026
