@@ -30,7 +30,7 @@ software labeled by emojis:
 ## Data Access
 Public [globus endpoint](https://research.libd.org/globus/) to access R objects associate with apps for this project.  
 SpaceRanger processed data outputs, can be accessed via Gene Expression Omnibus (GEO) under accession number [update number](link). 
-Zenodo Archive for this project can be found at [link](link). Project data was also uploaded to the NeMO and can be found at [number/ID](address).
+Zenodo Archive for this project can be found at [link](link). Project data was also uploaded to the NeMO and can be found at [nemo:col-s93bogv](https://assets.nemoarchive.org/col-s93bogv).
 
 
 ## Contact
