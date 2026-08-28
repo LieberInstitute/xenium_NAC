@@ -19,6 +19,8 @@ software labeled by emojis:
 
 - Pseudobulk
   - 👀 [if needed](link)
+- Shiny App
+  - 🔍 [VisiumHD shiny app](https://interactive.libd.org/NAC_AP/)
 - Samui
   - 🔍 [Samui: 2 Donors - 11 samples per donor](https://samuibrowser.com/from?url=data.libd.org%2Fsamuibrowser%2F&s=Br6660_Nac10_4080&s=Br6660_NAc1_580&s=Br6660_NAc2_1090&s=Br6660_NAc3_1580&s=Br6660_NAc4_2080&s=Br6660_NAc5_2580&s=Br6660_NAc6_3080&s=Br6660_NAc7_3580&s=Br6660_NAc8_4580&s=Br6660_NAc9_5080&s=Br6660_Nac11_5580&s=Br6436_Nac1_650&s=Br6436_Nac2_1150&s=Br6436_Nac3_1650&s=Br6436_Nac_4_2150&s=Br6436_Nac_5_2650&s=Br6436_Nac_6_3150&s=Br6436_Nac_7_3660&s=Br6436_Nac_8_4150&s=Br6436_Nac_9_4650&s=Br6436_Nac_10_5150&s=Br6436_Nac_11_5650&g=Genes&f=DRD1&sample=Br6660_Nac10_4080&x=6030&y=10054&z=3)
 - 3D Reconstruction links
