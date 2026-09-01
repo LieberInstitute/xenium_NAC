@@ -28,12 +28,12 @@ ct_cols  <- cluster_cols[-14]
 sfe <- computeLibraryFactors(sfe)
 sfe <- logNormCounts(sfe)
 
-sfe$DRD1 <- logcounts(sfe)["DRD1",]
-sfe$PDYN <- logcounts(sfe)["PDYN",]
-sfe$DRD2 <- logcounts(sfe)["DRD2",]
-sfe$ADORA2A <- logcounts(sfe)["ADORA2A",]
-sfe$RXFP1 <- logcounts(sfe)["RXFP1",]
-sfe$SEMA5B <- logcounts(sfe)["SEMA5B",]
+sfe$DRD1 <- as.numeric(logcounts(sfe)["DRD1",])
+sfe$PDYN <- as.numeric(logcounts(sfe)["PDYN",])
+sfe$DRD2 <- as.numeric(logcounts(sfe)["DRD2",])
+sfe$ADORA2A <- as.numeric(logcounts(sfe)["ADORA2A",])
+sfe$RXFP1 <- as.numeric(logcounts(sfe)["RXFP1",])
+sfe$SEMA5B <- as.numeric(logcounts(sfe)["SEMA5B",])
 
 genes <- c("DRD1","PDYN","DRD2","ADORA2A","RXFP1","SEMA5B")
 # Loop through the vector
