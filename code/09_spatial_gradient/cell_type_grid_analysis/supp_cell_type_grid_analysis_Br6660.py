@@ -10,6 +10,7 @@ Run from anywhere inside the repository with:
         supp_cell_type_grid_analysis_Br6660.py
 """
 
+import argparse
 from pathlib import Path
 import subprocess
 
@@ -50,6 +51,16 @@ CELLTYPE_PALETTE = {
     "Microglia_Oligo": "#B62A7A",
     "WM": "orange",
 }
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--legend-only",
+        action="store_true",
+        help="Generate only the standalone 5-by-4 and 2-by-2 legends.",
+    )
+    return parser.parse_args()
 
 
 def find_git_root() -> Path:
@@ -285,7 +296,90 @@ def make_xy_proportion_grid(
     plt.close(fig)
 
 
+def make_legend_only(output_path: Path) -> None:
+    """Save an alphabetized cell-type legend in a 5-row by 4-column layout."""
+    alphabetical = sorted(CELLTYPE_PALETTE, key=str.casefold)
+    nrows, ncols = 5, 4
+    if len(alphabetical) != nrows * ncols:
+        raise ValueError(
+            f"Expected {nrows * ncols} cell types; found {len(alphabetical)}"
+        )
+
+    # Matplotlib fills multi-column legends from top to bottom within each
+    # column. Reorder the handles so the displayed grid reads alphabetically
+    # from left to right and then from top to bottom.
+    display_grid = np.asarray(alphabetical, dtype=object).reshape(nrows, ncols)
+    matplotlib_order = display_grid.T.ravel().tolist()
+    handles = [
+        Patch(
+            facecolor=CELLTYPE_PALETTE[celltype],
+            edgecolor="none",
+            label=celltype,
+        )
+        for celltype in matplotlib_order
+    ]
+
+    fig = plt.figure(figsize=(10.0, 2.6))
+    fig.legend(
+        handles=handles,
+        loc="center",
+        ncol=ncols,
+        frameon=False,
+        fontsize=12,
+        handlelength=1.3,
+        handleheight=1.1,
+        columnspacing=1.2,
+        labelspacing=0.10,
+    )
+    fig.savefig(
+        output_path,
+        dpi=300,
+        bbox_inches="tight",
+        pad_inches=0.15,
+        facecolor="white",
+    )
+    plt.close(fig)
+
+
+def make_d1_msn_legend_only(output_path: Path) -> None:
+    """Save D1 islands in column 1 and MSN labels in column 2."""
+    selected_celltypes = (
+        "D1_Island_A",
+        "D1_Island_B",
+        "DRD1_MSN",
+        "DRD2_MSN",
+    )
+    handles = [
+        Patch(
+            facecolor=CELLTYPE_PALETTE[celltype],
+            edgecolor="none",
+            label=celltype,
+        )
+        for celltype in selected_celltypes
+    ]
+    fig = plt.figure(figsize=(5.5, 1.4))
+    fig.legend(
+        handles=handles,
+        loc="center",
+        ncol=2,
+        frameon=False,
+        fontsize=12,
+        handlelength=1.3,
+        handleheight=1.1,
+        columnspacing=1.2,
+    )
+    fig.savefig(
+        output_path,
+        dpi=300,
+        bbox_inches="tight",
+        pad_inches=0.15,
+        facecolor="white",
+    )
+    plt.close(fig)
+
+
 def main() -> None:
+    args = parse_args()
     git_root = find_git_root()
     output_dir = (
         git_root
@@ -295,14 +389,30 @@ def main() -> None:
         / "supp_fig"
     )
     output_dir.mkdir(parents=True, exist_ok=True)
-    obs, xy = load_plot_data(git_root)
-
     overlay_path = output_dir / "Br6660_slice_grid_overlay.png"
     proportion_path = output_dir / "Br6660_cell_type_proportion_grid_xy.png"
+    legend_path = output_dir / "Br6660_cell_type_legend_5x4.png"
+    d1_msn_legend_path = (
+        output_dir
+        / "Br6660_D1_Island_A_B_DRD1_MSN_DRD2_MSN_legend_2x2.png"
+    )
+
+    if args.legend_only:
+        make_legend_only(legend_path)
+        make_d1_msn_legend_only(d1_msn_legend_path)
+        print(f"Saved: {legend_path}")
+        print(f"Saved: {d1_msn_legend_path}")
+        return
+
+    obs, xy = load_plot_data(git_root)
     make_slice_grid_overlay(obs, xy, overlay_path)
     make_xy_proportion_grid(obs, xy, proportion_path)
+    make_legend_only(legend_path)
+    make_d1_msn_legend_only(d1_msn_legend_path)
     print(f"Saved: {overlay_path}")
     print(f"Saved: {proportion_path}")
+    print(f"Saved: {legend_path}")
+    print(f"Saved: {d1_msn_legend_path}")
 
 
 if __name__ == "__main__":
