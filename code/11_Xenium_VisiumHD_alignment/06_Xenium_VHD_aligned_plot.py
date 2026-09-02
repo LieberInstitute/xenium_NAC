@@ -15,7 +15,8 @@ Outputs
 -------
 1. Four 2-by-4 pairwise overlay figures: all observations, D1_Island_A,
    D1_Island_B, and WM.
-2. Six interactive HTML files: two donors x three highlighted labels,
+2. Eight interactive HTML files: two donors x four highlighted views
+   (D1 Island A, D1 Island B, WM, and D1 Islands A+B),
    displayed with reversed physical z depth.
 3. Six static three-view PNG files with the same donor/label combinations.
 
@@ -39,7 +40,7 @@ from typing import Sequence
 
 os.environ["PYVISTA_OFF_SCREEN"] = "true"
 os.environ.setdefault("PYVISTA_EGL", "true")
-os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib")
+os.environ["MPLCONFIGDIR"] = f"/tmp/matplotlib-{os.getuid()}"
 
 import matplotlib
 
@@ -64,6 +65,8 @@ VHD_HIGHLIGHT_PALETTE = {
     "D1_Island_B": "#006400",
     "WM": "#8B4513",
 }
+COMBINED_D1_CONTENT = "D1_Island_A_B"
+INTERACTIVE_CONTENTS = (*HIGHLIGHT_PALETTE, COMBINED_D1_CONTENT)
 
 PAIRWISE_ALL_POINT_SIZE = 0.20
 PAIRWISE_ALL_ALPHA = 0.45
@@ -178,6 +181,13 @@ def parse_args() -> argparse.Namespace:
         choices=("pairwise", "interactive", "static"),
         default=("pairwise", "interactive", "static"),
         help="Plot groups to generate (default: all three).",
+    )
+    parser.add_argument(
+        "--donors",
+        nargs="+",
+        choices=DONORS,
+        default=list(DONORS),
+        help="Donors for 3D products (default: Br6660 and Br6436).",
     )
     parser.add_argument(
         "--output-dir",
@@ -467,7 +477,11 @@ def plot_pairwise_grid(
             frameon=False,
         )
 
-    label = "all observations" if cell_type is None else cell_type
+    label = (
+        "all observations"
+        if cell_type is None
+        else content_display_name(cell_type)
+    )
     figure.suptitle(
         f"Final Xenium–VisiumHD pairwise alignments: {label}",
         y=1.002,
@@ -566,13 +580,11 @@ def add_highlight_layers(
     legend_font_size: int | None = None,
     legend_location: str = "upper right",
 ) -> None:
-    xenium_highlight_color = HIGHLIGHT_PALETTE[cell_type]
-    vhd_highlight_color = VHD_HIGHLIGHT_PALETTE[cell_type]
-    short_cell_type = cell_type.replace("D1_Island_", "D1 ")
+    selected = highlighted_celltypes(cell_type)
     xenium_points = points_for_orientation(cloud.xenium_xyz, flipped_z)
     vhd_points = points_for_orientation(cloud.vhd_xyz, flipped_z)
-    xenium_highlight = cloud.xenium_labels == cell_type
-    vhd_highlight = cloud.vhd_labels == cell_type
+    xenium_highlight = np.isin(cloud.xenium_labels, selected)
+    vhd_highlight = np.isin(cloud.vhd_labels, selected)
 
     # All layers use the same point size. VHD is shown as spherical points and
     # with darker grey so its physical slice planes remain distinguishable.
@@ -594,24 +606,26 @@ def add_highlight_layers(
         "VHD other",
         True,
     )
-    add_point_layer(
-        plotter,
-        xenium_points[xenium_highlight],
-        xenium_highlight_color,
-        XENIUM_HIGHLIGHT_OPACITY,
-        THREE_D_POINT_SIZE,
-        f"Xenium {short_cell_type}",
-        False,
-    )
-    add_point_layer(
-        plotter,
-        vhd_points[vhd_highlight],
-        vhd_highlight_color,
-        VHD_HIGHLIGHT_OPACITY,
-        THREE_D_POINT_SIZE,
-        f"VHD {short_cell_type}",
-        True,
-    )
+    for selected_cell_type in selected:
+        short_cell_type = content_display_name(selected_cell_type)
+        add_point_layer(
+            plotter,
+            xenium_points[cloud.xenium_labels == selected_cell_type],
+            HIGHLIGHT_PALETTE[selected_cell_type],
+            XENIUM_HIGHLIGHT_OPACITY,
+            THREE_D_POINT_SIZE,
+            f"Xenium {short_cell_type}",
+            False,
+        )
+        add_point_layer(
+            plotter,
+            vhd_points[cloud.vhd_labels == selected_cell_type],
+            VHD_HIGHLIGHT_PALETTE[selected_cell_type],
+            VHD_HIGHLIGHT_OPACITY,
+            THREE_D_POINT_SIZE,
+            f"VHD {short_cell_type}",
+            True,
+        )
     if show_legend:
         legend = plotter.add_legend(
             loc=legend_location,
@@ -624,8 +638,26 @@ def add_highlight_layers(
             legend.GetEntryTextProperty().SetFontSize(legend_font_size)
 
 
+def highlighted_celltypes(content: str) -> tuple[str, ...]:
+    if content == COMBINED_D1_CONTENT:
+        return ("D1_Island_A", "D1_Island_B")
+    if content not in HIGHLIGHT_PALETTE:
+        raise ValueError(f"Unknown 3D highlight content: {content}")
+    return (content,)
+
+
+def content_display_name(content: str) -> str:
+    if content == COMBINED_D1_CONTENT:
+        return "D1-island A and D1-island B"
+    if content == "D1_Island_A":
+        return "D1-island A"
+    if content == "D1_Island_B":
+        return "D1-island B"
+    return content.replace("_", " ")
+
+
 def add_brain_reference_axes(plotter: pv.Plotter) -> None:
-    """Add the same rotating anatomical axis widget as Xenium Module 02."""
+    """Add a camera-synced ML/DV/AP widget pinned to the lower-left corner."""
     plotter.add_axes(
         interactive=False,
         line_width=3,
@@ -633,31 +665,108 @@ def add_brain_reference_axes(plotter: pv.Plotter) -> None:
         x_color="#D95F5F",
         y_color="#5FA35F",
         z_color="#5F7FD9",
-        xlabel="ML (L-M)",
-        ylabel="DV (D-V)",
-        zlabel="AP (A-P)",
-        viewport=(0.0, 0.0, 0.22, 0.22),
+        xlabel="ML",
+        ylabel="DV",
+        zlabel="AP",
+        viewport=(0.0, 0.0, 0.195, 0.195),
         label_size=(0.34, 0.12),
     )
+    # Explicitly enable the widget before export. PyVistaLocalView passes
+    # enabled orientation widgets to trame-vtk's CameraSync serializer, which
+    # keeps the marker fixed in this viewport while synchronizing its camera.
+    widget = plotter.renderer.axes_widget
+    if widget is None:
+        raise RuntimeError("PyVista did not create the orientation axes widget.")
+    widget.SetEnabled(1)
+    widget.SetInteractive(False)
 
 
-def inject_html_title(
+def inject_interactive_html_overlays(
     output_path: Path,
     donor: str,
     cell_type: str,
 ) -> None:
+    """Inject title and legend overlays that PyVista's exporter preserves."""
+    display_cell_type = content_display_name(cell_type)
+    title = html.escape(f"{donor} — {display_cell_type}")
+    legend_rows: list[tuple[str, str]] = []
+    for selected_cell_type in highlighted_celltypes(cell_type):
+        short_name = html.escape(content_display_name(selected_cell_type))
+        legend_rows.extend(
+            [
+                (f"Xenium {short_name}", HIGHLIGHT_PALETTE[selected_cell_type]),
+                (
+                    f"VisiumHD {short_name}",
+                    VHD_HIGHLIGHT_PALETTE[selected_cell_type],
+                ),
+            ]
+        )
+    legend_rows.extend(
+        [
+            ("Xenium other", BACKGROUND_XENIUM_COLOR),
+            ("VisiumHD other", BACKGROUND_VHD_COLOR),
+        ]
+    )
+    rows = "\n".join(
+        (
+            f'<div class="xvhd-legend-row" style="color:{color}">'
+            f'<span class="xvhd-swatch" style="background:{color}"></span>'
+            f"<span>{label}</span></div>"
+        )
+        for label, color in legend_rows
+    )
     overlay = f"""
-<div style="position:fixed;left:18px;top:18px;z-index:1000;
-            padding:8px 12px;background:rgba(255,255,255,0.90);
-            border:1px solid #777;border-radius:4px;color:#111;
-            font:600 18px Arial,sans-serif;">
-  {html.escape(donor)} — {html.escape(cell_type)}
-</div>"""
-    html_text = output_path.read_text(encoding="utf-8")
-    if "</body>" not in html_text:
-        raise ValueError(f"Exported HTML has no closing body tag: {output_path}")
+<style>
+  .xvhd-overlay {{
+    position: fixed;
+    z-index: 10000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #171717;
+    pointer-events: none;
+    box-sizing: border-box;
+  }}
+  .xvhd-title {{
+    top: 22px;
+    left: 26px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 7px 10px;
+    background: rgba(255, 255, 255, 0.72);
+    border-radius: 4px;
+  }}
+  .xvhd-legend {{
+    top: 22px;
+    right: 24px;
+    min-width: 170px;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.76);
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.15;
+  }}
+  .xvhd-legend-row {{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 3px 0;
+    white-space: nowrap;
+  }}
+  .xvhd-swatch {{
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: 0 0 9px;
+  }}
+</style>
+<div class="xvhd-overlay xvhd-title">{title}</div>
+<div class="xvhd-overlay xvhd-legend">{rows}</div>
+"""
+    document = output_path.read_text(encoding="utf-8")
+    if "</body>" not in document:
+        raise RuntimeError(f"Cannot inject overlays into malformed HTML: {output_path}")
     output_path.write_text(
-        html_text.replace("</body>", f"{overlay}\n</body>", 1),
+        document.replace("</body>", f"{overlay}\n</body>", 1),
         encoding="utf-8",
     )
 
@@ -678,16 +787,17 @@ def export_interactive(
             cloud,
             cell_type,
             flipped_z,
-            show_legend=True,
+            show_legend=False,
         )
-        plotter.view_isometric()
+        plotter.view_xy()
         plotter.reset_camera()
         add_brain_reference_axes(plotter)
+        plotter.render()
         plotter.export_html(str(output_path))
-        inject_html_title(
+        inject_interactive_html_overlays(
             output_path,
-            cloud.donor,
-            cell_type,
+            donor=cloud.donor,
+            cell_type=cell_type,
         )
     finally:
         plotter.close()
@@ -736,7 +846,7 @@ def export_static(
             )
             set_static_view(plotter, view)
             plotter.add_text(
-                f"{cloud.donor} {cell_type} {view}",
+                f"{cloud.donor} {content_display_name(cell_type)} {view}",
                 position="upper_edge",
                 font_size=10,
                 color="black",
@@ -829,7 +939,7 @@ def main() -> None:
 
     if {"interactive", "static"} & products:
         initialize_headless_pyvista()
-        for donor in DONORS:
+        for donor in args.donors:
             donor_specs = [
                 spec for spec in PAIR_SPECS if spec.donor == donor
             ]
@@ -843,12 +953,12 @@ def main() -> None:
                 f"{list(cloud.xenium_depths)}; "
                 f"VHD depths: {list(cloud.vhd_depths)}"
             )
-            for cell_type in HIGHLIGHT_PALETTE:
-                # Display the anatomical stack with reversed physical z depth.
-                # Output names and plot annotations intentionally do not expose
-                # this implementation detail.
-                flipped_z = True
-                if "interactive" in products:
+            # Display the anatomical stack with reversed physical z depth.
+            # Output names and plot annotations intentionally do not expose
+            # this implementation detail.
+            flipped_z = True
+            if "interactive" in products:
+                for cell_type in INTERACTIVE_CONTENTS:
                     export_interactive(
                         cloud,
                         cell_type,
@@ -859,7 +969,8 @@ def main() -> None:
                         / f"{cell_type}_reconstruction_3d.html",
                         args.overwrite,
                     )
-                if "static" in products:
+            if "static" in products:
+                for cell_type in HIGHLIGHT_PALETTE:
                     export_static(
                         cloud,
                         cell_type,
@@ -895,3 +1006,9 @@ if __name__ == "__main__":
 #
 # Generate only the supplementary pairwise figures (depth-only subplot titles):
 # python 06_Xenium_VHD_aligned_plot.py --supp-pairwise --overwrite
+#
+# Generate only the four Br6660 interactive 3D HTML files:
+# python 06_Xenium_VHD_aligned_plot.py \
+#     --products interactive \
+#     --donors Br6660 \
+#     --overwrite
