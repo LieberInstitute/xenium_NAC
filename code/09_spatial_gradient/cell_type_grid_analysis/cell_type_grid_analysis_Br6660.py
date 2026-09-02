@@ -587,7 +587,6 @@ z_by_sample = (
     .sort_values()
 )
 samples_xy = z_by_sample.index.astype(str).tolist()
-z_lookup = z_by_sample.to_dict()
 
 # Count and proportion by Sample × CellType
 ct_counts = sub.groupby(["Sample", "CellType"]).size().reset_index(name="count")
@@ -631,16 +630,20 @@ for ct in celltypes_order:
                 f"{v:.2f}",
                 ha="center",
                 va="center",
-                fontsize=5,
+                fontsize=7.5,
             )
 
     left += vals
 
 ax.set_xlim(0, 1)
-ax.set_xlabel("Cell-type proportion")
-ax.set_ylabel("Slice depth ($\\mu$m)")
+ax.set_xlabel("Cell-type proportion", fontsize=14)
+ax.set_ylabel("Slice number", fontsize=14)
+ax.tick_params(axis="both", labelsize=12)
 ax.set_yticks(ylocs)
-ax.set_yticklabels([f"{z_lookup[s]:.0f}" for s in df_pivot.index], fontsize=7)
+ax.set_yticklabels(
+    [str(slice_number) for slice_number in range(1, len(df_pivot) + 1)],
+    fontsize=12,
+)
 
 # Make top -> bottom = small -> large
 ax.invert_yaxis()
@@ -650,11 +653,17 @@ ax.set_title(
     fontsize=10
 )
 
+legend_order = sorted(celltypes_order, key=str.casefold)
+legend_handles = [
+    Patch(facecolor=celltype_palette[ct], edgecolor="none", label=ct)
+    for ct in legend_order
+]
 ax.legend(
+    handles=legend_handles,
     loc="center left",
     bbox_to_anchor=(1.02, 0.5),
     frameon=False,
-    fontsize=6,
+    fontsize=8,
 )
 
 plt.savefig(
