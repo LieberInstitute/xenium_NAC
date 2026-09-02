@@ -285,45 +285,122 @@ plot_metric_by_sample("detected_gex", "detected_gex", bins = 150, logx = FALSE)
 plot_metric_by_sample("cell_area",    "cell_area",    bins = 150, logx = FALSE)
 
 #Visualize outliers using violin plots
+# Save each QC plot with an identical data-panel size. Legends and axis text can
+# change the total PNG size, but not the width or height of the plotting panel.
+save_qc_plot <- function(p, filename, panel_width = 5.5,
+                         panel_height = 5.5, dpi = 300) {
+  gt <- ggplotGrob(p)
+  panel_rows <- unique(gt$layout$t[grepl("^panel", gt$layout$name)])
+  panel_cols <- unique(gt$layout$l[grepl("^panel", gt$layout$name)])
+
+  gt$widths[panel_cols] <- grid::unit(
+    panel_width / length(panel_cols), "in"
+  )
+  gt$heights[panel_rows] <- grid::unit(
+    panel_height / length(panel_rows), "in"
+  )
+
+  total_width <- grid::convertWidth(
+    sum(gt$widths), "in", valueOnly = TRUE
+  )
+  total_height <- grid::convertHeight(
+    sum(gt$heights), "in", valueOnly = TRUE
+  )
+
+  ggsave(
+    filename = filename,
+    plot = gt,
+    width = total_width,
+    height = total_height,
+    dpi = dpi,
+    limitsize = FALSE,
+    bg = "white"
+  )
+}
+
 p <- plotColData(spe, x = "Sample", y = "subsets_any_neg_percent", color_by = "exclude_any_neg") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_x_discrete(expand = expansion(add = 0.8)) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.margin = margin(5.5, 5.5, 5.5, 25)
+  ) +
   stat_summary(fun = median, 
                fun.min = median, 
                fun.max = median,
                geom = "crossbar", 
-               width = 0.3)
-ggsave(p, filename = here("plots","03_qc","exclude_any_neg_outliers_violin.png"))
+               width = 0.3) +
+  labs(
+    x = "Sample",
+    y = "Negative control and unassigned transcripts (%)"
+  )
+save_qc_plot(
+  p,
+  here("plots","03_qc","exclude_any_neg_outliers_violin.png")
+)
 
 
-p <- plotColData(spe, x = "Sample", y = "detected", color_by = "detected_gex_4MAD") +
+p <- plotColData(spe, x = "Sample", y = "detected_gex", color_by = "detected_gex_4MAD") +
   scale_y_log10() + 
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_x_discrete(expand = expansion(add = 0.8)) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.margin = margin(5.5, 5.5, 5.5, 25)
+  ) +
   stat_summary(fun = median, 
                fun.min = median, 
                fun.max = median,
                geom = "crossbar", 
-               width = 0.3)
-ggsave(p, filename = here("plots","03_qc","detected_gex_4MAD_outliers_violin.png"))
+               width = 0.3) +
+  labs(
+    x = "Sample",
+    y = "Detected gene expression genes per cell"
+  )
+save_qc_plot(
+  p,
+  here("plots","03_qc","detected_gex_4MAD_outliers_violin.png")
+)
 
-p <- plotColData(spe, x = "Sample", y = "sum", color_by = "sum_gex_4MAD") +
+p <- plotColData(spe, x = "Sample", y = "sum_gex", color_by = "sum_gex_4MAD") +
   scale_y_log10() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_x_discrete(expand = expansion(add = 0.8)) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.margin = margin(5.5, 5.5, 5.5, 25)
+  ) +
   stat_summary(fun = median, 
                fun.min = median, 
                fun.max = median,
                geom = "crossbar", 
-               width = 0.3)
-ggsave(p, filename = here("plots","03_qc","sum_gex_4MAD_outliers_violin.png"))
+               width = 0.3) +
+  labs(
+    x = "Sample",
+    y = "Gene expression transcripts per cell"
+  )
+save_qc_plot(
+  p,
+  here("plots","03_qc","sum_gex_4MAD_outliers_violin.png")
+)
 
 p <- plotColData(spe,x = "Sample", y = "cell_area", color_by = "cell_area_4MAD") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position = "none")  +
+  scale_x_discrete(expand = expansion(add = 0.8)) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "none",
+    plot.margin = margin(5.5, 5.5, 5.5, 25)
+  )  +
   stat_summary(fun = median, 
                fun.min = median, 
                fun.max = median,
                geom = "crossbar", 
-               width = 0.3)
-ggsave(filename = here("plots","03_qc","cell_area_4MAD_outliers_violin.png"),plot = p)
+               width = 0.3) +
+  labs(
+    x = "Sample",
+    y = expression("Cell area ("*mu*"m"^2*")")
+  )
+save_qc_plot(
+  p,
+  here("plots","03_qc","cell_area_4MAD_outliers_violin.png")
+)
 
 p <- plotColData(spe,x = "Sample", y = "nucleus_area") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
@@ -391,12 +468,22 @@ df_long <- df %>%
   ) %>%
   mutate(
     Metric = case_when(
-      Metric == "exclude_any_neg"                       ~ "High-neg% (≥25%) outliers (count)",
-      Metric == "detected_gex_4MAD"                    ~ "Detected GEX outliers (±4 MAD) (count)",
-      Metric == "sum_gex_4MAD"                    ~ "Sum GEX outliers (±4 MAD) (count)",
-      Metric == "cell_area_4MAD"                    ~ "Cell-area outliers (±4 MAD) (count)",
-      Metric == "PercentRemoved"                        ~ "Percent of cells removed (%)",
-      TRUE                                              ~ Metric
+      Metric == "exclude_any_neg"    ~ "Negative controls ≥25% (cells)",
+      Metric == "sum_gex_4MAD"       ~ "Low GEX transcript count (lower 4 MAD; cells)",
+      Metric == "detected_gex_4MAD"  ~ "Low detected GEX genes (lower 4 MAD; cells)",
+      Metric == "cell_area_4MAD"     ~ "Cell area outliers (two sided 4 MAD; cells)",
+      Metric == "PercentRemoved"     ~ "Cells removed (%)",
+      TRUE                            ~ Metric
+    ),
+    Metric = factor(
+      Metric,
+      levels = c(
+        "Negative controls ≥25% (cells)",
+        "Low GEX transcript count (lower 4 MAD; cells)",
+        "Low detected GEX genes (lower 4 MAD; cells)",
+        "Cell area outliers (two sided 4 MAD; cells)",
+        "Cells removed (%)"
+      )
     )
   )
 p <- ggplot(df_long, aes(x = Sample, y = Value)) +
@@ -576,5 +663,3 @@ Sys.time()
 proc.time()
 options(width = 120)
 sessioninfo::session_info()
-
-
