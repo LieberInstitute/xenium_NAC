@@ -75,3 +75,11 @@ processed-data/NMF_CellTypes.csv
 processed-data/mouse_xenium/*
 processed-data/rat_NMF/*
 code/Drug_Discovery/*
+**/__pycache__/*
+**/Archive/*
+code/05_clustering/Harmony/*
+code/09_spatial_gradient/nmf_gene/
+code/09_spatial_gradient/spatial_gene_regression/D1_marker_source_snapshot.csv
+code/09_spatial_gradient/spatial_gene_regression/README.md
+**/test*/*
+code/05_clustering/Harmony/01_harmony.py
