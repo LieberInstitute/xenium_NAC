@@ -1,0 +1,34 @@
+********* Job Starts *********
+Thu Sep  3 07:04:49 AM EDT 2026
+User: rphillip; Job id: 35497742; Array task: 18; Hostname: compute-176
+Trait: SMK_INIT
+Loading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/h5ad/VHD_sfe_counts.h5ad
+Excluding 32048 cells (Spatial_Domain in ['Hypo', 'Excitatory'] or labels in ['Excitatory'])
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scanpy/neighbors/__init__.py:577: UserWarning: You’re trying to run this on 18132 dimensions of `.X`, if you really want this, set `use_rep='X'`.
+         Falling back to preprocessing with `sc.pp.pca` and default params.
+  x = _choose_representation(self._adata, use_rep=use_rep, n_pcs=n_pcs)
+Reading scores: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/scores/SMK_INIT.full_score.gz
+Running downstream analysis for SMK_INIT
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scdrs/method.py:957: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  for group, df_group in df_meta.groupby(groupby):
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scdrs/method.py:957: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  for group, df_group in df_meta.groupby(groupby):
+Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/group_analysis/scdrs_group_stats_Spatial_Domain_SMK_INIT.tsv
+Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/group_analysis/scdrs_group_stats_labels_SMK_INIT.tsv
+Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/group_analysis/norm_score_SMK_INIT.tsv.gz
+Done.
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/session_info/main.py:213: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('scanpy')` instead
+  mod_version = _find_version(mod.__version__)
+-----
+numpy               1.26.4
+pandas              2.1.4
+scanpy              1.11.5
+scdrs               1.0.2
+session_info        v1.0.1
+-----
+Python 3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-09-03 08:14
+********* Job Ends *********
+Thu Sep  3 08:14:21 AM EDT 2026

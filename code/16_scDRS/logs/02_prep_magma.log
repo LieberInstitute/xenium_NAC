@@ -1,0 +1,69 @@
+********* Job Starts *********
+Wed Sep  2 05:31:25 PM EDT 2026
+User: rphillip; Job id: 35482444; Hostname: compute-176
+Loading conda_R/4.5
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+h5ad genes: 18132; matched by Ensembl ID: 17081; by symbol fallback: 170; unmatched (dropped): 881
+Gene loc: 17251 genes
+SCZ: 1150803 SNPs (11 duplicate SNPs dropped)
+MDD: 1141145 SNPs (11 duplicate SNPs dropped)
+BIP: 1148645 SNPs (8 duplicate SNPs dropped)
+ASD: 1112913 SNPs (13 duplicate SNPs dropped)
+ADHD: 1114823 SNPs
+PTSD: 1169725 SNPs (20 duplicate SNPs dropped)
+AN: 1111211 SNPs (12 duplicate SNPs dropped)
+INSOMNIA: 1113938 SNPs (6 duplicate SNPs dropped)
+NEUROT: 1187056 SNPs
+IQ: 1152076 SNPs
+EDU: 1187056 SNPs
+OUD: 650698 SNPs
+AUD: 1147117 SNPs
+AGE_SMK: 1155215 SNPs (987 duplicate SNPs dropped)
+CIG_DAY: 1155615 SNPs (989 duplicate SNPs dropped)
+DRINKS_WK: 1151893 SNPs (991 duplicate SNPs dropped)
+SMK_CES: 1154836 SNPs (991 duplicate SNPs dropped)
+SMK_INIT: 1153007 SNPs (988 duplicate SNPs dropped)
+PD: 1124954 SNPs
+AD: 1161066 SNPs (6 duplicate SNPs dropped)
+EPI_ALL: 892710 SNPs
+EPI_FOCAL: 890792 SNPs
+EPI_GGE: 888187 SNPs
+HEIGHT: 1002716 SNPs
+BMI: 1003896 SNPs (2 duplicate SNPs dropped)
+T2D: 968509 SNPs
+─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
+ os       Rocky Linux 9.4 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       US/Eastern
+ date     2026-09-02
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
+ quarto   1.10.18 @ /users/rphillip/.positron-server/bin/747dd536c5913adad71a568a57679bb2c5e5cd71/quarto/bin/quarto
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package      * version date (UTC) lib source
+ cli            3.6.5   2025-04-23 [2] CRAN (R 4.5.0)
+ data.table   * 1.17.2  2025-05-12 [2] CRAN (R 4.5.0)
+ here         * 1.0.1   2020-12-13 [2] CRAN (R 4.5.0)
+ R.methodsS3    1.8.2   2022-06-13 [2] CRAN (R 4.5.0)
+ R.oo           1.27.1  2025-05-02 [2] CRAN (R 4.5.0)
+ R.utils        2.13.0  2025-02-24 [2] CRAN (R 4.5.0)
+ rhdf5          2.52.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rhdf5filters   1.20.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Rhdf5lib       1.30.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rprojroot      2.0.4   2023-11-05 [2] CRAN (R 4.5.0)
+ sessioninfo    1.2.3   2025-02-05 [2] CRAN (R 4.5.0)
+
+ [1] /users/rphillip/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
+ * ── Packages attached to the search path.
+
+──────────────────────────────────────────────────────────────────────────────
+********* Job Ends *********
+Wed Sep  2 05:32:19 PM EDT 2026

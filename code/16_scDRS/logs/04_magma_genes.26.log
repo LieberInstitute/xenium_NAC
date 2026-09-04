@@ -1,0 +1,40 @@
+********* Job Starts *********
+Wed Sep  2 05:33:25 PM EDT 2026
+Task id: 26
+Loading LIBD SLURM module for magma/1.10
+Trait: T2D
+Welcome to MAGMA v1.10 (linux/s)
+Using flags:
+	--bfile /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged
+	--pval /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/pval/T2D.pval.txt ncol=N
+	--gene-annot /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/annot/nac_w35_10.genes.annot
+	--gene-model snp-wise=mean
+	--out /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/genes/T2D
+
+Start time is 17:33:25, Wednesday 02 Sep 2026
+
+Loading PLINK-format data...
+Reading file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.fam... 489 individuals read
+Reading file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.bim... 9997231 SNPs read
+Preparing file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.bed... 
+
+Reading SNP p-values from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/pval/T2D.pval.txt... 
+	detected 3 variables in file
+	using variable: SNP (SNP id)
+	using variable: P (p-value)
+	using variable: N (sample size; discarding SNPs with N < 50)
+	read 968510 lines from file, containing valid SNP p-values for 968509 SNPs in data (100% of lines, 9.688% of SNPs in data)
+Loading gene annotation from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/annot/nac_w35_10.genes.annot... 
+	17249 gene definitions read from file
+	found 16699 genes containing valid SNPs in genotype data
+
+
+Starting gene analysis... 
+	using model: SNPwise-mean
+	processed genes: 458 (2.7%)     	processed genes: 819 (4.9%)     	processed genes: 1208 (7.2%)     	processed genes: 1524 (9.1%)     	processed genes: 1938 (11.6%)     	processed genes: 2333 (14%)     	processed genes: 2730 (16.3%)     	processed genes: 3081 (18.5%)     	processed genes: 3435 (20.6%)     	processed genes: 3784 (22.7%)     	processed genes: 4239 (25.4%)     	processed genes: 4680 (28%)     	processed genes: 5107 (30.6%)     	processed genes: 5414 (32.4%)     	processed genes: 5804 (34.8%)     	processed genes: 6209 (37.2%)     	processed genes: 6629 (39.7%)     	processed genes: 6983 (41.8%)     	processed genes: 7389 (44.2%)     	processed genes: 7781 (46.6%)     	processed genes: 8143 (48.8%)     	processed genes: 8516 (51%)     	processed genes: 8592 (51.5%)     	processed genes: 8978 (53.8%)     	processed genes: 9197 (55.1%)     	processed genes: 9596 (57.5%)     	processed genes: 9965 (59.7%)     	processed genes: 10309 (61.7%)     	processed genes: 10634 (63.7%)     	processed genes: 11018 (66%)     	processed genes: 11420 (68.4%)     	processed genes: 11757 (70.4%)     	processed genes: 12165 (72.8%)     	processed genes: 12560 (75.2%)     	processed genes: 13016 (77.9%)     	processed genes: 13415 (80.3%)     	processed genes: 13784 (82.5%)     	processed genes: 14211 (85.1%)     	processed genes: 14730 (88.2%)     	processed genes: 15110 (90.5%)     	processed genes: 15197 (91%)     	processed genes: 15539 (93.1%)     	processed genes: 15897 (95.2%)     	processed genes: 16279 (97.5%)     	processed genes: 16612 (99.5%)                                                                                                                        	writing gene analysis results to file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/genes/T2D.genes.out
+	writing intermediate output to file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/genes/T2D.genes.raw
+
+
+End time is 17:34:31, Wednesday 02 Sep 2026 (elapsed: 00:01:06)
+********* Job Ends *********
+Wed Sep  2 05:34:31 PM EDT 2026

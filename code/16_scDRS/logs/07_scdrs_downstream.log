@@ -1,0 +1,13 @@
+********* Job Starts *********
+Fri Aug 28 10:46:08 AM EDT 2026
+Loading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/HD_Full_Analysis/h5ad/VHD_sfe_counts.h5ad
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scanpy/neighbors/__init__.py:577: UserWarning: You’re trying to run this on 18132 dimensions of `.X`, if you really want this, set `use_rep='X'`.
+         Falling back to preprocessing with `sc.pp.pca` and default params.
+  x = _choose_representation(self._adata, use_rep=use_rep, n_pcs=n_pcs)
+Found 26 full score files
+--- AD
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scdrs/method.py:957: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  for group, df_group in df_meta.groupby(groupby):
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scdrs/method.py:957: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  for group, df_group in df_meta.groupby(groupby):
+slurmstepd: error: *** JOB 35406542 ON compute-163 CANCELLED AT 2026-08-28T11:40:35 ***

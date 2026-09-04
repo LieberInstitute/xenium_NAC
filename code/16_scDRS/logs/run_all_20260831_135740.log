@@ -1,0 +1,5 @@
+********* scDRS pipeline submission *********
+Mon Aug 31 01:57:40 PM EDT 2026
+User: rphillip; Host: compute-160.cm.cluster
+Git commit: edb8e7071ca5edf863a4d72989c97d65a1651749
+Removing existing conda env 'scdrs_nac' ...

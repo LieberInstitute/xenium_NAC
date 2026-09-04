@@ -1,0 +1,220 @@
+********* Job Starts *********
+Thu Sep  3 09:42:56 PM EDT 2026
+Loading conda_R/4.5
+Generating figures for 26 traits (Spatial_Domain).
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/weight_percentile_Spatial_Domain.{pdf,png}
+  AD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_AD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_AD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_AD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_AD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_AD.{pdf,png}
+  ADHD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_ADHD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_ADHD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_ADHD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_ADHD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_ADHD.{pdf,png}
+  AGE_SMK
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_AGE_SMK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_AGE_SMK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_AGE_SMK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_AGE_SMK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_AGE_SMK.{pdf,png}
+  AN
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_AN.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_AN.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_AN.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_AN.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_AN.{pdf,png}
+  ASD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_ASD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_ASD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_ASD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_ASD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_ASD.{pdf,png}
+  AUD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_AUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_AUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_AUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_AUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_AUD.{pdf,png}
+  BIP
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_BIP.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_BIP.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_BIP.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_BIP.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_BIP.{pdf,png}
+  BMI
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_BMI.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_BMI.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_BMI.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_BMI.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_BMI.{pdf,png}
+  CIG_DAY
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_CIG_DAY.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_CIG_DAY.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_CIG_DAY.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_CIG_DAY.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_CIG_DAY.{pdf,png}
+  DRINKS_WK
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_DRINKS_WK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_DRINKS_WK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_DRINKS_WK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_DRINKS_WK.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_DRINKS_WK.{pdf,png}
+  EDU
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_EDU.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_EDU.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_EDU.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_EDU.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_EDU.{pdf,png}
+  EPI_ALL
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_EPI_ALL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_EPI_ALL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_EPI_ALL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_EPI_ALL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_EPI_ALL.{pdf,png}
+  EPI_FOCAL
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_EPI_FOCAL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_EPI_FOCAL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_EPI_FOCAL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_EPI_FOCAL.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_EPI_FOCAL.{pdf,png}
+  EPI_GGE
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_EPI_GGE.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_EPI_GGE.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_EPI_GGE.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_EPI_GGE.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_EPI_GGE.{pdf,png}
+  HEIGHT
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_HEIGHT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_HEIGHT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_HEIGHT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_HEIGHT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_HEIGHT.{pdf,png}
+  INSOMNIA
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_INSOMNIA.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_INSOMNIA.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_INSOMNIA.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_INSOMNIA.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_INSOMNIA.{pdf,png}
+  IQ
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_IQ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_IQ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_IQ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_IQ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_IQ.{pdf,png}
+  MDD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_MDD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_MDD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_MDD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_MDD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_MDD.{pdf,png}
+  NEUROT
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_NEUROT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_NEUROT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_NEUROT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_NEUROT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_NEUROT.{pdf,png}
+  OUD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_OUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_OUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_OUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_OUD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_OUD.{pdf,png}
+  PD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_PD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_PD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_PD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_PD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_PD.{pdf,png}
+  PTSD
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_PTSD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_PTSD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_PTSD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_PTSD.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_PTSD.{pdf,png}
+  SCZ
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_SCZ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_SCZ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_SCZ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_SCZ.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_SCZ.{pdf,png}
+  SMK_CES
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_SMK_CES.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_SMK_CES.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_SMK_CES.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_SMK_CES.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_SMK_CES.{pdf,png}
+  SMK_INIT
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_SMK_INIT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_SMK_INIT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_SMK_INIT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_SMK_INIT.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_SMK_INIT.{pdf,png}
+  T2D
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_scatter_Spatial_Domain_T2D.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_heatmap_Spatial_Domain_T2D.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/driver_specificity_Spatial_Domain_T2D.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_heatmap_Spatial_Domain_T2D.{pdf,png}
+wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers/expression_dotplot_Spatial_Domain_T2D.{pdf,png}
+Done. Figures in /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/plots/16_scDRS/drivers
+─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
+ os       Rocky Linux 9.4 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       US/Eastern
+ date     2026-09-03
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
+ quarto   1.10.18 @ /users/rphillip/.positron-server/bin/747dd536c5913adad71a568a57679bb2c5e5cd71/quarto/bin/quarto
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package      * version   date (UTC) lib source
+ cli            3.6.5     2025-04-23 [2] CRAN (R 4.5.0)
+ data.table   * 1.17.2    2025-05-12 [2] CRAN (R 4.5.0)
+ dichromat      2.0-0.1   2022-05-02 [2] CRAN (R 4.5.0)
+ dplyr          1.1.4     2023-11-17 [2] CRAN (R 4.5.0)
+ farver         2.1.2     2024-05-13 [2] CRAN (R 4.5.0)
+ generics       0.1.4     2025-05-09 [2] CRAN (R 4.5.0)
+ ggplot2      * 3.5.2     2025-04-09 [2] CRAN (R 4.5.0)
+ ggrepel        0.9.6     2024-09-07 [2] CRAN (R 4.5.0)
+ glue           1.8.0     2024-09-30 [2] CRAN (R 4.5.0)
+ gtable         0.3.6     2024-10-25 [2] CRAN (R 4.5.0)
+ labeling       0.4.3     2023-08-29 [2] CRAN (R 4.5.0)
+ lifecycle      1.0.4     2023-11-07 [2] CRAN (R 4.5.0)
+ magrittr       2.0.3     2022-03-30 [2] CRAN (R 4.5.0)
+ patchwork      1.3.0     2024-09-16 [2] CRAN (R 4.5.0)
+ pillar         1.10.2    2025-04-05 [2] CRAN (R 4.5.0)
+ pkgconfig      2.0.3     2019-09-22 [2] CRAN (R 4.5.0)
+ R.methodsS3    1.8.2     2022-06-13 [2] CRAN (R 4.5.0)
+ R.oo           1.27.1    2025-05-02 [2] CRAN (R 4.5.0)
+ R.utils        2.13.0    2025-02-24 [2] CRAN (R 4.5.0)
+ R6             2.6.1     2025-02-15 [2] CRAN (R 4.5.0)
+ ragg           1.4.0     2025-04-10 [2] CRAN (R 4.5.0)
+ RColorBrewer   1.1-3     2022-04-03 [2] CRAN (R 4.5.0)
+ Rcpp           1.1.1-1.1 2026-04-24 [1] CRAN (R 4.5.0)
+ rlang          1.1.6     2025-04-11 [2] CRAN (R 4.5.0)
+ scales         1.4.0     2025-04-24 [2] CRAN (R 4.5.0)
+ sessioninfo    1.2.3     2025-02-05 [2] CRAN (R 4.5.0)
+ systemfonts    1.2.3     2025-04-30 [2] CRAN (R 4.5.0)
+ textshaping    1.0.1     2025-05-01 [2] CRAN (R 4.5.0)
+ tibble         3.2.1     2023-03-20 [2] CRAN (R 4.5.0)
+ tidyselect     1.2.1     2024-03-11 [2] CRAN (R 4.5.0)
+ vctrs          0.6.5     2023-12-01 [2] CRAN (R 4.5.0)
+ viridisLite    0.4.2     2023-05-02 [2] CRAN (R 4.5.0)
+ withr          3.0.2     2024-10-28 [2] CRAN (R 4.5.0)
+
+ [1] /users/rphillip/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
+ * ── Packages attached to the search path.
+
+──────────────────────────────────────────────────────────────────────────────
+********* Job Ends *********
+Thu Sep  3 09:46:47 PM EDT 2026

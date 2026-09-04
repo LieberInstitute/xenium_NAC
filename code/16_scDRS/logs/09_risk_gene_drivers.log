@@ -1,0 +1,93 @@
+********* Job Starts *********
+Thu Sep  3 09:13:12 PM EDT 2026
+407397 cells shared between h5ad and scores.
+Fitting covariate correction on 9 covariates (const, n_genes, 7 sample dummies) ...
+  stored correction for 18132 genes
+AD: done (1000 risk genes).
+ADHD: done (1000 risk genes).
+AGE_SMK: done (1000 risk genes).
+AN: done (1000 risk genes).
+ASD: done (1000 risk genes).
+AUD: done (1000 risk genes).
+BIP: done (1000 risk genes).
+BMI: done (1000 risk genes).
+CIG_DAY: done (1000 risk genes).
+DRINKS_WK: done (1000 risk genes).
+EDU: done (1000 risk genes).
+EPI_ALL: done (1000 risk genes).
+EPI_FOCAL: done (1000 risk genes).
+EPI_GGE: done (1000 risk genes).
+HEIGHT: done (1000 risk genes).
+INSOMNIA: done (1000 risk genes).
+IQ: done (1000 risk genes).
+MDD: done (1000 risk genes).
+NEUROT: done (1000 risk genes).
+OUD: done (1000 risk genes).
+PD: done (1000 risk genes).
+PTSD: done (1000 risk genes).
+SCZ: done (1000 risk genes).
+SMK_CES: done (1000 risk genes).
+SMK_INIT: done (1000 risk genes).
+T2D: done (1000 risk genes).
+Wrote Spatial_Domain: 260000 rows, top20 -> 5200 rows.
+Wrote Spatial_Domain expression: 260000 rows.
+  risk genes on panel per trait:
+trait
+AD           1000
+ADHD         1000
+AGE_SMK      1000
+AN           1000
+ASD          1000
+AUD          1000
+BIP          1000
+BMI          1000
+CIG_DAY      1000
+DRINKS_WK    1000
+EDU          1000
+EPI_ALL      1000
+EPI_FOCAL    1000
+EPI_GGE      1000
+HEIGHT       1000
+INSOMNIA     1000
+IQ           1000
+MDD          1000
+NEUROT       1000
+OUD          1000
+PD           1000
+PTSD         1000
+SCZ          1000
+SMK_CES      1000
+SMK_INIT     1000
+T2D          1000
+Wrote labels: 494000 rows, top20 -> 9880 rows.
+Wrote labels expression: 494000 rows.
+  risk genes on panel per trait:
+trait
+AD           1000
+ADHD         1000
+AGE_SMK      1000
+AN           1000
+ASD          1000
+AUD          1000
+BIP          1000
+BMI          1000
+CIG_DAY      1000
+DRINKS_WK    1000
+EDU          1000
+EPI_ALL      1000
+EPI_FOCAL    1000
+EPI_GGE      1000
+HEIGHT       1000
+INSOMNIA     1000
+IQ           1000
+MDD          1000
+NEUROT       1000
+OUD          1000
+PD           1000
+PTSD         1000
+SCZ          1000
+SMK_CES      1000
+SMK_INIT     1000
+T2D          1000
+********* Job Ends *********
+Thu Sep  3 09:42:47 PM EDT 2026

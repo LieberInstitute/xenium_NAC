@@ -1,0 +1,40 @@
+********* Job Starts *********
+Wed Sep  2 05:33:26 PM EDT 2026
+Task id: 16
+Loading LIBD SLURM module for magma/1.10
+Trait: DRINKS_WK
+Welcome to MAGMA v1.10 (linux/s)
+Using flags:
+	--bfile /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged
+	--pval /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/pval/DRINKS_WK.pval.txt ncol=N
+	--gene-annot /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/annot/nac_w35_10.genes.annot
+	--gene-model snp-wise=mean
+	--out /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/genes/DRINKS_WK
+
+Start time is 17:33:26, Wednesday 02 Sep 2026
+
+Loading PLINK-format data...
+Reading file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.fam... 489 individuals read
+Reading file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.bim... 9997231 SNPs read
+Preparing file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.bed... 
+
+Reading SNP p-values from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/pval/DRINKS_WK.pval.txt... 
+	detected 3 variables in file
+	using variable: SNP (SNP id)
+	using variable: P (p-value)
+	using variable: N (sample size; discarding SNPs with N < 50)
+	read 1151894 lines from file, containing valid SNP p-values for 1139160 SNPs in data (98.89% of lines, 11.39% of SNPs in data)
+Loading gene annotation from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/annot/nac_w35_10.genes.annot... 
+	17249 gene definitions read from file
+	found 16875 genes containing valid SNPs in genotype data
+
+
+Starting gene analysis... 
+	using model: SNPwise-mean
+	processed genes: 200 (1.2%)     	processed genes: 365 (2.2%)     	processed genes: 555 (3.3%)     	processed genes: 705 (4.2%)     	processed genes: 929 (5.5%)     	processed genes: 1127 (6.7%)     	processed genes: 1240 (7.3%)     	processed genes: 1352 (8%)     	processed genes: 1521 (9%)     	processed genes: 1666 (9.9%)     	processed genes: 1871 (11.1%)     	processed genes: 1961 (11.6%)     	processed genes: 1964 (11.6%)     	processed genes: 1968 (11.7%)     	processed genes: 1973 (11.7%)     	processed genes: 2135 (12.7%)     	processed genes: 2357 (14%)     	processed genes: 2584 (15.3%)     	processed genes: 2787 (16.5%)     	processed genes: 2963 (17.6%)     	processed genes: 3115 (18.5%)     	processed genes: 3299 (19.5%)     	processed genes: 3427 (20.3%)     	processed genes: 3430 (20.3%)     	processed genes: 3617 (21.4%)     	processed genes: 3806 (22.6%)     	processed genes: 4020 (23.8%)     	processed genes: 4128 (24.5%)     	processed genes: 4354 (25.8%)     	processed genes: 4566 (27.1%)     	processed genes: 4822 (28.6%)     	processed genes: 5063 (30%)     	processed genes: 5217 (30.9%)     	processed genes: 5327 (31.6%)     	processed genes: 5535 (32.8%)     	processed genes: 5739 (34%)     	processed genes: 5967 (35.4%)     	processed genes: 6167 (36.5%)     	processed genes: 6365 (37.7%)     	processed genes: 6578 (39%)     	processed genes: 6755 (40%)     	processed genes: 6981 (41.4%)     	processed genes: 7124 (42.2%)     	processed genes: 7364 (43.6%)     	processed genes: 7594 (45%)     	processed genes: 7785 (46.1%)     	processed genes: 7993 (47.4%)     	processed genes: 8166 (48.4%)     	processed genes: 8307 (49.2%)     	processed genes: 8506 (50.4%)     	processed genes: 8678 (51.4%)     	processed genes: 8826 (52.3%)     	processed genes: 9050 (53.6%)     	processed genes: 9139 (54.2%)     	processed genes: 9234 (54.7%)     	processed genes: 9336 (55.3%)     	processed genes: 9357 (55.4%)     	processed genes: 9466 (56.1%)     	processed genes: 9607 (56.9%)     	processed genes: 9732 (57.7%)     	processed genes: 9898 (58.7%)     	processed genes: 10088 (59.8%)     	processed genes: 10260 (60.8%)     	processed genes: 10457 (62%)     	processed genes: 10567 (62.6%)     	processed genes: 10719 (63.5%)     	processed genes: 10925 (64.7%)     	processed genes: 11119 (65.9%)     	processed genes: 11327 (67.1%)     	processed genes: 11532 (68.3%)     	processed genes: 11736 (69.5%)     	processed genes: 11900 (70.5%)     	processed genes: 12111 (71.8%)     	processed genes: 12286 (72.8%)     	processed genes: 12484 (74%)     	processed genes: 12615 (74.8%)     	processed genes: 12742 (75.5%)     	processed genes: 12750 (75.6%)     	processed genes: 12751 (75.6%)     	processed genes: 12926 (76.6%)     	processed genes: 13107 (77.7%)     	processed genes: 13287 (78.7%)     	processed genes: 13389 (79.3%)     	processed genes: 13560 (80.4%)     	processed genes: 13756 (81.5%)     	processed genes: 13833 (82%)     	processed genes: 13835 (82%)     	processed genes: 13836 (82%)     	processed genes: 13837 (82%)     	processed genes: 13913 (82.4%)     	processed genes: 14134 (83.8%)     	processed genes: 14313 (84.8%)     	processed genes: 14573 (86.4%)     	processed genes: 14699 (87.1%)     	processed genes: 14833 (87.9%)     	processed genes: 14961 (88.7%)     	processed genes: 15140 (89.7%)     	processed genes: 15265 (90.5%)     	processed genes: 15428 (91.4%)     	processed genes: 15527 (92%)     	processed genes: 15615 (92.5%)     	processed genes: 15717 (93.1%)     	processed genes: 15855 (94%)     	processed genes: 16032 (95%)     	processed genes: 16204 (96%)     	processed genes: 16410 (97.2%)     	processed genes: 16575 (98.2%)     	processed genes: 16725 (99.1%)     	processed genes: 16840 (99.8%)                                                                                                                        	writing gene analysis results to file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/genes/DRINKS_WK.genes.out
+	writing intermediate output to file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/genes/DRINKS_WK.genes.raw
+
+
+End time is 17:36:44, Wednesday 02 Sep 2026 (elapsed: 00:03:18)
+********* Job Ends *********
+Wed Sep  2 05:36:44 PM EDT 2026

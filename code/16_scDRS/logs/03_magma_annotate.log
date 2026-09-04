@@ -1,0 +1,54 @@
+********* Job Starts *********
+Wed Sep  2 05:32:55 PM EDT 2026
+Loading LIBD SLURM module for plink/1.90b
+Plink 1.9 is invoked with the command 'plink'.
+Loading LIBD SLURM module for magma/1.10
+Merged bfile already exists, skipping merge.
+Welcome to MAGMA v1.10 (linux/s)
+Using flags:
+	--annotate window=35,10
+	--snp-loc /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.bim
+	--gene-loc /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/genes_hg19_symbol.gene.loc
+	--out /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/annot/nac_w35_10
+
+Start time is 17:32:56, Wednesday 02 Sep 2026
+
+Starting annotation...
+Reading gene locations from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/genes_hg19_symbol.gene.loc... 
+	adding window: 35000bp (before), 10000bp (after)
+	WARNING: no valid strand column found, assuming positive strand for all genes
+	17251 gene locations read from file
+	chromosome  1: 1872 genes
+	chromosome  2: 1145 genes
+	chromosome  3: 998 genes
+	chromosome  4: 706 genes
+	chromosome  5: 813 genes
+	chromosome  6: 911 genes
+	chromosome  7: 816 genes
+	chromosome  8: 607 genes
+	chromosome  9: 710 genes
+	chromosome 10: 677 genes
+	chromosome 11: 1194 genes
+	chromosome 12: 948 genes
+	chromosome 13: 295 genes
+	chromosome 14: 578 genes
+	chromosome 15: 523 genes
+	chromosome 16: 748 genes
+	chromosome 17: 1061 genes
+	chromosome 18: 255 genes
+	chromosome 19: 1295 genes
+	chromosome 20: 508 genes
+	chromosome 21: 193 genes
+	chromosome 22: 398 genes
+Reading SNP locations from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/ref/1000G.EUR.QC.merged.bim... 
+	SNPs mapped so far: 710617	SNPs mapped so far: 1403704	SNPs mapped so far: 1986228	SNPs mapped so far: 2712871	SNPs mapped so far: 3485240	SNPs mapped so far: 4241507	SNPs mapped so far: 5133884                                                                                                 	9997231 SNP locations read from file
+	of those, 5427953 (54.29%) mapped to at least one gene
+Writing annotation to file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/magma/annot/nac_w35_10.genes.annot
+	for chromosome 10, 1 gene is empty (out of 677)
+	for chromosome 12, 1 gene is empty (out of 948)
+	at least one SNP mapped to each of a total of 17249 genes (out of 17251)
+
+
+End time is 17:33:04, Wednesday 02 Sep 2026 (elapsed: 00:00:08)
+********* Job Ends *********
+Wed Sep  2 05:33:04 PM EDT 2026
