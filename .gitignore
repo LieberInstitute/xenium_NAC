@@ -83,3 +83,8 @@ code/09_spatial_gradient/spatial_gene_regression/D1_marker_source_snapshot.csv
 code/09_spatial_gradient/spatial_gene_regression/README.md
 **/test*/*
 code/05_clustering/Harmony/01_harmony.py
+code/16_scDRS/scDRS_pipeline_summary.*
+code/16_scDRS/scDRS_pipeline_summary_files/*
+plots/16_scDRS/H1*
+processed-data/16_scDRS/*
+processed-data/17_drug_analysis/*
