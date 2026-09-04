@@ -1,0 +1,5 @@
+********* Drug analysis pipeline submission *********
+Thu Sep  3 01:27:28 PM EDT 2026
+User: rphillip; Host: jhpce03.cm.cluster
+Git commit: 6ee9fccaa65c08e774fc675c7afb09db421bb37c
+Removing existing conda env 'scdrs_nac' ...

@@ -1,0 +1,26 @@
+********* Job Starts *********
+Thu Sep  3 01:55:07 PM EDT 2026
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/session_info/main.py:213: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('scanpy')` instead
+  mod_version = _find_version(mod.__version__)
+AnnData object with n_obs × n_vars = 407397 × 2432
+    obs: 'Sample', 'Barcode', 'sample_id', 'sum', 'detected', 'subsets_mt_sum', 'subsets_mt_detected', 'subsets_mt_percent', 'total', 'log10_sum', 'log10_detected', 'qc_low_umi', 'qc_low_gene', 'qc_high_mito', 'qc_discard', 'X_coords', 'Y_coords', 'nmf1', 'nmf2', 'nmf3', 'nmf4', 'nmf5', 'nmf6', 'nmf7', 'nmf8', 'nmf9', 'nmf10', 'nmf11', 'nmf12', 'nmf13', 'nmf14', 'nmf15', 'nmf16', 'nmf17', 'nmf18', 'nmf19', 'nmf20', 'nmf21', 'nmf22', 'nmf23', 'nmf24', 'nmf25', 'nmf26', 'nmf27', 'nmf28', 'nmf29', 'nmf30', 'nmf31', 'nmf32', 'nmf33', 'nmf34', 'nmf35', 'nmf36', 'nmf37', 'nmf38', 'nmf39', 'nmf40', 'nmf41', 'nmf42', 'nmf43', 'nmf44', 'nmf45', 'nmf46', 'nmf47', 'nmf48', 'nmf49', 'nmf50', 'nmf51', 'nmf52', 'nmf53', 'nmf54', 'nmf55', 'nmf56', 'nmf57', 'nmf58', 'nmf59', 'nmf60', 'nmf61', 'nmf62', 'nmf63', 'nmf64', 'nmf65', 'nmf66', 'Top_NMF', 'Pred_NMF_CellType', 'sizeFactor', 'rctd_weight_Astrocyte_A', 'rctd_weight_Astrocyte_B', 'rctd_weight_DRD1_MSN_A', 'rctd_weight_DRD1_MSN_B', 'rctd_weight_DRD1_MSN_C', 'rctd_weight_DRD1_MSN_D', 'rctd_weight_DRD2_MSN_A', 'rctd_weight_DRD2_MSN_B', 'rctd_weight_Endothelial', 'rctd_weight_Ependymal', 'rctd_weight_Excitatory', 'rctd_weight_Inh_A', 'rctd_weight_Inh_B', 'rctd_weight_Inh_C', 'rctd_weight_Inh_D', 'rctd_weight_Inh_E', 'rctd_weight_Inh_F', 'rctd_weight_Microglia', 'rctd_weight_Oligo', 'rctd_weight_OPC', 'rctd_spot_class', 'rctd_first_type', 'rctd_second_type', 'scores.Astrocyte_A', 'scores.Astrocyte_B', 'scores.DRD1_MSN_A', 'scores.DRD1_MSN_B', 'scores.DRD1_MSN_C', 'scores.DRD1_MSN_D', 'scores.DRD2_MSN_A', 'scores.DRD2_MSN_B', 'scores.Endothelial', 'scores.Ependymal', 'scores.Excitatory', 'scores.Inh_A', 'scores.Inh_B', 'scores.Inh_C', 'scores.Inh_D', 'scores.Inh_E', 'scores.Inh_F', 'scores.Microglia', 'scores.Oligo', 'scores.OPC', 'labels', 'delta.next', 'pruned.labels', 'label_score', 'snRNA_label', 'ct', 'spatial_0.4', 'Spatial_Domain'
+    var: 'genes', 'all_genes'
+    obsm: 'NMF_Proj', 'spatial'
+Excluding 0 cells (Spatial_Domain in ['Hypo', 'Excitatory'] or labels in ['Excitatory'])
+--- Enrichment by Spatial_Domain
+Wrote Spatial_Domain: 24320 rows, 1140 highlighted
+--- Enrichment by labels
+Wrote labels: 46208 rows, 2166 highlighted
+Done.
+-----
+anndata             0.10.4
+pandas              2.1.4
+scanpy              1.11.5
+session_info        v1.0.1
+-----
+Python 3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-09-03 14:01
+********* Job Ends *********
+Thu Sep  3 02:01:44 PM EDT 2026

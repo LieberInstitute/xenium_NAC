@@ -1,0 +1,13 @@
+********* Drug analysis pipeline submission *********
+Tue Sep  1 01:14:11 PM EDT 2026
+User: rphillip; Host: compute-156.cm.cluster
+Git commit: edb8e7071ca5edf863a4d72989c97d65a1651749
+WARNING: scDRS jobs are still running — skipping env recreation to avoid breaking them.
+Using existing 'scdrs_nac' environment.
+01_drug2cell            -> job 35456134
+02_drug2cell_enrichment -> job 35456135 (after 35456134)
+03_curated_drug_sets    -> job 35456136 (after 35456135)
+04_drug_viz             -> job 35456137 (after 35456136)
+
+All SLURM jobs submitted. Monitor with: squeue -u rphillip
+Tue Sep  1 01:14:12 PM EDT 2026
