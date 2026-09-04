@@ -5,6 +5,38 @@ library(Matrix)
 library(ggplot2)
 library(here)
 
+
+library(escheR)
+
+df <- data.frame(VIP = as.numeric(counts(sfe)["VIP", ]), HGF = as.numeric(counts(sfe)["HGF", ]))
+ggplot(data = df, aes(x = VIP, y = HGF)) +
+  geom_point()
+
+
+
+sfe$VIP <- as.numeric(logcounts(sfe)["VIP", ])
+sfe$HGF <- as.numeric(logcounts(sfe)["HGF", ])
+sfe$TAFA1 <- as.numeric(logcounts(sfe)["TAFA1", ])
+
+for(sample in unique(sfe$sample_id)){
+  print(sample)
+  sfe_sub <- sfe[, sfe$sample_id == sample]
+  for(gene in c("VIP", "HGF","TAFA1")){
+    print(gene)
+    p <- make_escheR(sfe_sub) |>
+      add_fill(gene) +
+      scale_fill_gradientn(colours = c("lightgrey","red","black")) 
+    ggsave(
+      filename = paste0("~/",gene, "_", sample, ".png"),
+      plot     = p,
+      width    = 16,
+      height   = 16,
+      dpi      = 200
+    )
+  }
+}
+
+
 # ---- CONFIG --------------------------------------------------
 seu_path      <- "/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/xenium_NAC_collab/compiled_area_norm_L0.0_L0.9_k30_d30_r1.0_banksy_SeuObj.rds"
 loadings_path <- here("processed-data", "rat_NMF", "NMF_Results_k53.Rds")

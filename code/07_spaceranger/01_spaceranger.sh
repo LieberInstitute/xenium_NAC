@@ -2,7 +2,7 @@
 #SBATCH --mem=80G
 #SBATCH -n 8
 #SBATCH --job-name=NAC-HD_spaceranger
-#SBATCH --output=logs/NAC-spaceranger-2601-%a.txt
+#SBATCH --output=logs/NAC-spaceranger-2603-%a.txt
 #SBATCH --array=1-4
 
 
@@ -21,10 +21,10 @@ module load spaceranger/4.0.1
 
 
 ## Locate file
-SAMPLE=$(awk 'BEGIN {FS="\t"} {print $1}' 02-sample_ids-2601.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
-IMAGE=$(awk 'BEGIN {FS="\t"} {print $2}' 02-sample_ids-2601.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
-IMGCYT=$(awk 'BEGIN {FS="\t"} {print $3}' 02-sample_ids-2601.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
-SAMPARG=$(awk 'BEGIN {FS="\t"} {print $4}' 02-sample_ids-2601.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
+SAMPLE=$(awk 'BEGIN {FS="\t"} {print $1}' 03-sample_ids-2603.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
+IMAGE=$(awk 'BEGIN {FS="\t"} {print $2}' 03-sample_ids-2603.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
+IMGCYT=$(awk 'BEGIN {FS="\t"} {print $3}' 03-sample_ids-2603.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
+SAMPARG=$(awk 'BEGIN {FS="\t"} {print $4}' 03-sample_ids-2603.txt | awk "NR==${SLURM_ARRAY_TASK_ID}")
 # SAMPLE=$(awk "NR==${SLURM_ARRAY_TASK_ID}" 02-sample_ids-2601.txt)
 echo "Processing sample ${SAMPLE}"
 date
@@ -49,8 +49,8 @@ spaceranger count \
     --probe-set=/dcs04/lieber/lcolladotor/annotationFiles_LIBD001/10x/Visium_Human_Transcriptome_Probe_Set_v2.1.0_GRCh38-2024-A.csv \
     --slide=${SLIDE} \
     --area=${CAPTUREAREA} \
-    --cytaimage=/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/${IMGCYT}.tif \
-    --image=/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/images/visiumHD/${IMAGE}.tif \
+    --cytaimage=/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/${IMGCYT}.tif \
+    --image=/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/raw-data/HD/${IMAGE}.tif \
     --create-bam=false \
     --localcores=8 \
     --localmem=64 
