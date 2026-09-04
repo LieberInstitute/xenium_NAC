@@ -1,0 +1,20 @@
+********* Job Starts *********
+Tue Sep  1 01:14:50 AM EDT 2026
+Exporting cell metadata
+Excluding 2029 cells (CellType.Final in ['Excitatory', 'Neuron_Ambig'])
+Merged 26 files -> /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/group_analysis/scdrs_group_stats_CellType.Final.tsv ((494, 11))
+Merged norm scores: (101756, 26)
+Done.
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/session_info/main.py:213: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('scanpy')` instead
+  mod_version = _find_version(mod.__version__)
+-----
+pandas              2.1.4
+scanpy              1.11.5
+session_info        v1.0.1
+-----
+Python 3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-09-01 01:16
+********* Job Ends *********
+Tue Sep  1 01:16:22 AM EDT 2026

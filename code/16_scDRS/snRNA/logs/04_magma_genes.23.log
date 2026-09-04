@@ -1,0 +1,39 @@
+********* Job Starts *********
+Mon Aug 31 02:12:09 PM EDT 2026
+Task id: 23
+Loading LIBD SLURM module for magma/1.10
+Trait: EPI_GGE
+Welcome to MAGMA v1.10 (linux/s)
+Using flags:
+	--bfile /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/ref/1000G.EUR.QC.merged
+	--pval /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/pval/EPI_GGE.pval.txt ncol=N
+	--gene-annot /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/annot/snrna_w35_10.genes.annot
+	--out /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/genes/EPI_GGE
+
+Start time is 14:12:09, Monday 31 Aug 2026
+
+Loading PLINK-format data...
+Reading file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/ref/1000G.EUR.QC.merged.fam... 489 individuals read
+Reading file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/ref/1000G.EUR.QC.merged.bim... 9997231 SNPs read
+Preparing file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/ref/1000G.EUR.QC.merged.bed... 
+
+Reading SNP p-values from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/pval/EPI_GGE.pval.txt... 
+	detected 3 variables in file
+	using variable: SNP (SNP id)
+	using variable: P (p-value)
+	using variable: N (sample size; discarding SNPs with N < 50)
+	read 888188 lines from file, containing valid SNP p-values for 888187 SNPs in data (100% of lines, 8.884% of SNPs in data)
+Loading gene annotation from file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/annot/snrna_w35_10.genes.annot... 
+	31117 gene definitions read from file
+	found 28947 genes containing valid SNPs in genotype data
+
+
+Starting gene analysis... 
+	using model: SNPwise-mean
+	processed genes: 344 (1.2%)     	processed genes: 641 (2.2%)     	processed genes: 878 (3%)     	processed genes: 1149 (4%)     	processed genes: 1438 (5%)     	processed genes: 1746 (6%)     	processed genes: 1944 (6.7%)     	processed genes: 2171 (7.5%)     	processed genes: 2465 (8.5%)     	processed genes: 2760 (9.5%)     	processed genes: 3101 (10.7%)     	processed genes: 3350 (11.6%)     	processed genes: 3372 (11.6%)     	processed genes: 3738 (12.9%)     	processed genes: 4126 (14.3%)     	processed genes: 4438 (15.3%)     	processed genes: 4688 (16.2%)     	processed genes: 4966 (17.2%)     	processed genes: 5226 (18.1%)     	processed genes: 5464 (18.9%)     	processed genes: 5764 (19.9%)     	processed genes: 6012 (20.8%)     	processed genes: 6324 (21.8%)     	processed genes: 6679 (23.1%)     	processed genes: 7011 (24.2%)     	processed genes: 7333 (25.3%)     	processed genes: 7718 (26.7%)     	processed genes: 8120 (28.1%)     	processed genes: 8450 (29.2%)     	processed genes: 8698 (30%)     	processed genes: 8991 (31.1%)     	processed genes: 9196 (31.8%)     	processed genes: 9538 (32.9%)     	processed genes: 9849 (34%)     	processed genes: 10197 (35.2%)     	processed genes: 10512 (36.3%)     	processed genes: 10822 (37.4%)     	processed genes: 11097 (38.3%)     	processed genes: 11497 (39.7%)     	processed genes: 11831 (40.9%)     	processed genes: 12181 (42.1%)     	processed genes: 12415 (42.9%)     	processed genes: 12799 (44.2%)     	processed genes: 13109 (45.3%)     	processed genes: 13440 (46.4%)     	processed genes: 13740 (47.5%)     	processed genes: 14017 (48.4%)     	processed genes: 14316 (49.5%)     	processed genes: 14634 (50.6%)     	processed genes: 14964 (51.7%)     	processed genes: 15231 (52.6%)     	processed genes: 15506 (53.6%)     	processed genes: 15773 (54.5%)     	processed genes: 15912 (55%)     	processed genes: 16195 (55.9%)     	processed genes: 16512 (57%)     	processed genes: 16717 (57.8%)     	processed genes: 16987 (58.7%)     	processed genes: 17317 (59.8%)     	processed genes: 17613 (60.8%)     	processed genes: 17911 (61.9%)     	processed genes: 18119 (62.6%)     	processed genes: 18420 (63.6%)     	processed genes: 18696 (64.6%)     	processed genes: 19011 (65.7%)     	processed genes: 19343 (66.8%)     	processed genes: 19697 (68%)     	processed genes: 19870 (68.6%)     	processed genes: 20192 (69.8%)     	processed genes: 20427 (70.6%)     	processed genes: 20726 (71.6%)     	processed genes: 21017 (72.6%)     	processed genes: 21238 (73.4%)     	processed genes: 21491 (74.2%)     	processed genes: 21874 (75.6%)     	processed genes: 22145 (76.5%)     	processed genes: 22189 (76.7%)     	processed genes: 22562 (77.9%)     	processed genes: 22817 (78.8%)     	processed genes: 23121 (79.9%)     	processed genes: 23313 (80.5%)     	processed genes: 23632 (81.6%)     	processed genes: 23935 (82.7%)     	processed genes: 24165 (83.5%)     	processed genes: 24497 (84.6%)     	processed genes: 24862 (85.9%)     	processed genes: 25151 (86.9%)     	processed genes: 25617 (88.5%)     	processed genes: 25913 (89.5%)     	processed genes: 26217 (90.6%)     	processed genes: 26444 (91.4%)     	processed genes: 26722 (92.3%)     	processed genes: 26972 (93.2%)     	processed genes: 27229 (94.1%)     	processed genes: 27533 (95.1%)     	processed genes: 27844 (96.2%)     	processed genes: 28094 (97.1%)     	processed genes: 28362 (98%)     	processed genes: 28581 (98.7%)     	processed genes: 28777 (99.4%)                                                                                                                        	writing gene analysis results to file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/genes/EPI_GGE.genes.out
+	writing intermediate output to file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/magma/genes/EPI_GGE.genes.raw
+
+
+End time is 14:14:10, Monday 31 Aug 2026 (elapsed: 00:02:01)
+********* Job Ends *********
+Mon Aug 31 02:14:10 PM EDT 2026

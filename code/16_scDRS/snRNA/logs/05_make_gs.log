@@ -1,0 +1,69 @@
+********* Job Starts *********
+Mon Aug 31 05:19:22 PM EDT 2026
+SCZ: 29910 genes
+MDD: 29677 genes
+BIP: 29910 genes
+ASD: 29895 genes
+ADHD: 29686 genes
+PTSD: 30062 genes
+AN: 29802 genes
+INSOMNIA: 30014 genes
+NEUROT: 30109 genes
+IQ: 30027 genes
+EDU: 30109 genes
+OUD: 29719 genes
+AUD: 29967 genes
+AGE_SMK: 29983 genes
+CIG_DAY: 29995 genes
+DRINKS_WK: 29978 genes
+SMK_CES: 29992 genes
+SMK_INIT: 29983 genes
+PD: 30000 genes
+AD: 30040 genes
+EPI_ALL: 28960 genes
+EPI_FOCAL: 28955 genes
+EPI_GGE: 28947 genes
+HEIGHT: 29861 genes
+BMI: 29866 genes
+T2D: 29597 genes
+Wrote 30440 genes x 26 traits to /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/gs/magma_zscore_matrix.tsv
+-----
+pandas              2.1.4
+session_info        v1.0.1
+-----
+Python 3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-08-31 17:19
+******************************************************************************
+* Single-cell disease relevance score (scDRS)
+* Version 1.0.2
+* Martin Jinye Zhang and Kangcheng Hou
+* HSPH / Broad Institute / UCLA
+* MIT License
+******************************************************************************
+Call: scdrs munge-gs \
+--zscore-file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/gs/magma_zscore_matrix.tsv \
+--weight zscore \
+--n-min 100 \
+--n-max 1000 \
+--out-file /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/gs/snrna_traits.gs
+
+--zscore-file loaded: n_gene=30440, n_trait=26 (sys_time=0.1s)
+Print info for the first 3 traits and first 10 genes
+Traits               ['SCZ', 'MDD', 'BIP']
+ENSG00000000419      [0.85866, 0.43577, 0.82316]
+ENSG00000000457      [1.6115, 0.8168, 1.445]
+ENSG00000000460      [1.7832, 0.22917, 1.5487]
+ENSG00000000938      [2.8645, 0.82974, 0.80701]
+ENSG00000000971      [1.7166, 1.5335, 1.9496]
+ENSG00000001036      [-0.23799, 0.25046, -0.17281]
+ENSG00000001084      [2.1761, 0.504, 1.836]
+ENSG00000001167      [0.85052, 0.17191, 0.21098]
+ENSG00000001460      [1.496, 1.3024, -1.8516]
+ENSG00000001461      [1.6536, 1.3188, -1.6367]
+--zscore-file have values above 1 or below 0. Seems fine.
+
+Finish munging 26 gene sets (sys_time=0.3s)
+********* Job Ends *********
+Mon Aug 31 05:19:31 PM EDT 2026

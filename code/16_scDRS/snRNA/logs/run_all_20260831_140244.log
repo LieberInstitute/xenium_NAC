@@ -1,0 +1,17 @@
+********* snRNA-seq scDRS pipeline submission *********
+Mon Aug 31 02:02:44 PM EDT 2026
+User: rphillip; Host: compute-160.cm.cluster
+Git commit: edb8e7071ca5edf863a4d72989c97d65a1651749
+Using existing scdrs_nac environment.
+01_prep_h5ad            -> job 35449294
+02_prep_magma_input     -> job 35449295 (after 35449294)
+03_magma_annotate       -> job 35449296 (after 35449295)
+04_magma_genes (array)  -> job 35449297 (after 35449296)
+05_make_gs_file         -> job 35449298 (after 35449297)
+06_scdrs_score (array)  -> job 35449299 (after 35449298)
+07_scdrs_downstream     -> job 35449300 (after 35449299)
+07_scdrs_merge          -> job 35449301 (after 35449300)
+08_scdrs_viz            -> job 35449302 (after 35449301)
+
+All jobs submitted. Monitor with: squeue -u rphillip
+Mon Aug 31 02:02:45 PM EDT 2026

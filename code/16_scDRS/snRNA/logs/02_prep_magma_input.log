@@ -1,0 +1,39 @@
+********* Job Starts *********
+Mon Aug 31 02:08:21 PM EDT 2026
+Loading conda_R/4.5
+here() starts at /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC
+h5ad genes: 36601; matched by Ensembl ID: 31126; by symbol fallback: 0; unmatched (dropped): 5475
+Gene loc: 31126 genes
+─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.5.0 Patched (2025-05-21 r88220)
+ os       Rocky Linux 9.4 (Blue Onyx)
+ system   x86_64, linux-gnu
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       US/Eastern
+ date     2026-08-31
+ pandoc   3.7.0.1 @ /jhpce/shared/community/core/conda_R/4.5/bin/pandoc
+ quarto   1.10.18 @ /users/rphillip/.positron-server/bin/747dd536c5913adad71a568a57679bb2c5e5cd71/quarto/bin/quarto
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package      * version date (UTC) lib source
+ cli            3.6.5   2025-04-23 [2] CRAN (R 4.5.0)
+ data.table   * 1.17.2  2025-05-12 [2] CRAN (R 4.5.0)
+ here         * 1.0.1   2020-12-13 [2] CRAN (R 4.5.0)
+ rhdf5          2.52.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rhdf5filters   1.20.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ Rhdf5lib       1.30.0  2025-04-15 [2] Bioconductor 3.21 (R 4.5.0)
+ rprojroot      2.0.4   2023-11-05 [2] CRAN (R 4.5.0)
+ sessioninfo    1.2.3   2025-02-05 [2] CRAN (R 4.5.0)
+
+ [1] /users/rphillip/R/4.5
+ [2] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/site-library
+ [3] /jhpce/shared/community/core/conda_R/4.5/R/lib64/R/library
+ * ── Packages attached to the search path.
+
+──────────────────────────────────────────────────────────────────────────────
+********* Job Ends *********
+Mon Aug 31 02:08:23 PM EDT 2026

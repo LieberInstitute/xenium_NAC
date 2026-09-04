@@ -1,0 +1,30 @@
+********* Job Starts *********
+Tue Sep  1 12:14:32 AM EDT 2026
+Task id: 17
+Trait: SMK_CES
+Loading /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/h5ad/snRNA_counts.h5ad
+Excluding 2029 cells (CellType.Final in ['Excitatory', 'Neuron_Ambig'])
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scanpy/neighbors/__init__.py:577: UserWarning: You’re trying to run this on 36601 dimensions of `.X`, if you really want this, set `use_rep='X'`.
+         Falling back to preprocessing with `sc.pp.pca` and default params.
+  x = _choose_representation(self._adata, use_rep=use_rep, n_pcs=n_pcs)
+Reading scores: /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/scores/SMK_CES.full_score.gz
+Running downstream analysis for SMK_CES
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/scdrs/method.py:957: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  for group, df_group in df_meta.groupby(groupby):
+Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/group_analysis/scdrs_group_stats_CellType.Final_SMK_CES.tsv
+Wrote /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/processed-data/16_scDRS/snRNA/group_analysis/norm_score_SMK_CES.tsv.gz
+Done.
+/users/rphillip/.conda/envs/scdrs_nac/lib/python3.11/site-packages/session_info/main.py:213: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('scanpy')` instead
+  mod_version = _find_version(mod.__version__)
+-----
+pandas              2.1.4
+scanpy              1.11.5
+scdrs               1.0.2
+session_info        v1.0.1
+-----
+Python 3.11.16 (main, Aug 27 2026, 14:44:21) [GCC 14.3.0]
+Linux-5.14.0-427.13.1.el9_4.x86_64-x86_64-with-glibc2.34
+-----
+Session information updated at 2026-09-01 00:29
+********* Job Ends *********
+Tue Sep  1 12:29:15 AM EDT 2026
