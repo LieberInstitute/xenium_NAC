@@ -14,6 +14,8 @@ OVERLAY_GROUPS <- list(
   c("Astro_A", "WM", "D1_Island_B", "Astrocyte_Oligo")
 )
 
+DM_COLOR <- "#006D5B"
+
 script_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
 script_path <- normalizePath(sub("^--file=", "", script_arg[[1]]))
 code_root <- dirname(dirname(dirname(script_path)))
@@ -27,7 +29,7 @@ default_task_dir <- file.path(
 default_output <- file.path(
   project_root,
   "plots/10_Xenium_CRAWDAD/figure_plots",
-  "relationship_summary_Br6660_Nac10_4080_dorsomedial_neighdist_50",
+  "panel_C_relationship_summary_Br6660_Nac10_4080_dorsomedial_neighdist_50",
   "relationship_summary.png"
 )
 
@@ -224,27 +226,36 @@ main <- function() {
       inherit.aes = FALSE,
       fill = NA,
       color = "black",
-      linewidth = 1.15
+      linewidth = 2
     )
     n_boxes <- nrow(boxes)
   }
 
   plot <- plot +
-    labs(title = opts$title, x = "Reference", y = "Neighbor") +
+    labs(
+      title = opts$title,
+      x = "Reference (DM)",
+      y = "Neighbor (DM)"
+    ) +
     theme(
       plot.title = if (is.null(opts$title)) {
         element_blank()
       } else {
-        element_text(size = 14, face = "bold", hjust = 0.5)
+        element_text(size = 18, face = "bold", hjust = 0.5)
       },
       axis.text.x.top = element_text(
-        angle = 90, hjust = 0, vjust = 0.5, size = 10,
+        angle = 90, hjust = 0, vjust = 0.5, size = 14,
         face = "bold",
         margin = margin(b = 3)
       ),
-      axis.text.y = element_text(size = 10, face = "bold"),
-      axis.title.x = element_text(size = 14, face = "bold"),
-      axis.title.y = element_text(size = 14, face = "bold"),
+      axis.text.y = element_text(size = 14, face = "bold"),
+      axis.title.x = element_text(size = 18, face = "bold"),
+      axis.title.y = element_text(size = 18, face = "bold"),
+      legend.title = element_text(size = 16, face = "bold"),
+      legend.text = element_text(size = 14),
+      panel.border = element_rect(
+        color = DM_COLOR, fill = NA, linewidth = 1.5
+      ),
       plot.margin = margin(t = 8, r = 15, b = 10, l = 10)
     )
 

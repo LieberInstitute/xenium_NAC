@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import itertools
 import json
 import os
 import sys
@@ -18,13 +19,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.lines import Line2D
+from matplotlib.patches import Polygon as MplPolygon
 from shapely.geometry import shape
 
 from manuscript_style import (
     ROI_COLORS,
     ROI_HALO_COLOR,
-    ROI_HALO_LINEWIDTH,
-    ROI_LINEWIDTH,
 )
 
 
@@ -38,6 +38,93 @@ DEFAULT_INPUT_DIR = (
 DEFAULT_PLOT_DIR = PROJECT_ROOT / "plots/10_Xenium_CRAWDAD/figure_plots"
 CELL_COLOR = "#A65AA3"
 VHD_COLOR = "#4D4D4D"
+SHARED_BOUNDARY_TOLERANCE_UM = 1.0
+MIN_SHARED_BOUNDARY_LENGTH_UM = 10.0
+PANEL_A_ROI_LINEWIDTH = 3.0
+PANEL_A_ROI_HALO_LINEWIDTH = 4.0
+
+
+def iter_line_geometries(geometry):
+    """Yield LineStrings from a possibly multipart shared boundary."""
+    if geometry.is_empty:
+        return
+    if geometry.geom_type in {"LineString", "LinearRing"}:
+        yield geometry
+        return
+    if hasattr(geometry, "geoms"):
+        for part in geometry.geoms:
+            yield from iter_line_geometries(part)
+
+
+def draw_nonshared_roi_boundaries(axis, rois: dict) -> None:
+    """Draw only portions of each colored outline not shared by another ROI."""
+    for roi_name, roi in rois.items():
+        nonshared = roi.boundary
+        for other_name, other_roi in rois.items():
+            if other_name == roi_name:
+                continue
+            nonshared = nonshared.difference(
+                other_roi.boundary.buffer(SHARED_BOUNDARY_TOLERANCE_UM)
+            )
+        for line in iter_line_geometries(nonshared):
+            x, y = line.xy
+            axis.plot(
+                x,
+                y,
+                color=ROI_COLORS[roi_name],
+                linewidth=PANEL_A_ROI_LINEWIDTH,
+                linestyle="-",
+                solid_capstyle="butt",
+                solid_joinstyle="miter",
+                zorder=4,
+            )
+
+
+def draw_shared_roi_boundaries(axis, rois: dict, module01) -> None:
+    """Split each near-coincident stroke across adjacent ROI interiors."""
+    for first_name, second_name in itertools.combinations(rois, 2):
+        # Some polygon edges are visually coincident but differ by tiny
+        # floating-point amounts, so an exact boundary intersection misses
+        # portions of the yellow/green and yellow/red shared outlines.
+        shared = rois[first_name].boundary.intersection(
+            rois[second_name].boundary.buffer(
+                SHARED_BOUNDARY_TOLERANCE_UM
+            )
+        )
+        for line in iter_line_geometries(shared):
+            if line.length < MIN_SHARED_BOUNDARY_LENGTH_UM:
+                continue
+            x, y = line.xy
+            common = dict(
+                linewidth=PANEL_A_ROI_LINEWIDTH,
+                linestyle="-",
+                solid_capstyle="butt",
+            )
+
+            # Both colors use this exact same line and endpoints. Paint the
+            # second color across the full stroke, then cover only the half
+            # inside the first ROI with the first color.
+            axis.plot(
+                x,
+                y,
+                color=ROI_COLORS[second_name],
+                zorder=5,
+                **common,
+            )
+            for polygon in module01.polygon_components(rois[first_name]):
+                clip_patch = MplPolygon(
+                    polygon.exterior.coords,
+                    closed=True,
+                    transform=axis.transData,
+                )
+                artist, = axis.plot(
+                    x,
+                    y,
+                    color=ROI_COLORS[first_name],
+                    zorder=5.1,
+                    **common,
+                )
+                artist.set_clip_path(clip_patch)
 
 
 def load_module01_plotting():
@@ -139,7 +226,7 @@ def draw_figure(
 ) -> Path:
     module01 = load_module01_plotting()
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / "figure02_roi_construction.png"
+    output_path = output_dir / "panel_A_roi_construction.png"
     if output_path.exists() and not overwrite:
         raise FileExistsError(
             f"Output exists: {output_path}; use --overwrite to replace it"
@@ -166,21 +253,20 @@ def draw_figure(
             zorder=2,
         )
 
-    for roi_name in ("lateral", "dorsomedial", "ventromedial"):
+    # Draw a common white halo first. Colored outlines are split below into
+    # nonshared and shared segments so closed-polygon joins cannot protrude
+    # from beneath the two-color shared boundaries.
+    for roi_name in ("lateral", "ventromedial", "dorsomedial"):
         module01.draw_geometry(
             axis,
             rois[roi_name],
             edgecolor=ROI_HALO_COLOR,
-            linewidth=ROI_HALO_LINEWIDTH,
+            linewidth=PANEL_A_ROI_HALO_LINEWIDTH,
             zorder=3.5,
         )
-        module01.draw_geometry(
-            axis,
-            rois[roi_name],
-            edgecolor=ROI_COLORS[roi_name],
-            linewidth=ROI_LINEWIDTH,
-            zorder=4,
-        )
+
+    draw_nonshared_roi_boundaries(axis, rois)
+    draw_shared_roi_boundaries(axis, rois, module01)
 
     axis.axhline(
         y_split,
@@ -211,21 +297,21 @@ def draw_figure(
             [0],
             [0],
             color=ROI_COLORS["lateral"],
-            lw=ROI_LINEWIDTH,
+            lw=PANEL_A_ROI_LINEWIDTH,
             label="Lateral",
         ),
         Line2D(
             [0],
             [0],
             color=ROI_COLORS["dorsomedial"],
-            lw=ROI_LINEWIDTH,
+            lw=PANEL_A_ROI_LINEWIDTH,
             label="Dorsomedial",
         ),
         Line2D(
             [0],
             [0],
             color=ROI_COLORS["ventromedial"],
-            lw=ROI_LINEWIDTH,
+            lw=PANEL_A_ROI_LINEWIDTH,
             label="Ventromedial",
         ),
         Line2D(

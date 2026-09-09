@@ -30,7 +30,7 @@ DEFAULT_INPUT = (
 DEFAULT_PLOT_DIR = (
     PROJECT_ROOT
     / "plots/10_Xenium_CRAWDAD/figure_plots"
-    / "heatmap_region_slice_neighdist_50_four_pairs"
+    / "panel_E_heatmap_region_slice_neighdist_50_four_pairs"
 )
 REGIONS = (
     "lateral",
@@ -51,6 +51,12 @@ PAIRS = (
     ("D1_Island_B", "D1_Island_A"),
     ("Inh_PVALB", "D1_Island_B"),
 )
+TITLE_FONTSIZE = 18
+AXIS_LABEL_FONTSIZE = 16
+TICK_FONTSIZE = 14
+LEGEND_FONTSIZE = 14
+COLORBAR_LABEL_FONTSIZE = 14
+COLORBAR_TICK_FONTSIZE = 12
 
 
 def parse_args() -> argparse.Namespace:
@@ -90,6 +96,63 @@ def point_areas(
     areas = maximum - fraction * (maximum - minimum)
     areas[indices == 0] *= 1.35
     return areas
+
+
+def scale_legend_handles(
+    scale_levels: np.ndarray, args: argparse.Namespace
+) -> list[Line2D]:
+    """Build the shared first-significant-scale legend handles."""
+    legend_scales = np.array([200.0, 600.0, 1000.0])
+    legend_areas = point_areas(
+        legend_scales,
+        scale_levels,
+        args.minimum_point_area,
+        args.maximum_point_area,
+    )
+    return [
+        Line2D(
+            [0],
+            [0],
+            marker="o",
+            linestyle="none",
+            markerfacecolor="#9e9e9e",
+            markeredgecolor="#222222",
+            markeredgewidth=0.55,
+            markersize=np.sqrt(area),
+            label=f"{scale:g} µm",
+        )
+        for scale, area in zip(legend_scales, legend_areas)
+    ]
+
+
+def render_combined_legend(
+    scale_levels: np.ndarray,
+    target: Path,
+    args: argparse.Namespace,
+) -> None:
+    """Save the shared Z-score colorbar and point-size legend together."""
+    figure = plt.figure(figsize=(7.2, 4.8))
+    norm = Normalize(vmin=-args.z_color_limit, vmax=args.z_color_limit)
+    scalar = plt.cm.ScalarMappable(norm=norm, cmap="RdBu_r")
+    scalar.set_array([])
+    colorbar_axis = figure.add_axes([0.10, 0.14, 0.07, 0.72])
+    colorbar = figure.colorbar(scalar, cax=colorbar_axis)
+    colorbar.set_label(
+        "Mean Z at first significant scale",
+        fontsize=COLORBAR_LABEL_FONTSIZE,
+    )
+    colorbar.ax.tick_params(labelsize=COLORBAR_TICK_FONTSIZE)
+    figure.legend(
+        handles=scale_legend_handles(scale_levels, args),
+        title="First significant scale",
+        loc="center left",
+        bbox_to_anchor=(0.50, 0.50),
+        frameon=False,
+        fontsize=LEGEND_FONTSIZE,
+        title_fontsize=LEGEND_FONTSIZE,
+        labelspacing=2.1,
+    )
+    save_figure(figure, target, args.dpi)
 
 
 def load_points(path: Path) -> tuple[pd.DataFrame, np.ndarray, float]:
@@ -214,55 +277,23 @@ def render_pair(
     axis.set_xlim(-0.52, len(REGIONS) - 0.48)
     axis.set_ylim(11.52, 0.48)
     axis.set_aspect("equal", adjustable="box")
-    axis.set_xlabel("Region", fontsize=12, fontweight="bold")
-    axis.set_ylabel("Slice number", fontsize=12, fontweight="bold")
+    axis.set_xlabel(
+        "Region", fontsize=AXIS_LABEL_FONTSIZE, fontweight="bold"
+    )
+    axis.set_ylabel(
+        "Slice number", fontsize=AXIS_LABEL_FONTSIZE, fontweight="bold"
+    )
     axis.set_title(
         f"{reference} → {neighbor}",
-        fontsize=12,
+        fontsize=TITLE_FONTSIZE,
         fontweight="bold",
         pad=12,
     )
     axis.grid(color="#d3d3d3", linewidth=0.8, zorder=0)
     axis.set_axisbelow(True)
-    axis.tick_params(labelsize=10, pad=3)
+    axis.tick_params(labelsize=TICK_FONTSIZE, pad=3)
 
-    scalar = plt.cm.ScalarMappable(norm=norm, cmap="RdBu_r")
-    scalar.set_array([])
-    colorbar_axis = figure.add_axes([0.76, 0.53, 0.045, 0.34])
-    colorbar = figure.colorbar(scalar, cax=colorbar_axis)
-    colorbar.set_label("Mean Z at first significant scale", fontsize=9)
-    legend_scales = np.array([200.0, 600.0, 1000.0])
-    legend_areas = point_areas(
-        legend_scales,
-        scale_levels,
-        args.minimum_point_area,
-        args.maximum_point_area,
-    )
-    handles = [
-        Line2D(
-            [0],
-            [0],
-            marker="o",
-            linestyle="none",
-            markerfacecolor="#9e9e9e",
-            markeredgecolor="#222222",
-            markeredgewidth=0.55,
-            markersize=np.sqrt(area),
-            label=f"{scale:g} µm",
-        )
-        for scale, area in zip(legend_scales, legend_areas)
-    ]
-    figure.legend(
-        handles=handles,
-        title="First significant scale",
-        loc="upper center",
-        bbox_to_anchor=(0.782, 0.47),
-        frameon=False,
-        fontsize=9,
-        title_fontsize=9,
-        labelspacing=2.1,
-    )
-    figure.subplots_adjust(left=0.16, right=0.70, bottom=0.14, top=0.98)
+    figure.subplots_adjust(left=0.16, right=0.98, bottom=0.14, top=0.98)
     save_figure(figure, target, args.dpi)
     return len(significant)
 
@@ -273,13 +304,24 @@ def main() -> int:
         args.plot_dir / f"{reference}__to__{neighbor}.png"
         for reference, neighbor in PAIRS
     ]
-    existing = [target for target in targets if target.exists()]
+    legend_target = (
+        args.plot_dir / "z_score_and_first_significant_scale_legend.png"
+    )
+    legacy_legend_target = (
+        args.plot_dir / "first_significant_scale_legend.png"
+    )
+    existing = [
+        target for target in [*targets, legend_target] if target.exists()
+    ]
     if existing and not args.overwrite:
         raise FileExistsError(
             f"{len(existing)} output plots already exist; use --overwrite"
         )
+    if args.overwrite and legacy_legend_target.is_file():
+        legacy_legend_target.unlink()
 
     data, scale_levels, _ = load_points(args.input)
+    render_combined_legend(scale_levels, legend_target, args)
     counts = []
     for (reference, neighbor), target in zip(PAIRS, targets):
         n_points = render_pair(
@@ -295,7 +337,10 @@ def main() -> int:
     print(f"Read saved Module 05 points from {args.input}")
     for reference, neighbor, count in counts:
         print(f"{reference} -> {neighbor}: {count}/44 significant positions")
-    print(f"Saved {len(targets)} plots under {args.plot_dir}")
+    print(
+        f"Saved {len(targets)} heatmaps and 1 standalone legend under "
+        f"{args.plot_dir}"
+    )
     return 0
 
 

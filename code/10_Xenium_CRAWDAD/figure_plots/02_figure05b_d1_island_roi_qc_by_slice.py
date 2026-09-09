@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import itertools
 import json
 import os
 import sys
@@ -18,6 +19,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.lines import Line2D
+from matplotlib.patches import Polygon as MplPolygon
 from shapely.geometry import shape
 from shapely.ops import unary_union
 
@@ -52,6 +54,102 @@ PLOT_VERSIONS = {
 }
 ALL_CELLTYPES_VERSION = "figure05b_all_celltypes"
 PLOT_VERSION_NAMES = (*PLOT_VERSIONS, ALL_CELLTYPES_VERSION)
+PANEL_B_DIRNAME = "panel_B_all_celltypes"
+PANEL_F_DIRNAME = "panel_F_celltype_across_slices"
+PANEL_B_DM_LINEWIDTH_SCALE = 1.6
+SHARED_BOUNDARY_TOLERANCE_UM = 1.0
+MIN_SHARED_BOUNDARY_LENGTH_UM = 10.0
+
+
+def version_output_dir(plot_dir: Path, version: str) -> Path:
+    """Route each plot version to its renamed manuscript-panel directory."""
+    if version == ALL_CELLTYPES_VERSION:
+        return plot_dir / PANEL_B_DIRNAME
+    return plot_dir / PANEL_F_DIRNAME / version
+
+
+def iter_line_geometries(geometry):
+    """Yield LineStrings from a potentially multipart boundary geometry."""
+    if geometry.is_empty:
+        return
+    if geometry.geom_type in {"LineString", "LinearRing"}:
+        yield geometry
+        return
+    if hasattr(geometry, "geoms"):
+        for part in geometry.geoms:
+            yield from iter_line_geometries(part)
+
+
+def draw_nonshared_roi_boundaries(
+    axis, rois: dict, roi_colors: dict[str, str], roi_linewidth: float
+) -> None:
+    """Draw colored ROI outline portions not shared with another ROI."""
+    for roi_name, roi in rois.items():
+        nonshared = roi.boundary
+        for other_name, other_roi in rois.items():
+            if other_name == roi_name:
+                continue
+            nonshared = nonshared.difference(
+                other_roi.boundary.buffer(SHARED_BOUNDARY_TOLERANCE_UM)
+            )
+        for line in iter_line_geometries(nonshared):
+            x, y = line.xy
+            axis.plot(
+                x,
+                y,
+                color=roi_colors[roi_name],
+                linewidth=roi_linewidth,
+                linestyle="-",
+                solid_capstyle="butt",
+                solid_joinstyle="miter",
+                zorder=3,
+            )
+
+
+def draw_shared_roi_boundaries(
+    axis,
+    rois: dict,
+    module01,
+    roi_colors: dict[str, str],
+    roi_linewidth: float,
+) -> None:
+    """Split shared strokes across the interiors of adjacent ROIs."""
+    for first_name, second_name in itertools.combinations(rois, 2):
+        shared = rois[first_name].boundary.intersection(
+            rois[second_name].boundary.buffer(
+                SHARED_BOUNDARY_TOLERANCE_UM
+            )
+        )
+        for line in iter_line_geometries(shared):
+            if line.length < MIN_SHARED_BOUNDARY_LENGTH_UM:
+                continue
+            x, y = line.xy
+            common = dict(
+                linewidth=roi_linewidth,
+                linestyle="-",
+                solid_capstyle="butt",
+            )
+            axis.plot(
+                x,
+                y,
+                color=roi_colors[second_name],
+                zorder=4,
+                **common,
+            )
+            for polygon in module01.polygon_components(rois[first_name]):
+                clip_patch = MplPolygon(
+                    polygon.exterior.coords,
+                    closed=True,
+                    transform=axis.transData,
+                )
+                artist, = axis.plot(
+                    x,
+                    y,
+                    color=roi_colors[first_name],
+                    zorder=4.1,
+                    **common,
+                )
+                artist.set_clip_path(clip_patch)
 
 
 def load_script_module(name: str, path: Path):
@@ -189,6 +287,8 @@ def draw_panel(
     roi_linewidth: float,
     show_split: bool,
     slice_label: str | None,
+    dorsomedial_linewidth_scale: float = 1.0,
+    split_shared_borders: bool = False,
 ) -> None:
     for celltype in celltypes:
         selected = frame.loc[frame["cell_type"].eq(celltype)]
@@ -202,7 +302,8 @@ def draw_panel(
             rasterized=True,
             zorder=1,
         )
-    for roi_name in ("lateral", "dorsomedial", "ventromedial"):
+    # Draw the common white halo independently of the colored border logic.
+    for roi_name in ("lateral", "ventromedial", "dorsomedial"):
         module01.draw_geometry(
             axis,
             rois[roi_name],
@@ -210,13 +311,28 @@ def draw_panel(
             linewidth=roi_halo_linewidth,
             zorder=2.5,
         )
-        module01.draw_geometry(
-            axis,
-            rois[roi_name],
-            edgecolor=roi_colors[roi_name],
-            linewidth=roi_linewidth,
-            zorder=3,
+    if split_shared_borders:
+        draw_nonshared_roi_boundaries(
+            axis, rois, roi_colors, roi_linewidth
         )
+        draw_shared_roi_boundaries(
+            axis, rois, module01, roi_colors, roi_linewidth
+        )
+    else:
+        # Panel B keeps its established black outlines with a thicker green
+        # dorsomedial border drawn last at shared edges.
+        for roi_name in ("lateral", "ventromedial", "dorsomedial"):
+            module01.draw_geometry(
+                axis,
+                rois[roi_name],
+                edgecolor=roi_colors[roi_name],
+                linewidth=(
+                    roi_linewidth * dorsomedial_linewidth_scale
+                    if roi_name == "dorsomedial"
+                    else roi_linewidth
+                ),
+                zorder=3,
+            )
     if show_split:
         axis.axhline(
             y_split,
@@ -237,7 +353,7 @@ def draw_panel(
             transform=axis.transAxes,
             ha="left",
             va="top",
-            fontsize=16,
+            fontsize=20,
             weight="bold",
         )
 
@@ -258,6 +374,9 @@ def draw_multislice(
     roi_halo_linewidth: float,
     roi_linewidth: float,
     show_split: bool,
+    show_slice_labels: bool,
+    dorsomedial_linewidth_scale: float = 1.0,
+    split_shared_borders: bool = False,
 ) -> Path:
     nrows = 4
     ncols = (len(slice_table) + nrows - 1) // nrows
@@ -290,7 +409,11 @@ def draw_multislice(
             roi_halo_linewidth,
             roi_linewidth,
             show_split,
-            slice_label=f"Slice {row.slice_number}",
+            slice_label=(
+                f"Slice {row.slice_number}" if show_slice_labels else None
+            ),
+            dorsomedial_linewidth_scale=dorsomedial_linewidth_scale,
+            split_shared_borders=split_shared_borders,
         )
     for axis in column_major_axes[len(slice_table) :]:
         axis.set_axis_off()
@@ -477,21 +600,19 @@ def main() -> int:
     plot_stem = f"figure05b_depth{depth_token}"
 
     targets = [
-        args.plot_dir / version / f"{plot_stem}.png"
+        version_output_dir(args.plot_dir, version) / f"{plot_stem}.png"
         for version in selected_versions
     ]
     targets.extend(
-        args.plot_dir / version / "legend.png"
+        version_output_dir(args.plot_dir, version) / "legend.png"
         for version in selected_versions
     )
     if ALL_CELLTYPES_VERSION in selected_versions:
         targets.extend(
             [
-                args.plot_dir
-                / ALL_CELLTYPES_VERSION
+                version_output_dir(args.plot_dir, ALL_CELLTYPES_VERSION)
                 / "figure05b_slice8_all_celltypes.png",
-                args.plot_dir
-                / ALL_CELLTYPES_VERSION
+                version_output_dir(args.plot_dir, ALL_CELLTYPES_VERSION)
                 / "legend_celltypes_3cols.png",
             ]
         )
@@ -503,7 +624,7 @@ def main() -> int:
 
     written = []
     for version, celltypes in selected_versions.items():
-        output_dir = args.plot_dir / version
+        output_dir = version_output_dir(args.plot_dir, version)
         output_dir.mkdir(parents=True, exist_ok=True)
         show_split = version != ALL_CELLTYPES_VERSION
         roi_colors = (
@@ -521,6 +642,11 @@ def main() -> int:
             if version == ALL_CELLTYPES_VERSION
             else ROI_LINEWIDTH
         )
+        multislice_roi_colors = dict(roi_colors)
+        if version == ALL_CELLTYPES_VERSION:
+            # Panel B uses black lateral/ventromedial outlines and the same
+            # deep green dorsomedial outline as panel_A_roi_construction.png.
+            multislice_roi_colors["dorsomedial"] = ROI_COLORS["dorsomedial"]
         written.append(
             draw_multislice(
                 selected_cells,
@@ -534,10 +660,19 @@ def main() -> int:
                 args,
                 module01,
                 module06.CELLTYPE_COLORS,
-                roi_colors,
+                multislice_roi_colors,
                 roi_halo_linewidth,
                 roi_linewidth,
                 show_split,
+                show_slice_labels=version != ALL_CELLTYPES_VERSION,
+                dorsomedial_linewidth_scale=(
+                    PANEL_B_DM_LINEWIDTH_SCALE
+                    if version == ALL_CELLTYPES_VERSION
+                    else 1.0
+                ),
+                split_shared_borders=(
+                    version != ALL_CELLTYPES_VERSION
+                ),
             )
         )
         written.append(
