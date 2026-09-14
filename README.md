@@ -56,7 +56,7 @@ software labeled by emojis:
   - 🔍 [WM reconstruction](https://data.libd.org/NAC_AP/WM_reconstruction_3d.html)
 
 ## Data Access
-Zenodo Archive for this project can be found at [link](link). Project data was also uploaded to the NeMO and can be found at [nemo:col-s93bogv](https://assets.nemoarchive.org/col-s93bogv).
+Zenodo Archive for this project can be found at [10.5281/zenodo.22755736](https://doi.org/10.5281/zenodo.22755736). Project data was also uploaded to the NeMO and can be found at [nemo:col-s93bogv](https://assets.nemoarchive.org/col-s93bogv).
 
 ## Contact
 
