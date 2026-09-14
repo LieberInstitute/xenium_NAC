@@ -1,10 +1,38 @@
-# NAC AP
+# NAc A-P
 
-graphical abstract  
+<table>
+  <tr>
+    <td><img src="https://github.com/LieberInstitute/xenium_NAC/blob/devel/Br6660_reconstruction_3d_second_spateo_all_cells.gif" width="375"></td>
+    <td><img src="https://github.com/LieberInstitute/xenium_NAC/blob/devel/Br6660_reconstruction_3d_second_spateo_D1_Island_A_B.gif" width="375"></td>
+  </tr>
+</table>
+
+
+Welcome to the NAc A-P project repository! Here you will find all code used to analyze the data generated as part of the manuscript "Three dimensional reconstruction of the human nucleus accumbens reveals topographic organization and molecular heterogeneity of D1-islands across the anterior posterior axis". 
+
+IMPORTANT NOTE: Some pdf/png versions of plots generated in the analysis were not pushed to the repository to avoid the inclusion of very large files. 
 
 ## Study Design  
 
-study statement / experimental design
+This study performs deep anatomical profiling of the human nucleus accumbens (NAc) via Xenium spatial transcriptomics. Specifically, we performed Xenium on 11 sequential sections separated by ~500um across, 2 donors for a total of 22 sections. We also performed VisiumHD, a single cell resolution spatial Transcriptomics technology, across 8 arrays and specifically targeted anatomical regions containing D1-islands. Following collection of all data, we present a three-dimensional reconstruction of the human NAc across the anterior posterior technology. 
+
+## Citing our work
+
+Please cite this [(manuscript](link) if you use
+data from this project.
+
+> Robert A. Phillips III, Jianing Yao, Svitlana V. Bach, Ishbel Del Rosario Alvia, Yufeng Du, Sarah E. Maguire, Ruth Zhang, Ryan A. Miller, Joel E. Kleinman,  Thomas M. Hyde, Keri Martinowich, Kristen R. Maynard, Stephanie C. Hicks. Three dimensional reconstruction of the human nucleus accumbens reveals topographic organization and molecular heterogeneity of D1-islands across the anterior posterior axis. bioRxiv [Preprint]. 2026 UPDATE DATE. doi: UPDATE DOI. PMID: UPDATE PMID; PMCID: UPDATE PMCID.
+
+Below is the citation in [`BibTeX`](http://www.bibtex.org/) format.
+
+    @article{phillipsya2026,
+      title={Three dimensional reconstruction of the human nucleus accumbens reveals topographic organization and molecular heterogeneity of D1-islands across the anterior posterior axis},
+      author={Robert A. Phillips III, Jianing Yao, Svitlana V. Bach, Ishbel Del Rosario Alvia, Yufeng Du, Sarah E. Maguire, Ruth Zhang, Ryan A. Miller, Joel E. Kleinman,  Thomas M. Hyde, Keri Martinowich, Kristen R. Maynard, Stephanie C. Hicks. },
+      journal={bioRxiv},
+      year={2026},
+      publisher={Cold Spring Harbor Laboratory Preprints}
+      }
+
 
 ## Interactive Websites
 
@@ -17,8 +45,6 @@ namely:
 We provide the following interactive websites, organized by dataset with
 software labeled by emojis:  
 
-- Pseudobulk
-  - 👀 [if needed](link)
 - Shiny App
   - 🔍 [VisiumHD shiny app](https://interactive.libd.org/NAC_AP/)
 - Samui
@@ -30,10 +56,7 @@ software labeled by emojis:
 
 
 ## Data Access
-Public [globus endpoint](https://research.libd.org/globus/) to access R objects associate with apps for this project.  
-SpaceRanger processed data outputs, can be accessed via Gene Expression Omnibus (GEO) under accession number [update number](link). 
 Zenodo Archive for this project can be found at [link](link). Project data was also uploaded to the NeMO and can be found at [nemo:col-s93bogv](https://assets.nemoarchive.org/col-s93bogv).
-
 
 ## Contact
 
