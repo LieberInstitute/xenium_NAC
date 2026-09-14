@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <td><img src="https://github.com/LieberInstitute/xenium_NAC/blob/devel/Br6660_reconstruction_3d_second_spateo_all_cells.gif?raw=true" width="375"></td>
-    <td><img src="https://github.com/LieberInstitute/xenium_NAC/blob/devel/Br6660_reconstruction_3d_second_spateo_D1_Island_A_B.gif?raw=true" width="375"></td>
+    <td><img src="https://github.com/LieberInstitute/xenium_NAC/blob/gh-pages/img/Br6660_reconstruction_3d_second_spateo_all_cells.gif?raw=true" width="375"></td>
+    <td><img src="https://github.com/LieberInstitute/xenium_NAC/blob/gh-pages/img/Br6660_reconstruction_3d_second_spateo_D1_Island_A_B.gif?raw=true" width="375"></td>
   </tr>
 </table>
 
