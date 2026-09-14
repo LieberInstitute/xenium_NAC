@@ -1,0 +1,29 @@
+**** Job starts ****
+Fri Sep 11 09:20:12 AM EDT 2026
+**** JHPCE info ****
+User: rmiller
+Job id: 35633099
+Job name: 01-create_samui
+Hostname: 
+Task id: 7
+Processing sample H1-XNQ4F2B_A1
+Fri Sep 11 09:20:12 AM EDT 2026
+Loading LIBD SLURM module for samui/1.0.0-next.45
+/jhpce/shared/libd/core/samui/1.0.0-next.45/samui_env/lib/python3.10/site-packages/pydantic/_internal/_config.py:261: UserWarning: Valid config keys have changed in V2:
+* 'allow_mutation' has been removed
+  warnings.warn(message, UserWarning)
+[09:27:26] INFO     Transforming                                    logger.py:27
+                    /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xen             
+                    ium_NAC/processed-data/14_samui/visHD/H1-XNQ4F2             
+                    B_A1/H1-XNQ4F2B_A1.tif to COG.                              
+           INFO     'H1-XNQ4F2B_A1' Executing queued functions      logger.py:27
+           INFO     H1-XNQ4F2B_A1 Adding coords 'coords'            logger.py:27
+[09:27:29] INFO     Writing uncompressed GeoTIFF                    logger.py:27
+                    /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xen             
+                    ium_NAC/processed-data/14_samui/visHD/H1-XNQ4F2             
+                    B_A1/H1-XNQ4F2B_A1.tif                                      
+[09:41:06] INFO     Writing COG                                     logger.py:27
+                    /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xen             
+                    ium_NAC/processed-data/14_samui/visHD/H1-XNQ4F2             
+                    B_A1/H1-XNQ4F2B_A1.tif                                      
+slurmstepd: error: *** JOB 35633099 ON compute-156 CANCELLED AT 2026-09-12T09:20:20 DUE TO TIME LIMIT ***

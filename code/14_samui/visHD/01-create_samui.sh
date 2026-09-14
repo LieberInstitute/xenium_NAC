@@ -1,9 +1,11 @@
 #!/bin/bash
-#SBATCH --mem=90G
-#SBATCH --job-name=01-create_samui
-#SBATCH -o logs/samui_%a.txt
-#SBATCH -e logs/samui_%a.txt
-#SBATCH --array=1-5
+#SBATCH --mem=128G
+#SBATCH -n 4
+#SBATCH --time=3-00:00:00
+#SBATCH --job-name=01-NAC-AP_create_samui
+#SBATCH -o logs/rerun_samui_%a.txt
+#SBATCH -e logs/rerun_samui_%a.txt
+#SBATCH --array=1-4
 
 
 # %4
@@ -19,7 +21,7 @@ echo "Job name: ${SLURM_JOB_NAME}"
 echo "Hostname: ${SLURM_NODENAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-donor=$(awk "NR==${SLURM_ARRAY_TASK_ID}" /dcs04/lieber/marmaypag/spatialAMY_LIBD4125/spatialAmygdala/code/samui/visiumHD/sample_ids-visium.txt)
+donor=$(awk "NR==${SLURM_ARRAY_TASK_ID}" /dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/code/14_samui/visHD/rerun_sample_ids-visium.txt)
 echo "Processing sample ${donor}"
 date
 

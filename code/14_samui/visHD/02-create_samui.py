@@ -1,5 +1,5 @@
 import os
-os.chdir('/dcs04/lieber/marmaypag/spatialAMY_LIBD4125/spatialAmygdala/')
+os.chdir('/dcs05/lieber/marmaypag/xenium_NAC_LIBD4125/xenium_NAC/')
 
 from pyhere import here
 from pathlib import Path
@@ -30,21 +30,22 @@ this_sample = sys.argv[1:]
 #this_sample = file.readlines()
 #this_sample = lines[1]
 this_sample = ''.join(this_sample)
-#this_sample = 'Br9280_CeA'
+#this_sample = 'H1-8MTH2TQ_A1'
 
 
 #spot_diameter_m = 55e-6 # 5-micrometer diameter for Visium spot
 spot_diameter_m = 16e-6 # 16-micrometer diameter for HDbin
+#spot_diameter_m = 8e-6 
 #m_per_px = 4.20390369911423e-07
 #0.00016÷63.36917768880937 = 0.00000252
 #0.00008÷31.684588844404686 = 0.00000252
 ################################################################################
 #   Gather gene-expression data into a DataFrame to later as a feature
 ################################################################################
-spg_path = here("processed-data", "samui", "visiumHD", "spe_visiumHD.h5ad")
+spg_path = here("processed-data", "14_samui", "visHD", "spe_visiumHD.h5ad")
 spg = sc.read(spg_path)
 
-unique_sample_ids = spg.obs['sample_id'].unique
+#unique_sample_ids = spg.obs['sample_id'].unique
 #unique_capture_ids = spg.obs['capture_id'].unique
 #spgP = spg
 #path_groups = spg.obs['path_groups'].cat.categories
@@ -53,9 +54,9 @@ unique_sample_ids = spg.obs['sample_id'].unique
 spgP = spg[spg.obs['sample_id'] == this_sample, :]
 sample_id=spgP.obs['sample_id'].unique()[0]
 
-samui_dir = Path(here('processed-data', 'samui', "visiumHD", f"{sample_id}"))
+samui_dir = Path(here('processed-data', '14_samui', "visHD", f"{sample_id}"))
 samui_dir.mkdir(parents = True, exist_ok = True)
-json_path = Path(here("processed-data", "VisiumHD", "01_spaceranger", "submission_links", sample_id, "outs", "binned_outputs", "square_016um", "spatial", "scalefactors_json.json"))
+json_path = Path(here("processed-data", "01_spaceranger", sample_id, "outs", "binned_outputs", "square_016um", "spatial", "scalefactors_json.json"))
 #json_path = Path(here("processed-data", "VisiumHD", "01_spaceranger", "submission_links", sample_id, "outs", "segmented_outputs", "spatial", "scalefactors_json.json"))
 #   Read in the spaceranger JSON to calculate meters per pixel for
 #   the full-resolution image
@@ -93,8 +94,11 @@ gene_df = gene_df.loc[: , ~gene_df.columns.duplicated()].copy()
 #spotCalling_metrics = spgP.obs[['spg_NDAPI', 'spg_PDAPI', 'spg_IDAPI', 'spg_CNDAPI',
 #       'spg_NNeuN', 'spg_PNeuN', 'spg_INeuN', 'spg_CNNeuN', 'spg_NWFA', 'spg_PWFA', 'spg_IWFA', 'spg_CNWFA',
 #       'spg_NClaudin5', 'spg_PClaudin5', 'spg_IClaudin5']]
-
-tissue_positions_cols=spgP.obs.filter(like="pxl_")
+xory = ['X', 'Y']
+# finds all x or y values use regex in filter
+#xory_pattern = '|'.join(xory)
+#tissue_positions_cols=spgP.obs.filter(like="pxl_")
+tissue_positions_cols=spgP.obs.filter(items=xory)
 tissue_positions_df=pd.DataFrame(tissue_positions_cols)
 ################################################################################
 #   Use the Samui API to create the importable directory for this combined "sample"
@@ -106,16 +110,17 @@ img_name = sample_id +'.tif'
 #img_path = here('processed-data', 'Images', 'VistoSeg', img_name)
 #img_path = here('raw-data', 'Images', img_name)
 #img_path = here('raw-data', 'images', 'VisiumHD', img_name)
-img_path = here('processed-data', 'samui', 'visiumHD', 'images', img_name)
+img_path = here('raw-data', 'HD', img_name)
 
 #tissue_positions_path = Path(here("processed-data", "01_spaceranger", capture_id, "outs", "spatial", "tissue_positions.csv"))
 #tissue_positions = pd.read_csv(tissue_positions_path ,index_col = 0).rename({'pxl_row_in_fullres': 'y', 'pxl_col_in_fullres': 'x'},axis = 1)
-tissue_positions = tissue_positions_df.rename({'pxl_row_in_fullres': 'y', 'pxl_col_in_fullres': 'x'},axis = 1)
+tissue_positions = tissue_positions_df.rename({'Y': 'y', 'X': 'x'},axis = 1)
+#tissue_positions = tissue_positions_df
 tissue_positions.index.name = None
 tissue_positions = tissue_positions[['x', 'y']].astype(int)
 #tp_sub = tissue_positions.reindex(gene_df.index).dropna(how="all")
  
-default_gene = 'SNAP25'
+default_gene = 'DRD1'
 assert default_gene in gene_df.columns, "Default gene not in AnnData"
 
 #notes_md_url = Url('/dcs04/lieber/lcolladotor/spatialHPC_LIBD4035/spatial_hpc/code/VSPG_image_stitching/feature_notes.md')
@@ -127,7 +132,7 @@ this_sample.add_image(tiff = img_path, channels = img_channels, scale = m_per_px
 #this_sample.add_csv_feature(precast_df, name = "Domains", coordName = "coords", dataType = "categorical")
 #this_sample.add_csv_feature(spotCalling_df, name = "Spot_Calling", coordName = "coords", dataType = "categorical")
 #this_sample.add_csv_feature(spotCalling_metrics, name = "Spot_Calling_metrics", coordName = "coords", dataType = "quantitative")
-this_sample.add_chunked_feature(gene_df, name = "Genes", coordName = "coords", dataType = "quantitative")
+this_sample.add_chunked_feature(gene_df, name = "Genes", coordName = "coords", dataType = "quantitative", sparse=True)
 this_sample.set_default_feature(group = "Genes", feature = default_gene)
 
 #   Add additional requested observational columns (colData columns)

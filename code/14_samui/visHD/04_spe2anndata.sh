@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mem=50G
+#SBATCH --mem=70G
 #SBATCH --job-name=spe2anndata-xen
 #SBATCH --array=1
 #SBATCH -o logs/spe2anndata_%a.txt
@@ -16,7 +16,7 @@ echo "Job name: ${SLURM_JOB_NAME}"
 echo "Hostname: ${SLURM_NODENAME}"
 echo "Task id: ${SLURM_ARRAY_TASK_ID}"
 
-module load conda_R/4.4
+module load conda_R/4.5
 Rscript 03-spe_to_anndata.R
 
 mkdir -p ./logs/
